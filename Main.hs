@@ -8,12 +8,15 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeSynonymInstances #-}
-
+import Criterion.Measurement
+import Criterion.Main
+import Criterion.Types (measCpuTime)
+import System.Process
+import System.Environment
 import Data.Char (chr,ord)
 import Data.List (foldl')
 import System.Random (mkStdGen, random, randoms)
 import System.IO(IOMode(..), hClose, hGetContents, openFile)
-
 import GA (Entity(..), GAConfig(..), 
            evolveVerbose, randomSearch)
 
@@ -66,13 +69,17 @@ instance Entity BangVec Score Time BangVec IO where
 
 main :: IO() 
 main = do
-    print "Please provide project path"
-  -- get base time and pool
+        print "Please provide project path"
+        projDir:_ <- getArgs
+        system $ "cd " ++ projDir ++ "; cabal build" -- compile program
+        (m, _) <- measure (whnfIO $ system $ "cd " ++ projDir ++ "; cabal run") 4 -- TODO change 4 to runs
+        let baseTime = measCpuTime m -- time from measurement record
+  -- get base time and pool. for the future, check out criterion `measure`
   -- base time: compile & run
   -- pool: parse
 
   -- Run Genetic Algorithm
-        let cfg = GAConfig 
+            cfg = GAConfig 
                     1000 -- population size
                     55 -- archive size (best entities to keep track of)
                     350 -- maximum number of generations
@@ -89,7 +96,7 @@ main = do
             -- vecPool = undefined -- largest bit vector of length(placesToStrict)
             vecPool = 7 :: BangVec -- largest bit vector of length(placesToStrict)
             -- baseTime = undefined -- base runtime
-            baseTime = 1.2 :: Time -- base runtime
+            -- baseTime = 1.2 :: Time -- base runtime
 
         -- Do the evolution!
         -- Note: if either of the last two arguments is unused, just use () as a value
