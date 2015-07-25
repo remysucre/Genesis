@@ -70,7 +70,7 @@ instance Entity BangVec Score Time BangVec IO where
 main :: IO() 
 main = do
         print "Please provide project path"
-        projDir:_ <- getArgs
+        [projDir] <- getArgs
         system $ "cd " ++ projDir ++ "; cabal build" -- compile program
         (m, _) <- measure (whnfIO $ system $ "cd " ++ projDir ++ "; cabal run") 4 -- TODO change 4 to runs
         let baseTime = measCpuTime m -- time from measurement record
