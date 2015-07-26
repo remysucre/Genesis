@@ -19,7 +19,7 @@ import System.Random (mkStdGen, random, randoms)
 import System.IO(IOMode(..), hClose, hGetContents, openFile)
 import GA (Entity(..), GAConfig(..), 
            evolveVerbose, randomSearch)
-import Rewrite (placesToStrict)
+import Rewrite (placesToStrict, editBangs)
 import Data.Bits
 import Data.Char (intToDigit)
 import Numeric (showHex, showIntAtBase)
@@ -63,9 +63,9 @@ instance Entity BangVec Score Time BangVec IO where
   -- score: improvement on base time
   -- NOTE: lower is better
   score _ _ = return $ Just (0.0 :: Score)
-  --score basTime e = do -- 1 / seconds faster
-      
+  -- score baseTime e = do -- 1 / seconds faster
   -- rewrite program, recompile & run
+      
 
   -- whether or not a scored entity is perfect
   isPerfect (_,s) = s == 0.0 -- Never
