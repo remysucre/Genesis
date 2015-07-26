@@ -9,13 +9,11 @@ module Rewrite (
     , flipRandomBang
     , placesToStrict
     , bangVector
-    , editBangs
 ) where
 
 import System.Random
 import System.IO.Unsafe
 import Language.Haskell.Exts
-import Data.Bits.Bitwise
 
 {-- Set of functions for adding and removing items from syntax tree --}
 
@@ -106,23 +104,6 @@ flipBangDecl x (d:ds) = case d of
                              FunBind ms -> let (y, ms') = flipBangMatch x ms
                                            in (FunBind $ ms'):(flipBangDecl y ds)
                              _ -> [d] ++ flipBangDecl x ds                          
-
-btn :: [Bool] -> [Int]
-btn bs = btn_ (length bs - 1) bs
-
-btn_ :: Int -> [Bool] -> [Int]
-btn_ _ [] = []
-btn_ i [b] = if b then [i] else []
-btn_ i (b:bs) = if b then i:btn_ (i - 1) bs else btn_ (i - 1) bs 
-
-editBangs :: String -> String -> Int -> String
-editBangs fp prog vec = program'
-    where 
-        bools = toListBE vec
-        nums = btn bools
-        flipBang' = flipBang fp
-        program' = foldl flipBang' prog nums
-
 
 {- Either add or remove stricntess from the i^th possible place -}
 flipBang :: String -> String -> Int -> String

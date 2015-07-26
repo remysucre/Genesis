@@ -19,6 +19,10 @@ import System.Random (mkStdGen, random, randoms)
 import System.IO(IOMode(..), hClose, hGetContents, openFile)
 import GA (Entity(..), GAConfig(..), 
            evolveVerbose, randomSearch)
+import Rewrite (placesToStrict)
+import Data.Bits
+import Data.Char (intToDigit)
+import Numeric (showHex, showIntAtBase)
 
 --
 -- GA TYPE CLASS IMPLEMENTATION
@@ -30,15 +34,14 @@ type Score = Double
 
 instance Entity BangVec Score Time BangVec IO where
  
-  -- generate a random entity, i.e. a random string
-  -- invariant: pool is the bit vector with all bits on
+  -- generate a random bang vector
+  -- invariant: pool is the vector with all bangs on
   genRandom pool seed = return $! e
     where
         g = mkStdGen seed
         e = (fst $ random g) `mod` (pool + 1)
 
-  -- crossover operator: mix (and trim to shortest entity)
-
+  -- crossover operator: merge from two vectors, randomly picking bangs
   crossover _ _ _ e _ = return $! Just e
   {- crossover _ _ seed e1 e2 = return $! Just e
     where
@@ -48,7 +51,7 @@ instance Entity BangVec Score Time BangVec IO where
       e2' = ~s .&. e2
       e = e1' .|. e2' -}
 
-  -- mutation operator: use next or previous letter randomly and add random characters (max. 9)
+  -- mutation operator: 
   mutation _ _ _ e = return $! Just e
   {- mutation pool p seed e = return $! Just e
     where
@@ -60,7 +63,8 @@ instance Entity BangVec Score Time BangVec IO where
   -- score: improvement on base time
   -- NOTE: lower is better
   score _ _ = return $ Just (0.0 :: Score)
-  -- score fn e =  undefined -- 1 / seconds faster
+  --score basTime e = do -- 1 / seconds faster
+      
   -- rewrite program, recompile & run
 
   -- whether or not a scored entity is perfect
@@ -69,14 +73,20 @@ instance Entity BangVec Score Time BangVec IO where
 
 main :: IO() 
 main = do
-        print "Please provide project path"
-        [projDir] <- getArgs
-        system $ "cd " ++ projDir ++ "; cabal build" -- compile program
-        (m, _) <- measure (whnfIO $ system $ "cd " ++ projDir ++ "; cabal run") 4 -- TODO change 4 to runs
-        let baseTime = measCpuTime m -- time from measurement record
+        print "Please provide project path"; [projDir] <- getArgs
   -- get base time and pool. for the future, check out criterion `measure`
-  -- base time: compile & run
-  -- pool: parse
+  -- obtain base time: compile & run
+        system $ "cd " ++ projDir ++ "; cabal build"
+        let runProj = system $ "cd " ++ projDir ++ "; cabal run > /dev/null"
+        (m, _) <- measure (whnfIO runProj) 4 -- TODO change 4 to runs
+        let baseTime = measCpuTime m
+        putStr "Basetime is: "; print baseTime
+  -- pool: largest bit vector of length (placesToStrict)
+        prog <- readFile $ projDir ++ "/Main.hs"
+        let vecSize = placesToStrict (projDir ++ "/Main.hs") prog --TODO assuming only one file named Main
+            vecPool = bit vecSize - 1 :: BangVec 
+        -- putStrLn $ showIntAtBase 2 intToDigit vecPool "" 
+        -- print vecSize
 
   -- Run Genetic Algorithm
             cfg = GAConfig 
@@ -94,7 +104,6 @@ main = do
 
             -- pool to pick from:
             -- vecPool = undefined -- largest bit vector of length(placesToStrict)
-            vecPool = 7 :: BangVec -- largest bit vector of length(placesToStrict)
             -- baseTime = undefined -- base runtime
             -- baseTime = 1.2 :: Time -- base runtime
 
