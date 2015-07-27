@@ -11,7 +11,7 @@
 {-# LANGUAGE BangPatterns #-}
 import Criterion.Measurement
 import Criterion.Main
-import Criterion.Types (measCpuTime, measTime, measAllocated, fromInt)
+import Criterion.Types (measCpuTime, measTime)
 import System.Process
 import System.Environment
 import Data.Char (chr,ord)
@@ -41,8 +41,8 @@ import Debug.Trace
 buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build"
 benchmark projDir runs = {-trace (unsafePerformIO runProj)-} measure (nfIO runProj) runs -- TODO change 4 to runs
     where
-        runProj = callCommand $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ " +RTS -T > /dev/null"
-        -- runProj = readProcess ("./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir " +RTS -T") [] ""
+        -- runProj = callCommand $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+        runProj = readProcess ("./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir) [] ""
         
 
 --
@@ -50,10 +50,10 @@ benchmark projDir runs = {-trace (unsafePerformIO runProj)-} measure (nfIO runPr
 --
 
 type BangVec = Int
-type Space = Double
+type Time = Double
 type Score = Double
 
-instance Entity BangVec Score (Space, FilePath) BangVec IO where
+instance Entity BangVec Score (Time, FilePath) BangVec IO where
  
   -- generate a random bang vector
   -- invariant: pool is the vector with all bangs on
@@ -84,7 +84,7 @@ instance Entity BangVec Score (Space, FilePath) BangVec IO where
   -- score: improvement on base time
   -- NOTE: lower is better
   -- score _ _ = return $ Just (0.0 :: Score)
-  score (baseSpace, projDir) bangVec = do -- 1 / seconds faster
+  score (baseTime, projDir) bangVec = do -- 1 / seconds faster
   -- rewrite program, recompile & run
   -- TODO currently overwrite original
     let mainPath = projDir ++ "/Main.hs"
@@ -93,8 +93,8 @@ instance Entity BangVec Score (Space, FilePath) BangVec IO where
     T.writeFile mainPath (pack prog')
     buildProj projDir
     (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
-    let newSpace = measAllocated m
-    return $! Just (fromIntegral newSpace / baseSpace) -- TODO make sure time is right
+    let newTime = measTime m
+    return $! Just (newTime / baseTime) -- TODO make sure time is right
 
   -- whether or not a scored entity is perfect
   isPerfect (_,s) = s == 0.0 -- Never
@@ -108,12 +108,9 @@ main = do
         buildProj projDir
         -- (m, _) <- measure (whnfIO $ runProj projDir) 4 -- TODO change 4 to runs
         (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
-        let 
-            alloc = measAllocated m
-            baseSpace = fromIntegral $ measAllocated m
+        let baseTime = measTime m
             mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
-        print $ fromInt alloc
-        putStr "Base alloc is: "; print baseSpace
+        putStr "Basetime is: "; print baseTime
   -- pool: bit vector representing places to strict w/ all bits on
         prog <- readFile mainPath
         let vecSize = placesToStrict mainPath prog 
@@ -137,7 +134,7 @@ main = do
 
         -- Do the evolution!
         -- Note: if either of the last two arguments is unused, just use () as a value
-        es <- evolveVerbose g cfg vecPool (baseSpace, projDir)
+        es <- evolveVerbose g cfg vecPool (baseTime, projDir)
         let e = snd $ head es :: BangVec
             prog' = editBangs mainPath prog e -- TODO unsafeperformIO hidden! 
         
