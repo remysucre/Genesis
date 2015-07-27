@@ -24,6 +24,15 @@ import Data.Bits
 import Data.Char (intToDigit)
 import Numeric (showHex, showIntAtBase)
 
+-- 
+-- BUILD AND RUN PROGRAM
+-- 
+
+-- build a cabal project. project must be configured with cabal. projDir is in the current dir
+-- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
+buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build"
+runProj projDir = system $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+
 --
 -- GA TYPE CLASS IMPLEMENTATION
 --
@@ -32,7 +41,7 @@ type BangVec = Int
 type Time = Double
 type Score = Double
 
-instance Entity BangVec Score Time BangVec IO where
+instance Entity BangVec Score (Time, FilePath) BangVec IO where
  
   -- generate a random bang vector
   -- invariant: pool is the vector with all bangs on
@@ -76,14 +85,14 @@ main = do
         print "Please provide project path"; [projDir] <- getArgs
   -- get base time and pool. for the future, check out criterion `measure`
   -- obtain base time: compile & run
-        system $ "cd " ++ projDir ++ "; cabal build"
-        let runProj = system $ "cd " ++ projDir ++ "; cabal run > /dev/null"
-        (m, _) <- measure (whnfIO runProj) 4 -- TODO change 4 to runs
+        buildProj projDir
+        (m, _) <- measure (whnfIO $ runProj projDir) 4 -- TODO change 4 to runs
         let baseTime = measCpuTime m
+            mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
         putStr "Basetime is: "; print baseTime
   -- pool: largest bit vector of length (placesToStrict)
-        prog <- readFile $ projDir ++ "/Main.hs"
-        let vecSize = placesToStrict (projDir ++ "/Main.hs") prog --TODO assuming only one file named Main
+        prog <- readFile mainPath
+        let vecSize = placesToStrict mainPath prog 
             vecPool = bit vecSize - 1 :: BangVec 
         -- putStrLn $ showIntAtBase 2 intToDigit vecPool "" 
         -- print vecSize
@@ -102,14 +111,9 @@ main = do
 
             g = mkStdGen 0 -- random generator
 
-            -- pool to pick from:
-            -- vecPool = undefined -- largest bit vector of length(placesToStrict)
-            -- baseTime = undefined -- base runtime
-            -- baseTime = 1.2 :: Time -- base runtime
-
         -- Do the evolution!
         -- Note: if either of the last two arguments is unused, just use () as a value
-        es <- evolveVerbose g cfg vecPool baseTime
+        es <- evolveVerbose g cfg vecPool (baseTime, mainPath)
         let e = snd $ head es :: BangVec
         
         putStrLn $ "best entity (GA): " ++ (show e)
