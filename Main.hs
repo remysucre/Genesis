@@ -11,7 +11,7 @@
 {-# LANGUAGE BangPatterns #-}
 import Criterion.Measurement
 import Criterion.Main
-import Criterion.Types (measCpuTime)
+import Criterion.Types (measCpuTime, measTime)
 import System.Process
 import System.Environment
 import Data.Char (chr,ord)
@@ -28,6 +28,9 @@ import Control.Applicative
 import qualified Data.Text.IO as T
 import Data.Text (unpack, pack)
 import Numeric (showHex, showIntAtBase)
+import Control.DeepSeq
+import System.IO.Unsafe
+import Debug.Trace
 
 -- 
 -- BUILD AND RUN PROGRAM
@@ -36,9 +39,11 @@ import Numeric (showHex, showIntAtBase)
 -- build a cabal project. project must be configured with cabal. projDir is in the current dir
 -- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
 buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build"
-benchmark projDir runs = measure (whnfIO $ runProj projDir) runs -- TODO change 4 to runs
+benchmark projDir runs = {-trace (unsafePerformIO runProj)-} measure (nfIO runProj) runs -- TODO change 4 to runs
     where
-        runProj projDir = system $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+        -- runProj = callCommand $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+        runProj = readProcess ("./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir) [] ""
+        
 
 --
 -- GA TYPE CLASS IMPLEMENTATION
@@ -88,7 +93,7 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
     T.writeFile mainPath (pack prog')
     buildProj projDir
     (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
-    let newTime = measCpuTime m
+    let newTime = measTime m
     return $! Just (newTime / baseTime) -- TODO make sure time is right
 
   -- whether or not a scored entity is perfect
@@ -103,7 +108,7 @@ main = do
         buildProj projDir
         -- (m, _) <- measure (whnfIO $ runProj projDir) 4 -- TODO change 4 to runs
         (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
-        let baseTime = measCpuTime m
+        let baseTime = measTime m
             mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
         putStr "Basetime is: "; print baseTime
   -- pool: bit vector representing places to strict w/ all bits on
@@ -131,5 +136,7 @@ main = do
         -- Note: if either of the last two arguments is unused, just use () as a value
         es <- evolveVerbose g cfg vecPool (baseTime, projDir)
         let e = snd $ head es :: BangVec
+            prog' = editBangs mainPath prog e -- TODO unsafeperformIO hidden! 
         
         putStrLn $ "best entity (GA): " ++ (show e)
+        T.writeFile mainPath (pack prog')
