@@ -8,6 +8,7 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeSynonymInstances #-}
+{-# LANGUAGE BangPatterns #-}
 import Criterion.Measurement
 import Criterion.Main
 import Criterion.Types (measCpuTime)
@@ -22,6 +23,10 @@ import GA (Entity(..), GAConfig(..),
 import Rewrite (placesToStrict, editBangs)
 import Data.Bits
 import Data.Char (intToDigit)
+import Data.Functor
+import Control.Applicative
+import qualified Data.Text.IO as T
+import Data.Text (unpack, pack)
 import Numeric (showHex, showIntAtBase)
 
 -- 
@@ -31,7 +36,9 @@ import Numeric (showHex, showIntAtBase)
 -- build a cabal project. project must be configured with cabal. projDir is in the current dir
 -- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
 buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build"
-runProj projDir = system $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+benchmark projDir runs = measure (whnfIO $ runProj projDir) runs -- TODO change 4 to runs
+    where
+        runProj projDir = system $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
 
 --
 -- GA TYPE CLASS IMPLEMENTATION
@@ -71,10 +78,18 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
 
   -- score: improvement on base time
   -- NOTE: lower is better
-  score _ _ = return $ Just (0.0 :: Score)
-  -- score baseTime e = do -- 1 / seconds faster
+  -- score _ _ = return $ Just (0.0 :: Score)
+  score (baseTime, projDir) bangVec = do -- 1 / seconds faster
   -- rewrite program, recompile & run
-      
+  -- TODO currently overwrite original
+    let mainPath = projDir ++ "/Main.hs"
+    prog <- unpack <$> T.readFile mainPath
+    let prog' = editBangs mainPath prog bangVec -- TODO unsafeperformIO hidden! 
+    T.writeFile mainPath (pack prog')
+    buildProj projDir
+    (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
+    let newTime = measCpuTime m
+    return $! Just (newTime / baseTime) -- TODO make sure time is right
 
   -- whether or not a scored entity is perfect
   isPerfect (_,s) = s == 0.0 -- Never
@@ -86,11 +101,12 @@ main = do
   -- get base time and pool. for the future, check out criterion `measure`
   -- obtain base time: compile & run
         buildProj projDir
-        (m, _) <- measure (whnfIO $ runProj projDir) 4 -- TODO change 4 to runs
+        -- (m, _) <- measure (whnfIO $ runProj projDir) 4 -- TODO change 4 to runs
+        (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
         let baseTime = measCpuTime m
             mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
         putStr "Basetime is: "; print baseTime
-  -- pool: largest bit vector of length (placesToStrict)
+  -- pool: bit vector representing places to strict w/ all bits on
         prog <- readFile mainPath
         let vecSize = placesToStrict mainPath prog 
             vecPool = bit vecSize - 1 :: BangVec 
@@ -99,9 +115,9 @@ main = do
 
   -- Run Genetic Algorithm
             cfg = GAConfig 
-                    1000 -- population size
-                    55 -- archive size (best entities to keep track of)
-                    350 -- maximum number of generations
+                    5 -- population size
+                    3 -- archive size (best entities to keep track of)
+                    5 -- maximum number of generations
                     0.8 -- crossover rate (% of entities by crossover)
                     0.2 -- mutation rate (% of entities by mutation)
                     0.0 -- parameter for crossover (not used here)
@@ -113,7 +129,7 @@ main = do
 
         -- Do the evolution!
         -- Note: if either of the last two arguments is unused, just use () as a value
-        es <- evolveVerbose g cfg vecPool (baseTime, mainPath)
+        es <- evolveVerbose g cfg vecPool (baseTime, projDir)
         let e = snd $ head es :: BangVec
         
         putStrLn $ "best entity (GA): " ++ (show e)

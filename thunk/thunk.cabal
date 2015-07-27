@@ -20,5 +20,7 @@ executable thunk
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8
+  ghc-options:         -O0
+                       -rtsopts
   -- hs-source-dirs:      
   default-language:    Haskell2010
