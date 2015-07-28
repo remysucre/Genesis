@@ -84,23 +84,24 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
         e = (fst $ random g) `mod` (pool + 1)
 
   -- crossover operator: merge from two vectors, randomly picking bangs
-  crossover _ _ _ e _ = return $! Just e
-  {- crossover _ _ seed e1 e2 = return $! Just e
+  -- crossover _ _ _ e _ = return $! Just e
+  crossover _ _ seed e1 e2 = return $! Just e
     where
       g = mkStdGen seed
-      s = random g -- random sieve to select bits from e1 e2
+      s = fst $ random g -- random sieve to select bits from e1 e2
       e1' = s .&. e1
-      e2' = ~s .&. e2
-      e = e1' .|. e2' -}
+      e2' = complement s .&. e2
+      e = e1' .|. e2'
 
   -- mutation operator: 
-  mutation _ _ _ e = return $! Just e
-  {- mutation pool p seed e = return $! Just e
+  -- mutation _ _ _ e = return $! Just e
+  mutation pool p seed e = return $! Just e'
     where
       g = mkStdGen seed
-      f = round (s / p) :: Int -- bang flips for each mutation
-        where s = undefined -- length of pool
-      is = -- complement bit -}
+      f = round (s * p) :: Int -- bang flips for each mutation
+        where s = fromIntegral $ finiteBitSize e -- length of pool
+      vecs = filter (\x -> popCount x == f) ([1..100] :: [Int]) -- TODO hardcode 100
+      e' = vecs !! ((fst . random) g `mod` length vecs) -- TODO careful off by 1!
 
   -- score: improvement on base time
   -- NOTE: lower is better
