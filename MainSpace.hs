@@ -30,7 +30,9 @@ import Data.Text (unpack, pack)
 import Numeric (showHex, showIntAtBase)
 import Control.DeepSeq
 import System.IO.Unsafe
+import System.Exit
 import Debug.Trace
+import Fib (fib)
 
 -- 
 -- BUILD AND RUN PROGRAM
@@ -38,10 +40,11 @@ import Debug.Trace
 
 -- build a cabal project. project must be configured with cabal. projDir is in the current dir
 -- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
+instance NFData ExitCode
 buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build"
-benchmark projDir runs = {-trace (unsafePerformIO runProj)-} measure (nfIO runProj) runs -- TODO change 4 to runs
+benchmark projDir runs = {-trace (unsafePerformIO runProj)-} measure (nfIO runProj) runs 
     where
-        runProj = callCommand $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ " +RTS -T > /dev/null"
+        runProj = system $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ " +RTS -T > out.txt"
         -- runProj = readProcess ("./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir " +RTS -T") [] ""
         
 
