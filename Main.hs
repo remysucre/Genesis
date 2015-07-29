@@ -21,11 +21,13 @@ import System.IO(IOMode(..), hClose, hGetContents, openFile)
 import GA (Entity(..), GAConfig(..), 
            evolveVerbose, randomSearch)
 import Rewrite (placesToStrict, editBangs)
+import Data.Bits.Bitwise (fromListBE)
 import Data.Bits
 import Data.Char (intToDigit)
 import Data.Functor
 import Control.Applicative
 import qualified Data.Text.IO as T
+import qualified System.IO.Strict as S
 import Data.Text (unpack, pack)
 import Numeric (showHex, showIntAtBase)
 import Control.DeepSeq
@@ -98,10 +100,9 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   mutation pool p seed e = return $! Just e'
     where
       g = mkStdGen seed
-      f = round (s * p) :: Int -- bang flips for each mutation
-        where s = fromIntegral $ finiteBitSize e -- length of pool
-      vecs = filter (\x -> popCount x == f) ([1..100] :: [Int]) -- TODO hardcode 100
-      e' = vecs !! ((fst . random) g `mod` length vecs) -- TODO careful off by 1!
+      fs = randoms g
+      bs = map (< p) fs
+      e' = e `xor` fromListBE bs
 
   -- score: improvement on base time
   -- NOTE: lower is better
@@ -110,9 +111,11 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   -- rewrite program, recompile & run
   -- TODO currently overwrite original
     let mainPath = projDir ++ "/Main.hs"
-    prog <- unpack <$> T.readFile mainPath
+    --prog <- unpack <$> T.readFile mainPath
+    prog <- readFile mainPath
     let prog' = editBangs mainPath prog bangVec -- TODO unsafeperformIO hidden! 
-    T.writeFile mainPath (pack prog')
+    length prog `seq` writeFile mainPath prog'
+    --T.writeFile mainPath (pack prog')
     buildProj projDir
     (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
     let newTime = measTime m
@@ -161,4 +164,5 @@ main = do
             prog' = editBangs mainPath prog e -- TODO unsafeperformIO hidden! 
         
         putStrLn $ "best entity (GA): " ++ (show e)
-        T.writeFile mainPath (pack prog')
+        writeFile mainPath prog'
+        --T.writeFile mainPath (pack prog')
