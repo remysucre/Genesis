@@ -1,8 +1,5 @@
-import Criterion.Measurement
-import Criterion.Main
-import Criterion.Types (measCpuTime)
-import System.Process
+import Data.Bits.Bitwise
 
-main = do
-    (m, t) <- measure (whnfIO $ system "runhaskell mulatg.hs a b") 4
-    print $ measCpuTime m
+main = do 
+    let i = 6 :: Integer
+    print $ toListBE i

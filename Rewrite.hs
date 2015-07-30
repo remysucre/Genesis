@@ -16,6 +16,7 @@ import System.Random
 import System.IO.Unsafe
 import Language.Haskell.Exts
 import Data.Bits.Bitwise
+--import Data.Int (Int64)
 
 {-- Set of functions for adding and removing items from syntax tree --}
 

@@ -16,12 +16,13 @@ import System.Process
 import System.Environment
 import Data.Char (chr,ord)
 import Data.List (foldl')
+-- import Data.Int (Int64)
 import System.Random (mkStdGen, random, randoms)
 import System.IO(IOMode(..), hClose, hGetContents, openFile)
 import GA (Entity(..), GAConfig(..), 
            evolveVerbose, randomSearch)
 import Rewrite (placesToStrict, editBangs)
-import Data.Bits.Bitwise (fromListBE)
+import Data.Bits.Bitwise (fromListLE, fromListBE, toListBE)
 import Data.Bits
 import Data.Char (intToDigit)
 import Data.Functor
@@ -41,7 +42,7 @@ import System.Exit
 
 -- build a cabal project. project must be configured with cabal. projDir is in the current dir
 -- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
-buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build"
+buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build > /dev/null"
 --benchmark projDir runs = {-trace (unsafePerformIO runProj)-} measure (nfIO runProj) runs -- TODO change 4 to runs
   --  where runProj = system $ "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ " +RTS -T > out.txt"
 benchmark :: FilePath -> Int -> IO (Double, Int)
@@ -67,12 +68,15 @@ avg !diffs = if average == 0 then (-1.0) else average
                 sum = foldr (+) 0 diffs'
                 average = if num == 0 then 0
                           else sum / (fromInteger $ toInteger num)
-
+bitLen :: Int -> Int
+bitLen 1 = 1
+bitLen 0 = 0
+bitLen !n = 1 + bitLen (n `shiftR` 1)
 --
 -- GA TYPE CLASS IMPLEMENTATION
 --
 
-type BangVec = Int
+type BangVec = Int -- TODO BangVec of arbitrary length
 type Time = Double
 type Score = Double
 
@@ -81,8 +85,8 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   -- generate a random bang vector
   -- invariant: pool is the vector with all bangs on
   genRandom pool seed = do 
-    putStr "genRandom "
-    print e
+    --putStr "genRandom "
+    --print e
     return $! e
     where
         g = mkStdGen seed
@@ -91,8 +95,8 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   -- crossover operator: merge from two vectors, randomly picking bangs
   -- crossover _ _ _ e _ = return $! Just e
   crossover _ _ seed e1 e2 = do 
-    print "cross"
-    putStrLn $ showIntAtBase 2 intToDigit e "" 
+    --print "cross"
+    --putStrLn $ showIntAtBase 2 intToDigit e "" 
     return $! Just e
         where
             g = mkStdGen seed
@@ -104,15 +108,22 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   -- mutation operator: 
   -- mutation _ _ _ e = return $! Just e
   mutation pool p seed e = do 
-    print "mutate"
-    putStrLn $ showIntAtBase 2 intToDigit e' "" 
+    --print "mutate"
+    --print fs
+    --print bs
+    --putStrLn $ showIntAtBase 2 intToDigit e' "" 
     return $! Just e'
         where
-            len = finiteBitSize e
-            g = mkStdGen seed
-            fs = take e $ randoms g
+            {- g = mkStdGen seed
+            fs = randoms g
             bs = map (< p) fs
-            e' = e `xor` fromListBE bs
+            el = toListBE e
+            e' = fromListBE $ zipWith xor el bs -}
+            len = bitLen e
+            g = mkStdGen seed
+            fs = take len $ randoms g
+            bs = map (< p) fs
+            e' = e `xor` fromListLE bs
 
   -- score: improvement on base time
   -- NOTE: lower is better
@@ -126,7 +137,7 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
     print bangVec
     print "rewriting prog"
     let prog' = editBangs mainPath prog bangVec -- TODO unsafeperformIO hidden! 
-    putStrLn prog'
+    --putStrLn prog'
     length prog `seq` writeFile mainPath prog'
     --T.writeFile mainPath (pack prog')
     buildProj projDir
@@ -140,7 +151,7 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
 
 main :: IO() 
 main = do
-        print "Please provide project path"; [projDir] <- getArgs
+        [projDir] <- getArgs
   -- get base time and pool. for the future, check out criterion `measure`
   -- obtain base time: compile & run
         buildProj projDir
