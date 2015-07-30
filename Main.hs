@@ -72,6 +72,8 @@ bitLen :: Int -> Int
 bitLen 1 = 1
 bitLen 0 = 0
 bitLen !n = 1 + bitLen (n `shiftR` 1)
+
+printBits b = showIntAtBase 2 intToDigit b ""
 --
 -- GA TYPE CLASS IMPLEMENTATION
 --
@@ -134,8 +136,8 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
     let mainPath = projDir ++ "/Main.hs"
     --prog <- unpack <$> T.readFile mainPath
     prog <- readFile mainPath
-    print bangVec
-    print "rewriting prog"
+    --print bangVec
+    --print "rewriting prog"
     let prog' = editBangs mainPath prog bangVec -- TODO unsafeperformIO hidden! 
     --putStrLn prog'
     length prog `seq` writeFile mainPath prog'
@@ -148,6 +150,8 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   -- whether or not a scored entity is perfect
   isPerfect (_,s) = s == 0.0 -- Never
 
+
+  showGeneration _ g = show $ map printBits $ fst g
 
 main :: IO() 
 main = do
@@ -187,6 +191,6 @@ main = do
         let e = snd $ head es :: BangVec
             prog' = editBangs mainPath prog e -- TODO unsafeperformIO hidden! 
         
-        putStrLn $ "best entity (GA): " ++ (show e)
+        putStrLn $ "best entity (GA): " ++ (printBits e)
         writeFile mainPath prog'
         --T.writeFile mainPath (pack prog')
