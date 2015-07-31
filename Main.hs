@@ -27,6 +27,7 @@ import Data.Bits
 import Data.Char (intToDigit)
 import Data.Functor
 import Data.List
+import Data.BitVector
 import Control.Applicative
 import qualified Data.Text.IO as T
 import qualified System.IO.Strict as S
@@ -69,17 +70,12 @@ avg !diffs = if average == 0 then (-1.0) else average
                 sum = foldr (+) 0 diffs'
                 average = if num == 0 then 0
                           else sum / (fromInteger $ toInteger num)
-bitLen :: Int -> Int
-bitLen 1 = 1
-bitLen 0 = 0
-bitLen !n = 1 + bitLen (n `shiftR` 1)
 
-printBits b = showIntAtBase 2 intToDigit b ""
 --
 -- GA TYPE CLASS IMPLEMENTATION
 --
 
-type BangVec = Int -- TODO BangVec of arbitrary length
+type BangVec = BV -- TODO BangVec of arbitrary length
 type Time = Double
 type Score = Double
 
@@ -174,9 +170,9 @@ main = do
 
   -- Run Genetic Algorithm
             cfg = GAConfig 
-                    15 -- population size
+                    5 -- population size
                     3 -- archive size (best entities to keep track of)
-                    50 -- maximum number of generations
+                    5 -- maximum number of generations
                     0.8 -- crossover rate (% of entities by crossover)
                     0.2 -- mutation rate (% of entities by mutation)
                     0.0 -- parameter for crossover (not used here)

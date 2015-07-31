@@ -1,5 +1,6 @@
 import Data.Bits.Bitwise
+import Data.BitVector
 
 main = do 
-    let i = 6 :: Integer
-    print $ toListBE i
+    let bv = fromBits [False, False,False,False,False,    True, False]
+    putStrLn $ showBin bv
