@@ -26,6 +26,7 @@ import Data.Bits.Bitwise (fromListLE, fromListBE, toListBE)
 import Data.Bits
 import Data.Char (intToDigit)
 import Data.Functor
+import Data.List
 import Control.Applicative
 import qualified Data.Text.IO as T
 import qualified System.IO.Strict as S
@@ -151,7 +152,7 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   isPerfect (_,s) = s == 0.0 -- Never
 
 
-  showGeneration _ g = show $ map printBits $ fst g
+  showGeneration gi g = "gen" ++ show gi ++ "\n" ++ intercalate "\n" (map (reverse . printBits) $ fst g)
 
 main :: IO() 
 main = do
@@ -173,9 +174,9 @@ main = do
 
   -- Run Genetic Algorithm
             cfg = GAConfig 
-                    5 -- population size
+                    15 -- population size
                     3 -- archive size (best entities to keep track of)
-                    5 -- maximum number of generations
+                    50 -- maximum number of generations
                     0.8 -- crossover rate (% of entities by crossover)
                     0.2 -- mutation rate (% of entities by mutation)
                     0.0 -- parameter for crossover (not used here)
