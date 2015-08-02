@@ -11,8 +11,5 @@ test = do
   case parseModule content of
     ParseFailed _ e -> error e
     ParseOk a       -> do
-      forM_ (findPats a) $ \p -> do
+        forM_ (findPats a) $ \p -> do
         putStrLn $ "got a pat: " ++ show p
-
-main = do
-    test
