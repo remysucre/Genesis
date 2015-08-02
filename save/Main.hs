@@ -148,7 +148,7 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
     let newTime = measTime m
     putStrLn $ reverse (printBits bangVec) ++ ": " ++ show (newTime / baseTime)
     writeFile mainPath prog
-    putStrLn prog'
+    -- putStrLn prog'
     return $! Just (newTime / baseTime) -- TODO make sure time is right
 
   -- whether or not a scored entity is perfect
@@ -202,5 +202,5 @@ main = do {-
         
         putStrLn $ "best entity (GA): " ++ (printBits e)
         putStrLn prog'
-        writeFile mainPath prog'
+        writeFile mainPath prog
         --T.writeFile mainPath (pack prog')
