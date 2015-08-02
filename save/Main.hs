@@ -49,7 +49,7 @@ buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build > /dev/null"
 benchmark :: FilePath -> Int -> IO (Double, Int)
 benchmark projDir _ = {-return (0.0, 0)-} do -- take average $ read file $ write
     let runProj = "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir 
-    exit <- system $ "bash timer.sh " ++ runProj ++ " " ++ "4" ++ " " ++ "50" ++ "s " ++ "test.txt"
+    exit <- system $ "bash timer.sh " ++ runProj ++ " " ++ "4" ++ " " ++ "17" ++ "s " ++ "test.txt"
     case exit of
          ExitSuccess ->  do {contents <- readFile "test.txt";
                              times <- return $ map (read) $ lines contents;
