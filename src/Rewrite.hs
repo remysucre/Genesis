@@ -3,7 +3,10 @@ where
 import Types
 import Language.Haskell.Exts
 
-strictPts = undefined
+strictPts _ _ _ _ _ _ _ decls = foldr (+) 0 strictPts decls 
+
+{- PatBind Match Lambda Proc Generator Alt PatField -}
+
 editBangs = undefined
 getModule :: FilePath -> IO Module
 getModule filePath = do 

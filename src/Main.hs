@@ -9,6 +9,7 @@ import Control.Monad
 import System.Environment (getArgs)
 import Language.Haskell.Exts
 import GA 
+import Data.BitVector
 
 --Cyrus says: This is a tiny population, and genetic algorithms are vulnerable to small populations.  I would increase the population size and the number of generations.
 -- Configurations for genetic algorithm
@@ -31,7 +32,7 @@ main = do
   -- Parse project TODO assuming only one file per project
     [projDir] <- getArgs
     let mainPath = projDir ++ "/Main.hs" 
-    prog <- getModule mainPath
+    -- prog <- getModule mainPath
 
   -- Random seed; credit to Cyrus Cousins
     randomSeed <- (getStdRandom random)
@@ -45,10 +46,13 @@ main = do
     m <- benchmark projDir runs
     let baseTime :: Time
         baseTime = measTime m
-    putStr "Basetime is: "; print baseTime
+    --putStr "Basetime is: "; print baseTime
 
+  -- Get pool: bit vector with all bangs on
+    let vecPool = ones $ length $ strictPts projDir
+    print vecPool
   -- Do the evolution!
-    gs <- evolveVerbose rdg cfg undefined (baseTime, fitnessRun)
+    gs <- evolveVerbose rdg cfg vecPool (baseTime, fitnessRun)
     let g :: Gene
         g = snd $ head gs
 

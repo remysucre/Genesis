@@ -7,11 +7,10 @@ where
 import GA
 import Types
 import Language.Haskell.Exts
+import Data.BitVector
 
 type FitnessRun = Module -> IO Measurement
-
-instance Read Module
-instance Entity Module Score (Time, FitnessRun) Module IO where
+instance Entity Gene Score (Time, FitnessRun) Gene IO where
  
   -- generate a random bang vector
   -- invariant: pool is the vector with all bangs on

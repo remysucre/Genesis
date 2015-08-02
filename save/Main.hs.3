@@ -26,7 +26,6 @@ import Data.Bits.Bitwise (fromListLE, fromListBE, toListBE)
 import Data.Bits
 import Data.Char (intToDigit)
 import Data.Functor
-import Data.List
 import Control.Applicative
 import qualified Data.Text.IO as T
 import qualified System.IO.Strict as S
@@ -141,29 +140,21 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
     --print "rewriting prog"
     let prog' = editBangs mainPath prog bangVec -- TODO unsafeperformIO hidden! 
     --putStrLn prog'
-    length prog' `seq` writeFile mainPath prog'
+    length prog `seq` writeFile mainPath prog'
     --T.writeFile mainPath (pack prog')
     buildProj projDir
     (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
     let newTime = measTime m
-    putStrLn $ reverse (printBits bangVec) ++ ": " ++ show (newTime / baseTime)
-    writeFile mainPath prog
-    putStrLn prog'
     return $! Just (newTime / baseTime) -- TODO make sure time is right
 
   -- whether or not a scored entity is perfect
   isPerfect (_,s) = s == 0.0 -- Never
 
 
-  showGeneration gi g = "gen" ++ show gi -- ++ "\n" ++ intercalate "\n" (map (reverse . printBits) $ fst g)
+  showGeneration _ g = show $ map printBits $ fst g
 
 main :: IO() 
-main = do {-
-    [projDir] <- getArgs
-    let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
-    prog <- readFile mainPath
-    let prog' = editBangs mainPath prog 1 -- TODO unsafeperformIO hidden! 
-    putStrLn prog'-}
+main = do
         [projDir] <- getArgs
   -- get base time and pool. for the future, check out criterion `measure`
   -- obtain base time: compile & run
@@ -201,6 +192,5 @@ main = do {-
             prog' = editBangs mainPath prog e -- TODO unsafeperformIO hidden! 
         
         putStrLn $ "best entity (GA): " ++ (printBits e)
-        putStrLn prog'
         writeFile mainPath prog'
         --T.writeFile mainPath (pack prog')
