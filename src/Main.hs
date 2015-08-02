@@ -23,14 +23,15 @@ cfg = GAConfig
     False -- whether or not to use checkpointing
     False -- don't rescore archive in each generation
 
-g = mkStdGen 0 -- random generator
+rdg = mkStdGen 0 -- random generator
 runs = 5       -- runs for each fitness test
 
 main :: IO()
 main = do
+  -- Parse project TODO assuming only one file per project
     [projDir] <- getArgs
-  -- TODO assuming only one file per project
     let mainPath = projDir ++ "/Main.hs" 
+    prog <- getModule mainPath
 
   -- Random seed; credit to Cyrus Cousins
     randomSeed <- (getStdRandom random)
@@ -38,7 +39,6 @@ main = do
   -- Also parse options for genetic algorithm?
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed
-    print seed
 
   -- Obtain base time.
     buildProj projDir
@@ -48,11 +48,11 @@ main = do
     putStr "Basetime is: "; print baseTime
 
   -- Do the evolution!
-    es <- evolveVerbose g cfg undefined (baseTime, projDir)
-    let e :: Gene
-        e = snd $ head es
+    gs <- evolveVerbose rdg cfg undefined (baseTime, fitnessRun)
+    let g :: Gene
+        g = snd $ head gs
 
   -- Write result
-    putStrLn $ "best entity (GA): " ++ show e
-    let prog' = editBangs mainPath e
-    writeFile mainPath prog'
+    putStrLn $ "best entity (GA): " ++ show g
+    -- let prog' = editBangs mainPath e
+    -- writeFile mainPath prog'

@@ -8,8 +8,10 @@ import GA
 import Types
 import Language.Haskell.Exts
 
+type FitnessRun = Module -> IO Measurement
+
 instance Read Module
-instance Entity Module Score (Time, FilePath) Module IO where
+instance Entity Module Score (Time, FitnessRun) Module IO where
  
   -- generate a random bang vector
   -- invariant: pool is the vector with all bangs on

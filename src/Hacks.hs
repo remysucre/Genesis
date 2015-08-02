@@ -1,4 +1,4 @@
-module Hacks (measTime)
+module Hacks 
 where
 
 measTime :: a -> a
