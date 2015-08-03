@@ -1,3 +1,6 @@
+#todo
+- change to bv
+- modularize
 #issues:
  - how to walk tree (strict points & edit bangs):
     1. declare ast as an instance of functor/foldable/some other type class
