@@ -14,5 +14,5 @@ test = do
     ParseFailed _ e -> error e
     ParseOk a       -> do
       forM_ (findPats a) $ \p -> do
-        putStrLn $ "got a pat: " ++ show p
+        putStrLn $ "got a pat: " ++ prettyPrint p
 main = test
