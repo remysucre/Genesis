@@ -1,0 +1,84 @@
+Preprocessing executable 'exp' for exp-0.1.0.0...
+Running exp...
+before: Module
+before:   (SrcLoc "Simple.hs" 1 1)
+before:   (ModuleName "Main")
+before:   []
+before:   Nothing
+before:   (Just [ EVar NoNamespace (UnQual (Ident "main")) ])
+before:   []
+before:   [ PatBind
+before:       (SrcLoc "Simple.hs" 1 1)
+before:       (PVar (Ident "main"))
+before:       (UnGuardedRhs
+before:          (Do
+before:             [ Qualifier
+before:                 (Case
+before:                    (Var (UnQual (Ident "args")))
+before:                    [ Alt
+before:                        (SrcLoc "Simple.hs" 3 5)
+before:                        (PList [])
+before:                        (UnGuardedRhs
+before:                           (App (Var (UnQual (Ident "error"))) (Lit (String "blah"))))
+before:                        (BDecls [])
+before:                    , Alt
+before:                        (SrcLoc "Simple.hs" 4 5)
+before:                        (PList [ PBangPat (PVar (Ident "x")) ])
+before:                        (UnGuardedRhs
+before:                           (App (Var (UnQual (Ident "putStrLn"))) (Lit (String "one"))))
+before:                        (BDecls [])
+before:                    , Alt
+before:                        (SrcLoc "Simple.hs" 5 5)
+before:                        (PParen
+before:                           (PBangPat
+before:                              (PInfixApp (PVar (Ident "x")) (Special Cons) (PVar (Ident "xs")))))
+before:                        (UnGuardedRhs
+before:                           (App (Var (UnQual (Ident "putStrLn"))) (Lit (String "many"))))
+before:                        (BDecls [])
+before:                    ])
+before:             ]))
+before:       (BDecls [])
+before:   ]
+
+after : ( Module
+after :     (SrcLoc "Simple.hs" 1 1)
+after :     (ModuleName "Main")
+after :     []
+after :     Nothing
+after :     (Just [ EVar NoNamespace (UnQual (Ident "main")) ])
+after :     []
+after :     [ PatBind
+after :         (SrcLoc "Simple.hs" 1 1)
+after :         (PVar (Ident "main"))
+after :         (UnGuardedRhs
+after :            (Do
+after :               [ Qualifier
+after :                   (Case
+after :                      (Var (UnQual (Ident "args")))
+after :                      [ Alt
+after :                          (SrcLoc "Simple.hs" 3 5)
+after :                          (PList [])
+after :                          (UnGuardedRhs
+after :                             (App (Var (UnQual (Ident "error"))) (Lit (String "blah"))))
+after :                          (BDecls [])
+after :                      , Alt
+after :                          (SrcLoc "Simple.hs" 4 5)
+after :                          (PList [ PVar (Ident "x") ])
+after :                          (UnGuardedRhs
+after :                             (App (Var (UnQual (Ident "putStrLn"))) (Lit (String "one"))))
+after :                          (BDecls [])
+after :                      , Alt
+after :                          (SrcLoc "Simple.hs" 5 5)
+after :                          (PParen
+after :                             (PBangPat
+after :                                (PInfixApp (PVar (Ident "x")) (Special Cons) (PVar (Ident "xs")))))
+after :                          (UnGuardedRhs
+after :                             (App (Var (UnQual (Ident "putStrLn"))) (Lit (String "many"))))
+after :                          (BDecls [])
+after :                      ])
+after :               ]))
+after :         (BDecls [])
+after :     ]
+after : , []
+after : )
+

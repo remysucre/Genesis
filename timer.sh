@@ -13,6 +13,6 @@ for (( i=1; i<=$REPS; i++ ))
     timeout $TIME time -f "%U" -a -o ${FILE} ${PROG} > /dev/null
     VAL=$?
     if [ "${VAL}" -eq "124" ]
-    then echo "-1.0" >> ${FILE}
+    then echo 17 >> ${FILE}
     fi
 done
