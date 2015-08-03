@@ -1,0 +1,323 @@
+Preprocessing executable 'Save' for Genesis-0.1.0.0...
+Running Save...
+Basetime is: 1.02
+0: 0.9975490196078431
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+11: 0.1568627450980392
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+0: 1.0
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+0: 1.0465686274509804
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+11: 0.19607843137254902
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+gen0
+11: 0.2426470588235294
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.22303921568627452
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+11: 0.23284313725490194
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.16666666666666666
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.17647058823529413
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+11: 0.17401960784313725
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+0: 1.075980392156863
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+gen1
+01: 0.1642156862745098
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.178921568627451
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.20343137254901963
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.16666666666666666
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+0: 1.2598039215686276
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+01: 0.2549019607843137
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+11: 0.22549019607843135
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+0: 1.4215686274509804
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+gen2
+01: 0.1568627450980392
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.15931372549019607
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.16176470588235292
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.17156862745098037
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+0: 1.0441176470588234
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+01: 0.1642156862745098
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+11: 0.18137254901960786
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+0: 1.0269607843137256
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+gen3
+01: 0.1568627450980392
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.15931372549019607
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.15441176470588236
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.1568627450980392
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.1568627450980392
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+01: 0.1568627450980392
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+11: 0.1642156862745098
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] !c = c
+f (x : xs) !c = f xs (c + 1)
+0: 1.0
+{-# LANGUAGE BangPatterns #-}
+import Harness
+
+main = print (f [1..4000000] (0 :: Int))
+
+f []     c = c
+f (x:xs) c = f xs (c + 1)
+
+-- Fixes:
+--  * Compile with optimizations
+--  * Bang pattern 'c' (making f strict)
+
+gen4
+done evolving!
+best entity (GA): 10
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Harness
+main = print (f [1 .. 4000000] (0 :: Int))
+f [] c = c
+f (x : xs) !c = f xs (c + 1)
+

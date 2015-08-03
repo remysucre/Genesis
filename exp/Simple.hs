@@ -1,7 +1,5 @@
-{-# LANGUAGE BangPatterns #-}
-
 main = do
   case args of
-    ![] -> error "blah"
+    !![] -> error "blah"
     [x] -> putStrLn "one"
-    x : xs -> putStrLn "many"
+    x : (!!xs) -> putStrLn "many"

@@ -147,6 +147,7 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
     (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
     let newTime = measTime m
     putStrLn $ reverse (printBits bangVec) ++ ": " ++ show (newTime / baseTime)
+    putStrLn prog'
     writeFile mainPath prog
     -- putStrLn prog'
     return $! Just (newTime / baseTime) -- TODO make sure time is right

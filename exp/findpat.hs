@@ -1,3 +1,5 @@
+{-# LANGUAGE BangPatterns #-}
+
 import Data.Data
 import Data.Generics.Uniplate.Data
 import Control.Monad
@@ -11,5 +13,6 @@ test = do
   case parseModule content of
     ParseFailed _ e -> error e
     ParseOk a       -> do
-        forM_ (findPats a) $ \p -> do
-        putStrLn $ "got a pat: " ++ show p
+      forM_ (findPats a) $ \p -> do
+        putStrLn $ "got a pat: " ++ prettyPrint p
+main = test
