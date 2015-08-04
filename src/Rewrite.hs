@@ -15,7 +15,6 @@ module Rewrite (
 import System.Random
 import System.IO.Unsafe
 import Language.Haskell.Exts
---import Data.Int (Int64)
 
 {-- Set of functions for adding and removing items from syntax tree --}
 

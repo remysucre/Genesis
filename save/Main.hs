@@ -43,6 +43,7 @@ benchmark projDir _ = {-return (0.0, 0)-} do -- take average $ read file $ write
     case exit of
          ExitSuccess ->  do {contents <- readFile "test.txt";
                              times <- return $ map (read) $ lines contents;
+                             print times;
                              let meanTime = avg times
                              in return (meanTime, 0)}
          ExitFailure _ -> error $ "Failed to run" ++ projDir
@@ -54,7 +55,7 @@ benchmark projDir _ = {-return (0.0, 0)-} do -- take average $ read file $ write
 measTime = id
 avg :: [Double] -> Double
 avg [] = -1
-avg !diffs = if average == 0 then (-1.0) else average
+avg diffs = if average == 0 then (-1.0) else average
             where
                 diffs' = filter ((/=) $ (-1.0)) diffs
                 num = length diffs'
