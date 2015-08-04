@@ -146,13 +146,14 @@ main = do {-
     prog <- readFile mainPath
     let prog' = editBangs mainPath prog 1 -- TODO unsafeperformIO hidden! 
     putStrLn prog'-}
+    {-
   -- Random seed; credit to Cyrus Cousins
     randomSeed <- (getStdRandom random)
   -- TODO parse CLI arguments here.  Need to determine runs and cliSeed.  
   -- Also parse options for genetic algorithm?
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed
-
+-}
         [projDir] <- getArgs
   -- get base time and pool. for the future, check out criterion `measure`
   -- obtain base time: compile & run
