@@ -1,23 +1,29 @@
 {-# LANGUAGE BangPatterns #-}
+
 import Rewrite (placesToStrict, editBangs)
 import Profiling
 import GeneAlg
-
+------
 import GA
 import Data.BitVector (BV, fromBits, toBits, size, ones)
 import System.Environment
+import Control.DeepSeq
 
 fitness :: FilePath -> BangVec -> IO Time
 fitness projDir bangVec = do
+  -- Read original
     let mainPath = projDir ++ "/Main.hs"
     prog  <- readFile mainPath
+  -- Rewrite according to gene
     prog' <- editBangs mainPath (toBits bangVec) 
-    length prog' `seq` writeFile mainPath prog'
+    rnf prog `seq` writeFile mainPath prog'
+  -- Benchmark new
     buildProj projDir
     newTime <- benchmark projDir 4 -- TODO change 4 to runs
-    putStrLn prog'
+    -- putStrLn prog'
+  -- Recover original
     writeFile mainPath prog
-    return $! newTime
+    return newTime
 
     {-
   -- Random seed; credit to Cyrus Cousins
@@ -32,17 +38,18 @@ main = do
 
     [projDir] <- getArgs
 
-  -- get base time and pool. for the future, check out criterion `measure`
-  -- obtain base time: compile & run
+  -- TODO for the future, check out criterion `measure`
+  -- Get base time and pool. 
+  -- Obtain base time: compile & run
     buildProj projDir
     baseTime <- benchmark projDir 4 -- TODO change 4 to runs
     let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
     putStr "Basetime is: "; print baseTime
 
-  -- pool: bit vector representing places to strict w/ all bits on
+  -- Pool: bit vector representing places to strict w/ all bits on
     prog <- readFile mainPath
-    let vecSize = placesToStrict mainPath prog 
-        vecPool = ones vecSize 
+    vecSize <- rnf prog `seq` placesToStrict mainPath
+    let vecPool = ones vecSize 
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
