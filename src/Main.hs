@@ -46,7 +46,21 @@ benchmark projDir _ = {-return (0.0, 0)-} do -- take average $ read file $ write
                              let meanTime = avg times
                              in return (meanTime, 0)}
          ExitFailure _ -> error $ "Failed to run" ++ projDir
- 
+
+fitness :: FilePath -> BangVec -> IO Time
+fitness projDir bangVec = do
+    let mainPath = projDir ++ "/Main.hs"
+    prog <- readFile mainPath
+    let prog' = editBangs mainPath prog (toBits bangVec) -- TODO unsafeperformIO hidden! 
+    length prog' `seq` writeFile mainPath prog'
+    buildProj projDir
+    (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
+    let newTime = measTime m
+    putStrLn prog'
+    writeFile mainPath prog
+    return $! newTime
+
+
 --
 -- TODO dirty hacks 
 --
@@ -76,9 +90,10 @@ printBits bs = reverse . concat $ map (\b -> if b then "1" else "0") bs
 type BangVec = BV -- TODO BangVec of arbitrary length
 type Time = Double
 type Score = Double
+type FitnessRun = BangVec -> IO Score
 
 instance Read BangVec -- TODO is this ok?
-instance Entity BangVec Score (Time, FilePath) BangVec IO where
+instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
  
   -- generate a random bang vector
   -- invariant: pool is the vector with all bangs on
@@ -112,40 +127,19 @@ instance Entity BangVec Score (Time, FilePath) BangVec IO where
   -- score: improvement on base time
   -- NOTE: lower is better
   -- score _ _ = return $ Just (0.0 :: Score)
-  score (baseTime, projDir) bangVec = do -- 1 / seconds faster
-  -- rewrite program, recompile & run
-  -- TODO currently overwrite original
-    let mainPath = projDir ++ "/Main.hs"
-    --prog <- unpack <$> T.readFile mainPath
-    prog <- readFile mainPath
-    --print bangVec
-    --print "rewriting prog"
-    let prog' = editBangs mainPath prog bangVec -- TODO unsafeperformIO hidden! 
-    --putStrLn prog'
-    length prog' `seq` writeFile mainPath prog'
-    --T.writeFile mainPath (pack prog')
-    buildProj projDir
-    (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
-    let newTime = measTime m
+  score (baseTime, fitRun) bangVec = do -- 1 / seconds faster
+    newTime <- fitRun bangVec
     putStrLn $ printBits (toBits bangVec) ++ ": " ++ show (newTime / baseTime)
-    putStrLn prog'
-    writeFile mainPath prog
-    -- putStrLn prog'
-    return $! Just (newTime / baseTime) -- TODO make sure time is right
+    return $! Just (newTime / baseTime)
 
   -- whether or not a scored entity is perfect
   isPerfect (_,s) = s == 0.0 -- Never
 
-
   showGeneration gi g = "gen" ++ show gi -- ++ "\n" ++ intercalate "\n" (map (reverse . printBits) $ fst g)
 
 main :: IO() 
-main = do {-
-    [projDir] <- getArgs
-    let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
-    prog <- readFile mainPath
-    let prog' = editBangs mainPath prog 1 -- TODO unsafeperformIO hidden! 
-    putStrLn prog'-}
+main = do 
+
     {-
   -- Random seed; credit to Cyrus Cousins
     randomSeed <- (getStdRandom random)
@@ -154,24 +148,23 @@ main = do {-
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed-}
 
-        [projDir] <- getArgs
+    [projDir] <- getArgs
   -- get base time and pool. for the future, check out criterion `measure`
   -- obtain base time: compile & run
-        buildProj projDir
-        -- (m, _) <- measure (whnfIO $ runProj projDir) 4 -- TODO change 4 to runs
-        (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
-        let baseTime = measTime m
-            mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
-        putStr "Basetime is: "; print baseTime
+    buildProj projDir
+    (m, _) <- benchmark projDir 4 -- TODO change 4 to runs
+    let baseTime = measTime m
+        mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
+    putStr "Basetime is: "; print baseTime
   -- pool: bit vector representing places to strict w/ all bits on
-        prog <- readFile mainPath
-        let vecSize = placesToStrict mainPath prog 
-            vecPool = ones vecSize 
+    prog <- readFile mainPath
+    let vecSize = placesToStrict mainPath prog 
+        vecPool = ones vecSize 
         -- putStrLn $ showIntAtBase 2 intToDigit vecPool "" 
         -- print vecSize
 
   -- Run Genetic Algorithm
-            cfg = GAConfig 
+        cfg = GAConfig 
                     5 -- population size
                     3 -- archive size (best entities to keep track of)
                     5 -- maximum number of generations
@@ -182,15 +175,14 @@ main = do {-
                     False -- whether or not to use checkpointing
                     False -- don't rescore archive in each generation
 
-            g = mkStdGen 0 -- random generator
+        g = mkStdGen 0 -- random generator
 
-        -- Do the evolution!
-        -- Note: if either of the last two arguments is unused, just use () as a value
-        es <- evolveVerbose g cfg vecPool (baseTime, projDir)
-        let e = snd $ head es :: BangVec
-            prog' = editBangs mainPath prog e -- TODO unsafeperformIO hidden! 
+  -- Do the evolution!
+  -- Note: if either of the last two arguments is unused, just use () as a value
+    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir)
+    let e = snd $ head es :: BangVec
+        prog' = editBangs mainPath prog (toBits e) -- TODO unsafeperformIO hidden! 
         
-        putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
-        putStrLn prog'
-        writeFile mainPath prog
-        --T.writeFile mainPath (pack prog')
+    putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
+    putStrLn prog'
+    writeFile mainPath prog
