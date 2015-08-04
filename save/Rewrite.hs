@@ -15,7 +15,7 @@ module Rewrite (
 import System.Random
 import System.IO.Unsafe
 import Language.Haskell.Exts
-import Data.Bits.Bitwise
+import Data.BitVector (BV, toBits)
 --import Data.Int (Int64)
 
 {-- Set of functions for adding and removing items from syntax tree --}
@@ -116,10 +116,10 @@ btn_ _ [] = []
 btn_ i [b] = if b then [i] else []
 btn_ i (b:bs) = if b then i:btn_ (i - 1) bs else btn_ (i - 1) bs 
 
-editBangs :: String -> String -> Int -> String
+editBangs :: String -> String -> BV -> String
 editBangs fp prog vec = program'
     where 
-        bools = toListBE vec
+        bools = toBits vec
         nums = btn bools
         flipBang' = flipBang fp
         program' = foldl flipBang' prog nums
