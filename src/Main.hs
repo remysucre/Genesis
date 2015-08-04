@@ -10,8 +10,8 @@ import System.Environment
 fitness :: FilePath -> BangVec -> IO Time
 fitness projDir bangVec = do
     let mainPath = projDir ++ "/Main.hs"
-    prog <- readFile mainPath
-    let prog' = editBangs mainPath prog (toBits bangVec) -- TODO unsafeperformIO hidden! 
+    prog  <- readFile mainPath
+    prog' <- editBangs mainPath (toBits bangVec) 
     length prog' `seq` writeFile mainPath prog'
     buildProj projDir
     newTime <- benchmark projDir 4 -- TODO change 4 to runs
@@ -48,7 +48,7 @@ main = do
   -- Note: if either of the last two arguments is unused, just use () as a value
     es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir)
     let e = snd $ head es :: BangVec
-        prog' = editBangs mainPath prog (toBits e) -- TODO unsafeperformIO hidden! 
+    prog' <- editBangs mainPath (toBits e)
 
   -- Write result
     putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
