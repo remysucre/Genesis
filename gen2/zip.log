@@ -1,0 +1,147 @@
+Preprocessing executable 'Genesis' for Genesis-0.1.0.0...
+Running Genesis...
+Basetime is: 9.75e-2
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+01100: 1025.6410256410256
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+11001: 1025.6410256410256
+00101: 1.0256410256410258
+10110: 1.0256410256410258
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+11101: 1025.6410256410256
+best entity (gen. 0): [5]20 [fitness: 1.0256410256410258]
+^\
+remy@franz:~/Genesis$ 
+remy@franz:~/Genesis$ 
+remy@franz:~/Genesis$ vim zipw3/
+remy@franz:~/Genesis$ vim zipw3/Main.hs 
+remy@franz:~/Genesis$ 
+remy@franz:~/Genesis$ 
+remy@franz:~/Genesis$ 
+remy@franz:~/Genesis$ cabal run Genesis zipw3
+Preprocessing executable 'Genesis' for Genesis-0.1.0.0...
+Running Genesis...
+Basetime is: 1.1925
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1100: 83.85744234800839
+1001: 1.119496855345912
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+0101: 83.85744234800839
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+0110: 83.85744234800839
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1101: 83.85744234800839
+best entity (gen. 0): [4]9 [fitness: 1.119496855345912]
+1001: 1.008385744234801
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1100: 83.85744234800839
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1101: 83.85744234800839
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+0110: 83.85744234800839
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1100: 83.85744234800839
+1001: 0.9433962264150946
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1100: 83.85744234800839
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+0101: 83.85744234800839
+best entity (gen. 1): [4]9 [fitness: 0.9433962264150946]
+1001: 1.0230607966457024
+1001: 0.9748427672955976
+1001: 1.0020964360587001
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1110: 83.85744234800839
+1011: 9.014675052410902e-2
+1001: 0.9748427672955975
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1100: 83.85744234800839
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1101: 83.85744234800839
+best entity (gen. 2): [4]13 [fitness: 9.014675052410902e-2]
+1011: 9.014675052410902e-2
+1001: 0.9601677148846961
+1011: 8.38574423480084e-2
+1001: 0.9392033542976941
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1111: 83.85744234800839
+1011: 8.38574423480084e-2
+1001: 0.9350104821802936
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1110: 83.85744234800839
+best entity (gen. 3): [4]13 [fitness: 8.38574423480084e-2]
+1011: 8.38574423480084e-2
+1011: 8.38574423480084e-2
+1011: 8.38574423480084e-2
+1011: 8.38574423480084e-2
+1011: 8.176100628930819e-2
+1011: 8.176100628930819e-2
+1001: 0.979035639412998
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+zipw3: <<loop>>
+1111: 83.85744234800839
+best entity (gen. 4): [4]13 [fitness: 8.176100628930819e-2]
+done evolving!
+best entity (GA): 1011
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+u = 0 : go (head u) (tail u)
+go (!a) as = a + 1 : go (head as) (tail as)
+main = do print $ u !! 1999999
+

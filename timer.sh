@@ -12,7 +12,7 @@ for (( i=1; i<=$REPS; i++ ))
     touch ${FILE}
     timeout $TIME time -f "%U" -a -o ${FILE} ${PROG} > /dev/null
     VAL=$?
-    if [ "${VAL}" -eq "124" ]
-    then echo 17 >> ${FILE}
+    if [ "${VAL}" -ne "0" ]
+    then echo -1 > ${FILE}
     fi
 done

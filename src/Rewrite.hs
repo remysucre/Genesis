@@ -17,9 +17,10 @@ findPats :: Data a => a -> [Pat]
 findPats = universeBi
 
 placesToStrict :: String -> IO Int
-placesToStrict fp = do
-  content <- readFile fp
-  case parseModule content of
+placesToStrict path = do
+  content <- readFile path
+  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False Nothing
+  case parseModuleWithMode mode content of
     ParseFailed _ e -> error e
     ParseOk a       -> rnf content `seq` return $ length $ findPats a 
 
