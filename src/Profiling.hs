@@ -23,9 +23,9 @@ avg ns = sum ns'' / fromIntegral (length ns'')
 -- TODO potentially use criterion and do space profile
 -- Time a project
 benchmark :: FilePath -> Int -> IO Double
-benchmark projDir _ =  do
+benchmark projDir runs =  do
   let runProj = "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir 
-  exit <- system $ "bash timer.sh " ++ runProj ++ " " ++ "4" ++ " " ++ "17" ++ "s " ++ "test.txt"
+  exit <- system $ "bash timer.sh " ++ runProj ++ " " ++ show runs ++ " " ++ "17" ++ "s " ++ "test.txt"
   case exit of
     ExitSuccess -> do {!contents <- readFile "test.txt";
                        !times <- return $ map (read) $ lines contents;
