@@ -22,7 +22,36 @@ placesToStrict path = do
   let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False Nothing
   case parseModuleWithMode mode content of
     ParseFailed _ e -> error e
-    ParseOk a       -> rnf content `seq` return $ length $ findPats a 
+    ParseOk a       -> rnf content `seq` return $ length $ findPats a
+
+
+readBangs :: String -> IO [Bool]
+readBangs path = do
+  content <- readFile path
+  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False Nothing
+  case parseModuleWithMode mode content of
+    ParseFailed _ e -> error e
+    ParseOk a       -> rnf content `seq` return $ findBangs $ findPats a
+
+findBangs :: [Pat] -> [Bool]
+findBangs = map isBang
+  where isBang (PBangPat p) = True
+        isBang _ = False
+
+{-wipeemall path = do
+  content <- readFile path
+  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False Nothing
+  case parseModuleWithMode mode content of
+    ParseFailed _ e -> error e
+    ParseOk a       -> do {a' <- wipeBangs a;
+                           rnf content `seq` return $ prettyPrint a'}
+
+ 
+
+wipeBangs :: Module -> IO Module
+wipeBangs x = transformBiM wipe x
+  where wipe (PBangPat p) = return p
+        wipe pp = return pp-}
 
 editBangs :: String -> [Bool] -> IO String
 editBangs path vec = do

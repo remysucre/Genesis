@@ -20,15 +20,6 @@ avg ns = sum ns'' / fromIntegral (length ns'')
   where ns' = filter ((/=) $ (-1.0)) ns
         ns'' = if null ns' then [100] else ns'
 
-{- avg [] = -1
-avg diffs = if average == 0 then (-1.0) else average
-  where
-    diffs' = filter ((/=) $ (-1.0)) diffs
-    num = length diffs'
-    sum = foldr (+) 0 diffs'
-    average = if num == 0 then 0
-              else sum / (fromInteger $ toInteger num) -}
-
 -- TODO potentially use criterion and do space profile
 -- Time a project
 benchmark :: FilePath -> Int -> IO Double

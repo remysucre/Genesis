@@ -1,13 +1,17 @@
 {-# LANGUAGE BangPatterns #-}
 
-import Rewrite (placesToStrict, editBangs)
+import Rewrite
 import Profiling
 import GeneAlg
+import Config
 ------
 import GA
 import Data.BitVector (BV, fromBits, toBits, size, ones)
 import System.Environment
 import Control.DeepSeq
+
+reps :: Int
+reps = runs
 
 fitness :: FilePath -> BangVec -> IO Time
 fitness projDir bangVec = do
@@ -19,8 +23,7 @@ fitness projDir bangVec = do
     rnf prog `seq` writeFile mainPath prog'
   -- Benchmark new
     buildProj projDir
-    newTime <- benchmark projDir 4 -- TODO change 4 to runs
-    -- putStrLn prog'
+    newTime <- benchmark projDir reps
   -- Recover original
     writeFile mainPath prog
     return newTime
@@ -33,23 +36,32 @@ fitness projDir bangVec = do
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed-}
 
-main :: IO() 
-main = do 
+main :: IO () 
+main = gmain
 
+test :: IO ()
+test = do
+    [file] <- getArgs
+    bs <- readBangs file
+    print bs
+
+gmain :: IO ()
+gmain = do 
     [projDir] <- getArgs
 
   -- TODO for the future, check out criterion `measure`
   -- Get base time and pool. 
   -- Obtain base time: compile & run
     buildProj projDir
-    baseTime <- benchmark projDir 4 -- TODO change 4 to runs
+    baseTime <- benchmark projDir reps
     let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
     putStr "Basetime is: "; print baseTime
 
   -- Pool: bit vector representing places to strict w/ all bits on
     prog <- readFile mainPath
-    vecSize <- rnf prog `seq` placesToStrict mainPath
-    let vecPool = ones vecSize 
+    -- vecSize <- rnf prog `seq` placesToStrict mainPath
+    bs <- readBangs mainPath
+    let vecPool = rnf prog `seq` fromBits bs
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
