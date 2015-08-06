@@ -8,14 +8,14 @@ import System.Random
 --
 
 runs :: Int
-runs = 4
+runs = 1
 
 -- 
 -- CONFIG FOR GENETIC ALG
 -- 
 
 cfg = GAConfig 
-        5 -- population size
+        15 -- population size
         3 -- archive size (best entities to keep track of)
         5 -- maximum number of generations
         0.8 -- crossover rate (% of entities by crossover)
