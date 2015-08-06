@@ -29,7 +29,8 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
  
   -- Generate a random bang vector
   -- Invariant: pool is the vector with all bangs on
-  genRandom pool seed = do 
+  genRandom pool seed = do {Just e <- mutation pool 0.2 seed pool; return e} -- TODO hardcode mutation rate
+  {-genRandom pool seed = do 
     putStrLn $ printBits (toBits e)
     return $! e
     where
@@ -37,7 +38,7 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
       g = mkStdGen seed 
       fs = take len $ randoms g :: [Float]
       bs = map (< 0.5) fs
-      e = fromBits bs `xor` pool
+      e = fromBits bs `xor` pool-}
 
   -- Crossover operator 
   -- Merge from two vectors, randomly picking bangs
