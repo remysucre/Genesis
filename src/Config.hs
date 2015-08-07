@@ -16,7 +16,7 @@ runs = 1
 
 cfg = GAConfig 
         15 -- population size
-        3 -- archive size (best entities to keep track of)
+        1 -- archive size (best entities to keep track of)
         5 -- maximum number of generations
         0.8 -- crossover rate (% of entities by crossover)
         0.2 -- mutation rate (% of entities by mutation)

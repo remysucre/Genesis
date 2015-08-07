@@ -10,6 +10,7 @@ import Data.BitVector (BV, fromBits, toBits, size, ones)
 import Data.Bits.Bitwise (fromListLE, fromListBE, toListBE)
 import Data.Bits
 import Data.List
+import Control.DeepSeq
 import Config
 
 --
@@ -42,18 +43,22 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
 
   -- Crossover operator 
   -- Merge from two vectors, randomly picking bangs
-  crossover p _ seed e1 e2 = do 
-    s <- genRandom p seed 
-    let e1' = s .&. e1
+  crossover pool _ seed e1 e2 = do 
+    let len = size pool
+        g = mkStdGen seed 
+        fs = take len $ randoms g :: [Float]
+        bs = map (< 0.5) fs
+        s = fromBits bs `xor` pool
+        e1' = s .&. e1
         e2' = complement s .&. e2
         e' = e1' .|. e2'
-    putStrLn $ "cross" ++ printBits (toBits e1) ++ " " ++ printBits (toBits e2) ++ "->" ++ printBits (toBits e')
+    putStrLn $ "cross " ++ printBits (toBits e1) ++ " " ++ printBits (toBits e2) -- ++ "->" ++ printBits (toBits e')
     return $! Just e'
 
   -- Mutation operator 
   mutation pool p seed e = do 
-    putStrLn $ "mutate" ++ printBits (toBits e) ++ "->" ++ printBits (toBits e')
-    return $! Just e'
+    putStrLn $ "mutate " ++ printBits (toBits e)-- ++ "->" ++ printBits (toBits e')
+    size e `seq` return $! Just e'
     where
       len = size e
       g = mkStdGen seed
@@ -66,5 +71,5 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
   score (baseTime, fitRun) bangVec = do 
     newTime <- fitRun bangVec
     let score = (newTime / baseTime)
-    putStrLn $ printBits (toBits bangVec) ++ ": " ++ show score
+    -- putStrLn $ printBits (toBits bangVec) ++ ": " ++ show score
     return $! Just score

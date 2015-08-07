@@ -1,0 +1,23 @@
+Code coverage: There are 3 factors affecting code coverage: mutation rate,
+population, and number of generation. They all seem to affect the coverage 
+linearly, I will get more data to confirm.
+
+Archive: This is another parameter that seems to affect code coverage/learning 
+rate. It is documented as "the best genes to keep track of", but I haven't 
+figured out how it works exactly.
+
+Hint: Any annotation already in the source code will be interpreted as hints.
+This is achieved by starting the first generation by mutating the original 
+source, instead of total randomness.
+With hints we can add annotations to help the algorithm figure out better 
+answer; the program wont go bang-crazy and get trapped in infinite loops.
+It also helps us to add fewer bangs while getting the desired performance.
+
+New generation: is created by 
+    1. crossover 2*cr*pop genes randomly selected from prev. gen,
+            where cr = crossover rate
+    2. mutate mr*pop genes randomly selected from prev. gen, where
+            mr = mutation rate
+    3. I thought said genes were only selected from the "archive", which proved
+       wrong by the output. I'm still trying to figure out how better genes
+       can have higher chance of survival. 
