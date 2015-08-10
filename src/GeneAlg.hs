@@ -71,5 +71,5 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
   score (baseTime, fitRun) bangVec = do 
     newTime <- fitRun bangVec
     let score = (newTime / baseTime)
-    -- putStrLn $ printBits (toBits bangVec) ++ ": " ++ show score
+    putStrLn $ "bits " ++ printBits (toBits bangVec)
     return $! Just score
