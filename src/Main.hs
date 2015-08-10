@@ -47,7 +47,11 @@ test = do
 
 gmain :: IO ()
 gmain = do 
-    [projDir] <- getArgs
+    putStrLn ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
+  -- Configurations
+    [projDir, popS, gensS, archS] <- getArgs
+    let [pop, gens, arch] = map read [popS, gensS, archS]
+        cfg = GAConfig pop arch gens crossRate muteRate crossParam muteParam checkpoint rescoreArc
 
   -- TODO for the future, check out criterion `measure`
   -- Get base time and pool. 
@@ -73,3 +77,4 @@ gmain = do
     putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
     putStrLn prog'
     writeFile mainPath prog
+    putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"

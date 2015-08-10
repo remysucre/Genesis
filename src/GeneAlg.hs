@@ -52,12 +52,12 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
         e1' = s .&. e1
         e2' = complement s .&. e2
         e' = e1' .|. e2'
-    putStrLn $ "cross " ++ printBits (toBits e1) ++ " " ++ printBits (toBits e2) -- ++ "->" ++ printBits (toBits e')
+    -- putStrLn $ "cross " ++ printBits (toBits e1) ++ " " ++ printBits (toBits e2) -- ++ "->" ++ printBits (toBits e')
     return $! Just e'
 
   -- Mutation operator 
   mutation pool p seed e = do 
-    putStrLn $ "mutate " ++ printBits (toBits e)-- ++ "->" ++ printBits (toBits e')
+    -- putStrLn $ "mutate " ++ printBits (toBits e)-- ++ "->" ++ printBits (toBits e')
     size e `seq` return $! Just e'
     where
       len = size e
