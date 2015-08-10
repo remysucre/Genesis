@@ -8,6 +8,7 @@ import Config
 import GA
 import Data.BitVector (BV, fromBits, toBits, size, ones)
 import System.Environment
+import System.Process
 import Control.DeepSeq
 
 reps :: Int
@@ -37,7 +38,7 @@ fitness projDir bangVec = do
         seed = if useCliSeed then cliSeed else randomSeed-}
 
 main :: IO () 
-main = gmain
+main = emain
 
 test :: IO ()
 test = do
@@ -45,13 +46,27 @@ test = do
     bs <- readBangs file
     print bs
 
-gmain :: IO ()
-gmain = do 
+emain :: IO ()
+emain = do
+  system "git rev-parse --short HEAD"
+  putStr "^git hash\n"
+  [projDir, maxPopS, maxGenS, maxArchS] <- getArgs
+  let [maxPop, maxGen, maxArch] = map read [maxPopS, maxGenS, maxArchS]
+  let cfgs :: [(Int, Int, Int)]
+      cfgs = [(pop, gen, arch) | pop <- [1..maxPop], gen <- [1..maxGen], arch <- [1..maxArch]]
+  sequence_ $ map (gmain projDir) cfgs
+
+
+gmain :: String -> (Int, Int, Int) -> IO ()
+gmain projDir (pop, gens, arch) = do 
     putStrLn ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
+    putStrLn $ show pop ++ " pop"
+    putStrLn $ show gens ++ " gens"
+    putStrLn $ show arch ++ " arch"
   -- Configurations
-    [projDir, popS, gensS, archS] <- getArgs
-    let [pop, gens, arch] = map read [popS, gensS, archS]
-        cfg = GAConfig pop arch gens crossRate muteRate crossParam muteParam checkpoint rescoreArc
+    -- [projDir, popS, gensS, archS] <- getArgs
+    -- let [pop, gens, arch] = map read [popS, gensS, archS]
+    let  cfg = GAConfig pop arch gens crossRate muteRate crossParam muteParam checkpoint rescoreArc
 
   -- TODO for the future, check out criterion `measure`
   -- Get base time and pool. 

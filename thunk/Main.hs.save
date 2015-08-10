@@ -3,14 +3,15 @@ module Main (main) where
 import Data.List
  
 f :: Integer -> Integer
-f x = if x >= 0 then f (x + 1) else 0
+f x = f (x + 1)
 fib1 0 _ b = b
 fib1 n a b = fib1 (n - 1) b (a + b)
 fiba = fib1 300000 0 1
+x = x + 1
  
 inf :: Integer -> Integer
 inf n = 0
-inf1 = inf $ f 0
+inf1 = inf x
 fib2 0 _ b = b
 fib2 n a b = fib2 (n - 1) b (a + b)
 fibb = fib2 300000 0 1
