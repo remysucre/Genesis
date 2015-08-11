@@ -53,7 +53,7 @@ emain = do
   [projDir, maxPopS, maxGenS, maxArchS] <- getArgs
   let [maxPop, maxGen, maxArch] = map read [maxPopS, maxGenS, maxArchS]
   let cfgs :: [(Int, Int, Int)]
-      cfgs = [(pop, gen, arch) | pop <- [1..maxPop], gen <- [1..maxGen], arch <- [1..maxArch]]
+      cfgs = [(pop, gen, arch) | pop <- [1..maxPop], gen <- [1..maxGen], arch <- [maxArch]]
   sequence_ $ map (gmain projDir) cfgs
 
 
