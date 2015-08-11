@@ -1,25 +1,12 @@
-@@@@ a log file is a sequence of runlogs bracketed by START and FINISH
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-@@@@ first parse pop, gens, arch and basetime. no problem here
 1 pop
 1 gens
 5 arch
 Basetime is: 6.61
-@@@@ an evoliution is a series of generations
-@@@@ a generation is a series of strands + best record
-@@@@ a strand is a bitvector
 bits 0000010010000100010010000100000010010
-bits 0000010010000100010010000100000010010
-@@@@ a best record's only useful data is the fitness
 best entity (gen. 0): [37]2424899602 [fitness: 0.44175491679273826]
-bits 0000010010000100010010000100000010010
-bits 0000010010000100010010000100000010010
-best entity (gen. 1): [37]2424899602 [fitness: 0.44175491679273826]
-@@@@ end of evolution
 done evolving!
-@@@@ parse winner (bit vector)
 best entity (GA): 0000010010000100010010000100000010010
-@@@@ parse the final program as a string
 {-# LANGUAGE BangPatterns #-}
 module Main (main) where
 import Data.List
