@@ -1,13 +1,13 @@
 Preprocessing executable 'Genesis' for Genesis-0.1.0.0...
-8c82e09
+f65c137
 ^git hash
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 1 pop
 1 gens
 5 arch
-Basetime is: 2.92
+Basetime is: 6.61
 bits 0000010010000100010010000100000010010
-best entity (gen. 0): [37]2424899602 [fitness: 0.9965753424657535]
+best entity (gen. 0): [37]2424899602 [fitness: 0.44175491679273826]
 done evolving!
 best entity (GA): 0000010010000100010010000100000010010
 {-# LANGUAGE BangPatterns #-}
@@ -46,13 +46,871 @@ main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 1 pop
 2 gens
+5 arch
+Basetime is: 6.6
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.440909090909091]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+3 gens
+5 arch
+Basetime is: 6.6
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.4393939393939394]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+4 gens
+5 arch
+Basetime is: 6.59
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.44157814871016693]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.44157814871016693]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.4400606980273141]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.44157814871016693]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+5 gens
+5 arch
+Basetime is: 6.62
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.44108761329305135]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4395770392749245]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+6 gens
+5 arch
+Basetime is: 6.63
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.4389140271493213]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.4374057315233786]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.4374057315233786]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.44042232277526394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4389140271493213]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.4389140271493213]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+7 gens
+5 arch
+Basetime is: 6.61
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.4402420574886536]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+8 gens
+5 arch
+Basetime is: 6.6
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.44242424242424244]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.44242424242424244]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.44242424242424244]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+9 gens
+5 arch
+Basetime is: 6.6
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.4363636363636364]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 8): [37]2424899602 [fitness: 0.4393939393939394]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+10 gens
+5 arch
+Basetime is: 6.62
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.4138972809667674]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 8): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 9): [37]2424899602 [fitness: 0.4395770392749245]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+11 gens
 5 arch
 Basetime is: 6.61
 bits 0000010010000100010010000100000010010
 best entity (gen. 0): [37]2424899602 [fitness: 0.44175491679273826]
 bits 0000010010000100010010000100000010010
 bits 0000010010000100010010000100000010010
-best entity (gen. 1): [37]2424899602 [fitness: 0.443267776096823]
+best entity (gen. 1): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.44175491679273826]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 8): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 9): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 10): [37]2424899602 [fitness: 0.4402420574886536]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+12 gens
+5 arch
+Basetime is: 6.59
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.44309559939301973]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.4385432473444613]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.44157814871016693]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.4400606980273141]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4400606980273141]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.44309559939301973]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.4400606980273141]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.44157814871016693]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 8): [37]2424899602 [fitness: 0.44157814871016693]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 9): [37]2424899602 [fitness: 0.4400606980273141]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 10): [37]2424899602 [fitness: 0.44157814871016693]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 11): [37]2424899602 [fitness: 0.44157814871016693]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+13 gens
+5 arch
+Basetime is: 6.63
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.44042232277526394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.4374057315233786]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.44042232277526394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.44042232277526394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4374057315233786]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.4389140271493213]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.4389140271493213]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.4389140271493213]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 8): [37]2424899602 [fitness: 0.4374057315233786]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 9): [37]2424899602 [fitness: 0.4389140271493213]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 10): [37]2424899602 [fitness: 0.4389140271493213]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 11): [37]2424899602 [fitness: 0.44042232277526394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 12): [37]2424899602 [fitness: 0.4374057315233786]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+14 gens
+5 arch
+Basetime is: 6.6
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.4378787878787879]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 8): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 9): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 10): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 11): [37]2424899602 [fitness: 0.44393939393939397]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 12): [37]2424899602 [fitness: 0.4545454545454546]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 13): [37]2424899602 [fitness: 0.44242424242424244]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+1 pop
+15 gens
+5 arch
+Basetime is: 6.69
+bits 0000010010000100010010000100000010010
+best entity (gen. 0): [37]2424899602 [fitness: 0.44544095665171896]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 1): [37]2424899602 [fitness: 0.43796711509715996]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 2): [37]2424899602 [fitness: 0.43796711509715996]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 3): [37]2424899602 [fitness: 0.43796711509715996]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 4): [37]2424899602 [fitness: 0.4364723467862481]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 5): [37]2424899602 [fitness: 0.43946188340807174]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 6): [37]2424899602 [fitness: 0.4439461883408072]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 7): [37]2424899602 [fitness: 0.4364723467862481]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 8): [37]2424899602 [fitness: 0.4439461883408072]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 9): [37]2424899602 [fitness: 0.43796711509715996]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 10): [37]2424899602 [fitness: 0.43796711509715996]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 11): [37]2424899602 [fitness: 0.43348281016442447]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 12): [37]2424899602 [fitness: 0.44245142002989535]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 13): [37]2424899602 [fitness: 0.4364723467862481]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+best entity (gen. 14): [37]2424899602 [fitness: 0.4364723467862481]
 done evolving!
 best entity (GA): 0000010010000100010010000100000010010
 {-# LANGUAGE BangPatterns #-}
@@ -92,10 +950,10 @@ main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
 2 pop
 1 gens
 5 arch
-Basetime is: 6.62
+Basetime is: 6.64
 bits 0000010010000100010010000100000010010
 bits 1001010010001000000000110001000000000
-best entity (gen. 0): [37]2424899602 [fitness: 0.4395770392749245]
+best entity (gen. 0): [37]2424899602 [fitness: 0.44427710843373497]
 done evolving!
 best entity (GA): 0000010010000100010010000100000010010
 {-# LANGUAGE BangPatterns #-}
@@ -135,15 +993,15 @@ main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
 2 pop
 2 gens
 5 arch
-Basetime is: 6.63
+Basetime is: 6.64
 bits 0000010010000100010010000100000010010
 bits 1001010010001000000000110001000000000
-best entity (gen. 0): [37]2424899602 [fitness: 0.4419306184012067]
+best entity (gen. 0): [37]2424899602 [fitness: 0.43975903614457834]
 bits 0000010010000100010010000100000010010
 bits 0000010010000100010010000100000010010
 bits 0000010010000100010010000100000010010
 bits 1001010010001000000000110001000000000
-best entity (gen. 1): [37]2424899602 [fitness: 0.4389140271493213]
+best entity (gen. 1): [37]2424899602 [fitness: 0.42018072289156627]
 done evolving!
 best entity (GA): 0000010010000100010010000100000010010
 {-# LANGUAGE BangPatterns #-}
@@ -179,3 +1037,469 @@ fib4 (!n) a b = fib4 (n - 1) b (a + b)
 fibd = fib4 300000 0 1
 main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+2 pop
+3 gens
+5 arch
+Basetime is: 6.7
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 0): [37]2424899602 [fitness: 0.43582089552238806]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 1): [37]2424899602 [fitness: 0.4343283582089552]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 2): [37]2424899602 [fitness: 0.4343283582089552]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+2 pop
+4 gens
+5 arch
+Basetime is: 6.62
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 0): [37]2424899602 [fitness: 0.4425981873111783]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 1): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 2): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 3): [37]2424899602 [fitness: 0.4395770392749245]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+2 pop
+5 gens
+5 arch
+Basetime is: 6.61
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 0): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 1): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 2): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 3): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 4): [37]2424899602 [fitness: 0.4402420574886536]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+2 pop
+6 gens
+5 arch
+Basetime is: 6.61
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 0): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 1): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 2): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 3): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 4): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 5): [37]2424899602 [fitness: 0.4387291981845688]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+2 pop
+7 gens
+5 arch
+Basetime is: 6.61
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 0): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 1): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 2): [37]2424899602 [fitness: 0.4372163388804841]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 3): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 4): [37]2424899602 [fitness: 0.4387291981845688]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 5): [37]2424899602 [fitness: 0.4402420574886536]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 6): [37]2424899602 [fitness: 0.44175491679273826]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+2 pop
+8 gens
+5 arch
+Basetime is: 6.6
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 0): [37]2424899602 [fitness: 0.44393939393939397]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 1): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 2): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 3): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 4): [37]2424899602 [fitness: 0.440909090909091]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 5): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 6): [37]2424899602 [fitness: 0.4393939393939394]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 7): [37]2424899602 [fitness: 0.440909090909091]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1) b (a + b)
+fibc = fib3 300000 0 1
+ 
+inf'' :: Integer -> Integer
+inf'' n = 0
+inf3 = inf'' $ f 0
+fib4 0 _ b = b
+fib4 (!n) a b = fib4 (n - 1) b (a + b)
+fibd = fib4 300000 0 1
+main = do putStrLn $ show (fiba + fibb + fibc + inf1 + inf2 + inf3)
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+2 pop
+9 gens
+5 arch
+Basetime is: 6.62
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 0): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 1): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 2): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 3): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 4): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 5): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 6): [37]2424899602 [fitness: 0.43806646525679754]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 7): [37]2424899602 [fitness: 0.4395770392749245]
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 0000010010000100010010000100000010010
+bits 1001010010001000000000110001000000000
+best entity (gen. 8): [37]2424899602 [fitness: 0.4395770392749245]
+done evolving!
+best entity (GA): 0000010010000100010010000100000010010
+{-# LANGUAGE BangPatterns #-}
+module Main (main) where
+import Data.List
+ 
+f :: Integer -> Integer
+f x = f (x + 1)
+fib1 0 _ b = b
+fib1 n (!a) b = fib1 (n - 1) b (a + b)
+fiba = fib1 300000 0 1
+x = x + 1
+ 
+inf :: Integer -> Integer
+inf n = 0
+inf1 = inf x
+fib2 0 _ (!b) = b
+fib2 n a b = fib2 (n - 1) b (a + b)
+fibb = fib2 300000 0 1
+ 
+inf' :: Integer -> Integer
+inf' n = 0
+inf2 = inf' $ f 0
+fib3 (!0) _ b = b
+fib3 n a (!b) = fib3 (n - 1)
