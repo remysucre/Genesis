@@ -60,9 +60,9 @@ emain = do
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
     putStrLn ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
-    putStrLn $ show pop ++ " pop"
-    putStrLn $ show gens ++ " gens"
-    putStrLn $ show arch ++ " arch"
+    putStrLn $ "pop: " ++ show pop 
+    putStrLn $ "gens: " ++ show gens
+    putStrLn $ "arch: " ++ show arch 
   -- Configurations
     -- [projDir, popS, gensS, archS] <- getArgs
     -- let [pop, gens, arch] = map read [popS, gensS, archS]
@@ -74,7 +74,7 @@ gmain projDir (pop, gens, arch) = do
     buildProj projDir
     baseTime <- benchmark projDir reps
     let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
-    putStr "Basetime is: "; print baseTime
+    -- putStr "Basetime is: "; print baseTime
 
   -- Pool: bit vector representing places to strict w/ all bits on
     prog <- readFile mainPath
@@ -89,7 +89,7 @@ gmain projDir (pop, gens, arch) = do
     prog' <- editBangs mainPath (toBits e)
 
   -- Write result
-    putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
-    putStrLn prog'
+    --putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
+    --putStrLn prog'
     writeFile mainPath prog
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"

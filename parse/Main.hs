@@ -95,7 +95,7 @@ arch = keyValue "arch: "
 testpop = pop
 
 end :: GenParser Char st String
-end = string ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>\n"
+end = string "done evolving!\n>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>\n"
 
 start :: GenParser Char st String
 start = string ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>\n"

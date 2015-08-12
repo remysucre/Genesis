@@ -71,5 +71,9 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
   score (baseTime, fitRun) bangVec = do 
     newTime <- fitRun bangVec
     let score = (newTime / baseTime)
-    putStrLn $ "bits " ++ printBits (toBits bangVec)
+    putStrLn $ "bits: " ++ printBits (toBits bangVec)
     return $! Just score
+
+  showGeneration _ (_,archive) = "best: " ++ (show fit)
+    where
+      (Just fit, _) = head archive
