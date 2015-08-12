@@ -101,6 +101,7 @@ start :: GenParser Char st String
 start = string ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>\n"
 
 testse = do {start; end}
+
 main = do 
   parsed <- testParse $ many run
   print $ map process parsed
