@@ -1,22 +1,98 @@
 import System.Environment
 import Text.ParserCombinators.Parsec.Number
 import Text.ParserCombinators.Parsec
+import Data.List
+import Data.Set (fromList, size)
 
--- A Log file contains 0 or more runs, each bracketed by start and end
--- 
---logFile :: GenParser Char st [(Int, Int, Int, Float, [([String], String)], String, String)]
-logFile :: GenParser Char st [(Int, Int, Int, Float)]
-logFile = 
-    do result <- many run
-       return result
+--
+-- PROCESSOR
+--
 
--- run :: GenParser Char st (Int, Int, Int, Float, [([String], String)], String, String)
-run :: GenParser Char st (Int, Int, Int, Float)
-run =
-    do start
-       end
-       result <- runContent
-       return result
+type Blob = ([Int], [([String],Float)])
+
+getStrands blob = ss
+  where ss = concatMap fst sfs
+        sfs = snd blob
+
+getScore :: Blob -> Float
+getScore blob = avg ss
+  where ss = map snd sfs
+        sfs = snd blob
+
+avg :: [Float] -> Float
+avg ns = sum ns / fromIntegral (length ns)
+
+coverage :: [String] -> Int
+coverage strands = size (fromList strands) 
+
+process :: Blob -> ([Int], Int, Float)
+process blob = (fst blob, coverage $ getStrands blob, getScore blob)
+
+blb = ([1,1,5],[(["0000010010000100010010000100000010010","0000010010000100010010000100000010010"],0.4417549 :: Float),(["0000010010000100010010000100000010010","0000010010000100010010000100000010010"],0.4417549 :: Float)])
+
+blbs = [([1,1,5],[(["0000010010000100010010000100000010010","0000010010000100010010000100000010010"],0.4417549),(["0000010010000100010010000100000010010","0000010010000100010010000100000010010"],0.4417549)]),([1,1,5],[(["0000010010000100010010000100000010010","0000010010000100010010000100000010010"],0.4417549),(["0000010010000100010010000100000010010","0000010010000100010010000100000010010"],0.4417549)])]
+
+
+-- main = print $ process blb
+
+--
+-- PARSER
+--
+
+run = 
+  do between start end runCont
+
+runCont =
+  do b <- base
+     gs <- many gen
+     return (b, gs)
+
+gen :: GenParser Char st ([String], Float)
+gen = 
+  do bs <- manyTill bits (try $ lookAhead best)
+     b <- best
+     return (bs, b)
+
+best :: GenParser Char st Float
+best = 
+  do string "best: "
+     f <- floating
+     newline
+     return f
+
+bits :: GenParser Char st String
+bits =
+  do string "bits: "
+     manyTill digit newline
+
+testbits = many bits
+
+base :: GenParser Char st [Int]
+base = do
+  p <- pop
+  g <- gens
+  a <- arch
+  return [p, g, a]
+
+testbase = between start end base
+
+keyValue :: String -> GenParser Char st Int
+keyValue k = 
+  do string k
+     n <- int
+     newline
+     return n
+
+pop :: GenParser Char st Int
+pop = keyValue "pop: "
+
+gens :: GenParser Char st Int
+gens = keyValue "gens: "
+
+arch :: GenParser Char st Int
+arch = keyValue "arch: "
+
+testpop = pop
 
 end :: GenParser Char st String
 end = string ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>\n"
@@ -24,75 +100,13 @@ end = string ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>\n"
 start :: GenParser Char st String
 start = string ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>\n"
 
---runContent :: GenParser Char st (Int, Int, Int, Float, [([String], String)], String, String)
-runContent :: GenParser Char st (Int, Int, Int, Float)
-runContent =
-    do p <- pop
-       g <- maxg
-       a <- arch
-       b <- base
-       return (pop, maxg, arch, base)
-       --gs <- manyTill gen (lookAhead (char 'd'))
-       --w  <- winner
-       --o  <- out
-       --return (p, g, a, b, gs, w, o) --TODO 
+testse = do {start; end}
+main = do 
+  parsed <- testParse $ many run
+  print $ map process parsed
 
-pop :: GenParser Char st Int
-pop = 
-    do n <- int
-       s <- string " pop\n"
-       return n
-
-maxg :: GenParser Char st Int
-maxg = 
-    do n <- int
-       s <- string " gens\n"
-       return n
-
-arch :: GenParser Char st Int
-arch = 
-    do n <- int
-       s <- string " arch\n"
-       return n
-
-base :: GenParser Char st Float
-base = 
-    do s <- string "Basetime is: "
-       f <- floating
-       nl <- newline
-       return f
-
-gen :: GenParser Char st ([String], String)
-gen = 
-    do ss <- manyTill strand (lookAhead best)
-       b  <- best
-       return (ss, b)
-
-strand :: GenParser Char st String
-strand = 
-    do string "bits "
-       ds <- manyTill digit newline
-       return ds
-
-best :: GenParser Char st String
-best = 
-    do manyTill anyChar newline -- TODO
-
-winner :: GenParser Char st String
-winner = 
-    do string "done evolving!\n"
-       string "best entity (GA): "
-       ds <- manyTill anyChar newline
-       return ds
-
-out :: GenParser Char st String
-out = manyTill anyChar end
-
-main = 
-    do [fp] <- getArgs
-       fc <- readFile fp
-       print $ parse logFile "uk" fc
-
--- main = do print $ parse gen "(uk)" "bits 1010101001\nbits 1010101001\nasdfasdf\n"
-
--- parseLog input = parse logFile "(unknown)" input
+testParse p = 
+  do [fp] <- getArgs
+     fc <- readFile fp
+     let (Right pa) = parse p "uk" fc
+     return pa
