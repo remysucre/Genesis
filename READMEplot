@@ -1,0 +1,7 @@
+To plot, put data in format:
+x,  y,  z
+x', y', z'
+...
+in file datapoints.val
+then run gnuplot
+splot 'datapoints.val' with points
