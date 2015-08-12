@@ -1,99 +1,41 @@
-Preprocessing executable 'Genesis' for Genesis-0.1.0.0...
-[5 of 5] Compiling Main             ( src/Main.hs, dist/build/Genesis/Genesis-tmp/Main.o )
-Linking dist/build/Genesis/Genesis ...
-Running Genesis...
-f3fcf7b
-^git hash
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-1 pop
-1 gens
-1 arch
-Basetime is: 1.03
-best entity (gen. 0): [8]4 [fitness: 0.9611650485436893]
+pop: 1
+gens: 1
+arch: 1
+bits: 00000000100
+best: 0.9902912621359223
 done evolving!
-best entity (GA): 00000100
-{-# LANGUAGE BangPatterns #-}
-module Main (main) where
-import Harness
-main = print (f [1 .. 4000000] (0 :: Int))
-f [] c = c
-f ((!(x : xs))) c = f xs (c + 1)
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-1 pop
-2 gens
-1 arch
-Basetime is: 1.03
-best entity (gen. 0): [8]4 [fitness: 0.9514563106796116]
-best entity (gen. 1): [8]4 [fitness: 0.9514563106796116]
+pop: 1
+gens: 2
+arch: 1
+bits: 00000000100
+best: 0.9732142857142857
+bits: 00000000100
+bits: 00000000100
+best: 1.044642857142857
 done evolving!
-best entity (GA): 00000100
-{-# LANGUAGE BangPatterns #-}
-module Main (main) where
-import Harness
-main = print (f [1 .. 4000000] (0 :: Int))
-f [] c = c
-f ((!(x : xs))) c = f xs (c + 1)
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-2 pop
-1 gens
-1 arch
-Basetime is: 1.01
-best entity (gen. 0): [8]4 [fitness: 0.9801980198019802]
+pop: 2
+gens: 1
+arch: 1
+bits: 00000000100
+bits: 10010000100
+best: 1.0384615384615385
 done evolving!
-best entity (GA): 00000100
-{-# LANGUAGE BangPatterns #-}
-module Main (main) where
-import Harness
-main = print (f [1 .. 4000000] (0 :: Int))
-f [] c = c
-f ((!(x : xs))) c = f xs (c + 1)
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-2 pop
-1 gens
-2 arch
-Basetime is: 1.0
-best entity (gen. 0): [8]4 [fitness: 1.01]
+pop: 2
+gens: 2
+arch: 1
+bits: 00000000100
+bits: 10010000100
+best: 1.1926605504587156
+bits: 00000000100
+bits: 00000000100
+bits: 00000000100
+best: 1.0733944954128438
 done evolving!
-best entity (GA): 00000100
-{-# LANGUAGE BangPatterns #-}
-module Main (main) where
-import Harness
-main = print (f [1 .. 4000000] (0 :: Int))
-f [] c = c
-f ((!(x : xs))) c = f xs (c + 1)
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-2 pop
-2 gens
-1 arch
-Basetime is: 1.0
-best entity (gen. 0): [8]4 [fitness: 1.0]
-best entity (gen. 1): [8]4 [fitness: 0.96]
-done evolving!
-best entity (GA): 00000100
-{-# LANGUAGE BangPatterns #-}
-module Main (main) where
-import Harness
-main = print (f [1 .. 4000000] (0 :: Int))
-f [] c = c
-f ((!(x : xs))) c = f xs (c + 1)
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-2 pop
-2 gens
-2 arch
-Basetime is: 0.99
-best entity (gen. 0): [8]148 [fitness: 1.0101010101010102]
-best entity (gen. 1): [8]4 [fitness: 0.9797979797979798]
-done evolving!
-best entity (GA): 00000100
-{-# LANGUAGE BangPatterns #-}
-module Main (main) where
-import Harness
-main = print (f [1 .. 4000000] (0 :: Int))
-f [] c = c
-f ((!(x : xs))) c = f xs (c + 1)
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
