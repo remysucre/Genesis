@@ -102,9 +102,13 @@ start = string ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>\n"
 
 testse = do {start; end}
 
+popGenCover ([pop,gen,_],cover,_) = putStrLn $ show pop ++ " " ++ show gen ++ " " ++ show cover
+popGenScore ([pop,gen,_],_,score) = putStrLn $ show pop ++ " " ++ show gen ++ " " ++ show (1 / score)
+
 main = do 
   parsed <- testParse $ many run
-  print $ map process parsed
+  let ped = map process parsed
+  sequence_ $ map popGenScore ped
 
 testParse p = 
   do [fp] <- getArgs
