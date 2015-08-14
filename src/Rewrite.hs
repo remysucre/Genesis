@@ -78,5 +78,5 @@ changeBangs bools x = runState (transformBiM go x) bools
 
 stripTop :: Module -> Module
 stripTop (Module a b c d e f decls) = Module a b c d e f (map rmBang decls)
-    where rmBang (PatBind x (PParen (PBangPat pb)) y z w) = PatBind x pb y z w
+    where rmBang (PatBind x (PParen (PBangPat pb)) y z) = PatBind x pb y z
           rmBang x = x

@@ -1,0 +1,27 @@
+Configuring bitwise-0.1.0.2...
+Building bitwise-0.1.0.2...
+Preprocessing library bitwise-0.1.0.2...
+[1 of 8] Compiling Compat           ( ghc74/Compat.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Compat.o )
+[2 of 8] Compiling Data.Array.BitArray.Internal ( src/Data/Array/BitArray/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Data/Array/BitArray/Internal.o )
+[3 of 8] Compiling Data.Bits.Bitwise ( src/Data/Bits/Bitwise.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Data/Bits/Bitwise.o )
+
+src/Data/Bits/Bitwise.hs:183:38: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+src/Data/Bits/Bitwise.hs:196:33: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+
+src/Data/Bits/Bitwise.hs:196:48: Warning:
+    In the use of ‘bitSize’ (imported from Data.Bits):
+    Deprecated: "Use 'bitSizeMaybe' or 'finiteBitSize' instead"
+[4 of 8] Compiling Data.Array.BitArray.IO ( src/Data/Array/BitArray/IO.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Data/Array/BitArray/IO.o )
+[5 of 8] Compiling Data.Array.BitArray.ST ( src/Data/Array/BitArray/ST.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Data/Array/BitArray/ST.o )
+[6 of 8] Compiling Data.Array.BitArray ( src/Data/Array/BitArray.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Data/Array/BitArray.o )
+[7 of 8] Compiling Data.Array.BitArray.ByteString ( src/Data/Array/BitArray/ByteString.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Data/Array/BitArray/ByteString.o )
+[8 of 8] Compiling Codec.Image.PBM  ( src/Codec/Image/PBM.hs, .stack-work/dist/x86_64-linux/Cabal-1.18.1.5/build/Codec/Image/PBM.o )
+In-place registering bitwise-0.1.0.2...
+Installing library in
+/home/remy/Genesis/.stack-work/install/x86_64-linux/lts-2.22/7.8.4/lib/x86_64-linux-ghc-7.8.4/bitwise-0.1.0.2
+Registering bitwise-0.1.0.2...
