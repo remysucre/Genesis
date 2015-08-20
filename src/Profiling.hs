@@ -2,8 +2,14 @@
 
 module Profiling where
 
+import Control.DeepSeq
+import Data.Int
 import System.Process
 import System.Exit
+import System.Timeout
+import Criterion.Main
+import Criterion.Measurement
+import Criterion.Types (measTime)
 
 -- 
 -- PROFILING EXTERNAL PROJECT
@@ -12,23 +18,21 @@ import System.Exit
 -- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
 -- Build a cabal project. Project must be configured with cabal. `projDir` is in the current dir
 buildProj :: FilePath -> IO ExitCode
-buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build > /dev/null"
+buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build -v0"
 
--- TODO this is a hack
-avg :: [Double] -> Double
-avg ns = sum ns'' / fromIntegral (length ns'')
-  where ns' = filter ((/=) $ (-1.0)) ns
-        ns'' = if null ns' then [100] else ns'
-
--- TODO potentially use criterion and do space profile
 -- Time a project
-benchmark :: FilePath -> Int -> IO Double
+instance NFData ExitCode
+  where 
+    rnf ExitSuccess = ()
+    rnf (ExitFailure _) = ()
+
+
+benchmark :: FilePath -> Int64 -> IO Double
 benchmark projDir runs =  do
-  let runProj = "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir 
-  exit <- system $ "bash timer.sh " ++ runProj ++ " " ++ show runs ++ " " ++ "17" ++ "s " ++ "test.txt"
+  let runProj = "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+  exit <- timeout 17000000 $ system runProj -- TODO hardcode timeout
   case exit of
-    ExitSuccess -> do {!contents <- readFile "test.txt";
-                       !times <- return $ map (read) $ lines contents;
-                       let meanTime = avg times
-                       in return $! meanTime}
-    ExitFailure _ -> error $ "Failed to run" ++ projDir
+       Just ExitSuccess     -> do {(m, _) <- measure (nfIO $ system runProj) runs; 
+                                  return $! measTime m}
+       Just (ExitFailure _) -> return 100
+       Nothing              -> return 100

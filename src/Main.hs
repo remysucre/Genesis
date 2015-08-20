@@ -7,11 +7,12 @@ import Config
 ------
 import GA
 import Data.BitVector (BV, fromBits, toBits, size, ones)
+import Data.Int
 import System.Environment
 import System.Process
 import Control.DeepSeq
 
-reps :: Int
+reps :: Int64
 reps = runs
 
 fitness :: FilePath -> BangVec -> IO Time
@@ -75,6 +76,7 @@ gmain projDir (pop, gens, arch) = do
     baseTime <- benchmark projDir reps
     let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
     -- putStr "Basetime is: "; print baseTime
+    putStr "Basetime is: "; print baseTime
 
   -- Pool: bit vector representing places to strict w/ all bits on
     prog <- readFile mainPath

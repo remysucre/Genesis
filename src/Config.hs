@@ -2,12 +2,13 @@ module Config where
 
 import GA
 import System.Random
+import Data.Int
 
 --
 -- CONFIG FOR FITNESS RUN
 --
 
-runs :: Int
+runs :: Int64
 runs = 1
 
 -- 
