@@ -18,7 +18,7 @@ import Criterion.Types (measTime)
 -- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
 -- Build a cabal project. Project must be configured with cabal. `projDir` is in the current dir
 buildProj :: FilePath -> IO ExitCode
-buildProj projDir = system $ "cd " ++ projDir ++ "; cabal build -v0"
+buildProj projDir = system $ "cd " ++ projDir ++ "; cabal sandbox init; cabal build"
 
 -- Time a project
 instance NFData ExitCode
