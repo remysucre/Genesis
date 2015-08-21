@@ -45,7 +45,44 @@ extra-source-files:  README.md
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
 
+executable SmallGene
+  -- .hs or .lhs file containing the Main module.
+  main-is:             Main.hs
+  
+  -- Modules included in this executable, other than Main.
+  -- other-modules: Config.hs GeneAlg.hs Profiling.hs Rewrite.hs
+  
+  -- LANGUAGE extensions used by modules in this package.
+  other-extensions:    BangPatterns, FlexibleInstances, MultiParamTypeClasses, TypeSynonymInstances
+  
+  -- Other library packages from which modules are imported.
+  build-depends:       base >=4.7 && <4.8, random >=1.0 && <1.2, GA >=1.0 && <1.1, process >=1.2 && <1.3, bitwise >=0.1 && <0.2, text >=1.2 && <1.3, strict-io >=0.2 && <0.3, deepseq >=1.3 && <1.4, haskell-src-exts >=1.14 && <1.17, directory >=1.2 && <1.3, filepath >=1.3 && <1.4, bv, mtl, uniplate, criterion
+  
+  -- Directories containing source files.
+  hs-source-dirs: srcpvar/     
+  
+  -- Base language which the package is written in.
+  default-language:    Haskell2010
 
+executable FullSearch
+  -- .hs or .lhs file containing the Main module.
+  main-is:             Main.hs
+  
+  -- Modules included in this executable, other than Main.
+  -- other-modules: Config.hs GeneAlg.hs Profiling.hs Rewrite.hs
+  
+  -- LANGUAGE extensions used by modules in this package.
+  other-extensions:    BangPatterns, FlexibleInstances, MultiParamTypeClasses, TypeSynonymInstances
+  
+  -- Other library packages from which modules are imported.
+  build-depends:       base >=4.7 && <4.8, random >=1.0 && <1.2, GA >=1.0 && <1.1, process >=1.2 && <1.3, bitwise >=0.1 && <0.2, text >=1.2 && <1.3, strict-io >=0.2 && <0.3, deepseq >=1.3 && <1.4, haskell-src-exts >=1.14 && <1.17, directory >=1.2 && <1.3, filepath >=1.3 && <1.4, bv, mtl, uniplate, criterion
+  
+  -- Directories containing source files.
+  hs-source-dirs: srcfull/     
+  
+  -- Base language which the package is written in.
+  default-language:    Haskell2010
+  
  
 executable Genesis
   -- .hs or .lhs file containing the Main module.
