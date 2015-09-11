@@ -1,16 +1,6 @@
-# Genesis
-Automatic strictness annotation for Haskell
+# haskell-thunk-leak-zoo
 
-build:
+Collection of thunk leaks caused by laziness and their treatments.
+Wiki contains discussion of each sample, whereas source and profiles can be found in their individual directories.  
 
-`stack build`
-
-run: 
-
-genesis: `bash runGenesis.sh projname pop# gen# arch#`
-
-e.g.: `bash runGenesis.sh thunk3 2 2 2`
-
-smallgenesis (only add bangs to pvar): `bash runSmall.sh projname pop# gen# arch#`
-
-fullcover: `bash runFull.sh projname`
+To profile, `cd` to directory and `bash run.sh program` where `program.hs` is source. 

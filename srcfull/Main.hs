@@ -68,10 +68,10 @@ tmain = do
   --Scores
       search bv
         | complement bv /= 0 = do {t <- fitness projDir bv; 
-                                   putStrLn $ "bits: " ++ printBits (toBits bv) ++ "time: " ++ show t; 
+                                   putStrLn $ "bits: " ++ printBits (toBits bv) ++ " time: " ++ show t; 
                                    search (bv + 1)}
         | otherwise = do {t <- fitness projDir bv; 
-                          putStrLn $ "bits: " ++ printBits (toBits bv) ++ "time: " ++ show t} 
+                          putStrLn $ "bits: " ++ printBits (toBits bv) ++ " time: " ++ show t} 
   search vecPool
 
 
