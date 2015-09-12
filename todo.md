@@ -1,0 +1,3 @@
+- [ ] run full search on monad, recurse, thread
+- [ ] parse and plot results
+- [ ] run genetics on all, parse and plot
