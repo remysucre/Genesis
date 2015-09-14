@@ -53,10 +53,12 @@ emain = do
   putStr "^git hash\n"
   [projDir, maxPopS, maxGenS, maxArchS] <- getArgs
   let [maxPop, maxGen, maxArch] = map read [maxPopS, maxGenS, maxArchS]
+  gmain projDir (maxPop, maxGen, maxArch)
+  {-
   let cfgs :: [(Int, Int, Int)]
       cfgs = [(pop, gen, arch) | pop <- [1..maxPop], gen <- [1..maxGen], arch <- [maxArch]]
   sequence_ $ map (gmain projDir) cfgs
-
+  -}
 
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
