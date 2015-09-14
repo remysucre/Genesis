@@ -9,7 +9,7 @@ instance Functor Thunk where
   fmap = liftM
 
 instance Applicative Thunk where
-  pure  = return
+  !pure  = return
   (<*>) = ap
 
 {- Imports to deal with GHC warning -}

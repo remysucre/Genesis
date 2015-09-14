@@ -96,4 +96,3 @@ gmain projDir (pop, gens, arch) = do
     --putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
     --putStrLn prog'
     writeFile mainPath prog
-    putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"
