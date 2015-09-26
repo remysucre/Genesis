@@ -19,7 +19,7 @@ executable length
   main-is:             Main.hs
   -- other-modules:       
   other-extensions:    BangPatterns
-  build-depends:       base >=4.7 && <4.8
+  build-depends:       base
   ghc-options:         -O0 
                        -rtsopts
   -- hs-source-dirs:      

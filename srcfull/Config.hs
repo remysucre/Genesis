@@ -9,7 +9,7 @@ import Data.Int
 --
 
 runs :: Int64
-runs = 1
+runs = 4
 
 -- 
 -- CONFIG FOR GENETIC ALG
