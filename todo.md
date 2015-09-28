@@ -1,6 +1,6 @@
 - [ ] make toc
 
-- [ ] run multiple times
+- [x] run multiple times
 - [x] write mymonad
 
 - [ ] show bits on axis
@@ -8,7 +8,7 @@
 - [ ] show leng of gene in title
 - [ ] record runtime
 
-- [ ] look for lib w/ strict & usage
+- [x] look for lib w/ strict & usage
 
 - [ ] redo small with opt
 
