@@ -1,3 +1,7 @@
+- [ ] TRYING PAR
+
+- [ ] par
+
 - [ ] make toc
 
 - [ ] diff shapes for gene points
