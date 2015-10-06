@@ -1,17 +1,12 @@
-- [ ] TRYING PAR
+- [ ] opt. v.s. genesis
 
-- [ ] par
+- [ ] replot full search
+
+- [ ] read stingy eval
+- [ ] profiling
 
 - [ ] make toc
 
 - [ ] diff shapes for gene points
-
-- [ ] read stingy eval
-
-- [ ] profiling
-
-- [ ] replot full search
-
-- [ ] opt. v.s. genesis
 
 - [ ] aeson
