@@ -39,7 +39,9 @@ fitness projDir bangVec = do
         seed = if useCliSeed then cliSeed else randomSeed-}
 
 main :: IO () 
-main = emain
+main = do 
+  [projDir, pop, gen, arch] <- getArgs
+  gmain projDir (read pop, read gen, read arch)
 
 test :: IO ()
 test = do
