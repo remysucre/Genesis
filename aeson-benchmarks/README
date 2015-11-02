@@ -1,0 +1,2 @@
+cabal build strict-bench
+time ./dist/build/strict-bench/strict-bench 65536 3700 json-data/jp100.json

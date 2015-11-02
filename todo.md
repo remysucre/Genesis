@@ -1,6 +1,6 @@
 - [x] opt. v.s. genesis
 
-- [ ] replot full search
+- [x] replot full search
 
 - [ ] read stingy eval
 - [ ] profiling
