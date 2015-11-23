@@ -21,7 +21,7 @@ executable aeson-benchmarks
     base,
     bytestring,
     time, 
-    criterion, 
+    -- criterion, 
     transformers, 
     text, 
     vector, 

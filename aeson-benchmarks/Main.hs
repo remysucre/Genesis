@@ -31,6 +31,7 @@ module Data.Aeson.Parser.Internal
     , eitherDecodeStrictWith
     ) where
 -}
+import Control.DeepSeq
 import Control.Monad.IO.Class (liftIO)
 import Data.Aeson.Types.Internal (IResult(..), JSONPath, Result(..), Value(..))
 --import Data.Aeson.Types.Instances (fromJSON)
@@ -511,7 +512,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 700
       blkSize = 65536
-      args = ["aeson-benchmarks/json-data/jp100.json"]
+      args = ["/home/rem/Genesis/aeson-benchmarks/json-data/jp100.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
@@ -522,7 +523,8 @@ main = do
           let refill = B.hGet h blkSize
           result <- parseWith refill json' =<< refill
           case result of
-            A.Done _ _ -> loop (good+1) bad
+            A.Done _ r -> do evaluate $ rnf r
+			     loop (good+1) bad
             _        -> loop good (bad+1)
     (good, _) <- loop 0 0
     delta <- flip diffUTCTime start `fmap` getCurrentTime
