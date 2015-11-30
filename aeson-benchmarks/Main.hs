@@ -1,6 +1,6 @@
 {-# LANGUAGE BangPatterns, CPP, OverloadedStrings #-}
 
-#define BANG
+-- #define BANG
 
 
 
@@ -525,7 +525,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 700
       blkSize = 65536
-      args = ["/h/ywang30/Genesis/aeson-benchmarks/json-data/jp100.json"]
+      args = ["./json-data/jp100.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
