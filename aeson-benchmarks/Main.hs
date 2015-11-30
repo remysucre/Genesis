@@ -1,5 +1,6 @@
 {-# LANGUAGE BangPatterns, CPP, OverloadedStrings #-}
 
+#define BANG
 
 
 
@@ -176,8 +177,11 @@ objectValues str val = do
   loop m0 = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
-    -- let !m = H.insert k v m0
+#ifdef BANG
+    let !m = H.insert k v m0
+#else
     let m = H.insert k v m0
+#endif
     ch <- A.satisfy $ \w -> w == 44 || w == 125
     if ch == 44
       then skipSpace >> loop m
@@ -197,8 +201,11 @@ array_ = {-# SCC "array_" #-} Array <$> arrayValues value
 
 array_' :: Parser Value
 array_' = {-# SCC "array_'" #-} do
+#ifdef BANG
+  !vals <- arrayValues value'
+#else
   vals <- arrayValues value'
-  -- !vals <- arrayValues value'
+#endif
   return (Array vals)
 
 
@@ -273,8 +280,11 @@ value' = do
   w <- A.peekWord8'
   case w of
     34  -> do
-                     -- !s <- A.anyWord8 *> jstring_
+#ifdef BANG
+                     !s <- A.anyWord8 *> jstring_
+#else
                      s <- A.anyWord8 *> jstring_
+#endif
                      return (String s)
     123    -> A.anyWord8 *> object_'
     91   -> A.anyWord8 *> array_'
@@ -283,8 +293,11 @@ value' = do
     110           -> string "null" *> pure Null
     _              | w >= 48 && w <= 57 || w == 45
                   -> do
-                     -- !n <- scientific
+#ifdef BANG
+                     !n <- scientific
+#else
                      n <- scientific
+#endif
                      return (Number n)
       | otherwise -> fail "not a valid json value"
 
@@ -512,7 +525,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 700
       blkSize = 65536
-      args = ["/home/rem/Genesis/aeson-benchmarks/json-data/jp100.json"]
+      args = ["/h/ywang30/Genesis/aeson-benchmarks/json-data/jp100.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
@@ -523,7 +536,8 @@ main = do
           let refill = B.hGet h blkSize
           result <- parseWith refill json' =<< refill
           case result of
-            A.Done _ r -> do evaluate $ rnf r
+            -- A.Done _ r -> do evaluate $ rnf r
+            A.Done _ _ -> 
 			     loop (good+1) bad
             _        -> loop good (bad+1)
     (good, _) <- loop 0 0
@@ -531,42 +545,3 @@ main = do
     putStrLn $ "  " ++ show good ++ " good, " ++ show delta
     let rate = fromIntegral count / realToFrac delta :: Double
     putStrLn $ "  " ++ show (round rate :: Int) ++ " per second"
-
-{-
-myDecode = decodeWith jsonEOF' fromJSON
-{-
-paaarse = do
-  let res = myDecode "[1,2,3]" :: Maybe [Integer]
-  print res
--}
-
-anotherDecode :: Int -> L.ByteString -> Maybe [Value]
-anotherDecode 0 s = myDecode s
-anotherDecode n s = (liftM2 (++)) (myDecode s) (anotherDecode (n - 1) s)
-
--- main = defaultMain [ bgroup "fib" [bench "something" $ nf anotherDecode "[1, 2, 3]"] ]
-
-fns = 
-  [ "json-data/buffer-builder.json"
-  , "json-data/dates-fract.json"
-  , "json-data/dates.json"
-  , "json-data/example.json"
-  , "json-data/geometry.json"
-  , "json-data/integers.json"
-  , "json-data/jp100.json"
-  , "json-data/jp10.json"
-  , "json-data/jp50.json"
-  , "json-data/numbers.json"
-  , "json-data/twitter100.json"
-  , "json-data/twitter10.json"
-  , "json-data/twitter1.json"
-  , "json-data/twitter20.json"
-  , "json-data/twitter50.json"]
-
-main = do 
-  fcs <- sequence $ map L.readFile fns
-  -- print fcs
-  print $ map (anotherDecode 0) fcs
-  -- defaultMain [bench "something" $ nf (map (anotherDecode 10)) fcs]
-  -- defaultMain [bench "something" $ nf (anotherDecode 10) fc]
-  -}
