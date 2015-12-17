@@ -1,36 +1,8 @@
 {-# LANGUAGE BangPatterns, CPP, OverloadedStrings #-}
 
+-- #define BANG
 
-
-
--- |
--- Module:      Data.Aeson.Parser.Internal
--- Copyright:   (c) 2011-2015 Bryan O'Sullivan
---              (c) 2011 MailRank, Inc.
--- License:     Apache
--- Maintainer:  Bryan O'Sullivan <bos@serpentine.com>
--- Stability:   experimental
--- Portability: portable
---
--- Efficiently and correctly parse a JSON string.  The string must be
--- encoded as UTF-8.
-{-
-module Data.Aeson.Parser.Internal
-    (
-    -- * Lazy parsers
-      json, jsonEOF
-    , value
-    , jstring
-    -- * Strict parsers
-    , json', jsonEOF'
-    , value'
-    -- * Helpers
-    , decodeWith
-    , decodeStrictWith
-    , eitherDecodeWith
-    , eitherDecodeStrictWith
-    ) where
--}
+import Control.DeepSeq
 import Control.Monad.IO.Class (liftIO)
 import Data.Aeson.Types.Internal (IResult(..), JSONPath, Result(..), Value(..))
 --import Data.Aeson.Types.Instances (fromJSON)
@@ -71,31 +43,10 @@ import Data.Time.Clock
 import Control.Applicative ((*>), (<$>), (<*), pure)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- | Parse a top-level JSON value.
 --
 -- The conversion of a parsed value to a Haskell value is deferred
--- until the Haskell value is needed.  This may improve performance if
+-- until the Haskell value is needed. This may improve performance if
 -- only a subset of the results of conversions are needed, but at a
 -- cost in thunk allocation.
 --
@@ -108,7 +59,7 @@ json = value
 -- | Parse a top-level JSON value.
 --
 -- This is a strict version of 'json' which avoids building up thunks
--- during parsing; it performs all conversions immediately.  Prefer
+-- during parsing; it performs all conversions immediately. Prefer
 -- this version if most of the JSON data needs to be accessed.
 --
 -- This function is an alias for 'value''. In aeson 0.8 and earlier, it
@@ -121,19 +72,6 @@ object_ :: Parser Value
 object_ = {-# SCC "object_" #-} Object <$> objectValues jstring value
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 object_' :: Parser Value
 object_' = {-# SCC "object_'" #-} do
   vals <- objectValues jstring' value'
@@ -142,27 +80,6 @@ object_' = {-# SCC "object_'" #-} do
   jstring' = do
     s <- jstring
     return s
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 objectValues :: Parser Text -> Parser Value -> Parser (H.HashMap Text Value)
 objectValues str val = do
@@ -175,32 +92,27 @@ objectValues str val = do
   loop m0 = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
-    -- let !m = H.insert k v m0
+
+
+
     let m = H.insert k v m0
+
     ch <- A.satisfy $ \w -> w == 44 || w == 125
     if ch == 44
       then skipSpace >> loop m
       else return m
 
-
-
 array_ :: Parser Value
 array_ = {-# SCC "array_" #-} Array <$> arrayValues value
 
-
-
-
-
-
-
-
 array_' :: Parser Value
 array_' = {-# SCC "array_'" #-} do
+
+
+
   vals <- arrayValues value'
-  -- !vals <- arrayValues value'
+
   return (Array vals)
-
-
 
 
 arrayValues :: Parser Value -> Parser (Vector Value)
@@ -219,14 +131,14 @@ arrayValues val = do
         else return (Vector.reverse (Vector.fromList (v:acc)))
 {-# INLINE arrayValues #-}
 
--- | Parse any JSON value.  You should usually 'json' in preference to
+-- | Parse any JSON value. You should usually 'json' in preference to
 -- this function, as this function relaxes the object-or-array
 -- requirement of RFC 4627.
 --
 -- In particular, be careful in using this function if you think your
--- code might interoperate with Javascript.  A na&#xef;ve Javascript
+-- code might interoperate with Javascript. A na&#xef;ve Javascript
 -- library that parses JSON data using @eval@ is vulnerable to attack
--- unless the encoded data represents an object or an array.  JSON
+-- unless the encoded data represents an object or an array. JSON
 -- implementations in other languages conform to that same restriction
 -- to preserve interoperability and security.
 value :: Parser Value
@@ -234,36 +146,17 @@ value = do
   skipSpace
   w <- A.peekWord8'
   case w of
-    34  -> A.anyWord8 *> (String <$> jstring_)
-    123    -> A.anyWord8 *> object_
-    91   -> A.anyWord8 *> array_
-    102           -> string "false" *> pure (Bool False)
-    116           -> string "true" *> pure (Bool True)
-    110           -> string "null" *> pure Null
-    _              | w >= 48 && w <= 57 || w == 45
+    34 -> A.anyWord8 *> (String <$> jstring_)
+    123 -> A.anyWord8 *> object_
+    91 -> A.anyWord8 *> array_
+    102 -> string "false" *> pure (Bool False)
+    116 -> string "true" *> pure (Bool True)
+    110 -> string "null" *> pure Null
+    _ | w >= 48 && w <= 57 || w == 45
                   -> Number <$> scientific
       | otherwise -> fail "not a valid json value"
 
 -- | Strict version of 'value'. See also 'json''.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 value' :: Parser Value
@@ -271,19 +164,25 @@ value' = do
   skipSpace
   w <- A.peekWord8'
   case w of
-    34  -> do
-                     -- !s <- A.anyWord8 *> jstring_
+    34 -> do
+
+
+
                      s <- A.anyWord8 *> jstring_
+
                      return (String s)
-    123    -> A.anyWord8 *> object_'
-    91   -> A.anyWord8 *> array_'
-    102           -> string "false" *> pure (Bool False)
-    116           -> string "true" *> pure (Bool True)
-    110           -> string "null" *> pure Null
-    _              | w >= 48 && w <= 57 || w == 45
+    123 -> A.anyWord8 *> object_'
+    91 -> A.anyWord8 *> array_'
+    102 -> string "false" *> pure (Bool False)
+    116 -> string "true" *> pure (Bool True)
+    110 -> string "null" *> pure Null
+    _ | w >= 48 && w <= 57 || w == 45
                   -> do
-                     -- !n <- scientific
+
+
+
                      n <- scientific
+
                      return (Number n)
       | otherwise -> fail "not a valid json value"
 
@@ -300,29 +199,18 @@ jstring_ = {-# SCC "jstring_" #-} do
   _ <- A.anyWord8
   s1 <- if isEscaped fin
         then case unescape s of
-               Right r  -> return r
+               Right r -> return r
                Left err -> fail err
         else return s
   case decodeUtf8' s1 of
-    Right r  -> return r
+    Right r -> return r
     Left err -> fail $ show err
  where
-
-
-
-
-
-
-
-
-
-
-
     isEscaped (S _ escaped) = escaped
-    startState              = S False False
+    startState = S False False
     go (S a b) c
-      | a                  = Just (S False b)
-      | c == 34  = Nothing
+      | a = Just (S False b)
+      | c == 34 = Nothing
       | otherwise = let a' = c == backslash
                     in Just (S a' (a' || b))
       where backslash = 92
@@ -360,7 +248,7 @@ unescape s = unsafePerformIO $ do
 
               escape = case B.elemIndex t "\"\\/ntbrfu" of
                          Just i -> i
-                         _      -> 255
+                         _ -> 255
           if slash /= 92 || escape == 255
             then fail "invalid JSON escape sequence"
             else
@@ -393,7 +281,7 @@ hexQuad = do
   let hex n | w >= 48 && w <= 57 = w - 48
             | w >= 97 && w <= 102 = w - 87
             | w >= 65 && w <= 70 = w - 55
-            | otherwise          = 255
+            | otherwise = 255
         where w = fromIntegral $ B.unsafeIndex s n
       a = hex 0; b = hex 1; c = hex 2; d = hex 3
   if (a .|. b .|. c .|. d) /= 255
@@ -405,8 +293,8 @@ decodeWith p to s =
     case L.parse p s of
       L.Done _ v -> case to v of
                       Success a -> Just a
-                      _         -> Nothing
-      _          -> Nothing
+                      _ -> Nothing
+      _ -> Nothing
 {-# INLINE decodeWith #-}
 
 decodeStrictWith :: Parser Value -> (Value -> Result a) -> B.ByteString
@@ -414,15 +302,15 @@ decodeStrictWith :: Parser Value -> (Value -> Result a) -> B.ByteString
 decodeStrictWith p to s =
     case either Error to (A.parseOnly p s) of
       Success a -> Just a
-      _         -> Nothing
+      _ -> Nothing
 {-# INLINE decodeStrictWith #-}
 
 eitherDecodeWith :: Parser Value -> (Value -> IResult a) -> L.ByteString
                  -> Either (JSONPath, String) a
 eitherDecodeWith p to s =
     case L.parse p s of
-      L.Done _ v     -> case to v of
-                          ISuccess a      -> Right a
+      L.Done _ v -> case to v of
+                          ISuccess a -> Right a
                           IError path msg -> Left (path, msg)
       L.Fail _ _ msg -> Left ([], msg)
 {-# INLINE eitherDecodeWith #-}
@@ -431,36 +319,36 @@ eitherDecodeStrictWith :: Parser Value -> (Value -> IResult a) -> B.ByteString
                        -> Either (JSONPath, String) a
 eitherDecodeStrictWith p to s =
     case either (IError []) to (A.parseOnly p s) of
-      ISuccess a      -> Right a
+      ISuccess a -> Right a
       IError path msg -> Left (path, msg)
 {-# INLINE eitherDecodeStrictWith #-}
 
 -- $lazy
 --
 -- The 'json' and 'value' parsers decouple identification from
--- conversion.  Identification occurs immediately (so that an invalid
+-- conversion. Identification occurs immediately (so that an invalid
 -- JSON document can be rejected as early as possible), but conversion
 -- to a Haskell value is deferred until that value is needed.
 --
 -- This decoupling can be time-efficient if only a smallish subset of
 -- elements in a JSON value need to be inspected, since the cost of
--- conversion is zero for uninspected elements.  The trade off is an
+-- conversion is zero for uninspected elements. The trade off is an
 -- increase in memory usage, due to allocation of thunks for values
 -- that have not yet been converted.
 
 -- $strict
 --
 -- The 'json'' and 'value'' parsers combine identification with
--- conversion.  They consume more CPU cycles up front, but have a
+-- conversion. They consume more CPU cycles up front, but have a
 -- smaller memory footprint.
 
 -- | Parse a top-level JSON value followed by optional whitespace and
--- end-of-input.  See also: 'json'.
+-- end-of-input. See also: 'json'.
 jsonEOF :: Parser Value
 jsonEOF = json <* skipSpace <* endOfInput
 
 -- | Parse a top-level JSON value followed by optional whitespace and
--- end-of-input.  See also: 'json''.
+-- end-of-input. See also: 'json''.
 jsonEOF' :: Parser Value
 jsonEOF' = json' <* skipSpace <* endOfInput
 
@@ -477,10 +365,10 @@ copy (PS fp off len) ptr =
 
 charUtf8 :: Char -> Ptr Word8 -> Z.ZeptoT IO (Ptr Word8)
 charUtf8 ch ptr
-  | ch < '\x80'   = liftIO $ do
+  | ch < '\x80' = liftIO $ do
                        poke ptr (fromIntegral (ord ch))
                        return $! ptr `plusPtr` 1
-  | ch < '\x800'  = liftIO $ do
+  | ch < '\x800' = liftIO $ do
                        let (a,b) = ord2 ch
                        poke ptr a
                        poke (ptr `plusPtr` 1) b
@@ -491,7 +379,7 @@ charUtf8 ch ptr
                        poke (ptr `plusPtr` 1) b
                        poke (ptr `plusPtr` 2) c
                        return $! ptr `plusPtr` 3
-  | otherwise     = liftIO $ do
+  | otherwise = liftIO $ do
                        let (a,b,c,d) = ord4 ch
                        poke ptr a
                        poke (ptr `plusPtr` 1) b
@@ -511,7 +399,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 700
       blkSize = 65536
-      args = ["aeson-benchmarks/json-data/jp100.json"]
+      args = ["./aeson-benchmarks/json-data/jp100.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
@@ -522,49 +410,11 @@ main = do
           let refill = B.hGet h blkSize
           result <- parseWith refill json' =<< refill
           case result of
+            -- A.Done _ r -> do evaluate $ rnf r
             A.Done _ _ -> loop (good+1) bad
-            _        -> loop good (bad+1)
+            _ -> loop good (bad+1)
     (good, _) <- loop 0 0
     delta <- flip diffUTCTime start `fmap` getCurrentTime
     putStrLn $ "  " ++ show good ++ " good, " ++ show delta
     let rate = fromIntegral count / realToFrac delta :: Double
     putStrLn $ "  " ++ show (round rate :: Int) ++ " per second"
-
-{-
-myDecode = decodeWith jsonEOF' fromJSON
-{-
-paaarse = do
-  let res = myDecode "[1,2,3]" :: Maybe [Integer]
-  print res
--}
-
-anotherDecode :: Int -> L.ByteString -> Maybe [Value]
-anotherDecode 0 s = myDecode s
-anotherDecode n s = (liftM2 (++)) (myDecode s) (anotherDecode (n - 1) s)
-
--- main = defaultMain [ bgroup "fib" [bench "something" $ nf anotherDecode "[1, 2, 3]"] ]
-
-fns = 
-  [ "json-data/buffer-builder.json"
-  , "json-data/dates-fract.json"
-  , "json-data/dates.json"
-  , "json-data/example.json"
-  , "json-data/geometry.json"
-  , "json-data/integers.json"
-  , "json-data/jp100.json"
-  , "json-data/jp10.json"
-  , "json-data/jp50.json"
-  , "json-data/numbers.json"
-  , "json-data/twitter100.json"
-  , "json-data/twitter10.json"
-  , "json-data/twitter1.json"
-  , "json-data/twitter20.json"
-  , "json-data/twitter50.json"]
-
-main = do 
-  fcs <- sequence $ map L.readFile fns
-  -- print fcs
-  print $ map (anotherDecode 0) fcs
-  -- defaultMain [bench "something" $ nf (map (anotherDecode 10)) fcs]
-  -- defaultMain [bench "something" $ nf (anotherDecode 10) fc]
-  -}

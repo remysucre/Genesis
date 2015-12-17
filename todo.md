@@ -1,12 +1,7 @@
-- [x] opt. v.s. genesis
+[ ] byte string / attoparsec
+[ ] aeson
+[ ] nathan gc
+[ ] aeson + bytestring, together & separate
 
-- [x] replot full search
-
-- [ ] read stingy eval
-- [ ] profiling
-
-- [ ] aeson
-
-- [ ] make toc
-
-- [ ] diff shapes for gene points
+#notes
+- maybe bangs are only helpful before names?
