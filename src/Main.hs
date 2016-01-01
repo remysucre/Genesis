@@ -23,6 +23,7 @@ fitness projDir bangVec = do
   -- Rewrite according to gene
     prog' <- editBangs mainPath (toBits bangVec) 
     rnf prog `seq` writeFile mainPath prog'
+    print prog'
   -- Benchmark new
     buildProj projDir
     newTime <- benchmark projDir reps

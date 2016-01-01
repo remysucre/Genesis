@@ -52,8 +52,8 @@ changeBangs bools x = runState (transformBiM go x) bools
            (b:bs) <- get
            put bs
            if b
-             then return (PBangPat p)
-             else return pb
+             then return pb
+             else return p
         go pp = do
            (b:bs) <- get
            put bs

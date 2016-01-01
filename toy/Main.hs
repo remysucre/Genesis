@@ -1,7 +1,4 @@
 {-# LANGUAGE BangPatterns #-}
-
-x = x + 1
-
-me (a, !b) = a
-
-main = print $ me (1, x)
+module Main (main) where
+me (a, b) = a
+main = print $ me (1, undefined)
