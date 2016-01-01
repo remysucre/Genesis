@@ -399,7 +399,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 700
       blkSize = 65536
-      args = ["./aeson-benchmarks/json-data/jp100.json"]
+      args = ["/home/rem/Genesis/aeson-benchmarks/json-data/jp100.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime

@@ -1,5 +1,7 @@
 {-# LANGUAGE BangPatterns #-}
 
-fun thing = thing + 1
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n - 1) + fib (n - 2)
 
-main = print $ fun 5
+main = print $ fib 39
