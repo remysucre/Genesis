@@ -1,6 +1,6 @@
 {-# LANGUAGE BangPatterns, CPP, OverloadedStrings #-}
 
--- #define BANG
+
 
 import Control.DeepSeq
 import Control.Monad.IO.Class (liftIO)
@@ -93,9 +93,9 @@ objectValues str val = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
 
+    let !m = H.insert k v m0
 
 
-    let m = H.insert k v m0
 
     ch <- A.satisfy $ \w -> w == 44 || w == 125
     if ch == 44
@@ -108,9 +108,9 @@ array_ = {-# SCC "array_" #-} Array <$> arrayValues value
 array_' :: Parser Value
 array_' = {-# SCC "array_'" #-} do
 
+  !vals <- arrayValues value'
 
 
-  vals <- arrayValues value'
 
   return (Array vals)
 
@@ -166,9 +166,9 @@ value' = do
   case w of
     34 -> do
 
+                     !s <- A.anyWord8 *> jstring_
 
 
-                     s <- A.anyWord8 *> jstring_
 
                      return (String s)
     123 -> A.anyWord8 *> object_'
@@ -179,9 +179,9 @@ value' = do
     _ | w >= 48 && w <= 57 || w == 45
                   -> do
 
+                     !n <- scientific
 
 
-                     n <- scientific
 
                      return (Number n)
       | otherwise -> fail "not a valid json value"
@@ -399,7 +399,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 700
       blkSize = 65536
-      args = ["/home/rem/Genesis/aeson-benchmarks/json-data/jp100.json"]
+      args = ["./json-data/jp100.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
