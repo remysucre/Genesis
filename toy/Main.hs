@@ -1,7 +1,7 @@
 {-# LANGUAGE BangPatterns #-}
 
-fib 0 = 0
-fib 1 = 1
-fib n = fib (n - 1) + fib (n - 2)
+x = x + 1
 
-main = print $ fib 39
+me (a, !b) = a
+
+main = print $ me (1, x)
