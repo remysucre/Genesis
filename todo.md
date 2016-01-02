@@ -1,6 +1,7 @@
-[ ] byte string / attoparsec
+[ ] write doc for exp
 [ ] aeson
-[ ] nathan gc
+[ ] byte string / attoparsec
+[x] nathan gc
 [ ] aeson + bytestring, together & separate
 
 #notes
