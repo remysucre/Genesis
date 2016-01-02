@@ -25,8 +25,8 @@ minN = 4
 io s n t = printf "%s of depth %d\t check: %d\n" s n t
 
 main = do
-    n <- getArgs >>= readIO . head
-    let maxN     = max (minN + 2) n
+    let n = 20
+        maxN     = max (minN + 2) n
         stretchN = maxN + 1
     -- stretch memory tree
     let c = {-# SCC "stretch" #-} check (make 0 stretchN)

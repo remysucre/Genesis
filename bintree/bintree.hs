@@ -33,7 +33,7 @@ main = do
     io "stretch tree" stretchN c
 
     -- allocate a long lived tree
-    let long    = make 0 maxN
+    let !long    = make 0 maxN
 
     -- allocate, walk, and deallocate many bottom-up binary trees
     let vs = depth minN maxN
@@ -64,7 +64,7 @@ check = check' True 0
 
 -- traverse the tree, counting up the nodes
 check' :: Bool -> Int -> Tree -> Int
-check' b z Nil          = z
+check' !b !z Nil          = z
 check' b z (Node i l r)	  = check' (not b) (check' b (if b then z+i else z-i) l) r
 
 -- build a tree
