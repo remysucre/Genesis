@@ -1,5 +1,5 @@
 [ ] write doc for exp
-[ ] aeson
+[x] aeson
 [ ] byte string / attoparsec
 [x] nathan gc
 [ ] aeson + bytestring, together & separate
