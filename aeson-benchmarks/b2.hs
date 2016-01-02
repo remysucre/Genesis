@@ -93,7 +93,7 @@ objectValues str val = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
 
-    let !m = H.insert k v m0
+    let m = H.insert k v m0
 
 
 
@@ -108,7 +108,7 @@ array_ = {-# SCC "array_" #-} Array <$> arrayValues value
 array_' :: Parser Value
 array_' = {-# SCC "array_'" #-} do
 
-  vals <- arrayValues value'
+  !vals <- arrayValues value'
 
 
 

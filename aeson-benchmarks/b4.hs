@@ -93,7 +93,7 @@ objectValues str val = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
 
-    let !m = H.insert k v m0
+    let m = H.insert k v m0
 
 
 
@@ -179,7 +179,7 @@ value' = do
     _ | w >= 48 && w <= 57 || w == 45
                   -> do
 
-                     n <- scientific
+                     !n <- scientific
 
 
 

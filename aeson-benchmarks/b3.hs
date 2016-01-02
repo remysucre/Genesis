@@ -93,7 +93,7 @@ objectValues str val = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
 
-    let !m = H.insert k v m0
+    let m = H.insert k v m0
 
 
 
@@ -166,7 +166,7 @@ value' = do
   case w of
     34 -> do
 
-                     s <- A.anyWord8 *> jstring_
+                     !s <- A.anyWord8 *> jstring_
 
 
 
