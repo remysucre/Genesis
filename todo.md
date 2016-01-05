@@ -1,8 +1,4 @@
-[ ] write doc for exp
-[x] aeson
-[ ] byte string / attoparsec
-[x] nathan gc
-[ ] aeson + bytestring, together & separate
-
-#notes
-- maybe bangs are only helpful before names?
+[ ] aeson more than one hint
+[ ] robustness
+[ ] nathan proj
+[ ] call graph
