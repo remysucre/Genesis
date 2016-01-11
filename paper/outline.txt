@@ -1,0 +1,95 @@
+Intro
+ Problem:
+  lazy functional languages & slow performance because of 
+laziness
+    -> bangs to the rescue
+  but,
+    non-experts are not able to write correct strictness 
+annotations
+    library writers can put in annotations for some usage but 
+not all
+  Solution:
+    machine learning to evolve best performing annotation 
+combination
+      why we use GA
+    benefits:
+      infers good annotations for non-expert programmers
+      customized to particular application (not one-size fits 
+all)
+      take annotations of library writers as hints
+    drawbacks:
+      may introduce non-termination or other semantic changes
+        non-terminating genes won't survive
+        use analysis to make sure all introduced bangs are 
+executed during GA.
+        static analysis/demand analysis of call graph
+        todo: is this sufficient? can we find an example where 
+things go awry
+        changes to side effects
+          users should inspect resulting program as a sanity 
+check
+      takes a long time to run (quantify)
+        isn't part of development compilation cycle
+        okay if it runs overnight, better than the alternative
+        can tune times based on GA parameters
+      useless bangs survive evolution
+        complicates understanding program
+        todo: be smarter about not adding useless bangs
+              try pruning bangs
+      not robust on all possible data sets
+         although possible to construct examples with this 
+property
+         not common in practice
+         todo: show not common in practice
+   Evaluation:
+     benchmark set is interesting and representative and as 
+large as we can do
+       different application areas (aeson, nathan, #?)
+       different programs using the same libraries (2-aseon, 
+1-nathan, #)
+       different input data sources  (#)
+     compare performance of
+        no annotations, expert annotations, inferred 
+annotations
+     inferred annotations are faster in most cases
+     robustness of inferred annotations for single program 
+over multiple datasets
+
+2. Background: what GA are, what strictness annotation are
+3. Our use of GAs to infer strictness annotations
+    genes as collection of program points
+    scores as running time and memory usage
+    parameters: number of genes, number of generations
+    starting points: naked program, expert program
+    key issue: how fast a generation can be run
+       what have we done to make this run fast?
+        make search space as small as possible
+        parallelize the benchmarking process
+    key issue: picking good values for parameters
+       how does running time vary with #genes, #generations
+    key issue: preserving semantics
+        ??
+
+4. Preserving Semantics
+    ???
+
+5. Evaluation
+    Sanity check:
+     In small cases, we find right bangs.
+    Benchmarks: what they are
+      todo: more benchmarks
+    Evaluation:
+       performance naked, expert, inferred
+        on as many programs as possible.
+       stability across data sets
+    Running time of inference as parameters and program size 
+change.
+
+6. Related Work
+    see earlier email
+7. Future work and conclusions
+
+things we'd like to be able to do
+ 1. guarantee not to change semantics (termination or side 
+effects)
+ 2. minimal bang additions
