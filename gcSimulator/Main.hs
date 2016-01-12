@@ -21,45 +21,45 @@ type StackMap = M.IntMap Stack
 
 push::Int->Int->StackMap->StackMap
 push !method !thread !stacks =  M.insert thread ( (method,S.empty) Seq.<| (f (M.lookup thread stacks))) stacks
-               where
-                f (Just !frames) = frames
-                f Nothing        = Seq.empty
+			   where
+				f (Just !frames) = frames
+				f Nothing        = Seq.empty
 
 
 pop::Int->Int->StackMap->StackMap
 pop !method !thread !stacks = M.update f  thread  stacks
-               where
-                f frames = if Seq.null frames then
-                        Nothing
-                       else 
-                        --Drop all the leaded frames not corrsepodinging to 'method'
-                        --Then drop that one as well.
-                        Just $  Seq.drop 1 $ Seq.dropWhileL (\(m,_) -> m /= method) frames
-    
+			   where
+				f frames = if Seq.null frames then
+						Nothing
+					   else 
+						--Drop all the leaded frames not corrsepodinging to 'method'
+						--Then drop that one as well.
+						Just $  Seq.drop 1 $ Seq.dropWhileL (\(m,_) -> m /= method) frames
+	
 addRoot::Int->Int->StackMap->StackMap
 addRoot !r !thread !stacks =  M.update f  thread  stacks 
-               where
-                f frames = if not $ Seq.null frames  then
-                        let (mid, roots)  = frames `Seq.index` 0 in
-                            Just $ (mid, S.insert r roots) Seq.<| Seq.drop 1 frames
-                       else
-                        Just Seq.empty
-            
-                    
+			   where
+				f frames = if not $ Seq.null frames  then
+						let (mid, roots)  = frames `Seq.index` 0 in
+							Just $ (mid, S.insert r roots) Seq.<| Seq.drop 1 frames
+					   else
+						Just Seq.empty
+			
+			        
 
 
 data Machine = Machine {
-              nursery :: !S.IntSet
-             , nursery_size :: !Int --Current size, in bytes, of the nursery
-             , nursery_limit :: !Int --How big can teh nursery get before a collection?
-             , heap_size :: !Int
-             , heap_limit :: !Int
-             , heap :: !G.Graph
-             , roots :: !S.IntSet --These contain _ONLY_ the static variable roots
-             , stacks:: !StackMap
-             , alloc :: !Int --How much total allocation?
-               }
-               deriving (Eq, Show)
+			  nursery :: !S.IntSet
+			 , nursery_size :: !Int --Current size, in bytes, of the nursery
+			 , nursery_limit :: !Int --How big can teh nursery get before a collection?
+			 , heap_size :: !Int
+			 , heap_limit :: !Int
+			 , heap :: !G.Graph
+			 , roots :: !S.IntSet --These contain _ONLY_ the static variable roots
+			 , stacks:: !StackMap
+			 , alloc :: !Int --How much total allocation?
+		       }
+		       deriving (Eq, Show)
 
 
 
@@ -73,37 +73,37 @@ initMachine = Machine S.empty 0 (4*mb) 0 (100*mb) G.empty S.empty M.empty 0
 
 simStep::(Machine,Int)->Record->(Machine,Int)
 simStep (m,!marks) (Alloc oid size ty tid) = if doCollection then
-                            (collectedMachine{alloc=alloc'}, marks+newMarks)
-                         else
-                            (m{nursery=nursery', heap_size=heap_size', heap=heap', alloc=alloc'},marks)
-                         where
-                        nursery' = S.insert oid (nursery m)
-                        heap_size' = (heap_size m + size)
-                        heap'  =  G.insNode oid (heap m)
-                        doCollection = heap_size' > heap_limit m
-                        (!collectedMachine,!newMarks) = wholeHeapCollect m
-                        alloc' = (alloc m) + size
+				       	 	(collectedMachine{alloc=alloc'}, marks+newMarks)
+					     else
+					        (m{nursery=nursery', heap_size=heap_size', heap=heap', alloc=alloc'},marks)
+					     where
+						nursery' = S.insert oid (nursery m)
+						heap_size' = (heap_size m + size)
+						heap'  =  G.insNode oid (heap m)
+						doCollection = heap_size' > heap_limit m
+						(!collectedMachine,!newMarks) = wholeHeapCollect m
+						alloc' = (alloc m) + size
 
-simStep (m,!marks) (Death oid)        = (m{nursery=nursery', heap=heap'} , marks)
-                    where
-                    nursery' = S.delete oid (nursery m)
-                    heap'    = G.delNode oid (heap m)
+simStep (m,!marks) (Death oid) 		  = (m{nursery=nursery', heap=heap'} , marks)
+				    where
+					nursery' = S.delete oid (nursery m)
+					heap'    = G.delNode oid (heap m)
 
 simStep (m,!marks) (Update old origin new tid _) = (m{heap=heap'}, marks)
-                   where
-                    !heap' = G.insEdge origin new $! G.delEdge origin old (heap m)
+				   where
+					!heap' = G.insEdge origin new $! G.delEdge origin old (heap m)
 
 simStep (m,!marks) (Entry mid rid tid) = (m{stacks=stacks'},marks)
-                     where
-                    stacks'=push mid tid (stacks m)
+				     where
+					stacks'=push mid tid (stacks m)
 
 simStep (m,!marks) (Exit mid rid tid) = (m{stacks=stacks'},marks)
-                     where
-                    !stacks' = pop mid tid (stacks m)
+				     where
+					!stacks' = pop mid tid (stacks m)
 
 simStep (m,!marks) (Root r t) = (m{stacks=addRoot r t (stacks m)} ,marks)
 
---simStep (m,!marks)    _             = (m,marks)
+--simStep (m,!marks) 	_		      = (m,marks)
 
 
 
@@ -115,66 +115,67 @@ simulate rs = List.foldl' simStep (initMachine,0) rs
 
 wholeHeapCollect::Machine->(Machine,Int)
 wholeHeapCollect m = (m{heap=heap'}, S.size markedSet)
-             where
-            !heap' = sweep markedSet (heap m)
-            mark::S.IntSet->S.IntSet->G.Graph->S.IntSet
-            mark black grey heap =  if grey == S.empty then
-                          black
-                        else
-                          mark black' grey' heap
+		     where
+			!heap' = sweep markedSet (heap m)
+			mark::S.IntSet->S.IntSet->G.Graph->S.IntSet
+			mark black grey heap =  if grey == S.empty then
+					  	  black
+						else
+						  mark black' grey' heap
 
-                        where
-                           black'::S.IntSet
-                           !black' = S.fold (\o m -> S.insert o m) black grey 
+						where
+						   black'::S.IntSet
+						   !black' = S.fold (\o m -> S.insert o m) black grey 
 
-                           grey'::S.IntSet
-                           !grey' = S.fold (S.union.neighbors) S.empty $ S.filter (not.isBlack) grey
+						   grey'::S.IntSet
+						   !grey' = S.fold (S.union.neighbors) S.empty $ S.filter (not.isBlack) grey
 
-                           neighbors::Int->S.IntSet
-                           neighbors n = S.fromList $ (fromMaybe []) $ G.neighbors n heap
+						   neighbors::Int->S.IntSet
+						   neighbors n = S.fromList $ (fromMaybe []) $ G.neighbors n heap
 
-                           isBlack::Int->Bool
-                           isBlack x = S.member x black
-        
-            markedSet = mark S.empty (getRoots m) (heap m)
-    
-            sweep::S.IntSet->G.Graph->G.Graph
-            sweep marked heap  = S.fold G.delNode heap (G.nodes heap S.\\ marked)
-            
+						   isBlack::Int->Bool
+						   isBlack x = S.member x black
+		
+			markedSet = mark S.empty (getRoots m) (heap m)
+	
+			sweep::S.IntSet->G.Graph->G.Graph
+			sweep marked heap  = S.fold G.delNode heap (G.nodes heap S.\\ marked)
+			
 
 
 getRoots::Machine->S.IntSet
 getRoots m = M.fold (S.union) S.empty (M.map stackRoots (stacks m) )
-         where
-        --get the roots for each individual stack
-        stackRoots::Stack->S.IntSet
-        stackRoots s = F.foldl (S.union) (S.empty)  (fmap ( \(method,roots)->roots) s)
+	     where
+		--get the roots for each individual stack
+		stackRoots::Stack->S.IntSet
+		stackRoots s = F.foldl (S.union) (S.empty)  (fmap ( \(method,roots)->roots) s)
 
-            
+			
 
 main = do
-    let args = ["temp.trace"]
-    contents <- L.readFile (args !! 0)
-    print $! simulate $! map (f.readRecord) $! L.lines  contents
-    
-    where
-          f::Maybe (Record,L.ByteString) -> Record
-          f  (Just (r,_))   = r
-          f      _        = error "We are all going to die."
+	-- args <- getArgs
+	let args = ["temp.trace"]
+	contents <- L.readFile (args !! 0)
+	print $! simulate $! map (f.readRecord) $! L.lines  contents
+	
+	where
+	      f::Maybe (Record,L.ByteString) -> Record
+	      f  (Just (r,_))   = r
+	      f      _        = error "We are all going to die."
 
 
-          
+	      
 
 
 data Flag =  NurserySize String
            | FileName String
-          deriving Eq
+	      deriving Eq
 
 
 data Options = Options {
-             optNurseryLimit::Int
-            ,optFileName::String
-          }
+			 optNurseryLimit::Int
+			,optFileName::String
+	      }
 
 defaults::Options
 defaults = Options{optNurseryLimit=1024*1024*4, optFileName="elephantTracks.trace"}

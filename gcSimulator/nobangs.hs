@@ -114,7 +114,7 @@ simulate rs = List.foldl' simStep (initMachine,0) rs
 wholeHeapCollect::Machine->(Machine,Int)
 wholeHeapCollect m = (m{heap=heap'}, S.size markedSet)
 		     where
-			 heap' = sweep markedSet (heap m)
+			heap' = sweep markedSet (heap m)
 			mark::S.IntSet->S.IntSet->G.Graph->S.IntSet
 			mark black grey heap =  if grey == S.empty then
 					  	  black
@@ -151,7 +151,8 @@ getRoots m = M.fold (S.union) S.empty (M.map stackRoots (stacks m) )
 			
 
 main = do
-	args <- getArgs
+	-- args <- getArgs
+	let args = ["temp.trace"]
 	contents <- L.readFile (args !! 0)
 	print $! simulate $! map (f.readRecord) $! L.lines  contents
 	

@@ -1,3 +1,5 @@
+{-# LANGUAGE BangPatterns #-}
+
 import EtParser
 import qualified Data.ByteString.Lazy.Char8 as L
 import qualified Data.IntSet as S
@@ -151,7 +153,8 @@ getRoots m = M.fold (S.union) S.empty (M.map stackRoots (stacks m) )
 			
 
 main = do
-	args <- getArgs
+	-- args <- getArgs
+	let args = ["temp.trace"]
 	contents <- L.readFile (args !! 0)
 	print $! simulate $! map (f.readRecord) $! L.lines  contents
 	
