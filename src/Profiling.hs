@@ -9,7 +9,7 @@ import System.Exit
 import System.Timeout
 import Criterion.Main
 import Criterion.Measurement
-import Criterion.Types (measTime)
+import Criterion.Types (measTime, measAllocated, fromInt)
 
 -- 
 -- PROFILING EXTERNAL PROJECT
@@ -33,6 +33,7 @@ benchmark projDir runs =  do
   exit <- timeout 170000000 $ system runProj -- TODO hardcode timeout
   case exit of
        Just ExitSuccess     -> do {(m, _) <- measure (nfIO $ system runProj) runs; 
-                                  return $! measTime m}
+                                  -- return $! measTime m}
+                                  let Just aloc = fromInt (measAllocated m) in return $! fromIntegral aloc }
        Just (ExitFailure _) -> return 100
        Nothing              -> return 100

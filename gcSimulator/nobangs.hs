@@ -152,7 +152,7 @@ getRoots m = M.fold (S.union) S.empty (M.map stackRoots (stacks m) )
 
 main = do
 	-- args <- getArgs
-	let args = ["temp.trace"]
+	let args = ["/data/remy/temp.trace"]
 	contents <- L.readFile (args !! 0)
 	print $! simulate $! map (f.readRecord) $! L.lines  contents
 	
