@@ -20,6 +20,8 @@ import Criterion.Types (measTime, measAllocated, fromInt)
 buildProj :: FilePath -> IO ExitCode
 buildProj projDir = system $ "cd " ++ projDir ++ "; cabal configure -v0; cabal build -v0"
 
+-- TODO use current working dir and save compile command in config.hs
+
 -- Time a project
 instance NFData ExitCode
   where 
@@ -37,3 +39,10 @@ benchmark projDir runs =  do
                                   let Just aloc = fromInt (measAllocated m) in return $! fromIntegral aloc }
        Just (ExitFailure _) -> return 100
        Nothing              -> return 100
+
+benchmark :: FilePath -> Int64 -> IO Double
+benchmark projDir runs =  do
+  let runProj = "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+      cleanProj = "rm timing.temp"
+  exit <- timeout 170000000 $ system runProj -- TODO hardcode timeout
+  case 
