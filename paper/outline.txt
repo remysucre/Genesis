@@ -1,3 +1,7 @@
+New ideas: 
+    - how to find good parameters for GA? 
+    - how to prove GA will guess the right bangs consistently (randomness)? 
+
 Intro
  Problem:
   lazy functional languages & slow performance because of 
