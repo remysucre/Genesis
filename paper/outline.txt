@@ -1,6 +1,7 @@
 New ideas: 
     - how to find good parameters for GA? 
     - how to prove GA will guess the right bangs consistently (randomness)? 
+    - what is the right heuristics: wall clock or gc time?
 
 Intro
  Problem:
