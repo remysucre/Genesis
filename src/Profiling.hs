@@ -7,9 +7,10 @@ import Data.Int
 import System.Process
 import System.Exit
 import System.Timeout
-import Criterion.Main
-import Criterion.Measurement
-import Criterion.Types (measTime, measAllocated, fromInt)
+import GHC.Stats
+-- import Criterion.Main
+-- import Criterion.Measurement
+-- import Criterion.Types (measTime, measAllocated, fromInt)
 
 -- 
 -- PROFILING EXTERNAL PROJECT
@@ -28,21 +29,17 @@ instance NFData ExitCode
     rnf ExitSuccess = ()
     rnf (ExitFailure _) = ()
 
-
 benchmark :: FilePath -> Int64 -> IO Double
 benchmark projDir runs =  do
-  let runProj = "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
-  exit <- timeout 170000000 $ system runProj -- TODO hardcode timeout
-  case exit of
-       Just ExitSuccess     -> do {(m, _) <- measure (nfIO $ system runProj) runs; 
-                                  -- return $! measTime m}
-                                  let Just aloc = fromInt (measAllocated m) in return $! fromIntegral aloc }
-       Just (ExitFailure _) -> return 100
-       Nothing              -> return 100
-
-benchmark :: FilePath -> Int64 -> IO Double
-benchmark projDir runs =  do
-  let runProj = "./" ++ projDir ++ "/dist/build/" ++ projDir ++ "/" ++ projDir ++ "> /dev/null"
+  let runProj = "./" ++ projDir ++ "/dist/build/" 
+                     ++ projDir ++ "/" ++ projDir 
+                     ++ " -q +RTS -ttiming.temp --machine-readable"
+                     ++ "> /dev/null"
       cleanProj = "rm timing.temp"
-  exit <- timeout 170000000 $ system runProj -- TODO hardcode timeout
-  case 
+  system runProj
+  t <- readFile "timing.temp"
+  system cleanProj
+  let s = unlines . tail . lines $ t
+      stats = read s :: [(String, String)]
+  let Just alloc = lookup "peak_megabytes_allocated" stats
+  return $ read alloc
