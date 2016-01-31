@@ -1,5 +1,7 @@
 {-# LANGUAGE BangPatterns #-}
 
+module MainTest where
+
 import EtParser
 import qualified Data.ByteString.Lazy.Char8 as L
 import qualified Data.IntSet as S
@@ -152,8 +154,9 @@ getRoots m = M.fold (S.union) S.empty (M.map stackRoots (stacks m) )
 
 			
 
-main = do
-	args <- getArgs
+maintest = do
+	-- args <- getArgs
+	let args = ["/data/remy/temp.trace"]
 	contents <- L.readFile (args !! 0)
 	print $! simulate $! map (f.readRecord) $! L.lines  contents
 	
