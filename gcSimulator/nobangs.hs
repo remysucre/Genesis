@@ -1,3 +1,5 @@
+{-# LANGUAGE BangPatterns #-}
+
 import EtParser
 import qualified Data.ByteString.Lazy.Char8 as L
 import qualified Data.IntSet as S
