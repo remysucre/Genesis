@@ -93,7 +93,7 @@ objectValues str val = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
 
-    let m = H.insert k v m0
+    let !m = H.insert k v m0
 
 
 
@@ -399,7 +399,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 1
       blkSize = 65536
-      args = ["./json-data/bigtree.json"]
+      args = ["./json-data/objects.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
