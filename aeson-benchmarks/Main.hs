@@ -399,7 +399,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 1
       blkSize = 65536
-      args = ["./json-data/objects.json"]
+      args = ["./json-data/world_bank.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
@@ -408,7 +408,7 @@ main = do
             | otherwise = do
           hSeek h AbsoluteSeek 0
           let refill = B.hGet h blkSize
-          result <- parseWith refill json' =<< refill
+          result <- parseWith refill json =<< refill
           case result of
             A.Done _ r -> do evaluate $ rnf r
                              loop (good+1) bad
