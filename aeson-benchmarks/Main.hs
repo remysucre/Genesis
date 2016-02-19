@@ -399,7 +399,7 @@ main = do
   -- (bs:cnt:args) <- getArgs
   let count = 1
       blkSize = 65536
-      args = ["./json-data/world_bank.json"]
+      args = ["./json-data/chicago3.json"]
   forM_ args $ \arg -> bracket (openFile arg ReadMode) hClose $ \h -> do
     putStrLn $ arg ++ ":"
     start <- getCurrentTime
