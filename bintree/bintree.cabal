@@ -22,5 +22,5 @@ executable bintree
   build-depends:       base >=4.8 && <4.9
   -- hs-source-dirs:      
   ghc-options:  -O2 -XBangPatterns -threaded -rtsopts -funbox-strict-fields
-                "-with-rtsopts=-N8 -K128M -H -T -s"
+                "-with-rtsopts=-N8 -K128M -H -T -ttiming.log --machine-readable"
   default-language:    Haskell2010

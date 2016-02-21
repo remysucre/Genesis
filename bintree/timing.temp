@@ -1,0 +1,2 @@
+/h/ywang30/Genesis/bintree/dist/build/bintree/bintree +RTS -N8 -K128M -H -T -ttiming.temp 
+<<ghc: 53084759704 bytes, 30860 GCs, 15726862/610884144 avg/max bytes residency (900 samples), 1588M in use, 0.006 INIT (0.005 elapsed), 239.820 MUT (44.972 elapsed), 350.350 GC (39.998 elapsed) :ghc>>

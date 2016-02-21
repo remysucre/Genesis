@@ -15,10 +15,10 @@ runs = 1
 -- CONFIG FOR GENETIC ALG
 -- 
 
-crossRate  = 0.9 :: Float
-muteRate   = 0.0 :: Float
+crossRate  = 0.6 :: Float
+muteRate   = 0.4 :: Float
 crossParam = 0.0 :: Float
-muteParam  = 0.0 :: Float
+muteParam  = 0.3 :: Float
 checkpoint = False :: Bool
 rescoreArc = False :: Bool
 
