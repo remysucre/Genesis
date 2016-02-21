@@ -48,12 +48,24 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
         g = mkStdGen seed 
         fs = take len $ randoms g :: [Float]
         bs = map (< 0.5) fs
-        s = fromBits bs `xor` pool
+        s = fromBits bs
         e1' = s .&. e1
         e2' = complement s .&. e2
         e' = e1' .|. e2'
     -- putStrLn $ "cross " ++ printBits (toBits e1) ++ " " ++ printBits (toBits e2) -- ++ "->" ++ printBits (toBits e')
     return $! Just e'
+
+  {- crossover pool _ seed e1 e2 = do 
+    let len = size pool
+        g = mkStdGen seed 
+        fs = take len $ randoms g :: [Float]
+        bs = map (< 0.5) fs
+        s = fromBits bs `xor` pool
+        e1' = s .&. e1
+        e2' = complement s .&. e2
+        e' = e1' .|. e2'
+    -- putStrLn $ "cross " ++ printBits (toBits e1) ++ " " ++ printBits (toBits e2) -- ++ "->" ++ printBits (toBits e')
+    return $! Just e' -}
 
   -- Mutation operator 
   mutation pool p seed e = do 

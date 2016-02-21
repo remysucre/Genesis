@@ -1,1 +1,10 @@
 ? one more parameter - initial mutation rate? 
+! TODO: compare with blind random search
+! TODO: make sure crossover still works, run experiments
+* NOTE: it is possible that an added bang will increase memory footprint (see
+  experiment). 
+! TODO: do we need to show annotations are additive in general? how?
+  experimenting with nofib is one way to go. 
+! TODO: change "initial mutation param" to "diversity"
+? Diogenes?
+* NOTE: people who offered help: Nathan, Dio, Tara, Miraj, John

@@ -67,8 +67,12 @@ over multiple datasets
 
 3.  To demonstrate out use of Genetic Algorithm to infer strictness annotations,
     we describe a programmer's workflow using our optimizer. 
+#TODO# talk about representation and explain
 
 ## Configuration
+
+#TODO# A configuration file looks like this, and explain. 
+
     Depending on properties of the bare program and the desired performance, the
     programmer need to provide a set of parameters as an aid to the optimizer. 
     They include the standard parameters to GA: crossover rate, crossover 
@@ -79,6 +83,7 @@ over multiple datasets
     effect. 
 
 ## The First Generation
+#TODO talk about starting point: naked v.s. expert program#
     After carefully picking the parameters, the programmer passes the orginal 
     Haskell source, annotated or not, to the optimizer. The optimizer then 
     reads from the source its strictness strategy and generates the 
@@ -95,6 +100,55 @@ over multiple datasets
     search space, whereas a smaller one reduces the cost of each generation. 
 
 ## Measuring Fitness
+    After a generation of genes are prepared, we measure each gene's fitness by
+    profiling the Haskell program it represents. Such profiles contain
+    various performance information that can be used to calculate fitness
+    scores, and the decision of which to use depends on the most critical
+    feature of performance that the programmer desires. If shrinking memory
+    footprint is on the top of the agenda, one can assign a higher score to the
+    gene which represents a program that requires less allocation. For example,
+    to use the reciprocal or negation of allocation as fitness score. If
+    runtime is of priority, one can score by the reciprocal of runtime to let
+    faster genes stand out. In the case where both memory usage and runtime
+    need improvement, GC time serves as a good choice since it correlates to
+    both heuristics. 
+    During the measurement stage, we must keep in mind that introducing
+    strictness annotations may change the program semantics and introduce
+    non-termination. Therefore we timeout program runs if they take much longer
+    than the initial program. With this strategy, we can always avoid programs
+    that don't terminate on provided inputs, but not on all. We will discuss
+    soundness in later sections with mroe details. 
+
+## Reproducing New Generations
+    The Genetic Algorithm handles reproduction of the next generations,
+    provided a mutation function and a crossover function. We take the mutation
+    rate as the percentage of genes we wish to get by mutation for the next
+    generate, whereas the crossover rate stands for the percentage of genes in
+    the next generation that come from crossover. 
+
+    We mutate each gene by flipping any bit with a probability equal to the 
+    mutation parameter. 
+    Notice that the mutation parameter discussed here differs from the 
+    initial mutation parameter, which controls the diversity of the first 
+    generation. Here the mutation parameter decides the rate of progress in 
+    each generation: the higher it is, the more significantly the genes change.
+    Just like the initial mutation parameter, the mutation parameter eventually
+    affects the performance of the optimizer. When each new generation changes
+    greatly from the previous one, the optimizer has the chance of converging
+    more quickly; whereas when the progress is small and careful, the converged
+    result can be more accurate. 
+
+    In crossover we pick half of the bits
+    for a new gene randomly from the corresponding positions in one parent, 
+    while taking the rest from the other parent. Such strategy will make
+    stronger genes more likely to survive: when a newly added annotation 
+    improves performance, its improvement is likely to persist regardless of
+    other annotations. There are less common cases where an annotation improves
+    performance on its own, but must be rid of in an optimal program. In that
+    situation, the correct combinition of annotations can be discovered by
+    future mutations that takes off the harmful bit. #TODO waving hands here#
+
+    #TODO# DISCUSS EACH CASE OF BANG BENEFIT IN DETAIL
 
 3. Our use of GAs to infer strictness annotations represents a certain
     strictness strategy #define# as a gene #define#, and their performance
