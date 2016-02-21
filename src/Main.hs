@@ -6,7 +6,8 @@ import GeneAlg
 import Config
 ------
 import GA
-import Data.BitVector (BV, fromBits, toBits, size, ones)
+import qualified Data.BitVector as B
+import Data.Bits
 import Data.Int
 import System.Environment
 import System.Process
@@ -19,16 +20,16 @@ fitness :: FilePath -> BangVec -> IO Time
 fitness projDir bangVec = do
   -- Read original
     let mainPath = projDir ++ "/Main.hs"
-    prog  <- readFile mainPath
+    !prog  <- readFile mainPath
   -- Rewrite according to gene
-    prog' <- editBangs mainPath (toBits bangVec) 
+    !prog' <- editBangs mainPath (B.toBits bangVec) 
     rnf prog `seq` writeFile mainPath prog'
     -- print prog'
   -- Benchmark new
     buildProj projDir
-    newTime <- benchmark projDir reps
+    !newTime <- benchmark projDir reps
   -- Recover original
-    writeFile mainPath prog
+    !_ <- writeFile mainPath prog
     return newTime
 
     {-
@@ -39,11 +40,19 @@ fitness projDir bangVec = do
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed-}
 
+
+{-
+main = do 
+  bangs <- readBangs "test.hs"
+  putStrLn $ "old: " ++ printBits bangs
+  let allBangs = B.complement $ B.fromBits bangs
+  p' <- editBangs "test.hs" (B.toBits allBangs)
+  writeFile "alltest.hs" p'
+-}
 main :: IO () 
 main = do 
   [projDir, pop, gen, arch] <- getArgs
   gmain projDir (read pop, read gen, read arch)
-
 test :: IO ()
 test = do
     [file] <- getArgs
@@ -81,20 +90,22 @@ gmain projDir (pop, gens, arch) = do
     -- putStr "Basetime is: "; print baseTime
     putStr "Basetime is: "; print baseTime
 
-  -- Pool: bit vector representing places to strict w/ all bits on
+  -- Pool: bit vector representing original progam
     prog <- readFile mainPath
     -- vecSize <- rnf prog `seq` placesToStrict mainPath
     bs <- readBangs mainPath
-    let vecPool = rnf prog `seq` fromBits bs
+    let !vecPool = rnf prog `seq` B.fromBits bs
+    putStrLn $ "plb: " ++ printBits bs
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
     es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir)
     let e = snd $ head es :: BangVec
-    prog' <- editBangs mainPath (toBits e)
+    prog' <- editBangs mainPath (B.toBits e)
 
   -- Write result
-    --putStrLn $ "best entity (GA): " ++ (printBits $ toBits e)
+    --putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
     --putStrLn prog'
-    writeFile mainPath prog'
+    let survivorPath = projDir ++ "Survivor.hs"
+    writeFile survivorPath prog'
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"

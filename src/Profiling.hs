@@ -37,7 +37,7 @@ benchmark projDir runs =  do
                      ++ "> /dev/null"
       cleanProj = "rm timing.temp"
   system runProj
-  t <- readFile "timing.temp"
+  !t <- readFile "timing.temp"
   system cleanProj
   let s = unlines . tail . lines $ t
       stats = read s :: [(String, String)]

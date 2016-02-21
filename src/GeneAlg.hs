@@ -30,7 +30,7 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
  
   -- Generate a random bang vector
   -- Invariant: pool is the vector with all bangs on
-  genRandom pool seed = do {Just e <- mutation pool 0.2 seed pool; return e} -- TODO hardcode mutation rate
+  genRandom pool seed = do {Just e <- mutation pool 0.4 seed pool; return e} -- TODO hardcode mutation rate
   {-genRandom pool seed = do 
     putStrLn $ printBits (toBits e)
     return $! e
@@ -83,6 +83,7 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
   score (baseTime, fitRun) bangVec = do 
     newTime <- fitRun bangVec
     let score = (newTime / baseTime)
+    putStrLn $ "bits: " ++ printBits (toBits bangVec)
     putStrLn $ "bits: " ++ printBits (toBits bangVec)
     return $! Just score
 
