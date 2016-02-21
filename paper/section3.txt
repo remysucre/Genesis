@@ -1,27 +1,54 @@
 3. Our use of GAs to infer strictness annotations represents a certain
-    strictness strategy #define# as a gene #define#, and their performance
-    as the fitness score #define#. Since any Haskell program has fixed
-    strictness points #better term?#, and adding or removing strictness
-    annotations do not change this space, we can use a bit vector of fixed
-    length to encode the program's strictness strategy. #example on a small 
-    program?# 
+    strictness strategy #BACK# as a gene #BACK#, and their performance
+    as the fitness score #BACK#. Since any Haskell program has fixed
+    a strictness space #BACK#, and adding or removing strictness
+    annotations do not change this space, we can use a unique bit vector of 
+    fixed length to encode the program's strictness strategy. For example, the
+    gene representing the following program is `101`:
+
+          module ABitLazy where
+
+          foo !(~a, !b) = a + b 
+          -- `~` highlights a place where strictness annotation can be added
  
-3.  To demonstrate out use of Genetic Algorithm to infer strictness annotations,
-    we describe a programmer's workflow using our optimizer. 
-#TODO# talk about representation and explain
+    where the two "on" bits map to the annotations before the pair and pattern
+    "b",respectively, and the "off" bit maps to the absence of annotation
+    before pattern "a". 
+
+    In choosing the performance heuristic to assign as the
+    fitness score, one has several choices, and the decision depends on the 
+    most critical feature of performance that the programmer desires. 
+    If reducing memory
+    footprint is on the top of the agenda, one can assign a higher score to the
+    gene which represents a program that requires less allocation. For example,
+    to use the reciprocal or negation of allocation as fitness score. If
+    runtime is of priority, one can score by the reciprocal or negation of runtime to let
+    faster genes stand out. In the case where both memory usage and runtime
+    need improvement, GC time serves as a good choice since it correlates to
+    both heuristics. In later sections we present experimental results on the
+    effectiveness of each heuristic. 
+
+    The big picture is, as the genes evolve
+    towards one with the highest score, we develop a strictness strategy that 
+    results in the best performing Haskell program. 
+
+## A Tour of the Optimizer
+    To demonstrate the details of our application of the genetic algorithm, we
+    describe the workflow of our optimizer. The following sections describe the
+    configuration, intitialization and iteration stages one by one. 
 
 ## Configuration
 
-#TODO# A configuration file looks like this, and explain. 
-
     Depending on properties of the bare program and the desired performance, the
     programmer need to provide a set of parameters as an aid to the optimizer. 
-    They include the standard parameters to GA: crossover rate, crossover 
-    parameter, mutation rate, mutation parameter, inital mutation parameter, 
-    population and maximum number of generation. Besides listed above, the 
-    programmer can also specify the number of iterations for each fitness run. 
-    We will discuss each parameter in following sections as they come into 
-    effect. 
+    Included are the standard parameters to GA: crossover rate, crossover 
+    parameter, mutation rate, mutation parameter, diversity, 
+    population and maximum number of generations. The 
+    programmer can also specify the number of iterations for each fitness run,
+    for a tuned balance of optimizer runtime and accuracy. A complete
+    configuration will look like graph X: 
+    
+          #TODO an example configuration file here, and explaination#
 
 ## The First Generation
 #TODO talk about starting point: naked v.s. expert program#
