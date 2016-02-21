@@ -65,6 +65,37 @@ over multiple datasets
     annotation wastes computation; uneccessary laziness causes space leak and
     increases GC work. 
 
+3.  To demonstrate out use of Genetic Algorithm to infer strictness annotations,
+    we describe a programmer's workflow using our optimizer. 
+
+## Configuration
+    Depending on properties of the bare program and the desired performance, the
+    programmer need to provide a set of parameters as an aid to the optimizer. 
+    They include the standard parameters to GA: crossover rate, crossover 
+    parameter, mutation rate, mutation parameter, inital mutation parameter, 
+    population and maximum number of generation. Besides listed above, the 
+    programmer can also specify the number of iterations for each fitness run. 
+    We will discuss each parameter in following sections as they come into 
+    effect. 
+
+## The First Generation
+    After carefully picking the parameters, the programmer passes the orginal 
+    Haskell source, annotated or not, to the optimizer. The optimizer then 
+    reads from the source its strictness strategy and generates the 
+    corresponding gene. Then the optimizer populates the initial generation
+    with that gene and its mutations, using the initial mutate paremeter. Since
+    the inital mutate parameter is interpreted as the probability of mutation
+    that happens to each gene, a higher value will result in a diverse
+    generation whereas a lower value will produce genes more closely resemble
+    the original one. Therefore when a programmer is confident with the current
+    strictness strategy, they can choose a lower value to help preserve the
+    strategy, and a higher value otherwise to explore more space. Besides the
+    initial mutate parameter, the population also affects the performance of
+    the optimizer. A larger population will guarantee better coverage of the
+    search space, whereas a smaller one reduces the cost of each generation. 
+
+## Measuring Fitness
+
 3. Our use of GAs to infer strictness annotations represents a certain
     strictness strategy #define# as a gene #define#, and their performance
     as the fitness score #define#. Since any Haskell program has fixed
@@ -139,3 +170,4 @@ things we'd like to be able to do
  1. guarantee not to change semantics (termination or side 
 effects)
  2. minimal bang additions
+ 3. learn the pattern of good strictness annotations from multiple programs. 
