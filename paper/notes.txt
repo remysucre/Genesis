@@ -8,3 +8,4 @@
 ! TODO: change "initial mutation param" to "diversity"
 ? Diogenes?
 * NOTE: people who offered help: Nathan, Dio, Tara, Miraj, John
+! TODO: talk about archive size
