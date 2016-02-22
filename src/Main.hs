@@ -104,7 +104,7 @@ gmain projDir (pop, gens, arch) = do
     prog' <- editBangs mainPath (B.toBits e)
 
   -- Write result
-    --putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
+    putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
     --putStrLn prog'
     let survivorPath = projDir ++ "Survivor.hs"
     writeFile survivorPath prog'
