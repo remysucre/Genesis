@@ -1,8 +1,9 @@
 3. Our use of GAs to infer strictness annotations represents a certain
-    strictness strategy #BACK# as a gene #BACK#, and their performance
-    as the fitness score #BACK#. Since any Haskell program has fixed
-    a strictness space #BACK#, and adding or removing strictness
-    annotations do not change this space, we can use a unique bit vector of 
+    strictness strategy #BACK# as a gene #BACK#, and the performance of the
+    corresponding program
+    as the fitness score #BACK#. Since any Haskell program has a fixed
+    strictness space #BACK#, and adding or removing strictness
+    annotations do not change this space #TODO PROOF?#, we can use a unique bit vector of 
     fixed length to encode the program's strictness strategy. For example, the
     gene representing the following program is `101`:
 
@@ -16,8 +17,8 @@
     before pattern "a". 
 
     In choosing the performance heuristic to assign as the
-    fitness score, one has several choices, and the decision depends on the 
-    most critical feature of performance that the programmer desires. 
+    fitness score, one has several options, and the decision depends on the 
+    most critical feature of performance that the programmer cares about. 
     If reducing memory
     footprint is on the top of the agenda, one can assign a higher score to the
     gene which represents a program that requires less allocation. For example,
@@ -29,7 +30,7 @@
     effectiveness of each heuristic. 
 
     The big picture is, as the genes evolve
-    towards one with the highest score, we develop a strictness strategy that 
+    towards a strongest one with the highest score, we develop a strictness strategy that 
     results in the best performing Haskell program. 
 
 ## A Tour of the Optimizer
@@ -40,26 +41,42 @@
 ## Configuration
 
     Depending on properties of the bare program and the desired performance, the
-    programmer need to provide a set of parameters as an aid to the optimizer. 
-    Included are the standard parameters to GA: crossover rate, crossover 
-    parameter, mutation rate, mutation parameter, diversity, 
+    programmer needs to provide a set of parameters as an aid to the optimizer. 
+    Among them are the standard parameters to GA: crossover rate, 
+    mutation rate, mutation parameter, diversity, 
     population and maximum number of generations. The 
     programmer can also specify the number of iterations for each fitness run,
     for a tuned balance of optimizer runtime and accuracy. A complete
-    configuration will look like graph X: 
+    configuration will look like picture X: 
     
-          #TODO an example configuration file here, and explaination#
+          CFG = 
+          { fitnessRuns = 4   -- iterations when profiling each gene
+          , maxGenNum   = 15  -- evolve for 20 generations
+          , population  = 20  -- 20 genes per generation
+          , archive     = 7   -- 7 strongest genes always survive
+          , diversity   = 0.4 -- parameter for diversity of first generation, 
+                              -- 0.0 ~ 0.5
+          , crossRate   = 0.8 -- 80% of population from crossover
+          , muteRate    = 0.2 -- 20% of population from mutation
+          , muteParam   = 0.2 -- 20% chance an annotation will flip in mutation
+          }
+
+    Each of the above parameter affects the performance of the optimizer, which 
+    we will discuss in detail in #EVALUATION# section. Intuitively, larger 
+    maxGenNum and population leads to greater coverage of the search space but
+    longer runtime; higher diversity, mutation rate and muteParam leads to larger
+    coverage but might miss close-by target #TODO be more precise#. 
+
 
 ## The First Generation
-#TODO talk about starting point: naked v.s. expert program#
     After carefully picking the parameters, the programmer passes the orginal 
     Haskell source, annotated or not, to the optimizer. The optimizer then 
     reads from the source its strictness strategy and generates the 
     corresponding gene. Then the optimizer populates the initial generation
-    with that gene and its mutations, using the initial mutate paremeter. Since
-    the inital mutate parameter is interpreted as the probability of mutation
-    that happens to each gene, a higher value will result in a diverse
-    generation whereas a lower value will produce genes more closely resemble
+    with that gene and its mutations, using the diversity paremeter. Since
+    the diversity parameter is interpreted as the probability of mutation
+    that happens to each gene, a higher value will result in a more diverse
+    generation whereas a lower one will produce genes more closely resemble
     the original one. Therefore when a programmer is confident with the current
     strictness strategy, they can choose a lower value to help preserve the
     strategy, and a higher value otherwise to explore more space. Besides the
@@ -117,56 +134,3 @@
     future mutations that takes off the harmful bit. #TODO waving hands here#
 
     #TODO# DISCUSS EACH CASE OF BANG BENEFIT IN DETAIL
-
-3. Our use of GAs to infer strictness annotations represents a certain
-    strictness strategy #define# as a gene #define#, and their performance
-    as the fitness score #define#. Since any Haskell program has fixed
-    strictness points #better term?#, and adding or removing strictness
-    annotations do not change this space, we can use a bit vector of fixed
-    length to encode the program's strictness strategy. #example on a small 
-    program?# 
-    
-    In choosing a proper heuristic as the fitness score there are
-    several options: to use the program runtime, allocation, GC time or a 
-    combination of them. #todo more on this?# This choice depends on how the
-    programmer wishes the program to perform, and the most critical heuristic
-    should be chosen as the score#if there are several important ones?#. 
-    #Should we give some advice on picking the fitness, and how?#
-
-    Besides the choice of the fitness score, there are a few other parameters
-    available to the programmer to fine-tune the genetic algorithm: population, 
-    generation, mutation rate and crossover rate. A good combination of the 
-    parameters can contribute to the productivity of genetic algorithm. 
-    #todo translate into English: #
-    - larger generation number and population covers more space but increases
-      the runtime of optimizer. 
-    - larger mutation and crossover rate searches more space, but might miss 
-      strictness points #is this true?# 
-    #TODO support by data/research in machine learning#
-    #TODO do we still want to change parameters over time?#
-
-    The workflow of our optimizer, after setting the above parameters, is as 
-    follows: the programmer will feed the initial program source, annotated or
-    not, as a starting point for the genetic algorithm. Existing annotations
-    serve as hints to the optimizer, and if the mutation rate is low #move to
-    previous seciton?#, the hints will likely survive if they contribute to 
-    performance. Then we populate an initial generation with a gene representing
-    the initial program and its mutations. Based on this initial generation, we
-    calculate the fitness score of each gene from the performance of the program
-    it represents, pick out the stronger ones among them to generate the next 
-    generation #better term?#, and repeat the process. 
-
-    Advantages: not linear to search space #evidence?#, once discovered faster 
-    programs won't get any worse
-
-    key issue: how fast a generation can be run
-       what have we done to make this run fast?
-        make search space as small as possible
-        parallelize the benchmarking process
-
-    key issue: picking good values for parameters
-       how does running time vary with #genes, #generations
-    key issue: preserving semantics
-        ??
-
-

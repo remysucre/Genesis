@@ -21,25 +21,25 @@ type Stack = Seq.Seq Frame
 type StackMap = M.IntMap Stack
  
 push :: Int -> Int -> StackMap -> StackMap
-push (!method) thread stacks
+push method thread stacks
   = M.insert thread
       ((method, S.empty) Seq.<| (f (M.lookup thread stacks)))
       stacks
-  where f (!((!(Just (!frames))))) = frames
+  where f ((!(Just frames))) = frames
         f Nothing = Seq.empty
  
 pop :: Int -> Int -> StackMap -> StackMap
-pop method thread (!stacks) = M.update f thread stacks
+pop (!method) thread stacks = M.update f thread stacks
   where f (!frames)
           = if Seq.null frames then Nothing else
               Just $ Seq.drop 1 $
-                Seq.dropWhileL (\ (!((!m), _)) -> m /= method) frames
+                Seq.dropWhileL (\ ((!m), _) -> m /= method) frames
  
 addRoot :: Int -> Int -> StackMap -> StackMap
-addRoot (!r) thread (!stacks) = M.update f thread stacks
+addRoot (!r) thread stacks = M.update f thread stacks
   where f (!frames)
           = if not $ Seq.null frames then
-              let ((!mid), roots) = frames `Seq.index` 0 in
+              let ((!mid), (!roots)) = frames `Seq.index` 0 in
                 Just $ (mid, S.insert r roots) Seq.<| Seq.drop 1 frames
               else Just Seq.empty
  
@@ -55,7 +55,7 @@ initMachine
   = Machine S.empty 0 (4 * mb) 0 (100 * mb) G.empty S.empty M.empty 0
  
 simStep :: (Machine, Int) -> Record -> (Machine, Int)
-simStep (!(m, (!marks))) (!((!(Alloc (!oid) size (!ty) (!tid)))))
+simStep ((!m), (!marks)) (!(Alloc (!oid) size ty (!tid)))
   = if doCollection then
       (collectedMachine{alloc = alloc'}, marks + newMarks) else
       (m{nursery = nursery', heap_size = heap_size', heap = heap',
@@ -64,23 +64,23 @@ simStep (!(m, (!marks))) (!((!(Alloc (!oid) size (!ty) (!tid)))))
   where nursery' = S.insert oid (nursery m)
         (!heap_size') = (heap_size m + size)
         heap' = G.insNode oid (heap m)
-        doCollection = heap_size' > heap_limit m
-        ((!collectedMachine), newMarks) = wholeHeapCollect m
-        (!alloc') = (alloc m) + size
-simStep (m, marks) (Death (!oid))
+        (!doCollection) = heap_size' > heap_limit m
+        (!((!collectedMachine), newMarks)) = wholeHeapCollect m
+        alloc' = (alloc m) + size
+simStep (!(m, (!marks))) (Death oid)
   = (m{nursery = nursery', heap = heap'}, marks)
   where nursery' = S.delete oid (nursery m)
-        (!heap') = G.delNode oid (heap m)
-simStep (!((!m), (!marks))) (Update old (!origin) new (!tid) _)
+        heap' = G.delNode oid (heap m)
+simStep (m, (!marks)) (!(Update (!old) origin new tid _))
   = (m{heap = heap'}, marks)
   where heap' = G.insEdge origin new $! G.delEdge origin old (heap m)
-simStep (!((!m), marks)) (!(Entry mid (!rid) (!tid)))
+simStep (!(m, marks)) (!(Entry (!mid) (!rid) tid))
   = (m{stacks = stacks'}, marks)
   where stacks' = push mid tid (stacks m)
-simStep (!(m, marks)) ((!(Exit (!mid) rid (!tid))))
+simStep (m, (!marks)) (!((!(Exit (!mid) (!rid) tid))))
   = (m{stacks = stacks'}, marks)
-  where (!stacks') = pop mid tid (stacks m)
-simStep (!(m, (!marks))) ((!(Root r t)))
+  where stacks' = pop mid tid (stacks m)
+simStep (!(m, marks)) ((!(Root r t)))
   = (m{stacks = addRoot r t (stacks m)}, marks)
  
 simulate :: [Record] -> (Machine, Int)
@@ -88,17 +88,17 @@ simulate rs = List.foldl' simStep (initMachine, 0) rs
  
 wholeHeapCollect :: Machine -> (Machine, Int)
 wholeHeapCollect m = (m{heap = heap'}, S.size markedSet)
-  where heap' = sweep markedSet (heap m)
+  where (!heap') = sweep markedSet (heap m)
          
         mark :: S.IntSet -> S.IntSet -> G.Graph -> S.IntSet
-        mark black (!grey) heap
+        mark (!black) grey heap
           = if grey == S.empty then black else mark black' grey' heap
           where  
                 black' :: S.IntSet
-                black' = S.fold (\ (!o) (!m) -> S.insert o m) black grey
+                (!black') = S.fold (\ (!o) m -> S.insert o m) black grey
                  
                 grey' :: S.IntSet
-                (!grey')
+                grey'
                   = S.fold (S.union . neighbors) S.empty $
                       S.filter (not . isBlack) grey
                  
@@ -106,15 +106,16 @@ wholeHeapCollect m = (m{heap = heap'}, S.size markedSet)
                 neighbors n = S.fromList $ (fromMaybe []) $ G.neighbors n heap
                  
                 isBlack :: Int -> Bool
-                isBlack (!x) = S.member x black
+                isBlack x = S.member x black
         markedSet = mark S.empty (getRoots m) (heap m)
          
         sweep :: S.IntSet -> G.Graph -> G.Graph
-        sweep (!marked) (!heap)
+        sweep marked heap
           = S.fold G.delNode heap (G.nodes heap S.\\ marked)
  
 getRoots :: Machine -> S.IntSet
-getRoots m = M.fold (S.union) S.empty (M.map stackRoots (stacks m))
+getRoots (!m)
+  = M.fold (S.union) S.empty (M.map stackRoots (stacks m))
   where  
         stackRoots :: Stack -> S.IntSet
         stackRoots (!s)
@@ -126,7 +127,7 @@ main
        print $! simulate $! map (f . readRecord) $! L.lines contents
   where  
         f :: Maybe (Record, L.ByteString) -> Record
-        f (Just (!(r, (!_)))) = r
+        f (Just (!((!r), _))) = r
         f (!_) = error "We are all going to die."
  
 data Flag = NurserySize String
@@ -143,9 +144,9 @@ defaults
  
 flagsToOptions :: [Flag] -> Options -> Options
 flagsToOptions [] (!o) = o
-flagsToOptions (!((!(NurserySize ns)) : fs)) o
+flagsToOptions (!(((!(NurserySize (!ns)))) : fs)) o
   = flagsToOptions fs o{optNurseryLimit = read ns}
-flagsToOptions (!(((!(FileName name))) : (!fs))) o
+flagsToOptions ((!((!(FileName name)))) : fs) (!o)
   = flagsToOptions fs o{optFileName = name}
  
 options :: [OptDescr Flag]
