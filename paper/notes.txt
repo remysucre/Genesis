@@ -1,11 +1,22 @@
-? one more parameter - initial mutation rate? 
-! TODO: compare with blind random search
-! TODO: make sure crossover still works, run experiments
-* NOTE: it is possible that an added bang will increase memory footprint (see
-  experiment). 
-! TODO: do we need to show annotations are additive in general? how?
-  experimenting with nofib is one way to go. 
-! TODO: change "initial mutation param" to "diversity"
-? Diogenes?
-* NOTE: people who offered help: Nathan, Dio, Tara, Miraj, John
+EXPERIMENTS:
+! TODO get data for all benchmark
+! TODO make sure crossover still works, run experiments
+! TODO compare with blind random search
+! TODO see if there's a good default for parameters (do experimant on all 
+       benchmarks) expert users can tune
+! TODO calculate from the program the search space, and our coverage space
+! TODO calculate runtime from sample profiling
+! TODO look @ ML literature for fine-tuning parameters
+
+PAPER: 
+intro: who is the tool for
+put conclusion first
+talk about why we have diversity and not only mutate rate
+interpret each parameter concretely for strictness
+explain that taking original prog doesn't get worse
+a short description before everything: it's easy, the user does very little
+explaination of diversity go to previous part
+have one sentence for each parameter in cfg section then go into detail
 ! TODO: talk about archive size
+
+* NOTE: people who offered help: Nathan, Dio, Tara, Miraj, John

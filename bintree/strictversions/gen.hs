@@ -18,8 +18,7 @@ main
        io "stretch tree" stretchN c
        let !long = make 0 maxN
        let vs = depth minN maxN
-       mapM_ (\ (!m, !d, i)) -> io (show m ++ "\t trees") d i)
-         vs
+       mapM_ (\ (!m, !d, i)) -> io (show m ++ "\t trees") d i) vs
        io "long lived tree" maxN (check long)
  
 depth :: Int -> Int -> [(Int, Int, Int)]
