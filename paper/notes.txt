@@ -1,6 +1,7 @@
 EXPERIMENTS:
+! TODO make Genesis take multiple sources
+! TODO figure out all nofib
 ! TODO get data for all benchmark
-! TODO make sure crossover still works, run experiments
 ! TODO compare with blind random search
 ! TODO see if there's a good default for parameters (do experimant on all 
        benchmarks) expert users can tune

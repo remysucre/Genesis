@@ -95,7 +95,6 @@ gmain projDir (pop, gens, arch) = do
     -- vecSize <- rnf prog `seq` placesToStrict mainPath
     bs <- readBangs mainPath
     let !vecPool = rnf prog `seq` B.fromBits bs
-    putStrLn $ "plb: " ++ printBits bs
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value

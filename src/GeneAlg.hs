@@ -84,7 +84,6 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
     newTime <- fitRun bangVec
     let score = (newTime / baseTime)
     putStrLn $ "bits: " ++ printBits (toBits bangVec)
-    putStrLn $ "bits: " ++ printBits (toBits bangVec)
     return $! Just score
 
   showGeneration _ (_,archive) = "best: " ++ (show fit)
