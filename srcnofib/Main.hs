@@ -58,8 +58,8 @@ emain = do
 
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
-    putStrLn "Optimizing " ++ projDir
-    putStrLn ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
+    putStrLn $ "Optimizing " ++ projDir
+    putStrLn $ ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
     putStrLn $ "pop: " ++ show pop 
     putStrLn $ "gens: " ++ show gens
     putStrLn $ "arch: " ++ show arch 
@@ -92,6 +92,7 @@ gmain projDir (pop, gens, arch) = do
   -- Write result
     putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
     --putStrLn prog'
-    let survivorPath = projDir ++ "Survivor.hs"
+    let survivorPath = projDir ++ "/geneticSurvivor"
     writeFile survivorPath prog'
+    writeFile mainPath prog
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"

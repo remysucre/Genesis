@@ -18,7 +18,7 @@ runs = 1
 crossRate  = 0.6 :: Float
 muteRate   = 0.4 :: Float
 crossParam = 0.0 :: Float
-muteParam  = 0.3 :: Float
+muteParam  = 0.25 :: Float
 checkpoint = False :: Bool
 rescoreArc = False :: Bool
 

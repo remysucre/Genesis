@@ -58,8 +58,8 @@ emain = do
 
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
-    putStrLn "Optimizing " ++ projDir
-    putStrLn ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
+    putStrLn $ "Optimizing " ++ projDir
+    putStrLn $ ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
     putStrLn $ "pop: " ++ show pop 
     putStrLn $ "gens: " ++ show gens
     putStrLn $ "arch: " ++ show arch 
