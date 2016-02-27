@@ -697,3 +697,21 @@ bits: 10011010000101001101100111101010101010000000010010101000010100000111010100
 best: 0.26229508196721313
 done evolving!
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+GenesisNF: Prelude.read: no parse
+
+Main.hs:15:8:
+    Could not find module ‘Data.FiniteMap’
+    Perhaps you meant Data.IntMap (from containers-0.5.5.1)
+    Use -v to see a list of the files searched for.
+<<ghc: 45005536 bytes, 13 GCs, 1818636/3468216 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [depend] Error 1
+GenesisNF: Prelude.read: no parse
+bash: line 52: 26341 Terminated              stack exec GenesisNF ~/nofib/spectral/constraints 1 1 1 >> gennofib.log 2>&1
+
+Main.hs:15:8:
+    Could not find module ‘Data.FiniteMap’
+    Perhaps you meant Data.IntMap (from containers-0.5.5.1)
+    Use -v to see a list of the files searched for.
+<<ghc: 45092656 bytes, 13 GCs, 1829084/3485400 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [depend] Error 1
+GenesisNF: Prelude.read: no parse

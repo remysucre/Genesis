@@ -23,7 +23,7 @@ buildProj :: FilePath -> IO ExitCode
 -- buildProj projDir = system $ "cd " ++ projDir ++ "; cabal configure -v0; cabal build -v0"
 buildProj projDir = do 
   setCurrentDirectory projDir
-  system "make clean -q; make boot -q"
+  system "make clean -q; make boot"
 
 -- TODO use current working dir and save compile command in config.hs
 

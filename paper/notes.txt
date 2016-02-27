@@ -1,4 +1,8 @@
 EXPERIMENTS:
+! TODO investigate nofib/err.log 
+  non-term, : fixity, bad interface?, recursive bang pattern
+! TODO investigate spectral/mandel2
+! TODO investigate spectral/constraint
 ! TODO make Genesis take multiple sources
 ! TODO figure out all nofib
 ! TODO get data for all benchmark
