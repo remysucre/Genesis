@@ -1,4 +1,42 @@
+NOTES: 
+* NoFib: 
+  - provides source for libraries and driver programs
+  - reveals semantics changes: non-termination, disallowed bangs: 
+     ...
+     where !a = b
+           !b = a
+* GA is ok: if a bang introduces non-term/is disallowed, all genes with that 
+  bang have low score, and crossover won't have that bang. In the next 
+  generation, only mutate-rate * mutate-parameter of genes may have bad bang
+  (bad bangs only reappear in mutations).
+* search space & coverage: 
+  bangs = n
+  search-space = 2 ^ n
+  coverage: parameters: gen#, pop, mute-rate, mute-param, cross-rate, diversity
+                        archive-size
+            first-gen = pop
+            total-space = pop * generation (assume all genes different)
+            probability-of-same-genes = ? 
+            probability-of-same-genes-mutation = mute-rate * (1 - mute-para) ^ n (next gen)
+            probability-of-same-genes-from-parent = cross-rate * 0.5 ^ n (next gen)
+
+            what about cross generations? 
+              - same gen reappear from same parents (strong parents survive through archive)
+              - same gen reappear from different parents
+              - same gen reappear from mutating different origin
+            These are low, like two families have the same children. Caculate 
+            probability based on similarity of parents / sources. Also caculate
+            progress (how different can genes be), which requires a measurement 
+            of similarity of genes. 
+
+* calculate: Probability of getting x bangs out of n strict points 
+              > where bangs are independent
+              > where they aren't effective individually
+              > where they are bad individually
+* people who offered help: Nathan, Dio, Tara, Miraj, John
+
 EXPERIMENTS:
+! TODO add -XBangPatterns
 ! TODO investigate nofib/err.log 
   non-term, : fixity, bad interface?, recursive bang pattern
 ! TODO investigate spectral/mandel2
@@ -23,5 +61,3 @@ a short description before everything: it's easy, the user does very little
 explaination of diversity go to previous part
 have one sentence for each parameter in cfg section then go into detail
 ! TODO: talk about archive size
-
-* NOTE: people who offered help: Nathan, Dio, Tara, Miraj, John

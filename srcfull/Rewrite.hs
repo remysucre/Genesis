@@ -13,6 +13,8 @@ import Control.Monad
 import Control.Monad.State.Strict
 import Control.DeepSeq
 
+imhere = runState
+
 findPats :: Data a => a -> [Pat]
 findPats = universeBi
 

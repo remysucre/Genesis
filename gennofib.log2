@@ -1,7 +1,0 @@
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-Optimizing /h/ywang30/nofib/spectral/triangle
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 

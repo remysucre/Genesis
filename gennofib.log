@@ -1,197 +1,36 @@
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41210464 bytes, 13 GCs, 1828696/3484624 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 41131912 bytes, 13 GCs, 1828612/3484456 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40915912 bytes, 13 GCs, 1828636/3484504 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/bernouilli
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.24
-bits: 010000000100110000
-best: 1.0
-done evolving!
-best entity (GA): 010000000100110000
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41044280 bytes, 13 GCs, 1830516/3488264 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40865400 bytes, 13 GCs, 1826472/3480176 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/exp3_8
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.27
-bits: 01000000010011000001100
-best: 1.0
-done evolving!
-best entity (GA): 01000000010011000001100
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41131160 bytes, 13 GCs, 1828600/3484432 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40858368 bytes, 13 GCs, 1828620/3484472 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40859016 bytes, 13 GCs, 1828580/3484392 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/imaginary/gen_regexps
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
 Basetime is: 0.0
-GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40890120 bytes, 13 GCs, 1828632/3484496 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40890800 bytes, 13 GCs, 1828648/3484528 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/integrate
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.328
-bits: 010000000100110000011000100
-best: 0.9329268292682926
+bits: 01000000010011000001100010010000110101000101100101100
+best: NaN
 done evolving!
-best entity (GA): 010000000100110000011000100
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -package array -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 42607152 bytes, 13 GCs, 1841352/3509504 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -package array -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 42335016 bytes, 13 GCs, 1841200/3509200 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/kahan
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.478
-bits: 0100000001001100000110
-best: 1.0
-done evolving!
-best entity (GA): 0100000001001100000110
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41013368 bytes, 13 GCs, 1829968/3487168 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40931104 bytes, 13 GCs, 1830004/3487240 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/paraffins
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.17
-bits: 01000000010011000001100010010000110101000101100101100011010000001011010011
-best: 0.9647058823529412
-done evolving!
-best entity (GA): 01000000010011000001100010010000110101000101100101100011010000001011010011
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40817424 bytes, 13 GCs, 1826544/3480320 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40862160 bytes, 13 GCs, 1826564/3480360 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/primes
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 9.0e-2
-bits: 01000000010
-best: 1.0
-done evolving!
-best entity (GA): 01000000010
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40897312 bytes, 13 GCs, 1826456/3480144 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40863120 bytes, 13 GCs, 1826568/3480368 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/queens
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 2.0e-2
-bits: 01000000010011000
-best: 1.0
-done evolving!
-best entity (GA): 01000000010011000
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40906920 bytes, 13 GCs, 1826580/3480392 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40862424 bytes, 13 GCs, 1826620/3480472 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/rfib
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 2.0e-2
-bits: 0100
-best: 1.0
-done evolving!
-best entity (GA): 0100
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40859072 bytes, 13 GCs, 1826600/3480432 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40860480 bytes, 13 GCs, 1826652/3480536 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/tak
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 1.0e-2
-bits: 01000000
-best: 1.0
-done evolving!
-best entity (GA): 01000000
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40957384 bytes, 13 GCs, 1828628/3484488 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40872704 bytes, 13 GCs, 1828644/3484520 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/wheel-sieve1
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.436
-bits: 0100000001001100000110001001000011010
-best: 0.963302752293578
-done evolving!
-best entity (GA): 0100000001001100000110001001000011010
+best entity (GA): 01000000010011000001100010010000110101000101100101100
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
 <<ghc: 40953136 bytes, 13 GCs, 1828608/3484448 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40869184 bytes, 13 GCs, 1828604/3484440 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40869184 bytes, 13 GCs, 1828604/3484440 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/imaginary/wheel-sieve2
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
-Basetime is: 0.29
+Basetime is: 0.288
 GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41216920 bytes, 13 GCs, 1828616/3484464 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40915536 bytes, 13 GCs, 1826496/3480224 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/imaginary/x2n1
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.0
-bits: 01000
-best: NaN
-done evolving!
-best entity (GA): 01000
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -syslib hbc -rtsopts -XBangPatterns -O2 -funbox-strict-fields Auxil.hs Create.hs Eval.hs Evolve.hs Header.hs Local.hs Main.hs Unify.hs
 
 on the commandline: Warning:
     -syslib is deprecated: Use -package instead
 <command line>: cannot satisfy -package hbc
     (use -v for more information)
-<<ghc: 35995784 bytes, 13 GCs, 399808/625264 avg/max bytes residency (2 samples), 27M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.04 GC (0.04 elapsed) :ghc>>
+<<ghc: 35995784 bytes, 13 GCs, 399808/625264 avg/max bytes residency (2 samples), 27M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.04 GC (0.04 elapsed) :ghc>>
 make: *** [depend] Error 1
 Optimizing /h/ywang30/nofib/real/PolyGP
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
@@ -208,7 +47,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Arch_x86.hs Generics.hs Main.hs
-<<ghc: 44355720 bytes, 13 GCs, 1860580/3547704 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 44355840 bytes, 13 GCs, 1860580/3547704 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/cacheprof
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -252,7 +91,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Assemble_loadvec.hs Assemble_stiffness.hs Basics.hs DB_interface.hs Database.hs Degrees.hs Displacement.hs Elemforce.hs Elemstif.hs Main.hs Matrix.hs Pre_assemble.hs PrintSource.hs Printuvwforce.hs VBlldecomp.hs VBmatrix.hs Vector.hs
-<<ghc: 62835960 bytes, 14 GCs, 1917212/3656168 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.11 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 62835960 bytes, 14 GCs, 1917212/3656168 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.09 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/fem
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -260,7 +99,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Asb_routs.hs C_matrix.hs Chl_decomp.hs Chl_method.hs Chl_routs.hs Defs.hs Elefac.hs Input_proc.hs Jcb_method.hs L_matrix.hs Main.hs Min_degree.hs Norm.hs Rhs_Asb_routs.hs S_Array.hs S_matrix.hs TG_iter.hs Tol_cal.hs
-<<ghc: 54592440 bytes, 14 GCs, 1937436/3697032 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.10 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 54592440 bytes, 14 GCs, 1937436/3697032 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.09 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/fluid
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -268,7 +107,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields Csg.hs Interval.hs Kolor.hs Main.hs Matrix.hs Oct.hs Patchlevel.hs Quad.hs Raster.hs Shapes.hs Types.hs Vector.hs
-<<ghc: 54761696 bytes, 17 GCs, 2588184/4044608 avg/max bytes residency (3 samples), 34M in use, 0.00 INIT (0.00 elapsed), 0.05 MUT (0.18 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+<<ghc: 54761472 bytes, 17 GCs, 2588184/4044608 avg/max bytes residency (3 samples), 34M in use, 0.00 INIT (0.00 elapsed), 0.05 MUT (0.17 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/fulsom
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -276,7 +115,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Compton.hs Consts.hs Distance.hs GamtebMain.hs GamtebType.hs InitTable.hs Main.hs Output.hs Pair.hs PhotoElec.hs RoulSplit.hs TransPort.hs Utils.hs
-<<ghc: 48439448 bytes, 14 GCs, 1873248/3570536 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.07 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 48439448 bytes, 14 GCs, 1873248/3570536 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.07 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/gamteb
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -284,7 +123,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Activity.hs GRIP.hs Graph.hs Main.hs PSlib.hs Parse.hs Pool.hs Spark.hs StdLib.hs
-<<ghc: 44055992 bytes, 14 GCs, 1813972/3453416 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.07 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 44055992 bytes, 14 GCs, 1813972/3453416 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/gg
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -300,7 +139,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields Environment.hs FiniteMap.hs Infer.hs InferMonad.hs Main.hs MaybeM.hs MyList.hs Parse.hs Shows.hs State.hs StateX.hs Substitution.hs Term.hs Type.hs
-<<ghc: 56409912 bytes, 17 GCs, 2645717/4082448 avg/max bytes residency (3 samples), 35M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.18 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+<<ghc: 56409656 bytes, 17 GCs, 2645717/4082448 avg/max bytes residency (3 samples), 35M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.18 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/infer
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -308,24 +147,9 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41798392 bytes, 13 GCs, 1831784/3490800 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 41232840 bytes, 13 GCs, 1830132/3487496 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40893432 bytes, 13 GCs, 1830312/3487856 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.07 GC (0.07 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/real/maillist
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.22
-bits: 010000000100110000011000100100001101010001011001011
-best: 0.9818181818181818
-done evolving!
-best entity (GA): 010000000100110000011000100100001101010001011001011
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41232840 bytes, 13 GCs, 1830132/3487496 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40874576 bytes, 13 GCs, 1830148/3487528 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40874520 bytes, 13 GCs, 1830148/3487528 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/parser
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -334,7 +158,7 @@ arch: 1
 Basetime is: 3.0e-2
 GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields ChargeDensity.hs Consts.hs ElecField.hs Main.hs Pic.hs PicType.hs Potential.hs PushParticle.hs Utils.hs
-<<ghc: 47430416 bytes, 14 GCs, 1813896/3453040 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 47430416 bytes, 14 GCs, 1813896/3453040 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.07 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/pic
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -350,7 +174,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Auxprogfuns.hs Diff.hs Drawfuns.hs Geomfuns.hs Help.hs Interstate.hs Layout.hs Main.hs Mgrfuns.hs Progfuns.hs Psfuns.hs Rational.hs Tilefuns.hs
-<<ghc: 49375288 bytes, 14 GCs, 1883688/3591528 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.08 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 49375288 bytes, 14 GCs, 1883688/3591528 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.07 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/reptile
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -358,7 +182,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs Rsa.hs
-<<ghc: 41074088 bytes, 13 GCs, 1838092/3503000 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 41074088 bytes, 13 GCs, 1838092/3503000 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/rsa
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -366,7 +190,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields LinearAlgebra.hs Main.hs Parse.hs ParseLib.hs RandomFix.hs Simulate.hs Types.hs
-<<ghc: 43534736 bytes, 13 GCs, 1897780/3621352 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 43534736 bytes, 13 GCs, 1897780/3621352 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/scs
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -382,43 +206,13 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Attributes.lhs Auto.hs Build_Tm.lhs Build_itrm.lhs Core_database.hs Core_datatype.hs Dcore.hs DerivedRules.hs Display.hs Editor.hs Edlib.lhs Getops.hs Globals.hs Goals.hs Kernel.hs Lookup.hs Main.hs Parse.lhs Sub_Core1.hs Sub_Core2.hs Sub_Core3.hs Sub_Core4.hs Tacticals.hs Tactics.hs Tags.hs ThmTactics.hs Token.lhs Tree.hs Type_defs.lhs Unparse.lhs Vtslib.hs X_interface.hs
-<<ghc: 66364968 bytes, 18 GCs, 2636856/4135040 avg/max bytes residency (3 samples), 35M in use, 0.00 INIT (0.00 elapsed), 0.05 MUT (0.14 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+<<ghc: 66365528 bytes, 18 GCs, 2636856/4135040 avg/max bytes residency (3 samples), 35M in use, 0.00 INIT (0.00 elapsed), 0.05 MUT (0.14 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/real/veritas
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41199712 bytes, 13 GCs, 1830724/3488160 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41145000 bytes, 13 GCs, 1830744/3488200 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/shootout/fannkuch-redux
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 5.85
-bits: 010000000100110001010001110110101000000100001000011001110110100010111100111001101011100
-best: 1.0023931623931623
-done evolving!
-best entity (GA): 010000000100110001010001110110101000000100001000011001110110100010111100111001101011100
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -O2 -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41079440 bytes, 13 GCs, 1828816/3484792 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -O2 -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40903152 bytes, 13 GCs, 1828816/3484792 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/shootout/pidigits
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.842
-bits: 01000000010011000001100010
-best: 0.9857482185273159
-done evolving!
-best entity (GA): 01000000010011000001100010
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -O2 -XBangPatterns -funfolding-use-threshold=32 -XMagicHash -XUnboxedTuples -XBangPatterns -O2 -funbox-strict-fields Main.hs
 <<ghc: 41097496 bytes, 13 GCs, 1829820/3485368 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/shootout/reverse-complement
@@ -426,7 +220,7 @@ Optimizing /h/ywang30/nofib/shootout/reverse-complement
 pop: 1
 gens: 1
 arch: 1
-Basetime is: 0.166
+Basetime is: 0.165
 GenesisNF: Parse error: Last statement in a do-block must be an expression
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -XMagicHash -O2 -fexcess-precision -XBangPatterns -O2 -funbox-strict-fields Main.hs
 <<ghc: 41813568 bytes, 13 GCs, 1834660/3495496 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
@@ -435,23 +229,8 @@ Optimizing /h/ywang30/nofib/shootout/spectral-norm
 pop: 1
 gens: 1
 arch: 1
-Basetime is: 1.592
+Basetime is: 1.594
 GenesisNF: Parse error: #
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41168040 bytes, 13 GCs, 1830116/3487464 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40866848 bytes, 13 GCs, 1830156/3487544 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/ansi
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.0
-bits: 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000
-best: NaN
-done evolving!
-best entity (GA): 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
 <<ghc: 41075168 bytes, 13 GCs, 1830036/3487304 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
@@ -471,23 +250,8 @@ pop: 1
 gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 42496216 bytes, 13 GCs, 1830020/3487272 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40905120 bytes, 13 GCs, 1829984/3487200 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/banner
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.0
-bits: 0100000001001100
-best: NaN
-done evolving!
-best entity (GA): 0100000001001100
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Checker.hs Lisplikefns.hs Main.hs Rewritefns.hs Rulebasetext.hs
-<<ghc: 43043192 bytes, 13 GCs, 1880820/3587376 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 43043192 bytes, 13 GCs, 1880820/3587376 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.07 GC (0.07 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/boyer2
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -495,7 +259,7 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41781088 bytes, 13 GCs, 1852344/3531824 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 41781088 bytes, 13 GCs, 1852344/3531824 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/calendar
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -504,7 +268,7 @@ arch: 1
 Basetime is: 1.0e-3
 GenesisNF: Parse error: #
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Auxil.hs Interval.hs Key.lhs Main.hs Prog.hs
-<<ghc: 42170296 bytes, 14 GCs, 1800056/3426328 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 42170296 bytes, 14 GCs, 1800056/3426328 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/cichelli
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -512,75 +276,41 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41678672 bytes, 13 GCs, 1830108/3487448 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 41678672 bytes, 13 GCs, 1830108/3487448 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40914496 bytes, 13 GCs, 1830068/3487368 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40914496 bytes, 13 GCs, 1830068/3487368 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/clausify
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
 Basetime is: 5.0e-2
-GenesisNF: Prelude.read: no parse
+bits: 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000001101000111101001000011001100001001110001001011001001011000000101110100001111011001001001001000001010010100001110010111100001110011100010101010100110
+best: 1.2
+done evolving!
+best entity (GA): 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000001101000111101001000011001100001001110001001011001001011000000101110100001111011001001001001000001010010100001110010111100001110011100010101010100110
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
 <<ghc: 41061608 bytes, 13 GCs, 1830204/3487640 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41004000 bytes, 13 GCs, 1830276/3487784 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 43109960 bytes, 13 GCs, 1827984/3483200 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40804160 bytes, 13 GCs, 1826460/3480152 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/cryptarithm1
+<<ghc: 41004008 bytes, 13 GCs, 1830276/3487784 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+Optimizing /h/ywang30/nofib/spectral/constraints
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
-Basetime is: 0.784
-bits: 01000000010011000001100010010000
-best: 1.0535714285714284
-done evolving!
-best entity (GA): 01000000010011000001100010010000
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -package transformers -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 42259128 bytes, 13 GCs, 1831560/3489752 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -package transformers -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41955840 bytes, 13 GCs, 1831128/3488888 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.07 GC (0.07 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/cryptarithm2
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 1.0e-2
-bits: 01000000010011000001100010010000110101000101100101100011010
-best: 1.6
-done evolving!
-best entity (GA): 01000000010011000001100010010000110101000101100101100011010
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+Basetime is: 4.198
+GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs StateMonad.hs
-<<ghc: 41651696 bytes, 13 GCs, 1841388/3509656 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+<<ghc: 41651696 bytes, 13 GCs, 1841388/3509656 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.17 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/cse
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41236640 bytes, 13 GCs, 1830040/3487312 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40915632 bytes, 13 GCs, 1830060/3487352 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.07 GC (0.07 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/eliza
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.0
-bits: 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000001101000111101001000011001100001001110001
-best: NaN
-done evolving!
-best entity (GA): 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000001101000111101001000011001100001001110001
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Knowledge.hs Main.hs Match.hs Result.hs Search.hs Table.hs
-<<ghc: 46840736 bytes, 13 GCs, 1889556/3605200 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.05 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+<<ghc: 46840736 bytes, 13 GCs, 1889556/3605200 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.12 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/expert
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
@@ -588,56 +318,30 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40844408 bytes, 13 GCs, 1829972/3487176 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+<<ghc: 41119936 bytes, 13 GCs, 1830236/3487704 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40818488 bytes, 13 GCs, 1829988/3487208 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/fish
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 1.0e-2
-bits: 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000001101
-best: 1.0
-done evolving!
-best entity (GA): 01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000001101
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41119936 bytes, 13 GCs, 1830236/3487704 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.06 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40867224 bytes, 13 GCs, 1828700/3484632 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40867224 bytes, 13 GCs, 1828700/3484632 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/gcd
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
 Basetime is: 3.0e-2
-GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40869592 bytes, 13 GCs, 1829724/3486680 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40869472 bytes, 13 GCs, 1829916/3487064 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/integer
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 2.718
-bits: 0100000001001100000110001001000011010100010110
-best: 0.9955849889624724
+bits: 01000000010011000001100010010000110101000101100101100011
+best: 1.0
 done evolving!
-best entity (GA): 0100000001001100000110001001000011010100010110
+best entity (GA): 01000000010011000001100010010000110101000101100101100011
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41942616 bytes, 13 GCs, 1830068/3487368 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 41942616 bytes, 13 GCs, 1830068/3487368 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40872720 bytes, 13 GCs, 1830052/3487336 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40872720 bytes, 13 GCs, 1830052/3487336 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/lambda
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
-Basetime is: 1.53
+Basetime is: 1.56
 GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -package text -package data -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
 <command line>: cannot satisfy -package data
@@ -651,138 +355,21 @@ gens: 1
 arch: 1
 Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41028024 bytes, 13 GCs, 1828276/3483784 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40807256 bytes, 13 GCs, 1828328/3483888 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40867392 bytes, 13 GCs, 1828260/3483752 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/lcss
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.616
-bits: 0100000001001100000110001001000011010100010110010110001101000000101101
-best: 0.25974025974025977
-done evolving!
-best entity (GA): 0100000001001100000110001001000011010100010110010110001101000000101101
->>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40807256 bytes, 13 GCs, 1828328/3483888 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40808528 bytes, 13 GCs, 1828524/3484280 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40808528 bytes, 13 GCs, 1828524/3484280 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 Optimizing /h/ywang30/nofib/spectral/life
 >>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
 pop: 1
 gens: 1
 arch: 1
 Basetime is: 0.368
-GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40968312 bytes, 13 GCs, 1830212/3487656 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40800032 bytes, 13 GCs, 1830092/3487416 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/mandel2
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 1.0e-2
-GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Board.hs Main.hs Move.hs Problem.hs Solution.hs
-<<ghc: 42887336 bytes, 13 GCs, 1877804/3581744 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/mate
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Board.hs Game.hs Main.hs Prog.hs Tree.hs Wins.hs
-<<ghc: 42312192 bytes, 13 GCs, 1880872/3587792 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/minimax
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 43145680 bytes, 13 GCs, 1830004/3487240 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40860400 bytes, 13 GCs, 1830056/3487344 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/multiplier
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.19
-GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41359680 bytes, 13 GCs, 1838416/3504064 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 41325536 bytes, 13 GCs, 1838372/3503976 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/power
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.65
-GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields CharSeq.hs Main.hs Pretty.hs
-<<ghc: 41835824 bytes, 13 GCs, 1858708/3544048 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/pretty
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40874152 bytes, 13 GCs, 1830088/3487408 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40821384 bytes, 13 GCs, 1829992/3487216 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/puzzle
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.21
-bits: 010000000100110000011000100100001101010001011001011000110100000010110100111001101011100111100000011010
-best: 0.8285714285714285
+bits: 01000000010011000001100010010000110101000101100
+best: 1.0869565217391306
 done evolving!
-best entity (GA): 010000000100110000011000100100001101010001011001011000110100000010110100111001101011100111100000011010
+best entity (GA): 01000000010011000001100010010000110101000101100
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Digraph.hs Main.hs
-<<ghc: 41211344 bytes, 13 GCs, 1839800/3506568 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/scc
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: GenesisNF: Prelude.read: no parse
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 42927568 bytes, 13 GCs, 1829996/3487224 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 40968312 bytes, 13 GCs, 1830212/3487656 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.05 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
 /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40934080 bytes, 13 GCs, 1830064/3487360 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/simple
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.35
-GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs Sort.hs
-<<ghc: 41117512 bytes, 13 GCs, 1840156/3507096 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/sorting
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: GenesisNF: Prelude.read: no parse
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40990264 bytes, 13 GCs, 1830532/3488296 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc  -M -dep-suffix "" -dep-makefile .depend -osuf o     -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields Main.hs
-<<ghc: 40973712 bytes, 13 GCs, 1830196/3487624 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
-Optimizing /h/ywang30/nofib/spectral/treejoin
->>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
-pop: 1
-gens: 1
-arch: 1
-Basetime is: 0.22
-GenesisNF: Prelude.read: no parse
+<<ghc: 40800032 bytes, 13 GCs, 1830092/3487416 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>

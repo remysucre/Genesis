@@ -1,0 +1,2430 @@
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== gen_regexps: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:15:18:
+    Couldn't match expected type ‘Char’ with actual type ‘[[[Char]]]’
+    In the pattern: ((!(a : '-')) : (!b)) : ']'
+    In the pattern: (((!(a : '-')) : (!b)) : ']') : (!rest)
+    In an equation for ‘alphabeticRule’:
+        alphabeticRule ((((!(a : '-')) : (!b)) : ']') : (!rest))
+          | a <= b = [c : z | (!c) <- [a .. b], z <- expand rest]
+          | otherwise = [c : z | c <- reverse [b .. a], z <- expand rest]
+
+Main.hs:15:26:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the pattern: '-'
+    In the pattern: a : '-'
+    In the pattern: !(a : '-')
+
+Main.hs:15:42:
+    Couldn't match expected type ‘[[[Char]]]’ with actual type ‘Char’
+    In the pattern: ']'
+    In the pattern: ((!(a : '-')) : (!b)) : ']'
+    In the pattern: (((!(a : '-')) : (!b)) : ']') : (!rest)
+
+Main.hs:16:10:
+    Couldn't match expected type ‘Char’ with actual type ‘[[Char]]’
+    In the second argument of ‘(<=)’, namely ‘b’
+    In the expression: a <= b
+
+Main.hs:16:37:
+    Couldn't match expected type ‘Char’ with actual type ‘[[Char]]’
+    In the expression: b
+    In the expression: [a .. b]
+
+Main.hs:17:18:
+    Couldn't match expected type ‘Char’ with actual type ‘[[Char]]’
+    In the first argument of ‘(:)’, namely ‘c’
+    In the expression: c : z
+
+Main.hs:17:45:
+    Couldn't match expected type ‘[[Char]]’ with actual type ‘Char’
+    In the expression: a
+    In the first argument of ‘reverse’, namely ‘[b .. a]’
+<<ghc: 83780144 bytes, 30 GCs, 5403356/10054480 avg/max bytes residency (4 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.08 MUT (0.10 elapsed), 0.13 GC (0.13 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing +RTS -M300m -RTS
+==nofib== wheel-sieve2: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+<<ghc: 193905440 bytes, 61 GCs, 8354139/18617336 avg/max bytes residency (5 samples), 42M in use, 0.00 INIT (0.00 elapsed), 0.20 MUT (0.26 elapsed), 0.26 GC (0.26 elapsed) :ghc>>
+==nofib== wheel-sieve2: size of Main.o follows...
+   text	   data	    bss	    dec	    hex	filename
+   1446	    328	      0	   1774	    6ee	Main.o
+==nofib== wheel-sieve2: time to link wheel-sieve2 follows...
+<<ghc: 38435296 bytes, 14 GCs, 409488/648824 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.59 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+==nofib== wheel-sieve2: size of wheel-sieve2 follows...
+   text	   data	    bss	    dec	    hex	filename
+ 857620	  48144	  48776	 954540	  e90ac	wheel-sieve2
+==nofib== wheel-sieve2: time to run wheel-sieve2 follows...
+../../runstdtest/runstdtest ./wheel-sieve2  -o1 wheel-sieve2.stdout -o1 wheel-sieve2.stdout  -ghc-timing  +RTS -M300m -RTS    20000;   ../../runstdtest/runstdtest ./wheel-sieve2  -o1 wheel-sieve2.stdout -o1 wheel-sieve2.stdout  -ghc-timing  +RTS -M300m -RTS    20000;   ../../runstdtest/runstdtest ./wheel-sieve2  -o1 wheel-sieve2.stdout -o1 wheel-sieve2.stdout  -ghc-timing  +RTS -M300m -RTS    20000;   ../../runstdtest/runstdtest ./wheel-sieve2  -o1 wheel-sieve2.stdout -o1 wheel-sieve2.stdout  -ghc-timing  +RTS -M300m -RTS    20000;   ../../runstdtest/runstdtest ./wheel-sieve2  -o1 wheel-sieve2.stdout -o1 wheel-sieve2.stdout  -ghc-timing  +RTS -M300m -RTS    20000;
+
+real	0m0.017s
+user	0m0.002s
+sys	0m0.003s
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+**** expected exit status 0 not seen ; got 1
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr15597	2016-02-27 11:11:18.350603546 -0500
++++ /tmp/runtest15597.2	2016-02-27 11:11:18.371603645 -0500
+@@ -0,0 +1 @@
++wheel-sieve2: <<loop>>
+
+real	0m0.006s
+user	0m0.001s
+sys	0m0.004s
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+**** expected exit status 0 not seen ; got 1
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr15613	2016-02-27 11:11:18.401603786 -0500
++++ /tmp/runtest15613.2	2016-02-27 11:11:18.412603838 -0500
+@@ -0,0 +1 @@
++wheel-sieve2: <<loop>>
+
+real	0m0.006s
+user	0m0.001s
+sys	0m0.003s
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+**** expected exit status 0 not seen ; got 1
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr15630	2016-02-27 11:11:18.452604027 -0500
++++ /tmp/runtest15630.2	2016-02-27 11:11:18.464604083 -0500
+@@ -0,0 +1 @@
++wheel-sieve2: <<loop>>
+
+real	0m0.006s
+user	0m0.002s
+sys	0m0.002s
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+**** expected exit status 0 not seen ; got 1
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr15646	2016-02-27 11:11:18.493604220 -0500
++++ /tmp/runtest15646.2	2016-02-27 11:11:18.505604276 -0500
+@@ -0,0 +1 @@
++wheel-sieve2: <<loop>>
+
+real	0m0.006s
+user	0m0.002s
+sys	0m0.002s
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+**** expected exit status 0 not seen ; got 1
+././wheel-sieve2 +RTS -M300m -RTS 20000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr15663	2016-02-27 11:11:18.537604428 -0500
++++ /tmp/runtest15663.2	2016-02-27 11:11:18.549604483 -0500
+@@ -0,0 +1 @@
++wheel-sieve2: <<loop>>
+make: *** [runtests] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -syslib hbc -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing Para +RTS -H16m
+==nofib== PolyGP: time to compile Auxil follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -syslib hbc -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Auxil.hs -o Auxil.o
+
+on the commandline: Warning:
+    -syslib is deprecated: Use -package instead
+<command line>: cannot satisfy -package hbc
+    (use -v for more information)
+<<ghc: 35964632 bytes, 13 GCs, 397656/622984 avg/max bytes residency (2 samples), 27M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.04 GC (0.04 elapsed) :ghc>>
+make: *** [Auxil.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== anna: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:7:1:
+    Bad interface file: ./BaseDefs.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:8:1:
+    Bad interface file: ./Utils.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:9:1:
+    Bad interface file: ./MyUtils.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:10:1:
+    Bad interface file: ./Parser2.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:11:1:
+    Bad interface file: ./PrettyPrint.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:12:1:
+    Bad interface file: ./LambdaLift5.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:13:1:
+    Bad interface file: ./TypeCheck5.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:14:1:
+    Bad interface file: ./EtaAbstract.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:15:1:
+    Bad interface file: ./StrictAn6.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:16:1:
+    Bad interface file: ./ReadTable.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 56875240 bytes, 15 GCs, 3320272/5269288 avg/max bytes residency (3 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.06 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== cacheprof: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:38:1:
+    Bad interface file: ./Arch_x86.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:39:1:
+    Bad interface file: ./Generics.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 95060456 bytes, 31 GCs, 3228469/4818968 avg/max bytes residency (3 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.07 MUT (0.08 elapsed), 0.09 GC (0.09 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing -stdout-binary
+==nofib== compress: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:16:1:
+    Bad interface file: ./Defaults.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:17:1:
+    Bad interface file: ./BinConv.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:18:1:
+    Bad interface file: ./Encode.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 45727864 bytes, 14 GCs, 2297816/4426040 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -fglasgow-exts -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing -stdout-binary
+==nofib== compress2: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -fglasgow-exts -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+on the commandline: Warning:
+    -fglasgow-exts is deprecated: Use individual extensions instead
+
+Main.hs:8:1:
+    Bad interface file: ./Encode.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:9:1:
+    Bad interface file: ./WriteRoutines.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 46230376 bytes, 13 GCs, 2346000/4522344 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -fglasgow-exts -package lang -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== ebnf2ps: time to compile AbstractSyntax follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -fglasgow-exts -package lang -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c AbstractSyntax.hs -o AbstractSyntax.o
+
+on the commandline: Warning:
+    -fglasgow-exts is deprecated: Use individual extensions instead
+<command line>: cannot satisfy -package lang
+    (use -v for more information)
+<<ghc: 36023880 bytes, 13 GCs, 399908/626608 avg/max bytes residency (2 samples), 27M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.04 GC (0.04 elapsed) :ghc>>
+make: *** [AbstractSyntax.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== fem: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:10:1:
+    Bad interface file: ./Database.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:11:1:
+    Bad interface file: ./Vector.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:12:1:
+    Bad interface file: ./Displacement.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:13:1:
+    Bad interface file: ./Elemforce.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:14:1:
+    Bad interface file: ./PrintSource.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:15:1:
+    Bad interface file: ./Printuvwforce.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 45364944 bytes, 13 GCs, 2327356/4485120 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== fluid: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Defs.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:4:1:
+    Bad interface file: ./S_Array.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:5:1:
+    Bad interface file: ./Norm.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:6:1:
+    Bad interface file: ./Elefac.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./Asb_routs.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:8:1:
+    Bad interface file: ./Chl_routs.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:9:1:
+    Bad interface file: ./Chl_decomp.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:10:1:
+    Bad interface file: ./Chl_method.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:11:1:
+    Bad interface file: ./Jcb_method.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:12:1:
+    Bad interface file: ./TG_iter.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:13:1:
+    Bad interface file: ./Min_degree.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:15:1:
+    Bad interface file: ./Input_proc.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 46104000 bytes, 14 GCs, 2317968/4466344 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing -stdout-binary
+==nofib== fulsom: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:22:1:
+    Bad interface file: ./Shapes.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:23:1:
+    Bad interface file: ./Raster.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:24:1:
+    Bad interface file: ./Quad.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:25:1:
+    Bad interface file: ./Oct.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:26:1:
+    Bad interface file: ./Csg.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:27:1:
+    Bad interface file: ./Interval.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:28:1:
+    Bad interface file: ./Types.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:29:1:
+    Bad interface file: ./Vector.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:30:1:
+    Bad interface file: ./Kolor.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:31:1:
+    Bad interface file: ./Matrix.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:32:1:
+    Bad interface file: ./Patchlevel.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 48468288 bytes, 15 GCs, 3284170/5222344 avg/max bytes residency (3 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.07 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== gamteb: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:6:1:
+    Bad interface file: ./GamtebMain.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 45308344 bytes, 13 GCs, 2336764/4503936 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== gg: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./GRIP.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:4:1:
+    Bad interface file: ./PSlib.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:5:1:
+    Bad interface file: ./Graph.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:6:1:
+    Bad interface file: ./Parse.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./Pool.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:8:1:
+    Bad interface file: ./Activity.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:9:1:
+    Bad interface file: ./Spark.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 49396408 bytes, 14 GCs, 2322892/4476192 avg/max bytes residency (2 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing +RTS -K1m -RTS
+==nofib== hidden: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:2:1:
+    Bad interface file: ./Numbers.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:3:1:
+    Bad interface file: ./Vectors.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:4:1:
+    Bad interface file: ./Hide.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:5:1:
+    Bad interface file: ./MyIO.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:6:1:
+    Bad interface file: ./EdgePlate.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./Postscript.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 45880864 bytes, 14 GCs, 2298448/4427304 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== infer: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Parse.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:4:1:
+    Bad interface file: ./Shows.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:5:1:
+    Bad interface file: ./Term.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:6:1:
+    Bad interface file: ./Type.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./Environment.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:8:1:
+    Bad interface file: ./InferMonad.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:9:1:
+    Bad interface file: ./Substitution.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:10:1:
+    Bad interface file: ./MaybeM.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:11:1:
+    Bad interface file: ./Infer.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 46077144 bytes, 14 GCs, 2315684/4461992 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== parser: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:47:18:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: '(' : (!c)
+    In the pattern: !('(' : (!c))
+    In the pattern: (!('(' : (!c))) : cs
+
+Main.hs:48:10:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the second argument of ‘(==)’, namely ‘':'’
+    In the expression: c == ':'
+    In a stmt of a pattern guard for
+                   an equation for ‘leLex’:
+      c == ':'
+
+Main.hs:52:79:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘(:)’, namely ‘c’
+    In the expression: c : restSym
+
+Main.hs:55:10:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the second argument of ‘(==)’, namely ‘'\\'’
+    In the expression: c == '\\'
+    In a stmt of a pattern guard for
+                   an equation for ‘leLex’:
+      c == '\\'
+
+Main.hs:55:57:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘(:)’, namely ‘c’
+    In the third argument of ‘leLex’, namely ‘(c : cs)’
+
+Main.hs:56:16:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘leIsSymbol’, namely ‘c’
+    In the expression: leIsSymbol c
+
+Main.hs:60:82:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘(:)’, namely ‘c’
+    In the expression: c : restSym
+
+Main.hs:63:57:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘(:)’, namely ‘c’
+    In the third argument of ‘leLex’, namely ‘(c : cs)’
+
+Main.hs:64:26:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: '`' : c
+    In the pattern: !('`' : c)
+    In the pattern: (!('`' : c)) : cs
+
+Main.hs:65:13:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘isAlpha’, namely ‘c’
+    In the expression: isAlpha c
+
+Main.hs:70:73:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘isUpper’, namely ‘c’
+    In the expression: isUpper c
+
+Main.hs:71:62:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the first argument of ‘(:)’, namely ‘c’
+    In the expression: c : restSym
+
+Main.hs:165:33:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: (!'\\') : '\\'
+    In the pattern: ((!'\\') : '\\') : cs
+    In the pattern: !(((!'\\') : '\\') : cs)
+
+Main.hs:165:43:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the pattern: '\\'
+    In the pattern: (!'\\') : '\\'
+    In the pattern: ((!'\\') : '\\') : cs
+
+Main.hs:168:38:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: '\\' : (!'n')
+    In the pattern: ('\\' : (!'n')) : (!cs)
+    In the pattern: !(('\\' : (!'n')) : (!cs))
+
+Main.hs:168:47:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the pattern: 'n'
+    In the pattern: !'n'
+    In the pattern: '\\' : (!'n')
+
+Main.hs:171:34:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: '\\' : 't'
+    In the pattern: !('\\' : 't')
+    In the pattern: (!('\\' : 't')) : cs
+
+Main.hs:171:41:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the pattern: 't'
+    In the pattern: '\\' : 't'
+    In the pattern: !('\\' : 't')
+
+Main.hs:174:32:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: '\\' : '"'
+    In the pattern: ('\\' : '"') : cs
+    In the pattern: !(('\\' : '"') : cs)
+
+Main.hs:174:39:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the pattern: '"'
+    In the pattern: '\\' : '"'
+    In the pattern: ('\\' : '"') : cs
+
+Main.hs:177:27:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: (!'\\') : (!'\'')
+    In the pattern: ((!'\\') : (!'\'')) : cs
+    In an equation for ‘leTakeLitChars’:
+        leTakeLitChars d (!l) n (((!'\\') : (!'\'')) : cs)
+          = case leTakeLitChars d l (n + 2) cs of {
+              (!(rest, col, left)) -> ('\'' : rest, col, left) }
+
+Main.hs:177:39:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the pattern: '\''
+    In the pattern: !'\''
+    In the pattern: (!'\\') : (!'\'')
+
+Main.hs:205:26:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the pattern: '-' : (!'}')
+    In the pattern: !('-' : (!'}'))
+    In the pattern: (!('-' : (!'}'))) : cs
+
+Main.hs:205:34:
+    Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    In the pattern: '}'
+    In the pattern: !'}'
+    In the pattern: '-' : (!'}')
+
+Main.hs:261:10:
+    Couldn't match type ‘[(Int, Int, Lex, String)]’
+                  with ‘(Int, Int, Lex, String)’
+    Expected type: Token
+      Actual type: [(Int, Int, Lex, String)]
+    In the pattern:
+      t1@((!l1), n1, w1, c1) : t2@(l2, (!n2), (!w2), (!c2))
+    In the pattern:
+      (t1@((!l1), n1, w1, c1) : t2@(l2, (!n2), (!w2), (!c2))) : ts
+    In the pattern:
+      !((t1@((!l1), n1, w1, c1) : t2@(l2, (!n2), (!w2), (!c2))) : ts)
+
+Main.hs:261:38:
+    Couldn't match expected type ‘[(Int, Int, Lex, String)]’
+                with actual type ‘(Int, Int, Lex, t0)’
+    In the pattern: (l2, (!n2), (!w2), (!c2))
+    In the pattern:
+      t1@((!l1), n1, w1, c1) : t2@(l2, (!n2), (!w2), (!c2))
+    In the pattern:
+      (t1@((!l1), n1, w1, c1) : t2@(l2, (!n2), (!w2), (!c2))) : ts
+
+Main.hs:264:35:
+    Couldn't match type ‘[(Int, Int, Lex, String)]’
+                  with ‘(Int, Int, Lex, String)’
+    Expected type: Token
+      Actual type: [(Int, Int, Lex, String)]
+    In the first argument of ‘(:)’, namely ‘t2’
+    In the second argument of ‘(:)’, namely
+      ‘t2 : laLayout l2 (n2 : s : ss) ts’
+
+Main.hs:265:41:
+    Couldn't match type ‘[(Int, Int, Lex, String)]’
+                  with ‘(Int, Int, Lex, String)’
+    Expected type: Token
+      Actual type: [(Int, Int, Lex, String)]
+    In the first argument of ‘(:)’, namely ‘t2’
+    In the third argument of ‘laLayout’, namely ‘(t2 : ts)’
+
+Main.hs:266:41:
+    Couldn't match type ‘[(Int, Int, Lex, String)]’
+                  with ‘(Int, Int, Lex, String)’
+    Expected type: Token
+      Actual type: [(Int, Int, Lex, String)]
+    In the first argument of ‘(:)’, namely ‘t2’
+    In the third argument of ‘laLayout’, namely ‘(t2 : ts)’
+
+Main.hs:268:55:
+    Couldn't match type ‘[(Int, Int, Lex, String)]’
+                  with ‘(Int, Int, Lex, String)’
+    Expected type: Token
+      Actual type: [(Int, Int, Lex, String)]
+    In the first argument of ‘(:)’, namely ‘t2’
+    In the third argument of ‘laLayout’, namely ‘(t2 : ts)’
+
+Main.hs:269:59:
+    Couldn't match type ‘[(Int, Int, Lex, String)]’
+                  with ‘(Int, Int, Lex, String)’
+    Expected type: Token
+      Actual type: [(Int, Int, Lex, String)]
+    In the first argument of ‘(:)’, namely ‘t2’
+    In the second argument of ‘(:)’, namely ‘t2 : ts’
+
+Main.hs:714:17:
+    Couldn't match type ‘[[(t1, Expr, t2)]]’ with ‘(Bool, Expr, Id)’
+    Expected type: PEntry
+      Actual type: [[(t1, Expr, t2)]]
+    In the pattern: (!(s1 : s2)) : s3
+    In the pattern: !((!(s1 : s2)) : s3)
+    In the pattern: (!((!(s1 : s2)) : s3)) : ss
+
+Main.hs:725:48:
+    Couldn't match expected type ‘(t, t5, t6)’
+                with actual type ‘[(t1, Expr, t2)]’
+    Relevant bindings include
+      opS2 :: t (bound at Main.hs:725:20)
+      valueS2 :: t5 (bound at Main.hs:725:28)
+      nameS2 :: t6 (bound at Main.hs:725:38)
+      s3 :: [[(t1, Expr, t2)]] (bound at Main.hs:714:32)
+      s2 :: [(t1, Expr, t2)] (bound at Main.hs:714:25)
+      s1 :: (t1, Expr, t2) (bound at Main.hs:714:20)
+    In the expression: s2
+    In a pattern binding: (opS2, (!valueS2), nameS2) = s2
+
+Main.hs:726:48:
+    Couldn't match expected type ‘(t, t5, t6)’
+                with actual type ‘[[(t1, Expr, t2)]]’
+    Relevant bindings include
+      opS3 :: t (bound at Main.hs:726:22)
+      valueS3 :: t5 (bound at Main.hs:726:29)
+      nameS3 :: t6 (bound at Main.hs:726:38)
+      s3 :: [[(t1, Expr, t2)]] (bound at Main.hs:714:32)
+      s2 :: [(t1, Expr, t2)] (bound at Main.hs:714:25)
+      s1 :: (t1, Expr, t2) (bound at Main.hs:714:20)
+    In the expression: s3
+    In a pattern binding: ((!opS3), valueS3, nameS3) = s3
+
+Main.hs:733:17:
+    Couldn't match type ‘[(Bool, Expr, t4)]’ with ‘(Bool, Expr, Id)’
+    Expected type: PEntry
+      Actual type: [(Bool, Expr, t4)]
+    In the pattern: (!s1) : s2
+    In the pattern: !((!s1) : s2)
+    In the pattern: (!((!s1) : s2)) : ss
+
+Main.hs:736:48:
+    Couldn't match expected type ‘(Bool, Expr, t3)’
+                with actual type ‘[(Bool, Expr, t4)]’
+    Relevant bindings include
+      nameS2 :: t3 (bound at Main.hs:736:37)
+      s2 :: [(Bool, Expr, t4)] (bound at Main.hs:733:25)
+      s1 :: (Bool, Expr, t4) (bound at Main.hs:733:19)
+    In the expression: s2
+    In a pattern binding: (!(opS2, valueS2, nameS2)) = s2
+<<ghc: 181175872 bytes, 82 GCs, 6274841/12565144 avg/max bytes residency (5 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.16 MUT (0.18 elapsed), 0.21 GC (0.21 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== pic: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:6:1:
+    Bad interface file: ./Pic.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./PicType.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 45540024 bytes, 13 GCs, 2339248/4508904 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== prolog: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:9:1:
+    Bad interface file: ./PrologData.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:10:1:
+    Bad interface file: ./Parse.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:11:1:
+    Bad interface file: ./Interact.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:12:1:
+    Bad interface file: ./Subst.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:13:1:
+    Bad interface file: ./Engine.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:14:1:
+    Bad interface file: ./Version.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 50086688 bytes, 14 GCs, 2322788/4475984 avg/max bytes residency (2 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== reptile: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:6:1:
+    Bad interface file: ./Mgrfuns.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./Progfuns.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:8:1:
+    Bad interface file: ./Auxprogfuns.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:9:1:
+    Bad interface file: ./Layout.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:10:1:
+    Bad interface file: ./Tilefuns.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 44850472 bytes, 14 GCs, 2275484/4381376 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== rsa: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:4:1:
+    Bad interface file: ./Rsa.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 43973528 bytes, 13 GCs, 2303632/4437672 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== scs: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:6:1:
+    Bad interface file: ./Parse.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./Simulate.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:8:1:
+    Bad interface file: ./Types.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 47041960 bytes, 14 GCs, 2305568/4441544 avg/max bytes residency (2 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing +RTS -M140m -RTS
+==nofib== symalg: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Ast.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:4:1:
+    Bad interface file: ./Parser.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:5:1:
+    Bad interface file: ./Env.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:6:1:
+    Bad interface file: ./Print.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./Eval.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:8:1:
+    Bad interface file: ./BasicNumber.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 47590048 bytes, 14 GCs, 2303564/4437536 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== veritas: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Auto.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:5:1:
+    Bad interface file: ./Tactics.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:7:1:
+    Bad interface file: ./ThmTactics.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:9:1:
+    Bad interface file: ./Display.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:11:1:
+    Bad interface file: ./Tree.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:13:1:
+    Bad interface file: ./Vtslib.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:15:1:
+    Bad interface file: ./Editor.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:17:1:
+    Bad interface file: ./Globals.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:19:1:
+    Bad interface file: ./Getops.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:21:1:
+    Bad interface file: ./Edlib.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:23:1:
+    Bad interface file: ./Lookup.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:25:1:
+    Bad interface file: ./X_interface.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:27:1:
+    Bad interface file: ./Goals.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:29:1:
+    Bad interface file: ./Type_defs.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:31:1:
+    Bad interface file: ./Core_datatype.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:33:1:
+    Bad interface file: ./Kernel.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:35:1:
+    Bad interface file: ./Tags.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:37:1:
+    Bad interface file: ./Parse.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 51451600 bytes, 16 GCs, 3237509/5101408 avg/max bytes residency (3 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.05 MUT (0.07 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -O2 -XBangPatterns -funfolding-use-threshold=32 -XMagicHash -XUnboxedTuples -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing -i revcomp-input2500000.txt -o1 reverse-complement.stdout
+==nofib== reverse-complement: size of reverse-complement follows...
+   text	   data	    bss	    dec	    hex	filename
+ 774009	  44296	  48872	 867177	  d3b69	reverse-complement
+==nofib== reverse-complement: time to run reverse-complement follows...
+../../runstdtest/runstdtest ./reverse-complement  -o1 reverse-complement.stdout -o1 reverse-complement.stdout  -ghc-timing  -i revcomp-input2500000.txt -o1 reverse-complement.stdout     2500000;   ../../runstdtest/runstdtest ./reverse-complement  -o1 reverse-complement.stdout -o1 reverse-complement.stdout  -ghc-timing  -i revcomp-input2500000.txt -o1 reverse-complement.stdout     2500000;   ../../runstdtest/runstdtest ./reverse-complement  -o1 reverse-complement.stdout -o1 reverse-complement.stdout  -ghc-timing  -i revcomp-input2500000.txt -o1 reverse-complement.stdout     2500000;   ../../runstdtest/runstdtest ./reverse-complement  -o1 reverse-complement.stdout -o1 reverse-complement.stdout  -ghc-timing  -i revcomp-input2500000.txt -o1 reverse-complement.stdout     2500000;   ../../runstdtest/runstdtest ./reverse-complement  -o1 reverse-complement.stdout -o1 reverse-complement.stdout  -ghc-timing  -i revcomp-input2500000.txt -o1 reverse-complement.stdout     2500000;
+
+real	0m0.187s
+user	0m0.121s
+sys	0m0.050s
+<<ghc: 90637904 bytes, 175 GCs (173 + 2), 0/0 avg/max bytes residency (0 samples), 48232 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.164 MUT (0.166 elapsed), 0.001 GC (0.001 elapsed), 0.001 GC(0) (0.001 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.173s
+user	0m0.119s
+sys	0m0.051s
+<<ghc: 90637904 bytes, 175 GCs (173 + 2), 0/0 avg/max bytes residency (0 samples), 48232 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.164 MUT (0.164 elapsed), 0.001 GC (0.001 elapsed), 0.001 GC(0) (0.001 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.174s
+user	0m0.123s
+sys	0m0.048s
+<<ghc: 90637904 bytes, 175 GCs (173 + 2), 0/0 avg/max bytes residency (0 samples), 48232 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.164 MUT (0.164 elapsed), 0.001 GC (0.001 elapsed), 0.001 GC(0) (0.001 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.178s
+user	0m0.123s
+sys	0m0.052s
+<<ghc: 90637904 bytes, 175 GCs (173 + 2), 0/0 avg/max bytes residency (0 samples), 48232 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.168 MUT (0.168 elapsed), 0.001 GC (0.001 elapsed), 0.001 GC(0) (0.001 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.174s
+user	0m0.124s
+sys	0m0.047s
+<<ghc: 90637904 bytes, 175 GCs (173 + 2), 0/0 avg/max bytes residency (0 samples), 48232 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.164 MUT (0.164 elapsed), 0.001 GC (0.001 elapsed), 0.001 GC(0) (0.001 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -XMagicHash -O2 -fexcess-precision -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== spectral-norm: size of spectral-norm follows...
+   text	   data	    bss	    dec	    hex	filename
+ 970431	  60152	  48872	1079455	 10789f	spectral-norm
+==nofib== spectral-norm: time to run spectral-norm follows...
+../../runstdtest/runstdtest ./spectral-norm  -o1 spectral-norm.stdout -o1 spectral-norm.stdout  -ghc-timing     3000;   ../../runstdtest/runstdtest ./spectral-norm  -o1 spectral-norm.stdout -o1 spectral-norm.stdout  -ghc-timing     3000;   ../../runstdtest/runstdtest ./spectral-norm  -o1 spectral-norm.stdout -o1 spectral-norm.stdout  -ghc-timing     3000;   ../../runstdtest/runstdtest ./spectral-norm  -o1 spectral-norm.stdout -o1 spectral-norm.stdout  -ghc-timing     3000;   ../../runstdtest/runstdtest ./spectral-norm  -o1 spectral-norm.stdout -o1 spectral-norm.stdout  -ghc-timing     3000;
+
+real	0m1.613s
+user	0m1.595s
+sys	0m0.003s
+<<ghc: 236440 bytes, 1 GCs (0 + 1), 0/0 avg/max bytes residency (0 samples), 3408 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 1.592 MUT (1.597 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m1.599s
+user	0m1.593s
+sys	0m0.004s
+<<ghc: 236440 bytes, 1 GCs (0 + 1), 0/0 avg/max bytes residency (0 samples), 3408 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 1.592 MUT (1.592 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m1.599s
+user	0m1.593s
+sys	0m0.004s
+<<ghc: 236440 bytes, 1 GCs (0 + 1), 0/0 avg/max bytes residency (0 samples), 3408 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 1.593 MUT (1.593 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m1.600s
+user	0m1.593s
+sys	0m0.005s
+<<ghc: 236440 bytes, 1 GCs (0 + 1), 0/0 avg/max bytes residency (0 samples), 3408 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 1.593 MUT (1.593 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m1.599s
+user	0m1.593s
+sys	0m0.005s
+<<ghc: 236440 bytes, 1 GCs (0 + 1), 0/0 avg/max bytes residency (0 samples), 3408 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 1.592 MUT (1.592 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== atom: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:49:10: Warning:
+    No explicit implementation for
+      ‘abs’ and ‘signum’
+    In the instance declaration for ‘Num [a]’
+
+Main.hs:64:3: Warning:
+    Local definition of ‘<*>’ clashes with a future Prelude name - this will become an error in GHC 7.10, under the Applicative-Monad Proposal.
+<<ghc: 245288712 bytes, 67 GCs, 8191028/17167936 avg/max bytes residency (5 samples), 39M in use, 0.00 INIT (0.00 elapsed), 0.27 MUT (0.32 elapsed), 0.25 GC (0.25 elapsed) :ghc>>
+==nofib== atom: size of Main.o follows...
+   text	   data	    bss	    dec	    hex	filename
+  11966	   1136	      0	  13102	   332e	Main.o
+==nofib== atom: time to link atom follows...
+<<ghc: 38432152 bytes, 14 GCs, 409268/648608 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.58 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+==nofib== atom: size of atom follows...
+   text	   data	    bss	    dec	    hex	filename
+ 919743	  52728	  48776	1021247	  f953f	atom
+==nofib== atom: time to run atom follows...
+../../runstdtest/runstdtest ./atom  -o1 atom.stdout -o1 atom.stdout  -ghc-timing     1000;   ../../runstdtest/runstdtest ./atom  -o1 atom.stdout -o1 atom.stdout  -ghc-timing     1000;   ../../runstdtest/runstdtest ./atom  -o1 atom.stdout -o1 atom.stdout  -ghc-timing     1000;   ../../runstdtest/runstdtest ./atom  -o1 atom.stdout -o1 atom.stdout  -ghc-timing     1000;   ../../runstdtest/runstdtest ./atom  -o1 atom.stdout -o1 atom.stdout  -ghc-timing     1000;
+
+real	1m0.942s
+user	0m46.118s
+sys	0m14.795s
+././atom 1000 < /dev/null
+**** expected exit status 0 not seen ; got 2
+././atom 1000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr23613	2016-02-27 11:14:56.172629969 -0500
++++ /tmp/runtest23613.2	2016-02-27 11:15:57.132916830 -0500
+@@ -0,0 +1,2 @@
++Stack space overflow: current size 33632 bytes.
++Use `+RTS -Ksize -RTS' to increase it.
+
+real	1m1.467s
+user	0m46.741s
+sys	0m14.713s
+././atom 1000 < /dev/null
+**** expected exit status 0 not seen ; got 2
+././atom 1000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr23814	2016-02-27 11:15:57.171917014 -0500
++++ /tmp/runtest23814.2	2016-02-27 11:16:58.666206219 -0500
+@@ -0,0 +1,2 @@
++Stack space overflow: current size 33632 bytes.
++Use `+RTS -Ksize -RTS' to increase it.
+
+real	1m1.692s
+user	0m47.216s
+sys	0m14.463s
+././atom 1000 < /dev/null
+**** expected exit status 0 not seen ; got 2
+././atom 1000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr24026	2016-02-27 11:16:58.702206388 -0500
++++ /tmp/runtest24026.2	2016-02-27 11:18:00.456496645 -0500
+@@ -0,0 +1,2 @@
++Stack space overflow: current size 33632 bytes.
++Use `+RTS -Ksize -RTS' to increase it.
+
+real	1m2.083s
+user	0m47.780s
+sys	0m14.291s
+././atom 1000 < /dev/null
+**** expected exit status 0 not seen ; got 2
+././atom 1000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr24139	2016-02-27 11:18:00.494496823 -0500
++++ /tmp/runtest24139.2	2016-02-27 11:19:02.599788561 -0500
+@@ -0,0 +1,2 @@
++Stack space overflow: current size 33632 bytes.
++Use `+RTS -Ksize -RTS' to increase it.
+
+real	1m1.202s
+user	0m46.608s
+sys	0m14.581s
+././atom 1000 < /dev/null
+**** expected exit status 0 not seen ; got 2
+././atom 1000 < /dev/null
+expected stderr not matched by reality
+--- /tmp/no_stderr24318	2016-02-27 11:19:02.636788736 -0500
++++ /tmp/runtest24318.2	2016-02-27 11:20:03.875076237 -0500
+@@ -0,0 +1,2 @@
++Stack space overflow: current size 33632 bytes.
++Use `+RTS -Ksize -RTS' to increase it.
+make: *** [runtests] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== awards: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:30:1:
+    Bad interface file: ./QSort.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 49285104 bytes, 14 GCs, 2346728/4523864 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.06 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== boyer2: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:19:1:
+    Bad interface file: ./Lisplikefns.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:20:1:
+    Bad interface file: ./Rewritefns.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:21:1:
+    Bad interface file: ./Rulebasetext.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:22:1:
+    Bad interface file: ./Checker.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 46204128 bytes, 13 GCs, 2323104/4476616 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -cpp -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== calendar: size of calendar follows...
+   text	   data	    bss	    dec	    hex	filename
+ 887369	  53816	  48872	 990057	  f1b69	calendar
+==nofib== calendar: time to run calendar follows...
+../../runstdtest/runstdtest ./calendar  -o1 calendar.stdout -o1 calendar.stdout  -ghc-timing     1993 1;   ../../runstdtest/runstdtest ./calendar  -o1 calendar.stdout -o1 calendar.stdout  -ghc-timing     1993 1;   ../../runstdtest/runstdtest ./calendar  -o1 calendar.stdout -o1 calendar.stdout  -ghc-timing     1993 1;   ../../runstdtest/runstdtest ./calendar  -o1 calendar.stdout -o1 calendar.stdout  -ghc-timing     1993 1;   ../../runstdtest/runstdtest ./calendar  -o1 calendar.stdout -o1 calendar.stdout  -ghc-timing     1993 1;
+
+real	0m0.025s
+user	0m0.003s
+sys	0m0.003s
+<<ghc: 837032 bytes, 2 GCs (1 + 1), 0/0 avg/max bytes residency (0 samples), 16936 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.001 MUT (0.006 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.007s
+user	0m0.002s
+sys	0m0.003s
+<<ghc: 837032 bytes, 2 GCs (1 + 1), 0/0 avg/max bytes residency (0 samples), 16936 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.001 MUT (0.001 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.007s
+user	0m0.002s
+sys	0m0.003s
+<<ghc: 837032 bytes, 2 GCs (1 + 1), 0/0 avg/max bytes residency (0 samples), 16936 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.001 MUT (0.001 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.007s
+user	0m0.003s
+sys	0m0.003s
+<<ghc: 837032 bytes, 2 GCs (1 + 1), 0/0 avg/max bytes residency (0 samples), 16936 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.001 MUT (0.001 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+
+real	0m0.007s
+user	0m0.001s
+sys	0m0.004s
+<<ghc: 837032 bytes, 2 GCs (1 + 1), 0/0 avg/max bytes residency (0 samples), 16936 bytes GC work, 1M in use, 0.000 INIT (0.000 elapsed), 0.001 MUT (0.001 elapsed), 0.000 GC (0.000 elapsed), 0.000 GC(0) (0.000 elapsed), 0.000 GC(1) (0.000 elapsed), 1 balance :ghc>>
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== cichelli: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Prog.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 44007736 bytes, 13 GCs, 2301724/4433856 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== clausify: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:68:27:
+    Couldn't match type ‘[StackFrame]’ with ‘StackFrame’
+    Expected type: [StackFrame]
+      Actual type: [[StackFrame]]
+    In the expression: parse' t []
+    In a pattern binding: [(!(Ast (!f)))] = parse' t []
+
+Main.hs:71:41:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the first argument of ‘(:)’, namely ‘Lex '('’
+    In the second argument of ‘parse'’, namely ‘(Lex '(' : s)’
+
+Main.hs:72:40:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the first argument of ‘(:)’, namely ‘x’
+    In the second argument of ‘parse'’, namely ‘(x : s')’
+
+Main.hs:73:18:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the pattern: Lex '('
+    In the pattern: (!x) : Lex '('
+    In the pattern: ((!x) : Lex '(') : s'
+
+Main.hs:75:44:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the first argument of ‘(:)’, namely ‘Ast (Sym c)’
+    In the second argument of ‘parse'’, namely ‘(Ast (Sym c) : s)’
+
+Main.hs:76:47:
+    Couldn't match type ‘StackFrame’ with ‘[StackFrame]’
+    Expected type: [[StackFrame]]
+      Actual type: [StackFrame]
+    In the second argument of ‘parse'’, namely ‘(red s)’
+    In the expression: parse' (c : t) (red s)
+
+Main.hs:76:51:
+    Couldn't match type ‘StackFrame’ with ‘[StackFrame]’
+    Expected type: [[[StackFrame]]]
+      Actual type: [[StackFrame]]
+    In the first argument of ‘red’, namely ‘s’
+    In the second argument of ‘parse'’, namely ‘(red s)’
+
+Main.hs:77:19:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the first argument of ‘(:)’, namely ‘Lex c’
+    In the second argument of ‘parse'’, namely ‘(Lex c : s)’
+
+Main.hs:78:26:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the pattern: Lex '='
+    In the pattern: (!(Ast p)) : Lex '='
+    In the pattern: ((!(Ast p)) : Lex '=') : (!(Ast q))
+
+Main.hs:78:40:
+    Couldn't match expected type ‘[[StackFrame]]’
+                with actual type ‘StackFrame’
+    In the pattern: Ast q
+    In the pattern: !(Ast q)
+    In the pattern: ((!(Ast p)) : Lex '=') : (!(Ast q))
+
+Main.hs:79:21:
+    Couldn't match type ‘[[StackFrame]]’ with ‘StackFrame’
+    Expected type: [StackFrame]
+      Actual type: [[[StackFrame]]]
+    In the second argument of ‘(:)’, namely ‘s’
+    In the expression: Ast (Eqv q p) : s
+
+Main.hs:80:30:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the pattern: Lex '>'
+    In the pattern: (!(Ast (!p))) : Lex '>'
+    In the pattern: !((!(Ast (!p))) : Lex '>')
+
+Main.hs:80:42:
+    Couldn't match expected type ‘[[StackFrame]]’
+                with actual type ‘StackFrame’
+    In the pattern: Ast q
+    In the pattern: (!((!(Ast (!p))) : Lex '>')) : Ast q
+    In the pattern: !((!((!(Ast (!p))) : Lex '>')) : Ast q)
+
+Main.hs:81:21:
+    Couldn't match type ‘[[StackFrame]]’ with ‘StackFrame’
+    Expected type: [StackFrame]
+      Actual type: [[[StackFrame]]]
+    In the second argument of ‘(:)’, namely ‘s’
+    In the expression: Ast (Imp q p) : s
+
+Main.hs:82:18:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the pattern: Lex (!'|')
+    In the pattern: Ast p : Lex (!'|')
+    In the pattern: (Ast p : Lex (!'|')) : Ast q
+
+Main.hs:82:32:
+    Couldn't match expected type ‘[[StackFrame]]’
+                with actual type ‘StackFrame’
+    In the pattern: Ast q
+    In the pattern: (Ast p : Lex (!'|')) : Ast q
+    In the pattern: ((Ast p : Lex (!'|')) : Ast q) : (!s)
+
+Main.hs:82:66:
+    Couldn't match type ‘[[StackFrame]]’ with ‘StackFrame’
+    Expected type: [StackFrame]
+      Actual type: [[[StackFrame]]]
+    In the second argument of ‘(:)’, namely ‘s’
+    In the expression: Ast (Dis q p) : s
+
+Main.hs:83:23:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the pattern: Lex (!'&')
+    In the pattern: Ast p : Lex (!'&')
+    In the pattern: !(Ast p : Lex (!'&'))
+
+Main.hs:83:38:
+    Couldn't match expected type ‘[[StackFrame]]’
+                with actual type ‘StackFrame’
+    In the pattern: Ast q
+    In the pattern: (!(Ast p : Lex (!'&'))) : Ast q
+    In the pattern: ((!(Ast p : Lex (!'&'))) : Ast q) : s
+
+Main.hs:84:21:
+    Couldn't match type ‘[[StackFrame]]’ with ‘StackFrame’
+    Expected type: [StackFrame]
+      Actual type: [[[StackFrame]]]
+    In the second argument of ‘(:)’, namely ‘s’
+    In the expression: Ast (Con q p) : s
+
+Main.hs:85:12:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the pattern: Ast (!p)
+    In the pattern: Ast (!p) : (!(Lex '~'))
+    In the pattern: (Ast (!p) : (!(Lex '~'))) : (!s)
+
+Main.hs:85:26:
+    Couldn't match expected type ‘[[StackFrame]]’
+                with actual type ‘StackFrame’
+    In the pattern: Lex '~'
+    In the pattern: !(Lex '~')
+    In the pattern: Ast (!p) : (!(Lex '~'))
+
+Main.hs:85:64:
+    Couldn't match type ‘[[StackFrame]]’ with ‘StackFrame’
+    Expected type: [StackFrame]
+      Actual type: [[[StackFrame]]]
+    In the second argument of ‘(:)’, namely ‘s’
+    In the expression: Ast (Not p) : s
+
+Main.hs:86:33:
+    Couldn't match type ‘[StackFrame]’ with ‘StackFrame’
+    Expected type: [[StackFrame]] -> [[StackFrame]]
+      Actual type: [[[StackFrame]]] -> [StackFrame]
+    In the second argument of ‘while’, namely ‘red’
+    In the expression: while ((/=) 0 . spri) red
+
+Main.hs:91:27:
+    Couldn't match expected type ‘[StackFrame]’
+                with actual type ‘StackFrame’
+    In the pattern: Lex (!c)
+    In the pattern: (!(Ast (!x))) : Lex (!c)
+    In the pattern: ((!(Ast (!x))) : Lex (!c)) : s
+<<ghc: 98449664 bytes, 35 GCs, 5718834/10874256 avg/max bytes residency (4 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.09 MUT (0.11 elapsed), 0.15 GC (0.15 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== constraints: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+<<ghc: 545380536 bytes, 133 GCs, 10987773/26429808 avg/max bytes residency (6 samples), 57M in use, 0.00 INIT (0.00 elapsed), 0.66 MUT (0.72 elapsed), 0.42 GC (0.42 elapsed) :ghc>>
+==nofib== constraints: size of Main.o follows...
+   text	   data	    bss	    dec	    hex	filename
+  35267	   1648	      0	  36915	   9033	Main.o
+==nofib== constraints: time to link constraints follows...
+<<ghc: 38434792 bytes, 14 GCs, 409460/648792 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.57 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+==nofib== constraints: size of constraints follows...
+   text	   data	    bss	    dec	    hex	filename
+ 899060	  50096	  48776	 997932	  f3a2c	constraints
+==nofib== constraints: time to run constraints follows...
+../../runstdtest/runstdtest ./constraints  -o1 constraints.stdout -o1 constraints.stdout  -ghc-timing     10;   ../../runstdtest/runstdtest ./constraints  -o1 constraints.stdout -o1 constraints.stdout  -ghc-timing     10;   ../../runstdtest/runstdtest ./constraints  -o1 constraints.stdout -o1 constraints.stdout  -ghc-timing     10;   ../../runstdtest/runstdtest ./constraints  -o1 constraints.stdout -o1 constraints.stdout  -ghc-timing     10;   ../../runstdtest/runstdtest ./constraints  -o1 constraints.stdout -o1 constraints.stdout  -ghc-timing     10;
+make: *** [runtests] Terminated
+/tmp/run_me26945: line 15: 26954 Terminated              /bin/sh -c ' ././constraints +RTS -s/tmp/stats26945  -RTS 10 < /dev/null 1> /tmp/runtest26945.1.raw 2> /tmp/runtest26945.2.raw 3> /tmp/runtest26945.3.raw'
+
+real	14m28.497s
+user	0m0.001s
+sys	0m0.001s
+././constraints 10 < /dev/null
+**** expected exit status 0 not seen ; got 143
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== cse: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:18:1:
+    Bad interface file: ./StateMonad.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 51723592 bytes, 13 GCs, 2311024/4452456 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.08 GC (0.08 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== expert: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:16:1:
+    Bad interface file: ./Result.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:17:1:
+    Bad interface file: ./Table.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:18:1:
+    Bad interface file: ./Knowledge.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:19:1:
+    Bad interface file: ./Match.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+
+Main.hs:20:1:
+    Bad interface file: ./Search.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 49442304 bytes, 14 GCs, 2325532/4481472 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.05 MUT (0.06 elapsed), 0.09 GC (0.09 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== gcd: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:16:23:
+    Occurs check: cannot construct the infinite type: a ~ [a]
+    Relevant bindings include
+      xs :: [[a]] (bound at Main.hs:15:33)
+      y :: [a] (bound at Main.hs:15:28)
+      x :: a (bound at Main.hs:15:24)
+      max' :: [[a]] -> [a] (bound at Main.hs:14:12)
+    In the second argument of ‘(<)’, namely ‘y’
+    In the expression: x < y
+
+Main.hs:17:28:
+    Couldn't match type ‘Integer’ with ‘[a0]’
+    Expected type: [[a0]]
+      Actual type: [Z]
+    In the first argument of ‘max'’, namely ‘rs’
+    In the first argument of ‘shows’, namely ‘(max' rs)’
+<<ghc: 88722224 bytes, 35 GCs, 5583136/10565352 avg/max bytes residency (4 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.08 MUT (0.12 elapsed), 0.15 GC (0.15 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== lambda: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:67:9:
+    Pattern bindings (except simple variables) not allowed in instance declarations
+      (!incr) = StateMonad2 (\ (!s) -> (s, ()))
+<<ghc: 81538104 bytes, 30 GCs, 5591818/10542984 avg/max bytes residency (4 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.06 MUT (0.08 elapsed), 0.13 GC (0.13 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -package text -package data -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== last-piece: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -package text -package data -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+<command line>: cannot satisfy -package data
+    (use -v for more information)
+<<ghc: 36163968 bytes, 13 GCs, 395576/618480 avg/max bytes residency (2 samples), 27M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.04 GC (0.04 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== life: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:28:10:
+    Occurs check: cannot construct the infinite type: t ~ [t]
+    Relevant bindings include
+      xs :: [[t]] (bound at Main.hs:27:22)
+      y :: [t] (bound at Main.hs:27:15)
+      x :: t (bound at Main.hs:27:11)
+      limit :: [[t]] -> [t] (bound at Main.hs:27:1)
+    In the second argument of ‘(==)’, namely ‘y’
+    In the expression: x == y
+
+Main.hs:35:52:
+    Couldn't match type ‘Int’ with ‘[a0]’
+    Expected type: [[[a0]]]
+      Actual type: [[Int]]
+    In the second argument of ‘map’, namely ‘start’
+    In the first argument of ‘(++)’, namely
+      ‘map (take sz . (++ (copy sz 0))) start’
+<<ghc: 86799656 bytes, 33 GCs, 5522012/10513640 avg/max bytes residency (4 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.08 MUT (0.09 elapsed), 0.14 GC (0.14 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== mandel2: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+<<ghc: 240447656 bytes, 59 GCs, 8497304/18539864 avg/max bytes residency (5 samples), 41M in use, 0.00 INIT (0.00 elapsed), 0.25 MUT (0.30 elapsed), 0.25 GC (0.25 elapsed) :ghc>>
+==nofib== mandel2: size of Main.o follows...
+   text	   data	    bss	    dec	    hex	filename
+   6918	    568	      0	   7486	   1d3e	Main.o
+==nofib== mandel2: time to link mandel2 follows...
+<<ghc: 38433288 bytes, 14 GCs, 409364/648712 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.46 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+==nofib== mandel2: size of mandel2 follows...
+   text	   data	    bss	    dec	    hex	filename
+ 758308	  40368	  48776	 847452	  cee5c	mandel2
+==nofib== mandel2: time to run mandel2 follows...
+../../runstdtest/runstdtest ./mandel2  -o1 mandel2.stdout -o1 mandel2.stdout  -ghc-timing     ;   ../../runstdtest/runstdtest ./mandel2  -o1 mandel2.stdout -o1 mandel2.stdout  -ghc-timing     ;   ../../runstdtest/runstdtest ./mandel2  -o1 mandel2.stdout -o1 mandel2.stdout  -ghc-timing     ;   ../../runstdtest/runstdtest ./mandel2  -o1 mandel2.stdout -o1 mandel2.stdout  -ghc-timing     ;   ../../runstdtest/runstdtest ./mandel2  -o1 mandel2.stdout -o1 mandel2.stdout  -ghc-timing     ;
+make: *** [runtests] Terminated
+/bin/sh: line 1: 37465 Terminated              ././mandel2 +RTS -s/tmp/stats37456 -RTS < /dev/null > /tmp/runtest37456.1.raw 2> /tmp/runtest37456.2.raw 3> /tmp/runtest37456.3.raw
+
+real	14m28.684s
+user	14m28.525s
+sys	0m0.004s
+././mandel2 < /dev/null
+**** expected exit status 0 not seen ; got 143
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== mate: time to link mate follows...
+<<ghc: 38477888 bytes, 14 GCs, 410616/648432 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.67 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+==nofib== mate: size of mate follows...
+   text	   data	    bss	    dec	    hex	filename
+1050532	  56688	  48776	1155996	 11a39c	mate
+==nofib== mate: time to run mate follows...
+../../runstdtest/runstdtest ./mate    -ghc-timing     holzhausen.prob;   ../../runstdtest/runstdtest ./mate    -ghc-timing     holzhausen.prob;   ../../runstdtest/runstdtest ./mate    -ghc-timing     holzhausen.prob;   ../../runstdtest/runstdtest ./mate    -ghc-timing     holzhausen.prob;   ../../runstdtest/runstdtest ./mate    -ghc-timing     holzhausen.prob;
+
+real	0m5.582s
+user	0m5.523s
+sys	0m0.042s
+././mate holzhausen.prob < /dev/null
+expected stdout not matched by reality
+--- /tmp/no_stdout41297	2016-02-27 11:51:03.050155272 -0500
++++ /tmp/runtest41297.1	2016-02-27 11:51:08.638183051 -0500
+@@ -0,0 +1,64 @@
++
++File: holzhausen.prob
++ - - - - R - - K
++ - - - - - - - b
++ - b - - N - q -
++ - - - - - - - -
++ - - - - - - P -
++ - r - - - - p -
++ - - p - - - - k
++ - - - - - - - -
++
++White to move and mate in 4
++
++1. B/QN6-QB7,
++	if R/K1-KB1; 2. B/QB7-K5,
++		if N/K3-KN2; 3. B/K5xN/KN7++
++		if R/KB1-KB3; 3. B/K5xR/KB6, N/K3-KN2; 4. B/KB6xN/KN7++
++	if R/K1-K2; 2. B/QB7-K5,
++		if R/K2-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. R/QN3-QN8, R/K2-K1; 4. R/QN8xR/K8++
++	if R/K1-KN1; 2. B/QB7-K5,
++		if R/KN1-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. B/K5-QR1, ...; 4. B/QR1xN/KN7++
++	if R/K1-QN1; 2. B/QB7-KB4,
++		if R/QN1-KB1; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/KB1-KB3; 4. Q/KN6-KN8++
++		if R/QN1-QN4; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/QN4xB/K4; 4. Q/KN6-KN8++
++		if N/K3-Q1; 3. B/KB4xR/QN8,
++			if N/Q1-QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-QB4; 3. B/KB4xR/QN8,
++			if N/QB4-QR5, -QR3, xR/QN6, -QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-KN2; 3. B/KB4xR/QN8, ...; 4. Q/KN6-KN8++
++		if R/QN1-KN1; 3. B/KR7xR/KN8,
++			if N/K3xB/KB5, -KN2; 4. Q/KN6-KR7++
++			if others; 4. B/KB4-K5++
++		if R/QN1-QN2; 3. Q/KN6-KN8++
++		if N/K3xB/KB5; 3. R/QN3xR/QN8++
++		if N/K3-QB2, -Q5, -KB1, -KN4; 3. B/KB4-K5++
++		if others; 3. B/KB4-K5, N/K3-KN2; 4. B/K5xN/KN7++
++	if N/K3xB/QB2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/KR7-KN8,
++			if R/QN1xB/KN1; 4. Q/KN6-KR6++
++			if others; 4. Q/KN6-KR7++
++		if N/QB2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/QB2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/QB2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if N/K3-KN2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/QB7xR/QN8, ...; 4. Q/KN6-KN8++
++		if N/KN2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/KN2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/KN2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if R/K1-QR1, -QB1, -Q1; 2. B/QB7-K5, N/K3-KN2; 3. B/K5xN/KN7++
++	if others; 2. B/QB7-K5, R/K1xB/K4; 3. Q/KN6-KN8++
+
+real	0m5.571s
+user	0m5.528s
+sys	0m0.040s
+././mate holzhausen.prob < /dev/null
+expected stdout not matched by reality
+--- /tmp/no_stdout41318	2016-02-27 11:51:08.675183234 -0500
++++ /tmp/runtest41318.1	2016-02-27 11:51:14.254210965 -0500
+@@ -0,0 +1,64 @@
++
++File: holzhausen.prob
++ - - - - R - - K
++ - - - - - - - b
++ - b - - N - q -
++ - - - - - - - -
++ - - - - - - P -
++ - r - - - - p -
++ - - p - - - - k
++ - - - - - - - -
++
++White to move and mate in 4
++
++1. B/QN6-QB7,
++	if R/K1-KB1; 2. B/QB7-K5,
++		if N/K3-KN2; 3. B/K5xN/KN7++
++		if R/KB1-KB3; 3. B/K5xR/KB6, N/K3-KN2; 4. B/KB6xN/KN7++
++	if R/K1-K2; 2. B/QB7-K5,
++		if R/K2-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. R/QN3-QN8, R/K2-K1; 4. R/QN8xR/K8++
++	if R/K1-KN1; 2. B/QB7-K5,
++		if R/KN1-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. B/K5-QR1, ...; 4. B/QR1xN/KN7++
++	if R/K1-QN1; 2. B/QB7-KB4,
++		if R/QN1-KB1; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/KB1-KB3; 4. Q/KN6-KN8++
++		if R/QN1-QN4; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/QN4xB/K4; 4. Q/KN6-KN8++
++		if N/K3-Q1; 3. B/KB4xR/QN8,
++			if N/Q1-QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-QB4; 3. B/KB4xR/QN8,
++			if N/QB4-QR5, -QR3, xR/QN6, -QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-KN2; 3. B/KB4xR/QN8, ...; 4. Q/KN6-KN8++
++		if R/QN1-KN1; 3. B/KR7xR/KN8,
++			if N/K3xB/KB5, -KN2; 4. Q/KN6-KR7++
++			if others; 4. B/KB4-K5++
++		if R/QN1-QN2; 3. Q/KN6-KN8++
++		if N/K3xB/KB5; 3. R/QN3xR/QN8++
++		if N/K3-QB2, -Q5, -KB1, -KN4; 3. B/KB4-K5++
++		if others; 3. B/KB4-K5, N/K3-KN2; 4. B/K5xN/KN7++
++	if N/K3xB/QB2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/KR7-KN8,
++			if R/QN1xB/KN1; 4. Q/KN6-KR6++
++			if others; 4. Q/KN6-KR7++
++		if N/QB2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/QB2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/QB2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if N/K3-KN2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/QB7xR/QN8, ...; 4. Q/KN6-KN8++
++		if N/KN2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/KN2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/KN2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if R/K1-QR1, -QB1, -Q1; 2. B/QB7-K5, N/K3-KN2; 3. B/K5xN/KN7++
++	if others; 2. B/QB7-K5, R/K1xB/K4; 3. Q/KN6-KN8++
+
+real	0m5.584s
+user	0m5.544s
+sys	0m0.036s
+././mate holzhausen.prob < /dev/null
+expected stdout not matched by reality
+--- /tmp/no_stdout41345	2016-02-27 11:51:14.289211138 -0500
++++ /tmp/runtest41345.1	2016-02-27 11:51:19.879238922 -0500
+@@ -0,0 +1,64 @@
++
++File: holzhausen.prob
++ - - - - R - - K
++ - - - - - - - b
++ - b - - N - q -
++ - - - - - - - -
++ - - - - - - P -
++ - r - - - - p -
++ - - p - - - - k
++ - - - - - - - -
++
++White to move and mate in 4
++
++1. B/QN6-QB7,
++	if R/K1-KB1; 2. B/QB7-K5,
++		if N/K3-KN2; 3. B/K5xN/KN7++
++		if R/KB1-KB3; 3. B/K5xR/KB6, N/K3-KN2; 4. B/KB6xN/KN7++
++	if R/K1-K2; 2. B/QB7-K5,
++		if R/K2-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. R/QN3-QN8, R/K2-K1; 4. R/QN8xR/K8++
++	if R/K1-KN1; 2. B/QB7-K5,
++		if R/KN1-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. B/K5-QR1, ...; 4. B/QR1xN/KN7++
++	if R/K1-QN1; 2. B/QB7-KB4,
++		if R/QN1-KB1; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/KB1-KB3; 4. Q/KN6-KN8++
++		if R/QN1-QN4; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/QN4xB/K4; 4. Q/KN6-KN8++
++		if N/K3-Q1; 3. B/KB4xR/QN8,
++			if N/Q1-QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-QB4; 3. B/KB4xR/QN8,
++			if N/QB4-QR5, -QR3, xR/QN6, -QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-KN2; 3. B/KB4xR/QN8, ...; 4. Q/KN6-KN8++
++		if R/QN1-KN1; 3. B/KR7xR/KN8,
++			if N/K3xB/KB5, -KN2; 4. Q/KN6-KR7++
++			if others; 4. B/KB4-K5++
++		if R/QN1-QN2; 3. Q/KN6-KN8++
++		if N/K3xB/KB5; 3. R/QN3xR/QN8++
++		if N/K3-QB2, -Q5, -KB1, -KN4; 3. B/KB4-K5++
++		if others; 3. B/KB4-K5, N/K3-KN2; 4. B/K5xN/KN7++
++	if N/K3xB/QB2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/KR7-KN8,
++			if R/QN1xB/KN1; 4. Q/KN6-KR6++
++			if others; 4. Q/KN6-KR7++
++		if N/QB2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/QB2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/QB2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if N/K3-KN2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/QB7xR/QN8, ...; 4. Q/KN6-KN8++
++		if N/KN2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/KN2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/KN2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if R/K1-QR1, -QB1, -Q1; 2. B/QB7-K5, N/K3-KN2; 3. B/K5xN/KN7++
++	if others; 2. B/QB7-K5, R/K1xB/K4; 3. Q/KN6-KN8++
+
+real	0m5.595s
+user	0m5.555s
+sys	0m0.038s
+././mate holzhausen.prob < /dev/null
+expected stdout not matched by reality
+--- /tmp/no_stdout41376	2016-02-27 11:51:19.916239107 -0500
++++ /tmp/runtest41376.1	2016-02-27 11:51:25.524266977 -0500
+@@ -0,0 +1,64 @@
++
++File: holzhausen.prob
++ - - - - R - - K
++ - - - - - - - b
++ - b - - N - q -
++ - - - - - - - -
++ - - - - - - P -
++ - r - - - - p -
++ - - p - - - - k
++ - - - - - - - -
++
++White to move and mate in 4
++
++1. B/QN6-QB7,
++	if R/K1-KB1; 2. B/QB7-K5,
++		if N/K3-KN2; 3. B/K5xN/KN7++
++		if R/KB1-KB3; 3. B/K5xR/KB6, N/K3-KN2; 4. B/KB6xN/KN7++
++	if R/K1-K2; 2. B/QB7-K5,
++		if R/K2-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. R/QN3-QN8, R/K2-K1; 4. R/QN8xR/K8++
++	if R/K1-KN1; 2. B/QB7-K5,
++		if R/KN1-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. B/K5-QR1, ...; 4. B/QR1xN/KN7++
++	if R/K1-QN1; 2. B/QB7-KB4,
++		if R/QN1-KB1; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/KB1-KB3; 4. Q/KN6-KN8++
++		if R/QN1-QN4; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/QN4xB/K4; 4. Q/KN6-KN8++
++		if N/K3-Q1; 3. B/KB4xR/QN8,
++			if N/Q1-QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-QB4; 3. B/KB4xR/QN8,
++			if N/QB4-QR5, -QR3, xR/QN6, -QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-KN2; 3. B/KB4xR/QN8, ...; 4. Q/KN6-KN8++
++		if R/QN1-KN1; 3. B/KR7xR/KN8,
++			if N/K3xB/KB5, -KN2; 4. Q/KN6-KR7++
++			if others; 4. B/KB4-K5++
++		if R/QN1-QN2; 3. Q/KN6-KN8++
++		if N/K3xB/KB5; 3. R/QN3xR/QN8++
++		if N/K3-QB2, -Q5, -KB1, -KN4; 3. B/KB4-K5++
++		if others; 3. B/KB4-K5, N/K3-KN2; 4. B/K5xN/KN7++
++	if N/K3xB/QB2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/KR7-KN8,
++			if R/QN1xB/KN1; 4. Q/KN6-KR6++
++			if others; 4. Q/KN6-KR7++
++		if N/QB2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/QB2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/QB2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if N/K3-KN2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/QB7xR/QN8, ...; 4. Q/KN6-KN8++
++		if N/KN2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/KN2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/KN2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if R/K1-QR1, -QB1, -Q1; 2. B/QB7-K5, N/K3-KN2; 3. B/K5xN/KN7++
++	if others; 2. B/QB7-K5, R/K1xB/K4; 3. Q/KN6-KN8++
+
+real	0m5.571s
+user	0m5.538s
+sys	0m0.030s
+././mate holzhausen.prob < /dev/null
+expected stdout not matched by reality
+--- /tmp/no_stdout41404	2016-02-27 11:51:25.566267187 -0500
++++ /tmp/runtest41404.1	2016-02-27 11:51:31.145294912 -0500
+@@ -0,0 +1,64 @@
++
++File: holzhausen.prob
++ - - - - R - - K
++ - - - - - - - b
++ - b - - N - q -
++ - - - - - - - -
++ - - - - - - P -
++ - r - - - - p -
++ - - p - - - - k
++ - - - - - - - -
++
++White to move and mate in 4
++
++1. B/QN6-QB7,
++	if R/K1-KB1; 2. B/QB7-K5,
++		if N/K3-KN2; 3. B/K5xN/KN7++
++		if R/KB1-KB3; 3. B/K5xR/KB6, N/K3-KN2; 4. B/KB6xN/KN7++
++	if R/K1-K2; 2. B/QB7-K5,
++		if R/K2-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. R/QN3-QN8, R/K2-K1; 4. R/QN8xR/K8++
++	if R/K1-KN1; 2. B/QB7-K5,
++		if R/KN1-KN2; 3. B/K5-KB6, ...; 4. B/KB6xR/KN7++
++		if N/K3-KN2; 3. B/K5-QR1, ...; 4. B/QR1xN/KN7++
++	if R/K1-QN1; 2. B/QB7-KB4,
++		if R/QN1-KB1; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/KB1-KB3; 4. Q/KN6-KN8++
++		if R/QN1-QN4; 3. B/KB4-K5,
++			if N/K3-KN2; 4. B/K5xN/KN7++
++			if R/QN4xB/K4; 4. Q/KN6-KN8++
++		if N/K3-Q1; 3. B/KB4xR/QN8,
++			if N/Q1-QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-QB4; 3. B/KB4xR/QN8,
++			if N/QB4-QR5, -QR3, xR/QN6, -QN2; 4. B/QN8-K5++
++			if others; 4. Q/KN6-KN8++
++		if N/K3-KN2; 3. B/KB4xR/QN8, ...; 4. Q/KN6-KN8++
++		if R/QN1-KN1; 3. B/KR7xR/KN8,
++			if N/K3xB/KB5, -KN2; 4. Q/KN6-KR7++
++			if others; 4. B/KB4-K5++
++		if R/QN1-QN2; 3. Q/KN6-KN8++
++		if N/K3xB/KB5; 3. R/QN3xR/QN8++
++		if N/K3-QB2, -Q5, -KB1, -KN4; 3. B/KB4-K5++
++		if others; 3. B/KB4-K5, N/K3-KN2; 4. B/K5xN/KN7++
++	if N/K3xB/QB2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/KR7-KN8,
++			if R/QN1xB/KN1; 4. Q/KN6-KR6++
++			if others; 4. Q/KN6-KR7++
++		if N/QB2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/QB2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/QB2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if N/K3-KN2; 2. R/QN3-QN8,
++		if R/K1xR/QN1; 3. B/QB7xR/QN8, ...; 4. Q/KN6-KN8++
++		if N/KN2-K3; 3. R/QN8xR/K8, N/K3-KB1; 4. R/K8xN/KB8++
++		if R/K1-KB1; 3. R/QN8xR/KB8++
++		if R/K1-KN1; 3. R/QN8xR/KN8++
++		if R/K1-Q1; 3. R/QN8xR/Q8, N/KN2-K1; 4. R/Q8xN/K8++
++		if R/K1-QB1; 3. R/QN8xR/QB8, N/KN2-K1; 4. R/QB8xN/K8++
++		if others; 3. R/QN8xR/K8++
++	if R/K1-QR1, -QB1, -Q1; 2. B/QB7-K5, N/K3-KN2; 3. B/K5xN/KN7++
++	if others; 2. B/QB7-K5, R/K1xB/K4; 3. Q/KN6-KN8++
+make: *** [runtests] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== minimax: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Prog.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 44005088 bytes, 13 GCs, 2301628/4433664 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== multiplier: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:31:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (ready, (!ra), rb, prod) = multiplier wordsize start as bs
+      (!start) = ready
+    In an equation for ‘multsys’:
+        multsys wordsize (!xs)
+          = (as, bs, ready, ra, rb, prod)
+          where
+              (ready, (!ra), rb, prod) = multiplier wordsize start as bs
+              (!start) = ready
+              as = f (map fst xs)
+              (!bs) = f (map snd xs)
+              ....
+
+Main.hs:34:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (!bs) = f (map snd xs)
+    In an equation for ‘multsys’:
+        multsys wordsize (!xs)
+          = (as, bs, ready, ra, rb, prod)
+          where
+              (ready, (!ra), rb, prod) = multiplier wordsize start as bs
+              (!start) = ready
+              as = f (map fst xs)
+              (!bs) = f (map snd xs)
+              ....
+
+Main.hs:47:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (!regP)
+        = wlat (2 * k) (wmux1 (2 * k) start sum (rept (2 * k) zerO))
+      (!((!ovfl), sum))
+        = add
+            (2 * k) regP (wmux1 (2 * k) lsbB (rept (2 * k) zerO) regA) zerO
+    In an equation for ‘multiplier’:
+        multiplier k start (!a) b
+          = (ready, regA, regB, regP)
+          where
+              (!regP)
+                = wlat (2 * k) (wmux1 (2 * k) start sum (rept (2 * k) zerO))
+              (!((!ovfl), sum))
+                = add
+                    (2 * k) regP (wmux1 (2 * k) lsbB (rept (2 * k) zerO) regA) zerO
+              regA
+                = wlat
+                    (2 * k) (wmux1 (2 * k) start (shl (2 * k) regA) (rept k zerO ++ a))
+              regB = wlat k (wmux1 k start (shr k regB) b)
+              ....
+
+Main.hs:103:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (!x) = latch (bmux1 sto x a)
+    In an equation for ‘breg’:
+        breg sto a
+          = x
+          where
+              (!x) = latch (bmux1 sto x a)
+<<ghc: 118589168 bytes, 37 GCs, 5459758/10134592 avg/max bytes residency (4 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.11 MUT (0.13 elapsed), 0.16 GC (0.16 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== power: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:97:13:
+    Could not deduce (a ~ Ps t0)
+    from the context (Eq a, Fractional a)
+      bound by the type signature for
+                 revert :: (Eq a, Fractional a) => Ps a -> Ps a
+      at Main.hs:40:11-46
+      ‘a’ is a rigid type variable bound by
+          the type signature for
+            revert :: (Eq a, Fractional a) => Ps a -> Ps a
+          at Main.hs:40:11
+    Relevant bindings include
+      revert :: Ps a -> Ps a (bound at Main.hs:95:1)
+    In the pattern: f0 :+: (!f1)
+    In the pattern: (f0 :+: (!f1)) :+: (!Pz)
+    In the pattern: !((f0 :+: (!f1)) :+: (!Pz))
+
+Main.hs:109:21:
+    Could not deduce (a ~ Ps t1)
+    from the context (Fractional (Ps a), Eq a, Fractional a)
+      bound by the instance declaration at Main.hs:107:10-48
+      ‘a’ is a rigid type variable bound by
+          the instance declaration at Main.hs:107:10
+    Relevant bindings include
+      sqrt :: Ps a -> Ps a (bound at Main.hs:108:9)
+    In the pattern: 0 :+: 0
+    In the pattern: (0 :+: 0) :+: fs
+    In the pattern: !((0 :+: 0) :+: fs)
+
+Main.hs:111:17:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (!qs) = 1 + integral ((deriv (1 :+: fs)) / (2 .* qs))
+    In an equation for ‘sqrt’:
+        sqrt (!((!1) :+: (!fs)))
+          = qs
+          where
+              (!qs) = 1 + integral ((deriv (1 :+: fs)) / (2 .* qs))
+    In the instance declaration for ‘Floating (Ps a)’
+<<ghc: 103026176 bytes, 38 GCs, 5478704/10261528 avg/max bytes residency (4 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.09 MUT (0.11 elapsed), 0.15 GC (0.15 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== pretty: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Pretty.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 44139576 bytes, 13 GCs, 2302364/4435136 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== scc: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:4:1:
+    Bad interface file: ./Digraph.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 44403576 bytes, 13 GCs, 2301920/4434248 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing +RTS -K3m -H20m -RTS
+==nofib== simple: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -H110m -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:311:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (!((!alpha'), s', (!rho')))
+        = (arrays_3
+             (pHbounds dimension_all_zones)
+             ([zone =: interior_area zone | (!zone) <- interior_zones]
+              ++
+                [zone =: reflect_area_vol_density (reflect_south zone) |
+                   (!zone) <- north_zones]
+                ++
+                  [zone =: reflect_area_vol_density (reflect_north zone) |
+                     zone <- south_zones]
+                  ++
+                    [zone =: reflect_area_vol_density (reflect_west zone) |
+                       zone <- east_zones]
+                    ++
+                      [zone =: reflect_area_vol_density (reflect_east zone) |
+                         zone <- west_zones]))
+      reflect_area_vol_density reflect_function
+        = (reflect_function alpha', reflect_function s', 
+           reflect_function rho')
+    In the expression:
+      let
+        interior_area (!zone) = let ... in ...
+        reflect_area_vol_density reflect_function
+          = (reflect_function alpha', reflect_function s', 
+             reflect_function rho')
+        (!((!alpha'), s', (!rho')))
+          = (arrays_3
+               (pHbounds dimension_all_zones)
+               ([zone =: interior_area zone | (!zone) <- interior_zones]
+                ++
+                  [zone =: reflect_area_vol_density (reflect_south zone) |
+                     (!zone) <- north_zones]
+                  ++
+                    [zone =: reflect_area_vol_density (reflect_north zone) |
+                       zone <- south_zones]
+                    ++
+                      [zone =: reflect_area_vol_density (reflect_west zone) |
+                         zone <- east_zones]
+                      ++
+                        [zone =: reflect_area_vol_density (reflect_east zone) |
+                           zone <- west_zones]))
+      in strictArrays_3 (alpha', s', rho')
+    In an equation for ‘make_area_density_volume’:
+        make_area_density_volume rho (!s) x'
+          = let
+              interior_area (!zone) = ...
+              reflect_area_vol_density reflect_function = ...
+              ....
+            in strictArrays_3 (alpha', s', rho')
+
+Main.hs:376:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (!(q', (!d)))
+        = (arrays_2
+             (pHbounds dimension_all_zones)
+             ([zone =: interior_viscosity zone | zone <- interior_zones]
+              ++
+                [zone =: reflect_viscosity_cdelta south zone | zone <- north_zones]
+                ++
+                  [zone =: reflect_viscosity_cdelta north zone | zone <- south_zones]
+                  ++
+                    [zone =: reflect_viscosity_cdelta west zone | zone <- east_zones]
+                    ++
+                      [zone =: reflect_viscosity_cdelta east zone | zone <- west_zones]))
+      reflect_viscosity_cdelta direction (!zone)
+        = ((q' ! direction zone) * (qb ! (nbc ! zone)), (0.0 :: Double))
+    In the expression:
+      let
+        interior_viscosity (!zone) = let ... in ...
+        reflect_viscosity_cdelta direction (!zone)
+          = ((q' ! direction zone) * (qb ! (nbc ! zone)), (0.0 :: Double))
+        (!(q', (!d)))
+          = (arrays_2
+               (pHbounds dimension_all_zones)
+               ([zone =: interior_viscosity zone | zone <- interior_zones]
+                ++
+                  [zone =: reflect_viscosity_cdelta south zone | zone <- north_zones]
+                  ++
+                    [zone =: reflect_viscosity_cdelta north zone | zone <- south_zones]
+                    ++
+                      [zone =: reflect_viscosity_cdelta west zone | zone <- east_zones]
+                      ++
+                        [zone =: reflect_viscosity_cdelta east zone | zone <- west_zones]))
+      in strictArrays_2 (q', d)
+    In an equation for ‘make_viscosity’:
+        make_viscosity (!p) (!(u', w')) (!(r', z')) alpha' (!rho')
+          = let
+              interior_viscosity (!zone) = ...
+              reflect_viscosity_cdelta direction (!zone) = ...
+              ....
+            in strictArrays_2 (q', d)
+
+Main.hs:534:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      interior_ab (!zone)
+        = let
+            denom
+              = ((sigma ! zone) + (gamma ! zone))
+                + (gamma ! preceding zone)
+                  * ((1.0 :: Double) - (a ! preceding zone))
+            (!nume1) = gamma ! zone
+            ....
+          in seq (result1 + result2) (result1, result2)
+      (!(a, b))
+        = (arrays_2
+             (pHbounds dimension_all_zones)
+             ([zone =: interior_ab zone | (!zone) <- interior_zones]
+              ++
+                [zone =: ((0.0 :: Double), theta ! zone) | zone <- north_zones]
+                ++
+                  [zone =: ((0.0 :: Double), theta ! zone) | zone <- south_zones]
+                  ++
+                    [zone =: ((0.0 :: Double), theta ! zone) | zone <- east_zones]
+                    ++
+                      [zone =: ((0.0 :: Double), theta ! zone) | (!zone) <- west_zones]))
+    In the expression:
+      let
+        interior_ab (!zone) = let ... in seq (result1 + result2) ...
+        (!(a, b))
+          = (arrays_2
+               (pHbounds dimension_all_zones)
+               ([zone =: interior_ab zone | (!zone) <- interior_zones]
+                ++
+                  [zone =: ... | zone <- north_zones]
+                  ++
+                    [zone =: ... | zone <- south_zones]
+                    ++
+                      [zone =: ... | zone <- east_zones]
+                      ++ [zone =: ... | (!zone) <- west_zones]))
+      in strictArrays_2 (a, b)
+    In an equation for ‘make_ab’:
+        make_ab (!theta) sigma gamma preceding
+          = let
+              interior_ab (!zone) = ...
+              (!(a, b))
+                = (arrays_2
+                     (pHbounds dimension_all_zones) (... ++ ... ++ ... ++ ... ++ ...))
+            in strictArrays_2 (a, b)
+
+Main.hs:560:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      interior_theta zone
+        = (a ! zone) * (theta ! succeeding zone) + (b ! zone)
+      (!theta)
+        = (array
+             (pHbounds dimension_all_zones)
+             ([zone =: interior_theta zone | (!zone) <- int_zones]
+              ++
+                [zone =: constant_heat_source | zone <- north_zones]
+                ++
+                  [zone =: constant_heat_source | zone <- south_zones]
+                  ++
+                    [zone =: constant_heat_source | zone <- east_zones]
+                    ++ [zone =: constant_heat_source | (!zone) <- west_zones]))
+    In the expression:
+      let
+        interior_theta zone
+          = (a ! zone) * (theta ! succeeding zone) + (b ! zone)
+        (!theta)
+          = (array
+               (pHbounds dimension_all_zones)
+               ([zone =: interior_theta zone | (!zone) <- int_zones]
+                ++
+                  [zone =: constant_heat_source | zone <- north_zones]
+                  ++
+                    [zone =: constant_heat_source | zone <- south_zones]
+                    ++
+                      [zone =: constant_heat_source | zone <- east_zones]
+                      ++ [zone =: constant_heat_source | (!zone) <- west_zones]))
+      in strictArray theta
+    In an equation for ‘make_theta’:
+        make_theta a b succeeding (!int_zones)
+          = let
+              interior_theta zone
+                = (a ! zone) * (theta ! succeeding zone) + (b ! zone)
+              (!theta)
+                = (array
+                     (pHbounds dimension_all_zones) (... ++ ... ++ ... ++ ... ++ ...))
+            in strictArray theta
+
+Main.hs:586:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      (!epsilon')
+        = (array
+             (pHbounds dimension_all_zones)
+             ([zone =: zonal_energy (rho' ! zone) (theta' ! zone) |
+                 (!zone) <- interior_zones]
+              ++
+                [zone =: reflect_south zone epsilon' | (!zone) <- north_zones]
+                ++
+                  [zone =: reflect_north zone epsilon' | zone <- south_zones]
+                  ++
+                    [zone =: reflect_west zone epsilon' | zone <- east_zones]
+                    ++ [zone =: reflect_east zone epsilon' | zone <- west_zones]))
+    In the expression:
+      let
+        (!epsilon')
+          = (array
+               (pHbounds dimension_all_zones)
+               ([zone =: zonal_energy (rho' ! zone) (theta' ! zone) |
+                   (!zone) <- interior_zones]
+                ++
+                  [zone =: reflect_south zone epsilon' | (!zone) <- north_zones]
+                  ++
+                    [zone =: reflect_north zone epsilon' | zone <- south_zones]
+                    ++
+                      [zone =: reflect_west zone epsilon' | zone <- east_zones]
+                      ++ [zone =: reflect_east zone epsilon' | zone <- west_zones]))
+      in strictArray epsilon'
+    In an equation for ‘make_energy’:
+        make_energy rho' theta'
+          = let
+              (!epsilon')
+                = (array
+                     (pHbounds dimension_all_zones) (... ++ ... ++ ... ++ ... ++ ...))
+            in strictArray epsilon'
+
+Main.hs:968:9:
+    Recursive bang-pattern or unboxed-tuple bindings aren't allowed:
+      reflect_node (!x_dir) y_dir a_dir node
+        = let
+            rx = reflect x_dir node r'
+            zx = reflect x_dir node z'
+            ....
+          in boundary_position rx zx ry zy ra za
+      (!(r', (!z')))
+        = (arrays_2
+             (pHbounds dimension_all_nodes)
+             ([node =: interior_function node | node <- interior_nodes]
+              ++
+                [node =: reflect_node south southeast farsouth node |
+                   node <- north_nodes]
+                ++
+                  [node =: reflect_node north northeast farnorth node |
+                     node <- south_nodes]
+                  ++
+                    [node =: reflect_node west southwest farwest node |
+                       node <- east_nodes]
+                    ++
+                      [node =: reflect_node east southeast fareast node |
+                         (!node) <- west_nodes]
+                      ++
+                        [node =: reflect_node southwest west farwest node |
+                           (!node) <- north_east_corner]
+                        ++
+                          [node =: reflect_node northwest west farwest node |
+                             (!node) <- south_east_corner]
+                          ++
+                            [node =: reflect_node southeast south farsouth node |
+                               node <- north_west_corner]
+                            ++
+                              [node =: reflect_node northeast east fareast node |
+                                 node <- south_west_corner]
+                              ++
+                                [node =: reflect_node south southwest farsouth node |
+                                   (!node) <- west_of_north_east]
+                                ++
+                                  [node =: reflect_node north northwest farnorth node |
+                                     (!node) <- west_of_south_east]
+                                  ++
+                                    [node =: reflect_node west northwest farwest node |
+                                       (!node) <- north_of_south_east]
+                                    ++
+                                      [node =: reflect_node east northeast fareast node |
+                                         node <- north_of_south_west]))
+    In the expression:
+      let
+        boundary_position rx zx (!ry) (!zy) ra za = let ... in ...
+        reflect_node (!x_dir) y_dir a_dir node
+          = let ... in boundary_position rx zx ry zy ra za
+        (!(r', (!z')))
+          = (arrays_2
+               (pHbounds dimension_all_nodes)
+               ([node =: interior_function node | node <- interior_nodes]
+                ++
+                  [node =: reflect_node south southeast farsouth node |
+                     node <- north_nodes]
+                  ++
+                    [node =: reflect_node north northeast farnorth node |
+                       node <- south_nodes]
+                    ++
+                      [node =: reflect_node west southwest farwest node |
+                         node <- east_nodes]
+                      ++
+                        [node =: reflect_node east southeast fareast node |
+                           (!node) <- west_nodes]
+                        ++
+                          [node =: reflect_node southwest west farwest node |
+                             (!node) <- north_east_corner]
+                          ++
+                            [node =: reflect_node northwest west farwest node |
+                               (!node) <- south_east_corner]
+                            ++
+                              [node =: reflect_node southeast south farsouth node |
+                                 node <- north_west_corner]
+                              ++
+                                [node =: reflect_node northeast east fareast node |
+                                   node <- south_west_corner]
+                                ++
+                                  [node =: reflect_node south southwest farsouth node |
+                                     (!node) <- west_of_north_east]
+                                  ++
+                                    [node =: reflect_node north northwest farnorth node |
+                                       (!node) <- west_of_south_east]
+                                    ++
+                                      [node =: reflect_node west northwest farwest node |
+                                         (!node) <- north_of_south_east]
+                                      ++
+                                        [node =: reflect_node east northeast fareast node |
+                                           node <- north_of_south_west]))
+      in strictArrays_2 (r', z')
+    In an equation for ‘make_position_matrix’:
+        make_position_matrix (!interior_function)
+          = let
+              boundary_position rx zx (!ry) (!zy) ra za = ...
+              reflect_node (!x_dir) y_dir a_dir node = ...
+              ....
+            in strictArrays_2 (r', z')
+<<ghc: 220238320 bytes, 60 GCs, 6735954/12858624 avg/max bytes residency (4 samples), 107M in use, 0.00 INIT (0.00 elapsed), 0.23 MUT (0.25 elapsed), 0.22 GC (0.22 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== sorting: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:3:1:
+    Bad interface file: ./Sort.hi
+        mismatched interface file versions (wanted "7084", got "7102")
+<<ghc: 44301176 bytes, 13 GCs, 2302544/4435496 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.03 MUT (0.04 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing +RTS -K3m -H24m -RTS
+==nofib== treejoin: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:67:9:
+    Parse error in pattern: !~ (! ((! f1) : ~((! ((! f2) : _)))))
+    Possibly caused by a missing 'do'?
+<<ghc: 44114576 bytes, 13 GCs, 2427872/4686152 avg/max bytes residency (2 samples), 31M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+make: *** [Main.o] Error 1
+HC = /h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc
+HC_OPTS = -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields
+RUNTEST_OPTS = -ghc-timing
+==nofib== triangle: time to compile Main follows...
+/h/ywang30/.stack/programs/x86_64-linux/ghc-gmp4-7.8.4/bin/ghc -O2 -Rghc-timing -H32m -hisuf hi -rtsopts -XBangPatterns -O2 -funbox-strict-fields -c Main.hs -o Main.o
+
+Main.hs:15:1:
+    Failed to load interface for ‘Data.FiniteMap’
+    Perhaps you meant Data.IntMap (from containers-0.5.5.1)
+    Use -v to see a list of the files searched for.
+<<ghc: 55937000 bytes, 14 GCs, 2308276/4446960 avg/max bytes residency (2 samples), 32M in use, 0.00 INIT (0.00 elapsed), 0.04 MUT (0.05 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+make: *** [Main.o] Error 1

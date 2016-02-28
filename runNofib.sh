@@ -73,4 +73,4 @@ stack exec GenesisNF ~/nofib/spectral/scc 1 1 1 >> gennofib.log 2>&1 ;
 stack exec GenesisNF ~/nofib/spectral/simple 1 1 1 >> gennofib.log 2>&1 ;
 stack exec GenesisNF ~/nofib/spectral/sorting 1 1 1 >> gennofib.log 2>&1 ;
 stack exec GenesisNF ~/nofib/spectral/treejoin 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/triangle 1 1 1 >> gennofib.log2>&1  
+stack exec GenesisNF ~/nofib/spectral/triangle 1 1 1 >> gennofib.log 2>&1  
