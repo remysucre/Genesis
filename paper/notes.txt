@@ -36,7 +36,7 @@ NOTES:
 * people who offered help: Nathan, Dio, Tara, Miraj, John
 
 EXPERIMENTS:
-! TODO add -XBangPatterns
+! TODO timeout nofib
 ! TODO investigate nofib/err.log 
   non-term, : fixity, bad interface?, recursive bang pattern
 ! TODO investigate spectral/mandel2

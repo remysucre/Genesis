@@ -19,7 +19,7 @@ findPats = universeBi
 placesToStrict :: String -> IO Int
 placesToStrict path = do
   content <- readFile path
-  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False (Just preludeFixities)
+  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False (Just baseFixities)
   case parseModuleWithMode mode content of
     ParseFailed _ e -> error e
     ParseOk a       -> rnf content `seq` return $ length $ findPats a
@@ -28,7 +28,7 @@ placesToStrict path = do
 readBangs :: String -> IO [Bool]
 readBangs path = do
   content <- readFile path
-  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False (Just preludeFixities)
+  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False (Just baseFixities)
   case parseModuleWithMode mode content of
     ParseFailed _ e -> error e
     ParseOk a       -> rnf content `seq` return $ findBangs $ findPats a
@@ -41,7 +41,7 @@ findBangs = map isBang
 editBangs :: String -> [Bool] -> IO String
 editBangs path vec = do
   content <- readFile path
-  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False (Just preludeFixities)
+  let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False (Just baseFixities)
   case parseModuleWithMode mode content of
     ParseFailed _ e -> error $ path ++ ": " ++ e
     ParseOk a       -> rnf content `seq` return $ prettyPrint $ stripTop $ fst $ changeBangs vec a
