@@ -68,7 +68,7 @@ instance Entity BangVec Score (Time, FitnessRun) BangVec IO where
     return $! Just e' -}
 
   -- Mutation operator 
-  mutation pool p seed e = do 
+  mutation pool p seed e = do -- TODO pass length as pool
     -- putStrLn $ "mutate " ++ printBits (toBits e)-- ++ "->" ++ printBits (toBits e')
     size e `seq` return $! Just e'
     where
