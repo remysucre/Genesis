@@ -37,7 +37,7 @@ benchmark :: FilePath -> Int64 -> IO Double
 benchmark projDir runs =  do
   setCurrentDirectory projDir
   system "make -k mode=slow > nofib-gen 2>&1 "
-  system "~/nofib/nofib-analyse/nofib-analyse --csv=Alloc nofib-gen nofib-gen > temp.prof" -- TODO heuristcs hardcoded
+  system "~/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof" -- TODO heuristcs hardcoded
   -- TODO dirty hack here! anusing nofib-analyse
   fc <- readFile "temp.prof"
   let wcs = words $ map (\c -> if c == ',' then ' ' else c) fc
