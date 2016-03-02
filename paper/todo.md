@@ -1,3 +1,5 @@
+find how long optimizer takes
+find common bangs 
 talk about how we minimize the search space
 compare runtime of full search with genetic
 explain intuition behind mutation & crossover, with examples
