@@ -1,0 +1,14 @@
+- now: 
+  - small examples
+  - experiment: full search
+- later: 
+  - parallelism
+  - document leak zoo
+  - better gnuplot graph
+  - write wiki
+
+- data to collect from experiments: 
+  - Independecy of bangs
+  - how long does it take to get to good
+  - how to define "good"
+  - how to tell it's reached good
