@@ -73,21 +73,23 @@ gmain projDir (pop, gens, arch) = do
   -- Obtain base time: compile & run
     buildProj projDir
     baseTime <- benchmark projDir reps
-    let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
+    -- let mainPath = projDir ++ "/Main.hs" -- MULTI TODO assuming only one file per project
+    let srcPaths = sourcePaths
     -- putStr "Basetime is: "; print baseTime
     putStr "Basetime is: "; print baseTime
 
   -- Pool: bit vector representing original progam
-    prog <- readFile mainPath
+    progs <- map readFile srcPaths 
     -- vecSize <- rnf prog `seq` placesToStrict mainPath
-    bs <- readBangs mainPath
-    let !vecPool = rnf prog `seq` B.fromBits bs
+    bs <- map readBangs srcPaths
+    let bangPool = rnf progs `seq` map B.fromBits bs
+        !vecPool = zip srcPaths bangPool
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
     es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir)
     let e = snd $ head es :: BangVec
-    prog' <- editBangs mainPath (B.toBits e)
+    prog' <- map (\(src, ))editBangs mainPath (B.toBits e)
 
   -- Write result
     putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
