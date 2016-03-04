@@ -1,0 +1,269 @@
+google scholars strictness annotations
+See how 2 bangs work
+See how to avoid mentioned example statically
+integerate notes into draft
+"calculate" coverage from experimental data
+measure "goodness" of coverage
+compare with random search: best ones and converge
+make an example program for intro, only necessary one(s)
+write outline for evaluation section: figure out necessary experiment
+^^ think about adversary: comp. to exhaustive, random search, show portion of search space . 
+put in related work
+think about soundness
+
+intro: who is the tool for
+put conclusion first
+talk about why we have diversity and not only mutate rate
+interpret each parameter concretely for strictness
+strictness 
+explain that taking original prog doesn't get worse
+see if there's a good default for parameters (do experimant on all benchmarks)
+  expert users can tune
+a formula for choosing the parameter
+a short description before everything: it's easy, the user does very little
+explaination of diversity go to previous part
+have one sentence for each parameter in cfg section then go into detail
+changes in parameter has effect 
+trade soundness for performance, it is important that the programmer provides
+  representative data
+calculate from the program the search space, and our coverage space
+calculate runtime from sample profiling
+check if ICFP will run tool
+if new contents add to draft
+
+talk about how we minimize the search space
+compare runtime of full search with genetic
+explain intuition behind mutation & crossover, with examples
+from toy examples. 
+explain intuition of impact of parameters on strictness performance. 
+look at toy programs, see if we get performance out of soundness. 
+discuss toy programs in section 3
+train data & real data
+? what does ghc do with the result of analysis
+? S, L, U, A
+? bottom
+
+par: 
+* better explanation on what to do with analysis 
+* mentioned searching, problem was "combinatorial explosion". Properties of GA
+    can avoid this? 
+organize todos and notes
+work on nofib
+add timeout for nofib
+evolving on multiple sources
+intro: who is the tool for
+put conclusion first
+talk about why we have diversity and not only mutate rate
+interpret each parameter concretely for strictness
+strictness 
+explain that taking original prog doesn't get worse
+see if there's a good default for parameters (do experimant on all benchmarks)
+  expert users can tune
+a formula for choosing the parameter
+a short description before everything: it's easy, the user does very little
+explaination of diversity go to previous part
+have one sentence for each parameter in cfg section then go into detail
+changes in parameter has effect 
+trade soundness for performance, it is important that the programmer provides
+  representative data
+calculate from the program the search space, and our coverage space
+calculate runtime from sample profiling
+check if ICFP will run tool
+if new contents add to draft
+
+talk about how we minimize the search space
+compare runtime of full search with genetic
+explain intuition behind mutation & crossover, with examples
+from toy examples. 
+explain intuition of impact of parameters on strictness performance. 
+look at toy programs, see if we get performance out of soundness. 
+discuss toy programs in section 3
+train data & real data
+NOTES: 
+* NoFib: 
+  - provides source for libraries and driver programs
+  - reveals semantics changes: non-termination, disallowed bangs: 
+     ...
+     where !a = b
+           !b = a
+* GA is ok: if a bang introduces non-term/is disallowed, all genes with that 
+  bang have low score, and crossover won't have that bang. In the next 
+  generation, only mutate-rate * mutate-parameter of genes may have bad bang
+  (bad bangs only reappear in mutations).
+* search space & coverage: 
+  bangs = n
+  search-space = 2 ^ n
+  coverage: parameters: gen#, pop, mute-rate, mute-param, cross-rate, diversity
+                        archive-size
+            first-gen = pop
+            total-space = pop * generation (assume all genes different)
+            probability-of-same-genes = ? 
+            probability-of-same-genes-mutation = mute-rate * (1 - mute-para) ^ n (next gen)
+            probability-of-same-genes-from-parent = cross-rate * 0.5 ^ n (next gen)
+
+            what about cross generations? 
+              - same gen reappear from same parents (strong parents survive through archive)
+              - same gen reappear from different parents
+              - same gen reappear from mutating different origin
+            These are low, like two families have the same children. Caculate 
+            probability based on similarity of parents / sources. Also caculate
+            progress (how different can genes be), which requires a measurement 
+            of similarity of genes. 
+
+* calculate: Probability of getting x bangs out of n strict points 
+              > where bangs are independent
+              > where they aren't effective individually
+              > where they are bad individually
+* people who offered help: Nathan, Dio, Tara, Miraj, John
+
+EXPERIMENTS:
+! TODO timeout nofib
+! TODO investigate nofib/err.log 
+  non-term, : fixity, bad interface?, recursive bang pattern
+! TODO investigate spectral/mandel2
+! TODO investigate spectral/constraint
+! TODO make Genesis take multiple sources
+! TODO figure out all nofib
+! TODO get data for all benchmark
+! TODO compare with blind random search
+! TODO see if there's a good default for parameters (do experimant on all 
+       benchmarks) expert users can tune
+! TODO calculate from the program the search space, and our coverage space
+! TODO calculate runtime from sample profiling
+! TODO look @ ML literature for fine-tuning parameters
+
+PAPER: 
+intro: who is the tool for
+put conclusion first
+talk about why we have diversity and not only mutate rate
+interpret each parameter concretely for strictness
+explain that taking original prog doesn't get worse
+a short description before everything: it's easy, the user does very little
+explaination of diversity go to previous part
+have one sentence for each parameter in cfg section then go into detail
+! TODO: talk about archive size
+find how long optimizer takes
+find common bangs 
+talk about how we minimize the search space
+compare runtime of full search with genetic
+explain intuition behind mutation & crossover, with examples
+from toy examples. 
+explain intuition of impact of parameters on strictness performance. 
+look at toy programs, see if we get performance out of soundness. 
+discuss toy programs in section 3
+train data & real data
+- now: 
+  - small examples
+  - experiment: full search
+- later: 
+  - parallelism
+  - document leak zoo
+  - better gnuplot graph
+  - write wiki
+
+- data to collect from experiments: 
+  - Independecy of bangs
+  - how long does it take to get to good
+  - how to define "good"
+  - how to tell it's reached good
+- [x] genesis readme
+- [x] get criterion working
+- [x] run genetic, also turn on opt on exp
+- milestone
+- experiment
+  * full coverage, avg score sorted by genes
+  * genetic, avg score & generation #
+
+#todo
+- now: overnight run, log file, how to trace coverage/avg score
+- [x] how to generate next gen
+- [x] add config module
+- experiment
+  - [x] add hint manually
+  - [ ] log: 
+    - link to git hash
+    - generation #
+    - population
+    - search space(out)
+    - score(out)
+- space leak zoo
+- papers
+
+##on-file
+- Randomness 
+  * Main.hs:  -- TODO parse CLI arguments here.  Need to determine runs and cliSeed.  
+  * random seed: file hash
+- Better profiling Main.hs:  -- TODO for the future, check out criterion `measure`
+- Accept diverse input program: assuming only one file w/o input
+- algorithms: wrapper-filter, hill-climbing, neuro networks
+- shrink search space
+- concurrency
+
+#goal: 
+- get 10 profilable packages
+  - small examples
+  - hackage
+  - nofib
+- make genetic faster & better
+  - limit code coverage: only one bang, strictness annotation
+  - timeout space instead of time
+  - ensure code coverage, optimize wider range of input
+
+#strategies: 
+- use profile/analysis to break down code (prevent premature opt.)
+- use genetic etc. for machine learning
+- potentially improve each function/module independently according to call graph/profile
+
+#ideas: 
+- simulated anealing
+- simulated quantum state collapse?
+- artificial neuro network
+- thoughts on parsing/building in scale: 
+  - difficult because people like to introduce accents to the language
+  - learning all the accents/dialects might well be a separate project. machine learning?
+
+
+#inbox
+- [Genetic Main](https://github.com/remysucre/Genesis/blob/master/Main.hs)
+- [paper](http://www.ccs.neu.edu/racket/pubs/esop12-cf.pdf)
+- [acovea](https://donsbot.wordpress.com/2009/03/09/evolving-faster-haskell-programs/)
+- [strictify](http://hackage.haskell.org/package/strictify)
+
+##species in the thunk leak zoo
+- accumulating parameter
+- spine strict (evaluate)
+- recursive data
+- multi-threading
+
+##space leaks
+- [ ] [space leak zoo](http://blog.ezyang.com/2011/05/space-leak-zoo/)
+- [x] [sum](https://github.com/remysucre/comp150-FP/blob/master/profile/sumacc/3x51.hs)
+- [x] [fib](https://github.com/remysucre/comp150-FP/blob/master/profile/fib/fibsum.hs)
+- [x] [hsleak](https://github.com/remysucre/comp150-FP/tree/master/profile/hsleak)
+- [ ] [strictlist](http://stackoverflow.com/questions/6630782/thunk-memory-leak-as-a-result-of-map-function/6667023#6667023)
+- [x] [recursive list](https://github.com/remysucre/comp150-FP/blob/master/profile/zipw3/zipw3.hs)
+  - relevant: [sequence](http://stackoverflow.com/questions/3190098/space-leak-in-list-program), [zip](http://stackoverflow.com/questions/29958541/space-leak-with-recursive-list-zipwith)
+- [ ] [hash table](http://stackoverflow.com/questions/7855323/fixing-a-particularly-obscure-haskell-space-leak)
+- [ ] [hash 2](http://stackoverflow.com/questions/23163125/haskell-space-leak-in-hash-table-insertion)
+- [x] [string](http://stackoverflow.com/questions/19355344/space-leak-in-simple-string-generation-why)
+- [ ] [multi threading](http://stackoverflow.com/questions/7768536/space-leaks-in-haskell)
+- [ ] [lazy tree](http://stackoverflow.com/questions/6638126/lazy-tree-with-a-space-leak)
+
+##questions we can ask about packages
+- how many bangs?
+- how big
+- use what lib
+
+##helpful resources:
+- Cyrus random gen
+- glob lib for shell cmd
+- [GPC](http://book.realworldhaskell.org/read/testing-and-quality-assurance.html) has pretty rendering, but no call tree
+- simulated annealing
+
+##people
+- philip wadler, benjamin pierce, cyrus cousins, imalsogreg ta gmail.com, brent yorgy, facebook haskell guy, matthias f
+
+##further project
+- better parser: support CPP
+- better criterion: benchmark cabal project
+- machine learning language 
