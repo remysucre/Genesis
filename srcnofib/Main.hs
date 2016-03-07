@@ -89,10 +89,10 @@ gmain projDir (pop, gens, arch) = do
   -- Note: if either of the last two arguments is unused, just use () as a value
     es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir)
     let e = snd $ head es :: BangVec
-    prog' <- map (\(src, ))editBangs mainPath (B.toBits e)
+    prog' <- map (\(src, bangs) editBangs src (B.toBits bangs)) e
 
   -- Write result
-    putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
+    -- putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
     --putStrLn prog'
     let survivorPath = projDir ++ "/geneticSurvivor"
     writeFile survivorPath prog'
