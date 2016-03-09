@@ -40,6 +40,8 @@ findBangs = map isBang
 
 editBangs :: String -> [Bool] -> IO String
 editBangs path vec = do
+  putStrLn path
+  print vec
   content <- readFile path
   let mode = ParseMode path Haskell2010 [EnableExtension BangPatterns] False False (Just baseFixities)
   case parseModuleWithMode mode content of

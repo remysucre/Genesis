@@ -12,24 +12,27 @@ import Data.Int
 import System.Environment
 import System.Process
 import Control.DeepSeq
+import Control.Monad
 
 reps :: Int64
 reps = runs
 
-fitness :: FilePath -> BangVec -> IO Time
-fitness projDir bangVec = do
+fitness :: FilePath -> [FilePath] -> [BangVec] -> IO Time
+fitness projDir srcs bangVecs = do
   -- Read original
-    let mainPath = projDir ++ "/Main.hs"
-    !prog  <- readFile mainPath
+    !progs  <- sequence $ map readFile srcs
   -- Rewrite according to gene
-    !prog' <- editBangs mainPath (B.toBits bangVec) 
-    rnf prog `seq` writeFile mainPath prog'
+    print "bangvecis"
+    print $ map (printBits . B.toBits) bangVecs
+    putStrLn $ concat srcs
+    !progs' <- sequence $ zipWith editBangs srcs (map B.toBits bangVecs) 
+    rnf progs `seq` sequence $ zipWith writeFile srcs progs'
     -- print prog'
   -- Benchmark new
     buildProj projDir
     !newTime <- benchmark projDir reps
   -- Recover original
-    !_ <- writeFile mainPath prog
+    !_ <- sequence $ zipWith writeFile srcs progs
     return newTime
 
     {-
@@ -79,22 +82,22 @@ gmain projDir (pop, gens, arch) = do
     putStr "Basetime is: "; print baseTime
 
   -- Pool: bit vector representing original progam
-    progs <- map readFile srcPaths 
+    progs <- sequence $ map readFile srcPaths 
     -- vecSize <- rnf prog `seq` placesToStrict mainPath
-    bs <- map readBangs srcPaths
-    let bangPool = rnf progs `seq` map B.fromBits bs
-        !vecPool = zip srcPaths bangPool
+    bs <- sequence $ map readBangs srcPaths
+    let !vecPool = rnf progs `seq` map B.fromBits bs :: [B.BV]
+    print $ map B.toBits vecPool
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
-    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir)
-    let e = snd $ head es :: BangVec
-    prog' <- map (\(src, bangs) editBangs src (B.toBits bangs)) e
+    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir srcPaths)
+    let e = snd $ head es 
+    prog' <- sequence $ map (\(src, bangs) -> editBangs src (B.toBits bangs)) (zip srcPaths e)
 
   -- Write result
     -- putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
     --putStrLn prog'
-    let survivorPath = projDir ++ "/geneticSurvivor"
-    writeFile survivorPath prog'
-    writeFile mainPath prog
+    -- let survivorPath = projDir ++ "/geneticSurvivor"
+    -- writeFile survivorPath prog'
+    -- writeFile mainPath prog
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"

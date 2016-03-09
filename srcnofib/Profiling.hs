@@ -36,7 +36,7 @@ instance NFData ExitCode
 benchmark :: FilePath -> Int64 -> IO Double
 benchmark projDir runs =  do
   setCurrentDirectory projDir
-  system "make -k mode=slow > nofib-gen 2>&1 "
+  system "make clean && make boot && make -k mode=slow > nofib-gen 2>&1 "
   system "~/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof" -- TODO heuristcs hardcoded
   -- TODO dirty hack here! anusing nofib-analyse
   fc <- readFile "temp.prof"
