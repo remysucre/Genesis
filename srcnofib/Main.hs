@@ -9,6 +9,7 @@ import GA
 import qualified Data.BitVector as B
 import Data.Bits
 import Data.Int
+import Data.List
 import System.Environment
 import System.Process
 import Control.DeepSeq
@@ -22,17 +23,17 @@ fitness projDir srcs bangVecs = do
   -- Read original
     !progs  <- sequence $ map readFile srcs
   -- Rewrite according to gene
-    print "bangvecis"
-    print $ map (printBits . B.toBits) bangVecs
-    putStrLn $ concat srcs
+  -- DEBUG --  print "bangvecis"
+  -- DEBUG -- putStrLn $ concat srcs
     !progs' <- sequence $ zipWith editBangs srcs (map B.toBits bangVecs) 
     rnf progs `seq` sequence $ zipWith writeFile srcs progs'
     -- print prog'
   -- Benchmark new
-    buildProj projDir
+  -- buildProj projDir
     !newTime <- benchmark projDir reps
   -- Recover original
     !_ <- sequence $ zipWith writeFile srcs progs
+    putStrLn $ (concat $ intersperse "," $ map (printBits . B.toBits) bangVecs) ++ " " ++ show newTime
     return newTime
 
     {-
@@ -86,7 +87,7 @@ gmain projDir (pop, gens, arch) = do
     -- vecSize <- rnf prog `seq` placesToStrict mainPath
     bs <- sequence $ map readBangs srcPaths
     let !vecPool = rnf progs `seq` map B.fromBits bs :: [B.BV]
-    print $ map B.toBits vecPool
+    -- DEBUG -- print $ map B.toBits vecPool
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value

@@ -13,6 +13,12 @@ import GHC.Stats
 -- import Criterion.Measurement
 -- import Criterion.Types (measTime, measAllocated, fromInt)
 
+worstScore :: Double
+worstScore = 9999999
+
+pathToNoFib :: String
+pathToNoFib = "/data/dan/"
+
 -- 
 -- PROFILING EXTERNAL PROJECT
 --
@@ -23,7 +29,7 @@ buildProj :: FilePath -> IO ExitCode
 -- buildProj projDir = system $ "cd " ++ projDir ++ "; cabal configure -v0; cabal build -v0"
 buildProj projDir = do 
   setCurrentDirectory projDir
-  system "make clean -q; make boot"
+  system "make clean -s; make boot -s"
 
 -- TODO use current working dir and save compile command in config.hs
 
@@ -33,13 +39,43 @@ instance NFData ExitCode
     rnf ExitSuccess = ()
     rnf (ExitFailure _) = ()
 
+runProj :: FilePath -> Int64 -> IO Double
+runProj projDir runs = do
+
+  -- result is (Maybe ExitCode)
+  --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
+  result <- timeout 17000000 $ system "make -k mode=slow &> nofib-gen "   
+
+  case result of
+       Nothing -> return worstScore
+       Just (ExitFailure _) -> return worstScore
+       Just ExitSuccess ->  do {
+       	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
+			       
+       	    		       -- TODO dirty hack here! anusing nofib-analyse
+			       fc <- readFile "temp.prof";
+			       let wcs = words $ map (\c -> if c == ',' then ' ' else c) fc
+			       -- system "rm nofib-gen; rm temp.prof"
+			       in return . read $ wcs !! 1
+                               }
+
 benchmark :: FilePath -> Int64 -> IO Double
 benchmark projDir runs =  do
-  setCurrentDirectory projDir
-  system "make clean && make boot && make -k mode=slow > nofib-gen 2>&1 "
+  --  setCurrentDirectory projDir
+  exitCode <- buildProj projDir
+  case exitCode of
+       ExitFailure _ -> return worstScore 
+       ExitSuccess   -> runProj projDir runs
+
+{-
+
+  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
+
   system "~/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof" -- TODO heuristcs hardcoded
+
   -- TODO dirty hack here! anusing nofib-analyse
   fc <- readFile "temp.prof"
   let wcs = words $ map (\c -> if c == ',' then ' ' else c) fc
   -- system "rm nofib-gen; rm temp.prof"
   return . read $ wcs !! 1
+-}

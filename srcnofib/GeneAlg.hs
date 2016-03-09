@@ -39,7 +39,7 @@ instance Entity [BangVec] Score (Time, FitnessRun) [BangVec] IO where
   genRandom pool seed = do {Just e <- mutation pool 0.4 seed pool; return e} -- TODO hardcode mutation rate
   {-genRandom pool seed = do 
     print "genRandom"
-    putStrLn $ printBits (toBits e)
+    -- DEBUG -- putStrLn $ printBits (toBits e)
     return $! e
     where
       len = size pool
@@ -60,7 +60,7 @@ instance Entity [BangVec] Score (Time, FitnessRun) [BangVec] IO where
         e1' = zipWith (.&.) ss e1 :: [BV]
         e2' = zipWith (.&.) (complement ss) e2 :: [BV]
         e' = zipWith (.|.) e1' e2'
-    putStrLn $ "cross " ++ concat (map (printBits . toBits) e1) ++ " " ++ concat (map (printBits . toBits) e2) ++ "->" ++ concat (map (printBits . toBits) e')
+    -- DEBUG -- putStrLn $ "cross " ++ concat (map (printBits . toBits) e1) ++ " " ++ concat (map (printBits . toBits) e2) ++ "->" ++ concat (map (printBits . toBits) e')
     return $! Just e'
 
   {- crossover pool _ seed e1 e2 = do 
@@ -77,9 +77,9 @@ instance Entity [BangVec] Score (Time, FitnessRun) [BangVec] IO where
 
   -- Mutation operator 
   mutation pool p seed e = do 
-    putStrLn $ "mutate " ++ concat (map (printBits . toBits) e) ++ "->" ++ concat (map (printBits . toBits) e')
-    print fss
-    print bss
+    -- DEBUG -- putStrLn $ "mutate " ++ concat (map (printBits . toBits) e) ++ "->" ++ concat (map (printBits . toBits) e')
+    -- DEBUG -- print fss
+    -- DEBUG -- print bss
     map size e `seq` return $! Just e'
     where
       lens = map size e
@@ -93,7 +93,7 @@ instance Entity [BangVec] Score (Time, FitnessRun) [BangVec] IO where
   score (baseTime, fitRun) bangVec = do 
     newTime <- fitRun bangVec
     let score = (newTime / baseTime)
-    putStrLn $ "bits: " ++ concat (map (printBits . toBits) bangVec)
+  --  putStrLn $ "bits: " ++ concat (map (printBits . toBits) bangVec)
     return $! Just score
 
   showGeneration _ (_,archive) = "best: " ++ (show fit)

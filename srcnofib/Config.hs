@@ -11,8 +11,8 @@ import Data.Int
 runs :: Int64
 runs = 1
 
-sourcePaths = [ "/h/ywang30/nofib/imaginary/tak/Main.hs"
-              , "/h/ywang30/nofib/imaginary/tak/Dio.hs" ]
+sourcePaths = [ "/data/dan/nofib/imaginary/tak/Main.hs"
+              , "/data/dan/nofib/imaginary/tak/Matt.hs" ]
 
 -- 
 -- CONFIG FOR GENETIC ALG
