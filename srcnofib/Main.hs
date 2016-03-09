@@ -62,6 +62,9 @@ emain = do
 
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
+
+    let mainsrcs = projDir ++ "/Main.hs"
+
     putStrLn $ "Optimizing " ++ projDir
     putStrLn $ ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
     putStrLn $ "pop: " ++ show pop 
@@ -78,7 +81,7 @@ gmain projDir (pop, gens, arch) = do
     buildProj projDir
     baseTime <- benchmark projDir reps
     -- let mainPath = projDir ++ "/Main.hs" -- MULTI TODO assuming only one file per project
-    let srcPaths = sourcePaths
+    let srcPaths = [mainsrcs]
     -- putStr "Basetime is: "; print baseTime
     putStr "Basetime is: "; print baseTime
 
