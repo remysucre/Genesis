@@ -10,6 +10,7 @@ import qualified Data.BitVector as B
 import Data.Bits
 import Data.Int
 import Data.List
+import System.Directory
 import System.Environment
 import System.Process
 import Control.DeepSeq
@@ -63,7 +64,6 @@ emain = do
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
 
-    let mainsrcs = projDir ++ "/Main.hs"
 
     putStrLn $ "Optimizing " ++ projDir
     putStrLn $ ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
@@ -81,7 +81,9 @@ gmain projDir (pop, gens, arch) = do
     buildProj projDir
     baseTime <- benchmark projDir reps (0 - 1)
     -- let mainPath = projDir ++ "/Main.hs" -- MULTI TODO assuming only one file per project
-    let srcPaths = [mainsrcs]
+    files <- getDirectoryContents projDir
+    let srcPaths = filter (isSuffixOf ".hs") files
+    --let srcPaths = [mainsrcs]
     -- putStr "Basetime is: "; print baseTime
     putStr "Basetime is: "; print baseTime
 
