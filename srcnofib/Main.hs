@@ -98,9 +98,14 @@ gmain projDir (pop, gens, arch) = do
   -- Note: if either of the last two arguments is unused, just use () as a value
     es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir srcPaths baseTime)
     let e = snd $ head es 
+        Just s = fst $ head es 
+    if s == (2 * baseTime) then print "Autobahn gives no improvement!" else print "all is well:)"
     prog' <- sequence $ map (\(src, bangs) -> editBangs src (B.toBits bangs)) (zip srcPaths e)
 
   -- Write result
+  -- generate new file names from original ones
+    let survivors = map (++ ".opt") srcPaths
+    sequence $ zipWith writeFile survivors prog'
     -- putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
     --putStrLn prog'
     -- let survivorPath = projDir ++ "/geneticSurvivor"
