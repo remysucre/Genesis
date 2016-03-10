@@ -1,4 +1,4 @@
-PATH_TO_NOFIB=..
+PATH_TO_NOFIB=~
 
 stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/imaginary/gen_regexps 1 1 1 >> gennofib.log 2>&1 ;
 stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/imaginary/wheel-sieve2 1 1 1 >> gennofib.log 2>&1 ;
