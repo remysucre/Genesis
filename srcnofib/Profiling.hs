@@ -17,7 +17,7 @@ worstScore :: Double
 worstScore = 9999999
 
 pathToNoFib :: String
-pathToNoFib = "/data/dan/"
+pathToNoFib = "~"
 
 -- 
 -- PROFILING EXTERNAL PROJECT
