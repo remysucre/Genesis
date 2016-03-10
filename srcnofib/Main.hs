@@ -18,8 +18,8 @@ import Control.Monad
 reps :: Int64
 reps = runs
 
-fitness :: FilePath -> [FilePath] -> [BangVec] -> IO Time
-fitness projDir srcs bangVecs = do
+fitness :: FilePath -> [FilePath] -> Time -> [BangVec] -> IO Time
+fitness projDir srcs baseTime bangVecs = do
   -- Read original
     !progs  <- sequence $ map readFile srcs
   -- Rewrite according to gene
@@ -30,7 +30,7 @@ fitness projDir srcs bangVecs = do
     -- print prog'
   -- Benchmark new
   -- buildProj projDir
-    !newTime <- benchmark projDir reps
+    !newTime <- benchmark projDir reps baseTime
   -- Recover original
     !_ <- sequence $ zipWith writeFile srcs progs
     putStrLn $ (concat $ intersperse "," $ map (printBits . B.toBits) bangVecs) ++ " " ++ show newTime
@@ -79,7 +79,7 @@ gmain projDir (pop, gens, arch) = do
   -- Get base time and pool. 
   -- Obtain base time: compile & run
     buildProj projDir
-    baseTime <- benchmark projDir reps
+    baseTime <- benchmark projDir reps (0 - 1)
     -- let mainPath = projDir ++ "/Main.hs" -- MULTI TODO assuming only one file per project
     let srcPaths = [mainsrcs]
     -- putStr "Basetime is: "; print baseTime
@@ -94,7 +94,7 @@ gmain projDir (pop, gens, arch) = do
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
-    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir srcPaths)
+    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir srcPaths baseTime)
     let e = snd $ head es 
     prog' <- sequence $ map (\(src, bangs) -> editBangs src (B.toBits bangs)) (zip srcPaths e)
 

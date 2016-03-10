@@ -13,8 +13,8 @@ import GHC.Stats
 -- import Criterion.Measurement
 -- import Criterion.Types (measTime, measAllocated, fromInt)
 
-worstScore :: Double
-worstScore = 9999999
+worstScore :: Double -> Double
+worstScore = (*) 2
 
 pathToNoFib :: String
 pathToNoFib = ".."
@@ -39,8 +39,8 @@ instance NFData ExitCode
     rnf ExitSuccess = ()
     rnf (ExitFailure _) = ()
 
-runProj :: FilePath -> Int64 -> IO Double
-runProj projDir runs = do
+runProj :: FilePath -> Int64 -> Double -> IO Double
+runProj projDir runs baseTime = do
 
   -- result is ExitCode
   --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
@@ -48,7 +48,7 @@ runProj projDir runs = do
 
   case result of
        -- Nothing -> return worstScore
-       ExitFailure _ -> return worstScore
+       ExitFailure _ -> return $ worstScore baseTime
        ExitSuccess ->  do {
        	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
 			       
@@ -59,13 +59,13 @@ runProj projDir runs = do
 			       in return . read $ wcs !! 1
                                }
 
-benchmark :: FilePath -> Int64 -> IO Double
-benchmark projDir runs =  do
+benchmark :: FilePath -> Int64 -> Double -> IO Double
+benchmark projDir runs baseTime =  do
   --  setCurrentDirectory projDir
   exitCode <- buildProj projDir
   case exitCode of
-       ExitFailure _ -> return worstScore 
-       ExitSuccess   -> runProj projDir runs
+       ExitFailure _ -> return $ worstScore baseTime
+       ExitSuccess   -> runProj projDir runs baseTime 
 
 {-
 

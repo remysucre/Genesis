@@ -1,4 +1,4 @@
-PATH_TO_NOFIB=/data/dan/
+PATH_TO_NOFIB=..
 
 stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/imaginary/gen_regexps 1 1 1 >> gennofib.log 2>&1 ;
 stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/imaginary/wheel-sieve2 1 1 1 >> gennofib.log 2>&1 ;
@@ -27,27 +27,27 @@ stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/real/veritas 1 1 1 >> gennofib.log 2
 # stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/shootout/spectral-norm 1 1 1 >> gennofib.log 2>&1 ;
 
 #Remy got these
-stack exec GenesisNF ~/nofib/spectral/atom 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/awards 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/boyer2 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/calendar 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/cichelli 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/clausify 1 1 1 >> gennofib.log 2>&1 ;
-#stack exec GenesisNF ~/nofib/spectral/constraints 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/cse 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/expert 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/gcd 1 1 1 >> gennofib.log 2>&1 ;
-#stack exec GenesisNF ~/nofib/spectral/lambda 1 1 1 >> gennofib.log 2>&1 ;
-#stack exec GenesisNF ~/nofib/spectral/last-piece 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/life 1 1 1 >> gennofib.log 2>&1 ;
-#stack exec GenesisNF ~/nofib/spectral/mandel2 1 1 1 >> gennofib.log 2>&1 ;
-#stack exec GenesisNF ~/nofib/spectral/mate 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/minimax 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/multiplier 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/power 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/pretty 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/scc 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/simple 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/sorting 1 1 1 >> gennofib.log 2>&1 ;
-stack exec GenesisNF ~/nofib/spectral/treejoin 1 1 1 >> gennofib.log 2>&1 ;
-#stack exec GenesisNF ~/nofib/spectral/triangle 1 1 1 >> gennofib.log 2>&1 
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/atom 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/awards 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/boyer2 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/calendar 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/cichelli 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/clausify 1 1 1 >> gennofib.log 2>&1 ;
+#stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/constraints 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/cse 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/expert 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/gcd 1 1 1 >> gennofib.log 2>&1 ;
+#stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/lambda 1 1 1 >> gennofib.log 2>&1 ;
+#stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/last-piece 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/life 1 1 1 >> gennofib.log 2>&1 ;
+#stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/mandel2 1 1 1 >> gennofib.log 2>&1 ;
+#stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/mate 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/minimax 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/multiplier 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/power 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/pretty 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/scc 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/simple 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/sorting 1 1 1 >> gennofib.log 2>&1 ;
+stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/treejoin 1 1 1 >> gennofib.log 2>&1 ;
+#stack exec GenesisNF ${PATH_TO_NOFIB}/nofib/spectral/triangle 1 1 1 >> gennofib.log 2>&1 
