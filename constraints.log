@@ -1,0 +1,13 @@
+<<ghc: 41064008 bytes, 13 GCs, 1830272/3487776 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+<<ghc: 41064008 bytes, 13 GCs, 1830272/3487776 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.06 GC (0.06 elapsed) :ghc>>
+<<ghc: 41006160 bytes, 13 GCs, 1830220/3487672 avg/max bytes residency (2 samples), 30M in use, 0.00 INIT (0.00 elapsed), 0.02 MUT (0.03 elapsed), 0.05 GC (0.05 elapsed) :ghc>>
+Optimizing /h/ywang30/nofib/spectral/constraints
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 1
+gens: 1
+arch: 1
+Basetime is: 2.114816376e9
+01000000010011000001100010010000110101000101100101100011010000001011010011100110101110011110000001101000111101001000011001100001001110001001011001001011000000101110100001111011001001001001000001010010100001110010111100001110011100010101010100110 9999999.0
+best: 4.728542446278088e-3
+done evolving!
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>

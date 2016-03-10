@@ -17,7 +17,7 @@ worstScore :: Double
 worstScore = 9999999
 
 pathToNoFib :: String
-pathToNoFib = "~"
+pathToNoFib = ".."
 
 -- 
 -- PROFILING EXTERNAL PROJECT
@@ -42,14 +42,14 @@ instance NFData ExitCode
 runProj :: FilePath -> Int64 -> IO Double
 runProj projDir runs = do
 
-  -- result is (Maybe ExitCode)
+  -- result is ExitCode
   --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
-  result <- timeout 17000000 $ system "make -k mode=slow &> nofib-gen "   
+  result <- system "timeout 30 make -k mode=slow &> nofib-gen "   
 
   case result of
-       Nothing -> return worstScore
-       Just (ExitFailure _) -> return worstScore
-       Just ExitSuccess ->  do {
+       -- Nothing -> return worstScore
+       ExitFailure _ -> return worstScore
+       ExitSuccess ->  do {
        	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
 			       
        	    		       -- TODO dirty hack here! anusing nofib-analyse
