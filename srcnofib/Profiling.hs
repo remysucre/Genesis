@@ -44,7 +44,7 @@ runProj projDir runs baseTime = do
 
   -- result is ExitCode
   --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
-  result <- system "timeout 30 make -k mode=slow &> nofib-gen "   
+  result <- system "timeout 120 make -k mode=slow &> nofib-gen "   
 
   case result of
        -- Nothing -> return worstScore

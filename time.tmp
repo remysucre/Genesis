@@ -1,0 +1,21 @@
+warning: dubious run time results for gen_regexps: [1.84,3.1100001,1.81,1.85,1.85]
+warning: dubious mut time results for gen_regexps: [1.32,2.39,1.29,1.33,1.33]
+warning: dubious run time results for gen_regexps: [1.84,3.1100001,1.81,1.85,1.85]
+warning: dubious mut time results for gen_regexps: [1.32,2.39,1.29,1.33,1.33]
+warning: dubious run time results for gen_regexps: [1.71,1.9499999,1.78,1.79,3.36]
+warning: dubious mut time results for gen_regexps: [1.23,1.42,1.29,1.3,2.56]
+warning: dubious GC time results for gen_regexps: [0.48,0.53,0.49,0.49,0.8]
+warning: dubious run time results for gen_regexps: [1.71,1.9499999,1.78,1.79,3.36]
+warning: dubious mut time results for gen_regexps: [1.23,1.42,1.29,1.3,2.56]
+warning: dubious GC time results for gen_regexps: [0.48,0.53,0.49,0.49,0.8]
+Optimizing /h/ywang30/nofib/imaginary/gen_regexps
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 1
+gens: 1
+arch: 1
+Basetime is: 7.71678552e8
+0100100101000100000110101000000111110100000110010010011111000001101001001100010011110001011000 7.71678552e8
+best: 1.0
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
