@@ -45,7 +45,7 @@ runProj projDir runs baseTime timeLimit = do
   -- result is ExitCode
   --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
   putStrLn $ "runproj limit: " ++ show timeLimit
-  result <- system $ "timeout " ++ (show . ceiling) (6 * timeLimit) ++ " make -k mode=slow &> nofib-gen "   
+  result <- system $ "timeout " ++ (show . ceiling) (2 * timeLimit) ++ " make -k mode=norm &> nofib-gen "   
 
   case result of
        -- Nothing -> return worstScore

@@ -859,5 +859,5 @@ best: 2.0
 done evolving!
 "all is well:)"
 >>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
-223.78user 125.52system 6:18.23elapsed 92%CPU (0avgtext+0avgdata 135568maxresident)k
-311472inputs+433184outputs (277major+52872765minor)pagefaults 0swaps
+593.48user 502.87system 18:00.61elapsed 101%CPU (0avgtext+0avgdata 109580maxresident)k
+275656inputs+406032outputs (152major+50834730minor)pagefaults 0swaps
