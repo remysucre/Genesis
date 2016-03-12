@@ -1,4 +1,3 @@
-calendar: CPP
-no bangs in class decl
-add CPP pass
-use -tmpdir
+sorting didn't run
+gen_regexp wrong numbers
+several timed out

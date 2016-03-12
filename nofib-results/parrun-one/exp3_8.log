@@ -1,0 +1,737 @@
+warning: dubious mut time results for exp3_8: [2.32,3.37,2.42,2.61,3.04]
+warning: dubious mut time results for exp3_8: [2.32,3.37,2.42,2.61,3.04]
+warning: dubious run time results for exp3_8: [4.91,3.87,5.4700003,5.14,4.67]
+warning: dubious mut time results for exp3_8: [3.37,2.55,3.75,3.59,3.14]
+warning: dubious run time results for exp3_8: [4.91,3.87,5.4700003,5.14,4.67]
+warning: dubious mut time results for exp3_8: [3.37,2.55,3.75,3.59,3.14]
+warning: dubious run time results for exp3_8: [4.6400003,4.2,5.99,6.66,4.25]
+warning: dubious mut time results for exp3_8: [3.2,2.77,4.06,4.79,2.86]
+warning: dubious run time results for exp3_8: [4.6400003,4.2,5.99,6.66,4.25]
+warning: dubious mut time results for exp3_8: [3.2,2.77,4.06,4.79,2.86]
+warning: dubious run time results for exp3_8: [5.02,4.69,4.24,4.66,6.16]
+warning: dubious mut time results for exp3_8: [3.46,3.18,2.86,3.12,4.24]
+warning: dubious run time results for exp3_8: [5.02,4.69,4.24,4.66,6.16]
+warning: dubious mut time results for exp3_8: [3.46,3.18,2.86,3.12,4.24]
+warning: dubious run time results for exp3_8: [3.79,8.18,5.04,4.03,3.6799998]
+warning: dubious mut time results for exp3_8: [2.5,5.89,3.49,2.7,2.37]
+warning: dubious GC time results for exp3_8: [1.29,2.29,1.55,1.33,1.31]
+warning: dubious run time results for exp3_8: [3.79,8.18,5.04,4.03,3.6799998]
+warning: dubious mut time results for exp3_8: [2.5,5.89,3.49,2.7,2.37]
+warning: dubious GC time results for exp3_8: [1.29,2.29,1.55,1.33,1.31]
+warning: dubious run time results for exp3_8: [3.46,4.0099998,3.71,5.06,4.07]
+warning: dubious mut time results for exp3_8: [2.19,2.58,2.37,3.35,2.65]
+warning: dubious run time results for exp3_8: [3.46,4.0099998,3.71,5.06,4.07]
+warning: dubious mut time results for exp3_8: [2.19,2.58,2.37,3.35,2.65]
+warning: dubious mut time results for exp3_8: [2.8,2.34,3.11,2.17,2.24]
+warning: dubious mut time results for exp3_8: [2.8,2.34,3.11,2.17,2.24]
+warning: dubious run time results for exp3_8: [3.44,3.39,3.7600002,3.3700001,5.19]
+warning: dubious mut time results for exp3_8: [2.19,2.14,2.41,2.13,3.53]
+warning: dubious run time results for exp3_8: [3.44,3.39,3.7600002,3.3700001,5.19]
+warning: dubious mut time results for exp3_8: [2.19,2.14,2.41,2.13,3.53]
+warning: dubious mut time results for exp3_8: [2.89,2.26,2.3,2.32,2.05]
+warning: dubious mut time results for exp3_8: [2.89,2.26,2.3,2.32,2.05]
+warning: dubious mut time results for exp3_8: [2.88,3.26,2.79,2.31,2.9]
+warning: dubious mut time results for exp3_8: [2.88,3.26,2.79,2.31,2.9]
+warning: dubious run time results for exp3_8: [3.77,4.44,4.89,4.26,5.4]
+warning: dubious mut time results for exp3_8: [2.39,2.84,3.28,2.78,3.57]
+warning: dubious run time results for exp3_8: [3.77,4.44,4.89,4.26,5.4]
+warning: dubious mut time results for exp3_8: [2.39,2.84,3.28,2.78,3.57]
+warning: dubious run time results for exp3_8: [5.86,4.49,4.14,3.85,3.63]
+warning: dubious mut time results for exp3_8: [4.04,2.96,2.77,2.58,2.38]
+warning: dubious GC time results for exp3_8: [1.82,1.53,1.37,1.27,1.25]
+warning: dubious run time results for exp3_8: [5.86,4.49,4.14,3.85,3.63]
+warning: dubious mut time results for exp3_8: [4.04,2.96,2.77,2.58,2.38]
+warning: dubious GC time results for exp3_8: [1.82,1.53,1.37,1.27,1.25]
+warning: dubious run time results for exp3_8: [3.22,4.6,3.3,3.79,3.58]
+warning: dubious mut time results for exp3_8: [2.02,3.0,2.07,2.33,2.27]
+warning: dubious run time results for exp3_8: [3.22,4.6,3.3,3.79,3.58]
+warning: dubious mut time results for exp3_8: [2.02,3.0,2.07,2.33,2.27]
+warning: dubious mut time results for exp3_8: [2.33,3.33,2.66,2.93,2.28]
+warning: dubious mut time results for exp3_8: [2.33,3.33,2.66,2.93,2.28]
+warning: dubious run time results for exp3_8: [4.04,6.26,4.21,3.8,4.32]
+warning: dubious mut time results for exp3_8: [2.75,4.27,2.79,2.49,2.9]
+warning: dubious GC time results for exp3_8: [1.29,1.99,1.42,1.31,1.42]
+warning: dubious run time results for exp3_8: [4.04,6.26,4.21,3.8,4.32]
+warning: dubious mut time results for exp3_8: [2.75,4.27,2.79,2.49,2.9]
+warning: dubious GC time results for exp3_8: [1.29,1.99,1.42,1.31,1.42]
+warning: dubious mut time results for exp3_8: [2.47,3.54,3.21,2.74,2.83]
+warning: dubious mut time results for exp3_8: [2.47,3.54,3.21,2.74,2.83]
+warning: dubious run time results for exp3_8: [3.64,4.69,3.44,3.79,5.71]
+warning: dubious mut time results for exp3_8: [2.4,3.24,2.3,2.56,3.91]
+warning: dubious GC time results for exp3_8: [1.24,1.45,1.14,1.23,1.8]
+warning: dubious run time results for exp3_8: [3.64,4.69,3.44,3.79,5.71]
+warning: dubious mut time results for exp3_8: [2.4,3.24,2.3,2.56,3.91]
+warning: dubious GC time results for exp3_8: [1.24,1.45,1.14,1.23,1.8]
+warning: dubious mut time results for exp3_8: [2.74,3.18,3.06,2.37,2.24]
+warning: dubious mut time results for exp3_8: [2.74,3.18,3.06,2.37,2.24]
+warning: dubious run time results for exp3_8: [3.44,3.54,4.86,4.16,3.35]
+warning: dubious mut time results for exp3_8: [2.26,2.33,3.28,2.75,2.22]
+warning: dubious run time results for exp3_8: [3.44,3.54,4.86,4.16,3.35]
+warning: dubious mut time results for exp3_8: [2.26,2.33,3.28,2.75,2.22]
+warning: dubious run time results for exp3_8: [4.23,4.75,4.27,3.29,4.27]
+warning: dubious mut time results for exp3_8: [2.8,3.1,2.72,2.1,2.69]
+warning: dubious run time results for exp3_8: [4.23,4.75,4.27,3.29,4.27]
+warning: dubious mut time results for exp3_8: [2.8,3.1,2.72,2.1,2.69]
+warning: dubious run time results for exp3_8: [3.4499998,3.67,5.23,3.77,3.82]
+warning: dubious mut time results for exp3_8: [2.27,2.42,3.53,2.53,2.54]
+warning: dubious GC time results for exp3_8: [1.18,1.25,1.7,1.24,1.28]
+warning: dubious run time results for exp3_8: [3.4499998,3.67,5.23,3.77,3.82]
+warning: dubious mut time results for exp3_8: [2.27,2.42,3.53,2.53,2.54]
+warning: dubious GC time results for exp3_8: [1.18,1.25,1.7,1.24,1.28]
+warning: dubious run time results for exp3_8: [3.6999998,3.36,3.54,3.7600002,5.5699997]
+warning: dubious mut time results for exp3_8: [2.36,2.12,2.27,2.41,3.84]
+warning: dubious run time results for exp3_8: [3.6999998,3.36,3.54,3.7600002,5.5699997]
+warning: dubious mut time results for exp3_8: [2.36,2.12,2.27,2.41,3.84]
+warning: dubious run time results for exp3_8: [5.04,3.3600001,4.2,3.71,3.1599998]
+warning: dubious mut time results for exp3_8: [3.61,2.19,2.74,2.42,2.07]
+warning: dubious run time results for exp3_8: [5.04,3.3600001,4.2,3.71,3.1599998]
+warning: dubious mut time results for exp3_8: [3.61,2.19,2.74,2.42,2.07]
+warning: dubious run time results for exp3_8: [3.3,3.48,4.81,4.2200003,4.25]
+warning: dubious mut time results for exp3_8: [2.09,2.2,3.14,2.63,2.84]
+warning: dubious run time results for exp3_8: [3.3,3.48,4.81,4.2200003,4.25]
+warning: dubious mut time results for exp3_8: [2.09,2.2,3.14,2.63,2.84]
+warning: dubious run time results for exp3_8: [5.2,4.12,4.14,5.05,3.47]
+warning: dubious mut time results for exp3_8: [3.6,2.61,2.74,3.3,2.19]
+warning: dubious run time results for exp3_8: [5.2,4.12,4.14,5.05,3.47]
+warning: dubious mut time results for exp3_8: [3.6,2.61,2.74,3.3,2.19]
+warning: dubious run time results for exp3_8: [3.94,3.31,5.84,3.09,3.54]
+warning: dubious mut time results for exp3_8: [2.59,2.2,4.13,2.06,2.39]
+warning: dubious GC time results for exp3_8: [1.35,1.11,1.71,1.03,1.15]
+warning: dubious run time results for exp3_8: [3.94,3.31,5.84,3.09,3.54]
+warning: dubious mut time results for exp3_8: [2.59,2.2,4.13,2.06,2.39]
+warning: dubious GC time results for exp3_8: [1.35,1.11,1.71,1.03,1.15]
+warning: dubious mut time results for exp3_8: [2.1,2.08,2.91,2.02,2.65]
+warning: dubious mut time results for exp3_8: [2.1,2.08,2.91,2.02,2.65]
+warning: dubious run time results for exp3_8: [3.85,4.15,4.69,6.09,5.1099997]
+warning: dubious mut time results for exp3_8: [2.52,2.72,3.21,4.39,3.58]
+warning: dubious run time results for exp3_8: [3.85,4.15,4.69,6.09,5.1099997]
+warning: dubious mut time results for exp3_8: [2.52,2.72,3.21,4.39,3.58]
+warning: dubious run time results for exp3_8: [4.5,3.68,5.7,3.8200002,5.1]
+warning: dubious mut time results for exp3_8: [3.05,2.43,3.97,2.46,3.6]
+warning: dubious run time results for exp3_8: [4.5,3.68,5.7,3.8200002,5.1]
+warning: dubious mut time results for exp3_8: [3.05,2.43,3.97,2.46,3.6]
+warning: dubious run time results for exp3_8: [4.2,5.34,3.7,3.61,3.9]
+warning: dubious mut time results for exp3_8: [2.82,3.62,2.41,2.33,2.52]
+warning: dubious run time results for exp3_8: [4.2,5.34,3.7,3.61,3.9]
+warning: dubious mut time results for exp3_8: [2.82,3.62,2.41,2.33,2.52]
+warning: dubious mut time results for exp3_8: [2.5,2.33,3.2,2.42,2.28]
+warning: dubious mut time results for exp3_8: [2.5,2.33,3.2,2.42,2.28]
+warning: dubious run time results for exp3_8: [3.26,3.4900002,4.1499996,3.63,6.4700003]
+warning: dubious mut time results for exp3_8: [2.04,2.17,2.61,2.23,4.3]
+warning: dubious GC time results for exp3_8: [1.22,1.32,1.54,1.4,2.17]
+warning: dubious run time results for exp3_8: [3.26,3.4900002,4.1499996,3.63,6.4700003]
+warning: dubious mut time results for exp3_8: [2.04,2.17,2.61,2.23,4.3]
+warning: dubious GC time results for exp3_8: [1.22,1.32,1.54,1.4,2.17]
+warning: dubious run time results for exp3_8: [3.81,3.87,3.84,3.61,5.35]
+warning: dubious mut time results for exp3_8: [2.53,2.55,2.55,2.37,3.77]
+warning: dubious run time results for exp3_8: [3.81,3.87,3.84,3.61,5.35]
+warning: dubious mut time results for exp3_8: [2.53,2.55,2.55,2.37,3.77]
+warning: dubious run time results for exp3_8: [4.52,4.25,6.4300003,4.6,3.9700003]
+warning: dubious mut time results for exp3_8: [3.07,2.81,4.61,3.05,2.64]
+warning: dubious run time results for exp3_8: [4.52,4.25,6.4300003,4.6,3.9700003]
+warning: dubious mut time results for exp3_8: [3.07,2.81,4.61,3.05,2.64]
+warning: dubious run time results for exp3_8: [5.02,3.72,3.35,4.14,3.94]
+warning: dubious mut time results for exp3_8: [3.34,2.45,2.18,2.76,2.55]
+warning: dubious GC time results for exp3_8: [1.68,1.27,1.17,1.38,1.39]
+warning: dubious run time results for exp3_8: [5.02,3.72,3.35,4.14,3.94]
+warning: dubious mut time results for exp3_8: [3.34,2.45,2.18,2.76,2.55]
+warning: dubious GC time results for exp3_8: [1.68,1.27,1.17,1.38,1.39]
+warning: dubious run time results for exp3_8: [6.32,4.41,4.73,5.4700003,4.05]
+warning: dubious mut time results for exp3_8: [4.34,2.88,3.15,3.77,2.66]
+warning: dubious GC time results for exp3_8: [1.98,1.53,1.58,1.7,1.39]
+warning: dubious run time results for exp3_8: [6.32,4.41,4.73,5.4700003,4.05]
+warning: dubious mut time results for exp3_8: [4.34,2.88,3.15,3.77,2.66]
+warning: dubious GC time results for exp3_8: [1.98,1.53,1.58,1.7,1.39]
+warning: dubious run time results for exp3_8: [5.01,4.24,4.63,3.3600001,3.32]
+warning: dubious mut time results for exp3_8: [3.5,2.78,3.11,2.17,2.12]
+warning: dubious run time results for exp3_8: [5.01,4.24,4.63,3.3600001,3.32]
+warning: dubious mut time results for exp3_8: [3.5,2.78,3.11,2.17,2.12]
+warning: dubious run time results for exp3_8: [3.8600001,4.09,3.7800002,5.32,3.73]
+warning: dubious mut time results for exp3_8: [2.51,2.63,2.45,3.67,2.38]
+warning: dubious run time results for exp3_8: [3.8600001,4.09,3.7800002,5.32,3.73]
+warning: dubious mut time results for exp3_8: [2.51,2.63,2.45,3.67,2.38]
+warning: dubious run time results for exp3_8: [4.76,4.63,3.6799998,4.16,6.15]
+warning: dubious mut time results for exp3_8: [3.18,3.03,2.35,2.69,4.13]
+warning: dubious GC time results for exp3_8: [1.58,1.6,1.33,1.47,2.02]
+warning: dubious run time results for exp3_8: [4.76,4.63,3.6799998,4.16,6.15]
+warning: dubious mut time results for exp3_8: [3.18,3.03,2.35,2.69,4.13]
+warning: dubious GC time results for exp3_8: [1.58,1.6,1.33,1.47,2.02]
+warning: dubious run time results for exp3_8: [4.24,3.7600002,3.57,5.14,3.79]
+warning: dubious mut time results for exp3_8: [2.69,2.42,2.27,3.23,2.43]
+warning: dubious GC time results for exp3_8: [1.55,1.34,1.3,1.91,1.36]
+warning: dubious run time results for exp3_8: [4.24,3.7600002,3.57,5.14,3.79]
+warning: dubious mut time results for exp3_8: [2.69,2.42,2.27,3.23,2.43]
+warning: dubious GC time results for exp3_8: [1.55,1.34,1.3,1.91,1.36]
+warning: dubious mut time results for exp3_8: [2.39,2.82,2.51,2.22,1.99]
+warning: dubious mut time results for exp3_8: [2.39,2.82,2.51,2.22,1.99]
+warning: dubious run time results for exp3_8: [4.0299997,4.94,3.91,3.5,3.4900002]
+warning: dubious mut time results for exp3_8: [2.54,3.14,2.41,2.12,2.16]
+warning: dubious run time results for exp3_8: [4.0299997,4.94,3.91,3.5,3.4900002]
+warning: dubious mut time results for exp3_8: [2.54,3.14,2.41,2.12,2.16]
+warning: dubious run time results for exp3_8: [4.16,3.3300002,3.81,3.39,4.95]
+warning: dubious mut time results for exp3_8: [2.75,2.14,2.48,2.18,3.33]
+warning: dubious run time results for exp3_8: [4.16,3.3300002,3.81,3.39,4.95]
+warning: dubious mut time results for exp3_8: [2.75,2.14,2.48,2.18,3.33]
+warning: dubious run time results for exp3_8: [5.58,3.66,3.6200001,3.65,3.54]
+warning: dubious mut time results for exp3_8: [3.78,2.43,2.39,2.4,2.31]
+warning: dubious GC time results for exp3_8: [1.8,1.23,1.23,1.25,1.23]
+warning: dubious run time results for exp3_8: [5.58,3.66,3.6200001,3.65,3.54]
+warning: dubious mut time results for exp3_8: [3.78,2.43,2.39,2.4,2.31]
+warning: dubious GC time results for exp3_8: [1.8,1.23,1.23,1.25,1.23]
+warning: dubious run time results for exp3_8: [4.09,3.8600001,4.53,3.6399999,3.12]
+warning: dubious mut time results for exp3_8: [2.71,2.48,2.9,2.35,1.98]
+warning: dubious GC time results for exp3_8: [1.38,1.38,1.63,1.29,1.14]
+warning: dubious run time results for exp3_8: [4.09,3.8600001,4.53,3.6399999,3.12]
+warning: dubious mut time results for exp3_8: [2.71,2.48,2.9,2.35,1.98]
+warning: dubious GC time results for exp3_8: [1.38,1.38,1.63,1.29,1.14]
+warning: dubious run time results for exp3_8: [4.43,5.79,4.94,3.51,6.14]
+warning: dubious mut time results for exp3_8: [3.0,3.98,3.31,2.31,4.35]
+warning: dubious GC time results for exp3_8: [1.43,1.81,1.63,1.2,1.79]
+warning: dubious run time results for exp3_8: [4.43,5.79,4.94,3.51,6.14]
+warning: dubious mut time results for exp3_8: [3.0,3.98,3.31,2.31,4.35]
+warning: dubious GC time results for exp3_8: [1.43,1.81,1.63,1.2,1.79]
+warning: dubious mut time results for exp3_8: [2.57,2.38,2.55,3.24,3.35]
+warning: dubious mut time results for exp3_8: [2.57,2.38,2.55,3.24,3.35]
+warning: dubious run time results for exp3_8: [3.27,4.62,3.1100001,4.29,4.38]
+warning: dubious mut time results for exp3_8: [2.14,3.06,1.99,2.76,2.9]
+warning: dubious run time results for exp3_8: [3.27,4.62,3.1100001,4.29,4.38]
+warning: dubious mut time results for exp3_8: [2.14,3.06,1.99,2.76,2.9]
+warning: dubious mut time results for exp3_8: [3.31,2.35,2.65,2.97,2.98]
+warning: dubious mut time results for exp3_8: [3.31,2.35,2.65,2.97,2.98]
+warning: dubious run time results for exp3_8: [4.08,5.2,3.8899999,4.5,6.58]
+warning: dubious mut time results for exp3_8: [2.65,3.45,2.48,2.86,4.42]
+warning: dubious GC time results for exp3_8: [1.43,1.75,1.41,1.64,2.16]
+warning: dubious run time results for exp3_8: [4.08,5.2,3.8899999,4.5,6.58]
+warning: dubious mut time results for exp3_8: [2.65,3.45,2.48,2.86,4.42]
+warning: dubious GC time results for exp3_8: [1.43,1.75,1.41,1.64,2.16]
+warning: dubious run time results for exp3_8: [3.3500001,4.66,3.15,3.55,4.83]
+warning: dubious mut time results for exp3_8: [2.15,3.18,2.03,2.26,3.21]
+warning: dubious GC time results for exp3_8: [1.2,1.48,1.12,1.29,1.62]
+warning: dubious run time results for exp3_8: [3.3500001,4.66,3.15,3.55,4.83]
+warning: dubious mut time results for exp3_8: [2.15,3.18,2.03,2.26,3.21]
+warning: dubious GC time results for exp3_8: [1.2,1.48,1.12,1.29,1.62]
+warning: dubious run time results for exp3_8: [3.5700002,5.1,4.7400002,4.54,3.9699998]
+warning: dubious mut time results for exp3_8: [2.24,3.44,3.14,3.0,2.59]
+warning: dubious run time results for exp3_8: [3.5700002,5.1,4.7400002,4.54,3.9699998]
+warning: dubious mut time results for exp3_8: [2.24,3.44,3.14,3.0,2.59]
+warning: dubious run time results for exp3_8: [4.21,4.09,3.63,6.46,5.8]
+warning: dubious mut time results for exp3_8: [2.81,2.83,2.41,4.39,3.99]
+warning: dubious GC time results for exp3_8: [1.4,1.26,1.22,2.07,1.81]
+warning: dubious run time results for exp3_8: [4.21,4.09,3.63,6.46,5.8]
+warning: dubious mut time results for exp3_8: [2.81,2.83,2.41,4.39,3.99]
+warning: dubious GC time results for exp3_8: [1.4,1.26,1.22,2.07,1.81]
+warning: dubious run time results for exp3_8: [4.48,3.23,4.81,5.42,3.9299998]
+warning: dubious mut time results for exp3_8: [2.96,2.1,3.21,3.65,2.52]
+warning: dubious GC time results for exp3_8: [1.52,1.13,1.6,1.77,1.41]
+warning: dubious run time results for exp3_8: [4.48,3.23,4.81,5.42,3.9299998]
+warning: dubious mut time results for exp3_8: [2.96,2.1,3.21,3.65,2.52]
+warning: dubious GC time results for exp3_8: [1.52,1.13,1.6,1.77,1.41]
+warning: dubious run time results for exp3_8: [4.31,5.49,6.38,3.99,3.58]
+warning: dubious mut time results for exp3_8: [2.71,3.71,4.29,2.53,2.33]
+warning: dubious GC time results for exp3_8: [1.6,1.78,2.09,1.46,1.25]
+warning: dubious run time results for exp3_8: [4.31,5.49,6.38,3.99,3.58]
+warning: dubious mut time results for exp3_8: [2.71,3.71,4.29,2.53,2.33]
+warning: dubious GC time results for exp3_8: [1.6,1.78,2.09,1.46,1.25]
+warning: dubious run time results for exp3_8: [4.06,3.8200002,5.44,3.31,4.93]
+warning: dubious mut time results for exp3_8: [2.67,2.47,3.69,2.15,3.27]
+warning: dubious GC time results for exp3_8: [1.39,1.35,1.75,1.16,1.66]
+warning: dubious run time results for exp3_8: [4.06,3.8200002,5.44,3.31,4.93]
+warning: dubious mut time results for exp3_8: [2.67,2.47,3.69,2.15,3.27]
+warning: dubious GC time results for exp3_8: [1.39,1.35,1.75,1.16,1.66]
+warning: dubious run time results for exp3_8: [4.94,4.34,4.41,3.28,3.4]
+warning: dubious mut time results for exp3_8: [3.24,2.83,2.85,2.04,2.13]
+warning: dubious run time results for exp3_8: [4.94,4.34,4.41,3.28,3.4]
+warning: dubious mut time results for exp3_8: [3.24,2.83,2.85,2.04,2.13]
+warning: dubious run time results for exp3_8: [7.1499996,4.38,5.5,4.06,5.5099998]
+warning: dubious mut time results for exp3_8: [5.18,2.85,3.73,2.69,3.84]
+warning: dubious GC time results for exp3_8: [1.97,1.53,1.77,1.37,1.67]
+warning: dubious run time results for exp3_8: [7.1499996,4.38,5.5,4.06,5.5099998]
+warning: dubious mut time results for exp3_8: [5.18,2.85,3.73,2.69,3.84]
+warning: dubious GC time results for exp3_8: [1.97,1.53,1.77,1.37,1.67]
+warning: dubious run time results for exp3_8: [4.33,5.33,3.4,4.73,3.61]
+warning: dubious mut time results for exp3_8: [2.77,3.52,2.15,3.04,2.34]
+warning: dubious GC time results for exp3_8: [1.56,1.81,1.25,1.69,1.27]
+warning: dubious run time results for exp3_8: [4.33,5.33,3.4,4.73,3.61]
+warning: dubious mut time results for exp3_8: [2.77,3.52,2.15,3.04,2.34]
+warning: dubious GC time results for exp3_8: [1.56,1.81,1.25,1.69,1.27]
+warning: dubious run time results for exp3_8: [3.54,3.85,6.31,4.7799997,4.1]
+warning: dubious mut time results for exp3_8: [2.39,2.61,4.38,3.23,2.68]
+warning: dubious GC time results for exp3_8: [1.15,1.24,1.93,1.55,1.42]
+warning: dubious run time results for exp3_8: [3.54,3.85,6.31,4.7799997,4.1]
+warning: dubious mut time results for exp3_8: [2.39,2.61,4.38,3.23,2.68]
+warning: dubious GC time results for exp3_8: [1.15,1.24,1.93,1.55,1.42]
+warning: dubious run time results for exp3_8: [5.22,6.6400003,3.3400002,3.79,4.1800003]
+warning: dubious mut time results for exp3_8: [3.62,4.57,2.19,2.49,2.7]
+warning: dubious GC time results for exp3_8: [1.6,2.07,1.15,1.3,1.48]
+warning: dubious run time results for exp3_8: [5.22,6.6400003,3.3400002,3.79,4.1800003]
+warning: dubious mut time results for exp3_8: [3.62,4.57,2.19,2.49,2.7]
+warning: dubious GC time results for exp3_8: [1.6,2.07,1.15,1.3,1.48]
+warning: dubious run time results for exp3_8: [4.14,3.6,3.35,3.0700002,4.51]
+warning: dubious mut time results for exp3_8: [2.76,2.31,2.18,1.96,3.01]
+warning: dubious run time results for exp3_8: [4.14,3.6,3.35,3.0700002,4.51]
+warning: dubious mut time results for exp3_8: [2.76,2.31,2.18,1.96,3.01]
+warning: dubious mut time results for exp3_8: [2.33,2.37,2.72,2.26,3.25]
+warning: dubious mut time results for exp3_8: [2.33,2.37,2.72,2.26,3.25]
+warning: dubious run time results for exp3_8: [4.03,5.0,5.5299997,3.94,6.5099998]
+warning: dubious mut time results for exp3_8: [2.64,3.47,3.87,2.57,4.43]
+warning: dubious GC time results for exp3_8: [1.39,1.53,1.66,1.37,2.08]
+warning: dubious run time results for exp3_8: [4.03,5.0,5.5299997,3.94,6.5099998]
+warning: dubious mut time results for exp3_8: [2.64,3.47,3.87,2.57,4.43]
+warning: dubious GC time results for exp3_8: [1.39,1.53,1.66,1.37,2.08]
+warning: dubious run time results for exp3_8: [3.25,3.42,4.91,4.61,3.35]
+warning: dubious mut time results for exp3_8: [2.12,2.22,3.23,3.03,2.19]
+warning: dubious GC time results for exp3_8: [1.13,1.2,1.68,1.58,1.16]
+warning: dubious run time results for exp3_8: [3.25,3.42,4.91,4.61,3.35]
+warning: dubious mut time results for exp3_8: [2.12,2.22,3.23,3.03,2.19]
+warning: dubious GC time results for exp3_8: [1.13,1.2,1.68,1.58,1.16]
+Optimizing /h/ywang30/nofib/imaginary/exp3_8
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 15
+gens: 13
+arch: 7
+Basetime is: 5.887834984e9
+01000000010011000001100 5.887769448e9
+10101001001101110101110 5.518900072e9
+10100000100100101010011 5.518834536e9
+00001001001100100111000 5.887834984e9
+10000000000010000000010 5.887769448e9
+10100001111100010101000 5.518834536e9
+11100000100000000010100 5.518834536e9
+11011001001011000000111 5.887769448e9
+00001000011100101000111 5.887834984e9
+01110101010001000001101 5.518900072e9
+11101100100000001100111 5.518834536e9
+10111110000010000000010 5.519031144e9
+00001110000010000101000 5.887769448e9
+11010010000010011000001 5.887769448e9
+00110000011001101101011 5.518900072e9
+best: 0.9373283305318939
+11001000000010000111000 5.887769448e9
+10101110111010000101000 5.518965608e9
+10000110000010000101000 5.887769448e9
+10101001001101110101110 5.518900072e9
+10110000000100101001011 5.518900072e9
+10100000100000000110000 5.518834536e9
+00111000101000001100011 5.518834536e9
+00110000100001101101011 5.518834536e9
+00110110010011001001010 5.519031144e9
+11110010110011100111010 5.518965608e9
+11100100000110101111010 5.519031144e9
+11000100110100010001000 5.887769448e9
+11101010100000001110011 5.518834536e9
+10010010001000000101010 5.887834984e9
+00011110010000000000010 5.887834984e9
+10100000100100101010011 5.518834536e9
+10100001111100010101000 5.518834536e9
+11100000100000000010100 5.518834536e9
+11101100100000001100111 5.518834536e9
+10101001001101110101110 5.518900072e9
+01110101010001000001101 5.518900072e9
+00110000011001101101011 5.518900072e9
+best: 0.9373283305318939
+10101100100100000101101 5.518834536e9
+10101001001101111101011 5.518900072e9
+10100001111101010101110 5.518834536e9
+10101010100100101010011 5.518834536e9
+10100100100010000110100 5.518965608e9
+00110000100001101101011 5.518834536e9
+10100100010010101101010 5.519031144e9
+10101110111111110101100 5.518965608e9
+11101100100000001100111 5.518834536e9
+00100000000001011001111 5.518900072e9
+11010000110111011010000 5.887703912e9
+00101100101001010100000 5.518834536e9
+11110001001111110101010 5.519031144e9
+00111001101001001100001 5.518834536e9
+01111110100010000111100 5.518965608e9
+10100000100000000110000 5.518834536e9
+00111000101000001100011 5.518834536e9
+00110000100001101101011 5.518834536e9
+11101010100000001110011 5.518834536e9
+10100000100100101010011 5.518834536e9
+10100001111100010101000 5.518834536e9
+11100000100000000010100 5.518834536e9
+best: 0.9373283305318939
+10100100100000001100011 5.518834536e9
+00101100100000100000011 5.518834536e9
+10101000100100000101000 5.518834536e9
+10100000101101010101110 5.518834536e9
+10101100100001010100000 5.518834536e9
+00101000101100001000011 5.518834536e9
+11100010000000011011111 5.518900072e9
+00101001100000001010001 5.518834536e9
+10100000100100000010100 5.518834536e9
+11001110101110101001100 5.887703912e9
+11111011100000011110000 5.518834536e9
+10110000110101111110011 5.518834536e9
+11101101110000010011010 5.518834536e9
+10110001100000011111001 5.518834536e9
+10111011011110111101011 5.519031144e9
+10101100100100000101101 5.518834536e9
+10100001111101010101110 5.518834536e9
+10101010100100101010011 5.518834536e9
+00110000100001101101011 5.518834536e9
+11101100100000001100111 5.518834536e9
+00101100101001010100000 5.518834536e9
+00111001101001001100001 5.518834536e9
+best: 0.9373283305318939
+10100000100001000101111 5.518834536e9
+11100100100000011100010 5.518834536e9
+00100000101101010100100 5.518834536e9
+11111001101000001100000 5.518834536e9
+10101000100100100000011 5.518834536e9
+01111001101000010100000 5.518834536e9
+10101001100000001001001 5.518834536e9
+10110101100000001111101 5.518834536e9
+00100000100001010101110 5.518834536e9
+10101101100000001100110 5.518834536e9
+00101101101101011100100 5.518834536e9
+10101101110000010111101 5.518834536e9
+01111111101011011110101 5.518965608e9
+00110000110000101111111 5.518834536e9
+00110011001000001111011 5.518900072e9
+10100100100000001100011 5.518834536e9
+00101100100000100000011 5.518834536e9
+10101000100100000101000 5.518834536e9
+10100000101101010101110 5.518834536e9
+10101100100001010100000 5.518834536e9
+00101000101100001000011 5.518834536e9
+00101001100000001010001 5.518834536e9
+best: 0.9373283305318939
+10101001101000011110100 5.518834536e9
+10101001100000001000111 5.518834536e9
+10100000100000100100011 5.518834536e9
+00100101110000011111101 5.518834536e9
+01110101101000001100000 5.518834536e9
+10100100100000011100000 5.518834536e9
+00100000100101001000111 5.518834536e9
+10101000100100000111100 5.518834536e9
+00111000111000110101010 5.518834536e9
+01100100000010001101111 5.519031144e9
+10110100000010011100011 5.519031144e9
+10100100101111100001100 5.518965608e9
+11101010101000100010000 5.518834536e9
+01101010001101000101100 5.518900072e9
+10001100000001001100011 5.887834984e9
+10100000100001000101111 5.518834536e9
+11100100100000011100010 5.518834536e9
+00100000101101010100100 5.518834536e9
+11111001101000001100000 5.518834536e9
+10101000100100100000011 5.518834536e9
+01111001101000010100000 5.518834536e9
+10101001100000001001001 5.518834536e9
+best: 0.9373283305318939
+11110000100000011100010 5.518834536e9
+01111000100000001100110 5.518834536e9
+10101001101000010111100 5.518834536e9
+11100100100000011100010 5.518834536e9
+10100100110000001100011 5.518834536e9
+11110001100100001101000 5.518834536e9
+00101100101000010100010 5.518834536e9
+10111001100000001100001 5.518834536e9
+10101001100000000101111 5.518834536e9
+10110000100100100100011 5.518834536e9
+00101000111000100100111 5.518834536e9
+11100100101001011100000 5.518834536e9
+10100000101101101001100 5.518834536e9
+10101110000000001100011 5.518900072e9
+10011011100000011001111 5.887769448e9
+10101001101000011110100 5.518834536e9
+10101001100000001000111 5.518834536e9
+10100000100000100100011 5.518834536e9
+00100101110000011111101 5.518834536e9
+01110101101000001100000 5.518834536e9
+10100100100000011100000 5.518834536e9
+00100000100101001000111 5.518834536e9
+best: 0.9373283305318939
+00101101110000011111101 5.518834536e9
+00101101101000010100000 5.518834536e9
+00100100110001011110100 5.518834536e9
+10101001111000011111101 5.518834536e9
+10100000101000010110011 5.518834536e9
+10100001100000001100000 5.518834536e9
+11100001100000001100110 5.518834536e9
+00100001100000001110101 5.518834536e9
+00111000100000010100010 5.518834536e9
+01010100000100001101000 5.887834984e9
+00000011100100001010110 5.887769448e9
+00100100110000000100000 5.518834536e9
+11100100101100010110010 5.518834536e9
+11101001101101111111000 5.518834536e9
+10100000111000111110111 5.518834536e9
+11110000100000011100010 5.518834536e9
+01111000100000001100110 5.518834536e9
+10101001101000010111100 5.518834536e9
+11100100100000011100010 5.518834536e9
+10100100110000001100011 5.518834536e9
+11110001100100001101000 5.518834536e9
+00101100101000010100010 5.518834536e9
+best: 0.9373283305318939
+10110000110000011110010 5.518834536e9
+00100001100000011100100 5.518834536e9
+00101101101000010110010 5.518834536e9
+00101101110000010100000 5.518834536e9
+10100000100000011110100 5.518834536e9
+11111000100000010110010 5.518834536e9
+10101101111000011110011 5.518834536e9
+00100000100000010100010 5.518834536e9
+10100000111000111100111 5.518834536e9
+00110100010101011110100 5.518900072e9
+10101100100010010101010 5.518965608e9
+10100100110010011010011 5.518965608e9
+10111111100000001111101 5.518834536e9
+01101110101100010000000 5.518834536e9
+10100011000001011010001 5.518900072e9
+00101101110000011111101 5.518834536e9
+00101101101000010100000 5.518834536e9
+00100100110001011110100 5.518834536e9
+10101001111000011111101 5.518834536e9
+10100000101000010110011 5.518834536e9
+10100001100000001100000 5.518834536e9
+11100001100000001100110 5.518834536e9
+best: 0.9373283305318939
+01101110100100011010100 5.518834536e9
+10100001100000001100100 5.518834536e9
+10110111100001001111101 5.518834536e9
+00111100100000011110110 5.518834536e9
+10101101111000011110011 5.518834536e9
+10100000111000111100111 5.518834536e9
+10101101100000010101010 5.518834536e9
+11101100101000011110010 5.518834536e9
+00110001100000010110010 5.518834536e9
+10000011000101010011011 5.887834984e9
+11111001011010000101110 5.519031144e9
+11101010110000001010100 5.518834536e9
+00000001001warning: dubious run time results for exp3_8: [5.3,4.58,3.12,3.44,4.79]
+warning: dubious mut time results for exp3_8: [3.64,3.01,2.02,2.33,3.26]
+warning: dubious GC time results for exp3_8: [1.66,1.57,1.1,1.11,1.53]
+warning: dubious run time results for exp3_8: [5.3,4.58,3.12,3.44,4.79]
+warning: dubious mut time results for exp3_8: [3.64,3.01,2.02,2.33,3.26]
+warning: dubious GC time results for exp3_8: [1.66,1.57,1.1,1.11,1.53]
+warning: dubious run time results for exp3_8: [3.71,5.19,5.78,4.63,4.68]
+warning: dubious mut time results for exp3_8: [2.32,3.57,3.91,2.95,3.08]
+warning: dubious run time results for exp3_8: [3.71,5.19,5.78,4.63,4.68]
+warning: dubious mut time results for exp3_8: [2.32,3.57,3.91,2.95,3.08]
+warning: dubious run time results for exp3_8: [3.2800002,4.6,3.0900002,3.0,3.55]
+warning: dubious mut time results for exp3_8: [2.14,3.05,1.99,1.94,2.29]
+warning: dubious GC time results for exp3_8: [1.14,1.55,1.1,1.06,1.26]
+warning: dubious run time results for exp3_8: [3.2800002,4.6,3.0900002,3.0,3.55]
+warning: dubious mut time results for exp3_8: [2.14,3.05,1.99,1.94,2.29]
+warning: dubious GC time results for exp3_8: [1.14,1.55,1.1,1.06,1.26]
+warning: dubious run time results for exp3_8: [4.4,4.59,3.5800002,3.06,4.37]
+warning: dubious mut time results for exp3_8: [3.05,3.14,2.39,2.0,2.97]
+warning: dubious run time results for exp3_8: [4.4,4.59,3.5800002,3.06,4.37]
+warning: dubious mut time results for exp3_8: [3.05,3.14,2.39,2.0,2.97]
+warning: dubious run time results for exp3_8: [4.5,4.1000004,5.06,3.9299998,3.29]
+warning: dubious mut time results for exp3_8: [3.03,2.66,3.27,2.58,2.1]
+warning: dubious GC time results for exp3_8: [1.47,1.44,1.79,1.35,1.19]
+warning: dubious run time results for exp3_8: [4.5,4.1000004,5.06,3.9299998,3.29]
+warning: dubious mut time results for exp3_8: [3.03,2.66,3.27,2.58,2.1]
+warning: dubious GC time results for exp3_8: [1.47,1.44,1.79,1.35,1.19]
+warning: dubious mut time results for exp3_8: [2.79,2.11,2.37,2.29,1.97]
+warning: dubious mut time results for exp3_8: [2.79,2.11,2.37,2.29,1.97]
+warning: dubious run time results for exp3_8: [4.24,5.71,4.0299997,4.14,3.67]
+warning: dubious mut time results for exp3_8: [2.75,3.66,2.59,2.51,2.38]
+warning: dubious GC time results for exp3_8: [1.49,2.05,1.44,1.63,1.29]
+warning: dubious run time results for exp3_8: [4.24,5.71,4.0299997,4.14,3.67]
+warning: dubious mut time results for exp3_8: [2.75,3.66,2.59,2.51,2.38]
+warning: dubious GC time results for exp3_8: [1.49,2.05,1.44,1.63,1.29]
+warning: dubious mut time results for exp3_8: [2.78,2.32,2.25,2.62,1.98]
+warning: dubious mut time results for exp3_8: [2.78,2.32,2.25,2.62,1.98]
+warning: dubious run time results for exp3_8: [5.12,3.7,4.73,3.3799999,3.6999998]
+warning: dubious mut time results for exp3_8: [3.51,2.41,3.14,2.1,2.35]
+warning: dubious run time results for exp3_8: [5.12,3.7,4.73,3.3799999,3.6999998]
+warning: dubious mut time results for exp3_8: [3.51,2.41,3.14,2.1,2.35]
+warning: dubious run time results for exp3_8: [4.14,3.97,4.95,3.53,3.64]
+warning: dubious mut time results for exp3_8: [2.78,2.69,3.33,2.33,2.43]
+warning: dubious run time results for exp3_8: [4.14,3.97,4.95,3.53,3.64]
+warning: dubious mut time results for exp3_8: [2.78,2.69,3.33,2.33,2.43]
+warning: dubious run time results for exp3_8: [3.47,4.4,6.0600004,3.5300002,3.7199998]
+warning: dubious mut time results for exp3_8: [2.19,2.93,4.01,2.21,2.32]
+warning: dubious GC time results for exp3_8: [1.28,1.47,2.05,1.32,1.4]
+warning: dubious run time results for exp3_8: [3.47,4.4,6.0600004,3.5300002,3.7199998]
+warning: dubious mut time results for exp3_8: [2.19,2.93,4.01,2.21,2.32]
+warning: dubious GC time results for exp3_8: [1.28,1.47,2.05,1.32,1.4]
+warning: dubious run time results for exp3_8: [4.76,3.56,3.1999998,3.56,3.4699998]
+warning: dubious mut time results for exp3_8: [3.13,2.41,2.09,2.35,2.3]
+warning: dubious GC time results for exp3_8: [1.63,1.15,1.11,1.21,1.17]
+warning: dubious run time results for exp3_8: [4.76,3.56,3.1999998,3.56,3.4699998]
+warning: dubious mut time results for exp3_8: [3.13,2.41,2.09,2.35,2.3]
+warning: dubious GC time results for exp3_8: [1.63,1.15,1.11,1.21,1.17]
+warning: dubious run time results for exp3_8: [4.06,3.38,4.06,4.5,4.76]
+warning: dubious mut time results for exp3_8: [2.53,2.14,2.67,2.96,3.29]
+warning: dubious run time results for exp3_8: [4.06,3.38,4.06,4.5,4.76]
+warning: dubious mut time results for exp3_8: [2.53,2.14,2.67,2.96,3.29]
+warning: dubious run time results for exp3_8: [4.5,4.23,3.1999998,4.73,3.52]
+warning: dubious mut time results for exp3_8: [3.04,2.82,2.12,3.22,2.32]
+warning: dubious run time results for exp3_8: [4.5,4.23,3.1999998,4.73,3.52]
+warning: dubious mut time results for exp3_8: [3.04,2.82,2.12,3.22,2.32]
+warning: dubious run time results for exp3_8: [3.6599998,3.34,3.04,4.33,3.1399999]
+warning: dubious mut time results for exp3_8: [2.33,2.12,1.95,2.98,2.04]
+warning: dubious run time results for exp3_8: [3.6599998,3.34,3.04,4.33,3.1399999]
+warning: dubious mut time results for exp3_8: [2.33,2.12,1.95,2.98,2.04]
+warning: dubious run time results for exp3_8: [3.8600001,3.8899999,3.7199998,4.2200003,5.84]
+warning: dubious mut time results for exp3_8: [2.5,2.52,2.31,2.72,3.96]
+warning: dubious run time results for exp3_8: [3.8600001,3.8899999,3.7199998,4.2200003,5.84]
+warning: dubious mut time results for exp3_8: [2.5,2.52,2.31,2.72,3.96]
+warning: dubious run time results for exp3_8: [3.5,4.24,3.98,4.08,6.5299997]
+warning: dubious mut time results for exp3_8: [2.19,2.77,2.6,2.68,4.23]
+warning: dubious GC time results for exp3_8: [1.31,1.47,1.38,1.4,2.3]
+warning: dubious run time results for exp3_8: [3.5,4.24,3.98,4.08,6.5299997]
+warning: dubious mut time results for exp3_8: [2.19,2.77,2.6,2.68,4.23]
+warning: dubious GC time results for exp3_8: [1.31,1.47,1.38,1.4,2.3]
+warning: dubious mut time results for exp3_8: [2.94,2.01,2.35,2.2,2.14]
+warning: dubious mut time results for exp3_8: [2.94,2.01,2.35,2.2,2.14]
+warning: dubious run time results for exp3_8: [4.27,3.97,3.56,5.71,4.6]
+warning: dubious mut time results for exp3_8: [2.85,2.51,2.28,3.88,3.06]
+warning: dubious GC time results for exp3_8: [1.42,1.46,1.28,1.83,1.54]
+warning: dubious run time results for exp3_8: [4.27,3.97,3.56,5.71,4.6]
+warning: dubious mut time results for exp3_8: [2.85,2.51,2.28,3.88,3.06]
+warning: dubious GC time results for exp3_8: [1.42,1.46,1.28,1.83,1.54]
+warning: dubious run time results for exp3_8: [3.79,4.67,4.63,3.89,3.33]
+warning: dubious mut time results for exp3_8: [2.53,3.03,2.96,2.44,2.11]
+warning: dubious run time results for exp3_8: [3.79,4.67,4.63,3.89,3.33]
+warning: dubious mut time results for exp3_8: [2.53,3.03,2.96,2.44,2.11]
+warning: dubious run time results for exp3_8: [3.51,3.4099998,3.5299997,4.27,5.17]
+warning: dubious mut time results for exp3_8: [2.31,2.3,2.35,2.89,3.55]
+warning: dubious GC time results for exp3_8: [1.2,1.11,1.18,1.38,1.62]
+warning: dubious run time results for exp3_8: [3.51,3.4099998,3.5299997,4.27,5.17]
+warning: dubious mut time results for exp3_8: [2.31,2.3,2.35,2.89,3.55]
+warning: dubious GC time results for exp3_8: [1.2,1.11,1.18,1.38,1.62]
+warning: dubious run time results for exp3_8: [4.19,4.96,3.08,3.41,3.3200002]
+warning: dubious mut time results for exp3_8: [2.76,3.36,1.96,2.19,2.18]
+warning: dubious GC time results for exp3_8: [1.43,1.6,1.12,1.22,1.14]
+warning: dubious run time results for exp3_8: [4.19,4.96,3.08,3.41,3.3200002]
+warning: dubious mut time results for exp3_8: [2.76,3.36,1.96,2.19,2.18]
+warning: dubious GC time results for exp3_8: [1.43,1.6,1.12,1.22,1.14]
+warning: dubious run time results for exp3_8: [5.27,4.2,3.88,3.8600001,3.3799999]
+warning: dubious mut time results for exp3_8: [3.51,2.68,2.53,2.5,2.08]
+warning: dubious run time results for exp3_8: [5.27,4.2,3.88,3.8600001,3.3799999]
+warning: dubious mut time results for exp3_8: [3.51,2.68,2.53,2.5,2.08]
+warning: dubious run time results for exp3_8: [4.68,3.42,5.07,4.25,4.2200003]
+warning: dubious mut time results for exp3_8: [3.12,2.26,3.47,2.82,2.89]
+warning: dubious run time results for exp3_8: [4.68,3.42,5.07,4.25,4.2200003]
+warning: dubious mut time results for exp3_8: [3.12,2.26,3.47,2.82,2.89]
+warning: dubious run time results for exp3_8: [4.3199997,4.67,3.1999998,3.19,3.1999998]
+warning: dubious mut time results for exp3_8: [2.83,3.15,2.05,2.05,2.05]
+warning: dubious run time results for exp3_8: [4.3199997,4.67,3.1999998,3.19,3.1999998]
+warning: dubious mut time results for exp3_8: [2.83,3.15,2.05,2.05,2.05]
+warning: dubious run time results for exp3_8: [3.45,4.4,4.01,4.88,4.1400003]
+warning: dubious mut time results for exp3_8: [2.17,2.99,2.66,3.21,2.65]
+warning: dubious run time results for exp3_8: [3.45,4.4,4.01,4.88,4.1400003]
+warning: dubious mut time results for exp3_8: [2.17,2.99,2.66,3.21,2.65]
+warning: dubious run time results for exp3_8: [3.28,4.17,4.16,4.61,3.48]
+warning: dubious mut time results for exp3_8: [2.02,2.75,2.75,3.03,2.16]
+warning: dubious run time results for exp3_8: [3.28,4.17,4.16,4.61,3.48]
+warning: dubious mut time results for exp3_8: [2.02,2.75,2.75,3.03,2.16]
+warning: dubious run time results for exp3_8: [5.69,4.02,4.22,5.84,4.11]
+warning: dubious mut time results for exp3_8: [3.74,2.55,2.62,3.97,2.71]
+warning: dubious run time results for exp3_8: [5.69,4.02,4.22,5.84,4.11]
+warning: dubious mut time results for exp3_8: [3.74,2.55,2.62,3.97,2.71]
+warning: dubious run time results for exp3_8: [5.96,3.46,5.5299997,3.5100002,3.42]
+warning: dubious mut time results for exp3_8: [3.89,2.16,3.82,2.19,2.18]
+warning: dubious GC time results for exp3_8: [2.07,1.3,1.71,1.32,1.24]
+warning: dubious run time results for exp3_8: [5.96,3.46,5.5299997,3.5100002,3.42]
+warning: dubious mut time results for exp3_8: [3.89,2.16,3.82,2.19,2.18]
+warning: dubious GC time results for exp3_8: [2.07,1.3,1.71,1.32,1.24]
+warning: dubious run time results for exp3_8: [3.27,3.76,6.23,3.65,3.54]
+warning: dubious mut time results for exp3_8: [2.17,2.49,4.27,2.46,2.29]
+warning: dubious GC time results for exp3_8: [1.1,1.27,1.96,1.19,1.25]
+warning: dubious run time results for exp3_8: [3.27,3.76,6.23,3.65,3.54]
+warning: dubious mut time results for exp3_8: [2.17,2.49,4.27,2.46,2.29]
+warning: dubious GC time results for exp3_8: [1.1,1.27,1.96,1.19,1.25]
+warning: dubious run time results for exp3_8: [4.2999997,3.72,3.2400002,3.74,3.05]
+warning: dubious mut time results for exp3_8: [2.87,2.42,2.14,2.49,2.01]
+warning: dubious run time results for exp3_8: [4.2999997,3.72,3.2400002,3.74,3.05]
+warning: dubious mut time results for exp3_8: [2.87,2.42,2.14,2.49,2.01]
+warning: dubious run time results for exp3_8: [3.2799997,3.0900002,3.48,3.49,4.37]
+warning: dubious mut time results for exp3_8: [2.12,2.01,2.25,2.3,2.83]
+warning: dubious GC time results for exp3_8: [1.16,1.08,1.23,1.19,1.54]
+warning: dubious run time results for exp3_8: [3.2799997,3.0900002,3.48,3.49,4.37]
+warning: dubious mut time results for exp3_8: [2.12,2.01,2.25,2.3,2.83]
+warning: dubious GC time results for exp3_8: [1.16,1.08,1.23,1.19,1.54]
+000011011011 5.887834984e9
+01110000110000000110000 5.518834536e9
+10101111111000001111111 5.518834536e9
+10110000110000011110010 5.518834536e9
+00100001100000011100100 5.518834536e9
+00101101101000010110010 5.518834536e9
+00101101110000010100000 5.518834536e9
+10100000100000011110100 5.518834536e9
+11111000100000010110010 5.518834536e9
+10101101111000011110011 5.518834536e9
+best: 0.9373283305318939
+10100000111000001110101 5.518834536e9
+10100000110000011110010 5.518834536e9
+10101111101000001111111 5.518834536e9
+10100101111000011100101 5.518834536e9
+00111100100000011110110 5.518834536e9
+10101111101100011010000 5.518834536e9
+00101101101000010110010 5.518834536e9
+10111101100000001110110 5.518834536e9
+10101001111000110100111 5.518834536e9
+10001001100001000111010 5.887769448e9
+10001101111000101011001 5.887769448e9
+00101101100101001100010 5.518834536e9
+10100000000100001010011 5.518900072e9
+00110100101001010110111 5.518834536e9
+10101100010010011100000 5.519031144e9
+01101110100100011010100 5.518834536e9
+10100001100000001100100 5.518834536e9
+10110111100001001111101 5.518834536e9
+00111100100000011110110 5.518834536e9
+10101101111000011110011 5.518834536e9
+10100000111000111100111 5.518834536e9
+10101101100000010101010 5.518834536e9
+best: 0.9373283305318939
+10100100111000111110011 5.518834536e9
+10100001111000111100101 5.518834536e9
+10100010101100011110101 5.518834536e9
+10100001100001001110100 5.518834536e9
+00101100110000011110010 5.518834536e9
+00111100101000011110111 5.518834536e9
+10111111100000000111010 5.518834536e9
+10110101110000011110101 5.518834536e9
+00101101100000001110110 5.518834536e9
+01110101010011001111100 5.519031144e9
+10111000001110011100111 5.519031144e9
+10100010110010010010110 5.518965608e9
+00101111101010110010010 5.518965608e9
+10101101010000000110010 5.518900072e9
+11000010000000001100101 5.887834984e9
+10100000111000001110101 5.518834536e9
+10100000110000011110010 5.518834536e9
+10101111101000001111111 5.518834536e9
+10100101111000011100101 5.518834536e9
+00111100100000011110110 5.518834536e9
+10101111101100011010000 5.518834536e9
+00101101101000010110010 5.518834536e9
+best: 0.9373283305318939
+10100111100000000110010 5.518834536e9
+00101101111000011100011 5.518834536e9
+00100000110000001110101 5.518834536e9
+00111101101000011110000 5.518834536e9
+10100000110001001110010 5.518834536e9
+10101000101100011110110 5.518834536e9
+10111101100000000110010 5.518834536e9
+00101100100000001110110 5.518834536e9
+10111110111000001111010 5.518834536e9
+00111111101010010010010 5.518965608e9
+10101101111010111010101 5.518965608e9
+00101101100101100100110 5.518834536e9
+10010001100001001110101 5.887769448e9
+00101101110000001001011 5.518834536e9
+00010010010001101010101 5.887834984e9
+10100100111000111110011 5.518834536e9
+10100001111000111100101 5.518834536e9
+10100010101100011110101 5.518834536e9
+10100001100001001110100 5.518834536e9
+00101100110000011110010 5.518834536e9
+00111100101000011110111 5.518834536e9
+10111111100000000111010 5.518834536e9
+best: 0.9373283305318939
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+6164.18user 926.41system 2:23:42elapsed 82%CPU (0avgtext+0avgdata 134836maxresident)k
+1051720inputs+3054072outputs (759major+68293624minor)pagefaults 0swaps
