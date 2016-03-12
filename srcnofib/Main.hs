@@ -19,8 +19,8 @@ import Control.Monad
 reps :: Int64
 reps = runs
 
-fitness :: FilePath -> [FilePath] -> Time -> [BangVec] -> IO Time
-fitness projDir srcs baseTime bangVecs = do
+fitness :: FilePath -> [FilePath] -> Time -> Time -> [BangVec] -> IO Time
+fitness projDir srcs baseTime timeLimit bangVecs = do
   -- Read original
     !progs  <- sequence $ map readFile srcs
   -- Rewrite according to gene
@@ -31,7 +31,7 @@ fitness projDir srcs baseTime bangVecs = do
     -- print prog'
   -- Benchmark new
   -- buildProj projDir
-    !newTime <- benchmark projDir reps baseTime
+    !newTime <- benchmark projDir reps baseTime timeLimit
   -- Recover original
     !_ <- sequence $ zipWith writeFile srcs progs
     putStrLn $ (concat $ intersperse "," $ map (printBits . B.toBits) bangVecs) ++ " " ++ show newTime
@@ -79,7 +79,9 @@ gmain projDir (pop, gens, arch) = do
   -- Get base time and pool. 
   -- Obtain base time: compile & run
     buildProj projDir
-    baseTime <- benchmark projDir reps (0 - 1)
+    timeLimit <- benchmark' projDir reps (0 - 1)
+    putStrLn $ "limit is: " ++ show timeLimit
+    baseTime <- benchmark projDir reps (0 - 1) timeLimit
     -- let mainPath = projDir ++ "/Main.hs" -- MULTI TODO assuming only one file per project
     files <- getDirectoryContents projDir
     let srcPaths = filter (isSuffixOf ".hs") files
@@ -96,7 +98,7 @@ gmain projDir (pop, gens, arch) = do
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
-    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir srcPaths baseTime)
+    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir srcPaths baseTime timeLimit)
     let e = snd $ head es 
         Just s = fst $ head es 
     if s == (2 * baseTime) then print "Autobahn gives no improvement!" else print "all is well:)"

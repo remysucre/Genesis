@@ -39,16 +39,17 @@ instance NFData ExitCode
     rnf ExitSuccess = ()
     rnf (ExitFailure _) = ()
 
-runProj :: FilePath -> Int64 -> Double -> IO Double
-runProj projDir runs baseTime = do
+runProj :: FilePath -> Int64 -> Double -> Double -> IO Double
+runProj projDir runs baseTime timeLimit = do
 
   -- result is ExitCode
   --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
-  result <- system "timeout 120 make -k mode=slow &> nofib-gen "   
+  putStrLn $ "runproj limit: " ++ show timeLimit
+  result <- system $ "timeout " ++ (show . ceiling) (6 * timeLimit) ++ " make -k mode=slow &> nofib-gen "   
 
   case result of
        -- Nothing -> return worstScore
-       ExitFailure _ -> return $ worstScore baseTime
+       ExitFailure _ -> do {print "timed out"; return $ worstScore baseTime}
        ExitSuccess ->  do {
        	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
 			       
@@ -59,14 +60,41 @@ runProj projDir runs baseTime = do
 			       in return . read $ wcs !! 1
                                }
 
-benchmark :: FilePath -> Int64 -> Double -> IO Double
-benchmark projDir runs baseTime =  do
+benchmark :: FilePath -> Int64 -> Double -> Double -> IO Double
+benchmark projDir runs baseTime timeLimit =  do
   --  setCurrentDirectory projDir
   exitCode <- buildProj projDir
   case exitCode of
-       ExitFailure _ -> return $ worstScore baseTime
-       ExitSuccess   -> runProj projDir runs baseTime 
+       ExitFailure _ -> do {print "build failed"; return $ worstScore baseTime}
+       ExitSuccess   -> runProj projDir runs baseTime timeLimit
 
+runProj' :: FilePath -> Int64 -> Double -> IO Double
+runProj' projDir runs _ = do
+
+  -- result is ExitCode
+  --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
+  result <- system "make -k mode=slow &> nofib-gen "   
+
+  case result of
+       -- Nothing -> return worstScore
+       ExitFailure _ -> return $ -1
+       ExitSuccess ->  do {
+       	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Runtime nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
+			       
+       	    		       -- TODO dirty hack here! anusing nofib-analyse
+			       fc <- readFile "temp.prof";
+			       let wcs = words $ map (\c -> if c == ',' then ' ' else c) fc
+			       -- system "rm nofib-gen; rm temp.prof"
+			       in return . read $ wcs !! 1
+                               }
+
+benchmark' :: FilePath -> Int64 -> Double -> IO Double
+benchmark' projDir runs _ =  do
+  --  setCurrentDirectory projDir
+  exitCode <- buildProj projDir
+  case exitCode of
+       ExitFailure _ -> return $ -1
+       ExitSuccess   -> runProj' projDir runs $ -1
 {-
 
   result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
