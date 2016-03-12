@@ -1,0 +1,8 @@
+warning: dubious GC time results for fannkuch-redux: [0.1,0.1,0.1,0.1,0.31]
+warning: dubious GC time results for fannkuch-redux: [0.1,0.1,0.1,0.1,0.31]
+warning: dubious GC time results for fannkuch-redux: [0.31,0.4,0.28,0.39,0.35]
+warning: dubious GC time results for fannkuch-redux: [0.31,0.4,0.28,0.39,0.35]
+warning: dubious GC time results for fannkuch-redux: [0.41,0.4,0.39,0.25,0.37]
+warning: dubious GC time results for fannkuch-redux: [0.41,0.4,0.39,0.25,0.37]
+warning: dubious GC time results for fannkuch-redux: [0.66,1.19,1.23,1.21,1.36]
+warning: dubious GC time results for fannkuch-redux: [0.66,1.19,1.23,1.21,1.36]
