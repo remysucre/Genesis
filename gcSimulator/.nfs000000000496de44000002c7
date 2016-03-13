@@ -1,0 +1,27 @@
+mv /data/remy/fop.trace /data/remy/temp.trace &&
+cp gen.hs Main.hs && /usr/bin/time -o timing.temp cabal run && mv timing.temp gentiming.log &&
+cp bangs.hs Main.hs && /usr/bin/time -o timing.temp cabal run && mv timing.temp bangstiming.log &&
+cp nobangs.hs Main.hs && /usr/bin/time -o timing.temp cabal run && mv timing.temp nobangstiming.log &&
+mkdir fop && mv *timing* fop &&
+mv /data/remy/temp.trace /data/remy/fop.trace 
+
+# mv /data/remy/fop.trace /data/remy/temp.trace &&
+# cp gen.hs Main.hs && cabal run && mv timing.temp gentiming.log &&
+# cp bangs.hs Main.hs && cabal run && mv timing.temp bangstiming.log &&
+# cp nobangs.hs Main.hs && cabal run && mv timing.temp nobangstiming.log &&
+# mkdir fop && mv *timing* fop &&
+# mv /data/remy/temp.trace /data/remy/fop.trace &&
+# 
+# mv /data/remy/batik.trace /data/remy/temp.trace &&
+# cp nobangs.hs Main.hs && cabal run && mv timing.temp nobangstiming.log &&
+# cp bangs.hs Main.hs && cabal run && mv timing.temp bangstiming.log &&
+# cp gen.hs Main.hs && cabal run && mv timing.temp gentiming.log &&
+# mkdir batik && mv *timing* batik &&
+# mv /data/remy/temp.trace /data/remy/batik.trace &&
+# 
+# mv /data/remy/avrora.trace /data/remy/temp.trace &&
+# cp nobangs.hs Main.hs && cabal run && mv timing.temp nobangstiming.log &&
+# cp bangs.hs Main.hs && cabal run && mv timing.temp bangstiming.log &&
+# cp gen.hs Main.hs && cabal run && mv timing.temp gentiming.log &&
+# mkdir avrora && mv *timing* avrora &&
+# mv /data/remy/temp.trace /data/remy/avrora.trace
