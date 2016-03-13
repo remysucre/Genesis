@@ -45,13 +45,14 @@ runProj projDir runs baseTime timeLimit = do
   -- result is ExitCode
   --  result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
   putStrLn $ "runproj limit: " ++ show timeLimit
-  result <- system $ "timeout " ++ (show . ceiling) (2 * timeLimit) ++ " make -k mode=norm &> nofib-gen "   
+  -- result <- system $ "timeout " ++ (show . ceiling) (4 * timeLimit) ++ " make -k mode=norm &> nofib-gen "   
+  result <- system $ "timeout 40s make -k mode=norm &> nofib-gen "   
 
   case result of
        -- Nothing -> return worstScore
        ExitFailure _ -> do {print "timed out"; return $ worstScore baseTime}
        ExitSuccess ->  do {
-       	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
+       	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Runtime nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
 			       
        	    		       -- TODO dirty hack here! anusing nofib-analyse
 			       fc <- readFile "temp.prof";
@@ -99,7 +100,7 @@ benchmark' projDir runs _ =  do
 
   result <- timeout 17000000 $ system "make -k mode=slow > nofib-gen 2>&1 "
 
-  system "~/nofib/nofib-analyse/nofib-analyse --csv=Allocs nofib-gen nofib-gen > temp.prof" -- TODO heuristcs hardcoded
+  system "~/nofib/nofib-analyse/nofib-analyse --csv=Runtime nofib-gen nofib-gen > temp.prof" -- TODO heuristcs hardcoded
 
   -- TODO dirty hack here! anusing nofib-analyse
   fc <- readFile "temp.prof"
