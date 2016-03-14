@@ -20,14 +20,14 @@ type Stack = Seq.Seq Frame
 type StackMap = M.IntMap Stack
 
 push::Int->Int->StackMap->StackMap
-push method thread stacks =  M.insert thread ( (method,S.empty) Seq.<| (f (M.lookup thread stacks))) stacks
+push !method !thread !stacks =  M.insert thread ( (method,S.empty) Seq.<| (f (M.lookup thread stacks))) stacks
 			   where
-				f (Just frames) = frames
+				f (Just !frames) = frames
 				f Nothing        = Seq.empty
 
 
 pop::Int->Int->StackMap->StackMap
-pop method thread stacks = M.update f  thread  stacks
+pop !method !thread !stacks = M.update f  thread  stacks
 			   where
 				f frames = if Seq.null frames then
 						Nothing
@@ -37,7 +37,7 @@ pop method thread stacks = M.update f  thread  stacks
 						Just $  Seq.drop 1 $ Seq.dropWhileL (\(m,_) -> m /= method) frames
 	
 addRoot::Int->Int->StackMap->StackMap
-addRoot r thread stacks =  M.update f  thread  stacks 
+addRoot !r !thread !stacks =  M.update f  thread  stacks 
 			   where
 				f frames = if not $ Seq.null frames  then
 						let (mid, roots)  = frames `Seq.index` 0 in
@@ -72,7 +72,7 @@ initMachine = Machine S.empty 0 (4*mb) 0 (100*mb) G.empty S.empty M.empty 0
 
 
 simStep::(Machine,Int)->Record->(Machine,Int)
-simStep (m,marks) (Alloc oid size ty tid) = if doCollection then
+simStep (m,!marks) (Alloc oid size ty tid) = if doCollection then
 				       	 	(collectedMachine{alloc=alloc'}, marks+newMarks)
 					     else
 					        (m{nursery=nursery', heap_size=heap_size', heap=heap', alloc=alloc'},marks)
@@ -81,27 +81,27 @@ simStep (m,marks) (Alloc oid size ty tid) = if doCollection then
 						heap_size' = (heap_size m + size)
 						heap'  =  G.insNode oid (heap m)
 						doCollection = heap_size' > heap_limit m
-						(collectedMachine,newMarks) = wholeHeapCollect m
+						(!collectedMachine,!newMarks) = wholeHeapCollect m
 						alloc' = (alloc m) + size
 
-simStep (m,marks) (Death oid) 		  = (m{nursery=nursery', heap=heap'} , marks)
+simStep (m,!marks) (Death oid) 		  = (m{nursery=nursery', heap=heap'} , marks)
 				    where
 					nursery' = S.delete oid (nursery m)
 					heap'    = G.delNode oid (heap m)
 
-simStep (m,marks) (Update old origin new tid _) = (m{heap=heap'}, marks)
+simStep (m,!marks) (Update old origin new tid _) = (m{heap=heap'}, marks)
 				   where
-					heap' = G.insEdge origin new $! G.delEdge origin old (heap m)
+					!heap' = G.insEdge origin new $! G.delEdge origin old (heap m)
 
-simStep (m,marks) (Entry mid rid tid) = (m{stacks=stacks'},marks)
+simStep (m,!marks) (Entry mid rid tid) = (m{stacks=stacks'},marks)
 				     where
 					stacks'=push mid tid (stacks m)
 
-simStep (m,marks) (Exit mid rid tid) = (m{stacks=stacks'},marks)
+simStep (m,!marks) (Exit mid rid tid) = (m{stacks=stacks'},marks)
 				     where
-					stacks' = pop mid tid (stacks m)
+					!stacks' = pop mid tid (stacks m)
 
-simStep (m,marks) (Root r t) = (m{stacks=addRoot r t (stacks m)} ,marks)
+simStep (m,!marks) (Root r t) = (m{stacks=addRoot r t (stacks m)} ,marks)
 
 --simStep (m,!marks) 	_		      = (m,marks)
 
@@ -116,7 +116,7 @@ simulate rs = List.foldl' simStep (initMachine,0) rs
 wholeHeapCollect::Machine->(Machine,Int)
 wholeHeapCollect m = (m{heap=heap'}, S.size markedSet)
 		     where
-			heap' = sweep markedSet (heap m)
+			!heap' = sweep markedSet (heap m)
 			mark::S.IntSet->S.IntSet->G.Graph->S.IntSet
 			mark black grey heap =  if grey == S.empty then
 					  	  black
@@ -125,10 +125,10 @@ wholeHeapCollect m = (m{heap=heap'}, S.size markedSet)
 
 						where
 						   black'::S.IntSet
-						   black' = S.fold (\o m -> S.insert o m) black grey 
+						   !black' = S.fold (\o m -> S.insert o m) black grey 
 
 						   grey'::S.IntSet
-						   grey' = S.fold (S.union.neighbors) S.empty $ S.filter (not.isBlack) grey
+						   !grey' = S.fold (S.union.neighbors) S.empty $ S.filter (not.isBlack) grey
 
 						   neighbors::Int->S.IntSet
 						   neighbors n = S.fromList $ (fromMaybe []) $ G.neighbors n heap
