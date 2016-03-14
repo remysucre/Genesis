@@ -4,7 +4,7 @@
 
 module GeneAlg where
 
-import System.Random (mkStdGen, random, randoms)
+import System.Random (mkStdGen, random, randoms, randomIO)
 import GA (Entity(..), GAConfig(..), evolveVerbose, randomSearch)
 import Data.BitVector (BV, fromBits, toBits, size, ones)
 import Data.Bits.Bitwise (fromListLE, fromListBE, toListBE)
@@ -36,7 +36,12 @@ instance Entity [BangVec] Score (Time, FitnessRun) [BangVec] IO where
  
   -- Generate a random bang vector
   -- Invariant: pool is the vector with all bangs on
-  genRandom pool seed = do {Just e <- mutation pool 0.1 seed pool; return e} -- TODO hardcode mutation rate
+  genRandom pool seed = do 
+    let g = mkStdGen seed 
+    f <- randomIO :: IO Float
+    Just e <- mutation pool 0.1 seed pool 
+    let e' = if f < 0.3 then pool else e
+    return e' -- TODO hardcode mutation rate
   {-genRandom pool seed = do 
     print "genRandom"
     -- DEBUG -- putStrLn $ printBits (toBits e)

@@ -83,6 +83,7 @@ gmain projDir (pop, gens, arch) = do
     putStrLn $ "limit is: " ++ show timeLimit
     buildProj projDir
     baseTime <- benchmark projDir reps (0 - 1) timeLimit
+    if baseTime == 0 then error "Base time neglegible" else print "All is well :D"
     -- let mainPath = projDir ++ "/Main.hs" -- MULTI TODO assuming only one file per project
     files <- getDirectoryContents projDir
     let srcPaths = filter (isSuffixOf ".hs") files

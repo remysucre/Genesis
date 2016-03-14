@@ -52,7 +52,7 @@ runProj projDir runs baseTime timeLimit = do
        -- Nothing -> return worstScore
        ExitFailure _ -> do {print "timed out"; return $ worstScore baseTime}
        ExitSuccess ->  do {
-       	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=Runtime nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
+       	    		       system $ pathToNoFib ++ "/nofib/nofib-analyse/nofib-analyse --csv=GCTime nofib-gen nofib-gen > temp.prof"; -- TODO heuristcs hardcoded
 			       
        	    		       -- TODO dirty hack here! anusing nofib-analyse
 			       fc <- readFile "temp.prof";
