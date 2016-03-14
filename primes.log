@@ -1,0 +1,628 @@
+warning: dubious run time results for primes: [0.26,0.12,9.9999994e-2,0.1]
+warning: dubious run time results for primes: [0.26,0.12,9.9999994e-2,0.1]
+warning: dubious run time results for primes: [7.0e-2,8.0e-2,0.37,0.11]
+warning: dubious GC time results for primes: [2.0e-2,3.0e-2,0.32,6.0e-2]
+warning: dubious run time results for primes: [7.0e-2,8.0e-2,0.37,0.11]
+warning: dubious GC time results for primes: [2.0e-2,3.0e-2,0.32,6.0e-2]
+warning: dubious run time results for primes: [8.0e-2,8.0e-2,8.0e-2,4.42]
+warning: dubious mut time results for primes: [5.0e-2,5.0e-2,5.0e-2,4.39]
+warning: dubious run time results for primes: [8.0e-2,8.0e-2,8.0e-2,4.42]
+warning: dubious mut time results for primes: [5.0e-2,5.0e-2,5.0e-2,4.39]
+warning: dubious run time results for primes: [8.0e-2,7.0e-2,0.34,6.0e-2]
+warning: dubious GC time results for primes: [3.0e-2,3.0e-2,0.3,2.0e-2]
+warning: dubious run time results for primes: [8.0e-2,7.0e-2,0.34,6.0e-2]
+warning: dubious GC time results for primes: [3.0e-2,3.0e-2,0.3,2.0e-2]
+Optimizing /h/ywang30/nofib/imaginary/primes
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 8.0e-2
+runproj limit: 8.0e-2
+Basetime is: 8.0e-2
+runproj limit: 8.0e-2
+01000000000 9.0e-2
+runproj limit: 8.0e-2
+00100000001 7.8e-2
+runproj limit: 8.0e-2
+00000000000 8.0e-2
+runproj limit: 8.0e-2
+00000000000 8.7e-2
+runproj limit: 8.0e-2
+00000000000 9.2e-2
+runproj limit: 8.0e-2
+00100000100 8.0e-2
+runproj limit: 8.0e-2
+10000000000 8.7e-2
+runproj limit: 8.0e-2
+01000000000 0.108
+runproj limit: 8.0e-2
+00001000000 0.122
+runproj limit: 8.0e-2
+00100000000 8.0e-2
+runproj limit: 8.0e-2
+00000100000 9.2e-2
+runproj limit: 8.0e-2
+00001000000 9.0e-2
+runproj limit: 8.0e-2
+00000000000 8.8e-2
+best: 0.975
+runproj limit: 8.0e-2
+00000000000 0.145
+runproj limit: 8.0e-2
+00100000001 7.8e-2
+runproj limit: 8.0e-2
+00100000100 0.102
+runproj limit: 8.0e-2
+00000000000 8.0e-2
+runproj limit: 8.0e-2
+10100000000 8.5e-2
+runproj limit: 8.0e-2
+10000000000 8.0e-2
+runproj limit: 8.0e-2
+01100000000 8.5e-2
+runproj limit: 8.0e-2
+10000000000 9.8e-2
+runproj limit: 8.0e-2
+00100000001 8.8e-2
+runproj limit: 8.0e-2
+00001100000 9.2e-2
+runproj limit: 8.0e-2
+00001100110 8.2e-2
+runproj limit: 8.0e-2
+01100100000 0.105
+runproj limit: 8.0e-2
+01100101001 7.8e-2
+runproj limit: 8.0e-2
+00100000001 9.8e-2
+runproj limit: 8.0e-2
+00000000000 0.11
+runproj limit: 8.0e-2
+00100000100 8.0e-2
+runproj limit: 8.0e-2
+00100000000 0.158
+runproj limit: 8.0e-2
+10000000000 8.5e-2
+runproj limit: 8.0e-2
+01000000000 8.0e-2
+runproj limit: 8.0e-2
+00001000000 1.165
+best: 0.975
+runproj limit: 8.0e-2
+01100100001 7.0e-2
+runproj limit: 8.0e-2
+01100000001 7.2e-2
+runproj limit: 8.0e-2
+01000000000 8.0e-2
+runproj limit: 8.0e-2
+00000000111 7.5e-2
+runproj limit: 8.0e-2
+00100000101 7.8e-2
+runproj limit: 8.0e-2
+00100001001 7.8e-2
+runproj limit: 8.0e-2
+00000100000 8.0e-2
+runproj limit: 8.0e-2
+00100000000 7.5e-2
+runproj limit: 8.0e-2
+01000000000 8.0e-2
+runproj limit: 8.0e-2
+01110101001 7.0e-2
+runproj limit: 8.0e-2
+11110000000 6.8e-2
+runproj limit: 8.0e-2
+01010100010 7.5e-2
+runproj limit: 8.0e-2
+00110100001 7.0e-2
+runproj limit: 8.0e-2
+00100000001 8.0e-2
+runproj limit: 8.0e-2
+01100101001 7.5e-2
+runproj limit: 8.0e-2
+00000000000 9.0e-2
+runproj limit: 8.0e-2
+10000000000 8.0e-2
+runproj limit: 8.0e-2
+00100000100 7.8e-2
+runproj limit: 8.0e-2
+01000000000 8.5e-2
+runproj limit: 8.0e-2
+00001100110 0.107
+best: 0.8500000000000001
+runproj limit: 8.0e-2
+01110100001 7.7e-2
+runproj limit: 8.0e-2
+01000000011 7.5e-2
+runproj limit: 8.0e-2
+01100101001 8.0e-2
+runproj limit: 8.0e-2
+00000000000 8.0e-2
+runproj limit: 8.0e-2
+01110100001 7.5e-2
+runproj limit: 8.0e-2
+01100101001 8.0e-2
+runproj limit: 8.0e-2
+01000000000 8.0e-2
+runproj limit: 8.0e-2
+01000000001 8.0e-2
+runproj limit: 8.0e-2
+00100000100 7.2e-2
+runproj limit: 8.0e-2
+00101100001 8.0e-2
+runproj limit: 8.0e-2
+00010101011 7.5e-2
+runproj limit: 8.0e-2
+11100001000 7.8e-2
+runproj limit: 8.0e-2
+01000100000 8.0e-2
+runproj limit: 8.0e-2
+11110000000 7.8e-2
+runproj limit: 8.0e-2
+01100100001 7.2e-2
+runproj limit: 8.0e-2
+01110101001 8.0e-2
+runproj limit: 8.0e-2
+00110100001 7.2e-2
+runproj limit: 8.0e-2
+01100000001 8.0e-2
+runproj limit: 8.0e-2
+00000000111 9.2e-2
+runproj limit: 8.0e-2
+00100000000 7.2e-2
+best: 0.8999999999999999
+runproj limit: 8.0e-2
+01110000011 7.0e-2
+runproj limit: 8.0e-2
+01100000000 7.5e-2
+runproj limit: 8.0e-2
+11110000000 8.0e-2
+runproj limit: 8.0e-2
+00110100001 7.5e-2
+runproj limit: 8.0e-2
+00100000101 7.2e-2
+runproj limit: 8.0e-2
+01100000000 7.8e-2
+runproj limit: 8.0e-2
+01100100001 7.8e-2
+runproj limit: 8.0e-2
+01000100011 7.8e-2
+runproj limit: 8.0e-2
+01010110000 7.0e-2
+runproj limit: 8.0e-2
+00110000010 6.2e-2
+runproj limit: 8.0e-2
+01101101001 8.0e-2
+runproj limit: 8.0e-2
+10100001101 7.8e-2
+runproj limit: 8.0e-2
+00110100001 8.0e-2
+runproj limit: 8.0e-2
+00100000100 7.3e-2
+runproj limit: 8.0e-2
+01100100001 7.0e-2
+runproj limit: 8.0e-2
+00110100001 6.8e-2
+runproj limit: 8.0e-2
+00100000000 7.3e-2
+runproj limit: 8.0e-2
+01000000011 7.0e-2
+runproj limit: 8.0e-2
+01110100001 7.2e-2
+runproj limit: 8.0e-2
+00010101011 7.3e-2
+best: 0.775
+runproj limit: 8.0e-2
+00110000000 8.0e-2
+runproj limit: 8.0e-2
+00100000000 7.0e-2
+runproj limit: 8.0e-2
+00010000010 7.3e-2
+runproj limit: 8.0e-2
+01000000011 7.2e-2
+runproj limit: 8.0e-2
+01000000101 8.0e-2
+runproj limit: 8.0e-2
+00110100001 7.8e-2
+runproj limit: 8.0e-2
+01100100011 7.0e-2
+runproj limit: 8.0e-2
+00010110011 7.0e-2
+runproj limit: 8.0e-2
+01010100001 6.7e-2
+runproj limit: 8.0e-2
+10100001011 7.2e-2
+runproj limit: 8.0e-2
+10010010100 6.0e-2
+runproj limit: 8.0e-2
+01010100111 7.0e-2
+runproj limit: 8.0e-2
+01110000001 7.3e-2
+runproj limit: 8.0e-2
+00110000010 6.5e-2
+runproj limit: 8.0e-2
+00110100001 7.5e-2
+runproj limit: 8.0e-2
+01110000011 6.5e-2
+runproj limit: 8.0e-2
+01010110000 7.2e-2
+runproj limit: 8.0e-2
+01100100001 8.5e-2
+runproj limit: 8.0e-2
+01000000011 7.5e-2
+runproj limit: 8.0e-2
+00100000101 7.5e-2
+best: 0.75
+runproj limit: 8.0e-2
+01010110100 7.2e-2
+runproj limit: 8.0e-2
+01010100000 6.2e-2
+runproj limit: 8.0e-2
+10010010010 7.0e-2
+runproj limit: 8.0e-2
+01100000101 7.5e-2
+runproj limit: 8.0e-2
+01110000011 6.8e-2
+runproj limit: 8.0e-2
+01110100001 7.5e-2
+runproj limit: 8.0e-2
+00110100001 6.8e-2
+runproj limit: 8.0e-2
+00110000011 7.7e-2
+runproj limit: 8.0e-2
+00010100011 7.3e-2
+runproj limit: 8.0e-2
+00111011011 7.0e-2
+runproj limit: 8.0e-2
+01001100001 8.0e-2
+runproj limit: 8.0e-2
+10101000011 8.0e-2
+runproj limit: 8.0e-2
+00010110010 7.0e-2
+runproj limit: 8.0e-2
+10010010100 6.0e-2
+runproj limit: 8.0e-2
+00110000010 7.0e-2
+runproj limit: 8.0e-2
+01110000011 8.7e-2
+runproj limit: 8.0e-2
+01010100001 6.7e-2
+runproj limit: 8.0e-2
+00100000000 7.8e-2
+runproj limit: 8.0e-2
+01100100011 7.5e-2
+runproj limit: 8.0e-2
+00010110011 7.2e-2
+best: 0.75
+runproj limit: 8.0e-2
+00110100001 6.5e-2
+runproj limit: 8.0e-2
+01110000011 7.3e-2
+runproj limit: 8.0e-2
+00110000010 6.2e-2
+runproj limit: 8.0e-2
+00111110001 6.2e-2
+runproj limit: 8.0e-2
+00110001111 8.0e-2
+runproj limit: 8.0e-2
+00110000011 7.5e-2
+runproj limit: 8.0e-2
+00111010011 7.3e-2
+runproj limit: 8.0e-2
+01010010011 7.0e-2
+runproj limit: 8.0e-2
+01111000001 8.0e-2
+runproj limit: 8.0e-2
+10000000101 8.0e-2
+runproj limit: 8.0e-2
+11110001101 7.2e-2
+runproj limit: 8.0e-2
+01000011101 8.0e-2
+runproj limit: 8.0e-2
+10010100001 6.2e-2
+runproj limit: 8.0e-2
+10010010100 6.0e-2
+runproj limit: 8.0e-2
+01010100000 7.5e-2
+runproj limit: 8.0e-2
+01010100001 6.5e-2
+runproj limit: 8.0e-2
+01110000011 6.5e-2
+runproj limit: 8.0e-2
+00110100001 7.0e-2
+runproj limit: 8.0e-2
+10010010010 8.7e-2
+runproj limit: 8.0e-2
+00111011011 7.0e-2
+best: 0.75
+runproj limit: 8.0e-2
+00110100011 6.7e-2
+runproj limit: 8.0e-2
+01110000011 6.2e-2
+runproj limit: 8.0e-2
+01010100000 6.0e-2
+runproj limit: 8.0e-2
+00111110001 7.0e-2
+runproj limit: 8.0e-2
+01110100001 6.2e-2
+runproj limit: 8.0e-2
+00010100001 7.2e-2
+runproj limit: 8.0e-2
+11010001001 7.5e-2
+runproj limit: 8.0e-2
+11100001101 7.8e-2
+runproj limit: 8.0e-2
+11011101000 7.2e-2
+runproj limit: 8.0e-2
+11110011101 6.8e-2
+runproj limit: 8.0e-2
+00100000110 7.5e-2
+runproj limit: 8.0e-2
+10111011010 7.2e-2
+runproj limit: 8.0e-2
+00111011011 7.0e-2
+runproj limit: 8.0e-2
+10010010100 7.2e-2
+runproj limit: 8.0e-2
+00110000010 6.2e-2
+runproj limit: 8.0e-2
+00111110001 6.5e-2
+runproj limit: 8.0e-2
+10010100001 7.0e-2
+runproj limit: 8.0e-2
+00110100001 7.3e-2
+runproj limit: 8.0e-2
+01010100001 7.0e-2
+runproj limit: 8.0e-2
+01110000011 6.5e-2
+best: 0.75
+runproj limit: 8.0e-2
+01111001010 7.0e-2
+runproj limit: 8.0e-2
+01110100001 8.5e-2
+runproj limit: 8.0e-2
+00110100011 6.2e-2
+runproj limit: 8.0e-2
+01110110001 6.5e-2
+runproj limit: 8.0e-2
+00111100000 7.5e-2
+runproj limit: 8.0e-2
+00110000010 7.5e-2
+runproj limit: 8.0e-2
+01110100001 8.0e-2
+runproj limit: 8.0e-2
+10010011000 7.5e-2
+runproj limit: 8.0e-2
+10110000011 6.0e-2
+runproj limit: 8.0e-2
+11010111101 7.0e-2
+runproj limit: 8.0e-2
+00000000110 7.5e-2
+runproj limit: 8.0e-2
+01101100110 8.0e-2
+runproj limit: 8.0e-2
+01110100011 6.7e-2
+runproj limit: 8.0e-2
+01010100000 0.138
+runproj limit: 8.0e-2
+01110000011 6.5e-2
+runproj limit: 8.0e-2
+01110100001 6.5e-2
+runproj limit: 8.0e-2
+00110000010 7.0e-2
+runproj limit: 8.0e-2
+00111110001 7.5e-2
+runproj limit: 8.0e-2
+00110100011 7.0e-2
+runproj limit: 8.0e-2
+11110011101 7.0e-2
+best: 0.75
+runproj limit: 8.0e-2
+00110000010 6.8e-2
+runproj limit: 8.0e-2
+01110100010 6.8e-2
+runproj limit: 8.0e-2
+00110000111 7.5e-2
+runproj limit: 8.0e-2
+00110000011 7.0e-2
+runproj limit: 8.0e-2
+11010011101 7.2e-2
+runproj limit: 8.0e-2
+00110000010 7.8e-2
+runproj limit: 8.0e-2
+01110010011 7.0e-2
+runproj limit: 8.0e-2
+01110000011 6.5e-2
+runproj limit: 8.0e-2
+01010000001 6.5e-2
+runproj limit: 8.0e-2
+11010001110 6.7e-2
+runproj limit: 8.0e-2
+01010000011 7.5e-2
+runproj limit: 8.0e-2
+00010100011 0.102
+runproj limit: 8.0e-2
+11110000011 6.2e-2
+runproj limit: 8.0e-2
+10110000011 6.0e-2
+runproj limit: 8.0e-2
+00110100011 7.0e-2
+runproj limit: 8.0e-2
+01110110001 7.3e-2
+runproj limit: 8.0e-2
+01110000011 6.0e-2
+runproj limit: 8.0e-2
+01110100001 7.5e-2
+runproj limit: 8.0e-2
+01110100011 7.5e-2
+runproj limit: 8.0e-2
+01111001010 7.0e-2
+best: 0.75
+runproj limit: 8.0e-2
+00110000010 6.2e-2
+runproj limit: 8.0e-2
+01110000010 6.7e-2
+runproj limit: 8.0e-2
+11110100001 7.2e-2
+runproj limit: 8.0e-2
+10110000011 6.5e-2
+runproj limit: 8.0e-2
+11111011100 6.7e-2
+runproj limit: 8.0e-2
+11110000010 6.0e-2
+runproj limit: 8.0e-2
+10110000011 7.5e-2
+runproj limit: 8.0e-2
+01110100011 6.5e-2
+runproj limit: 8.0e-2
+10110000001 7.0e-2
+runproj limit: 8.0e-2
+01111011011 7.2e-2
+runproj limit: 8.0e-2
+10110010101 7.5e-2
+runproj limit: 8.0e-2
+00110100110 8.0e-2
+runproj limit: 8.0e-2
+01111011010 7.5e-2
+runproj limit: 8.0e-2
+10110000011 7.5e-2
+runproj limit: 8.0e-2
+01110000011 7.2e-2
+runproj limit: 8.0e-2
+11110000011 7.8e-2
+runproj limit: 8.0e-2
+01010000001 6.8e-2
+runproj limit: 8.0e-2
+11010001110 7.0e-2
+runproj limit: 8.0e-2
+00110000010 6.5e-2
+runproj limit: 8.0e-2
+01110100010 6.5e-2
+best: 0.75
+runproj limit: 8.0e-2
+11111011010 7.8e-2
+runproj limit: 8.0e-2
+11110000011 7.0e-2
+runproj limit: 8.0e-2
+10110100001 7.5e-2
+runproj limit: 8.0e-2
+00110000011 6.2e-2
+runproj limit: 8.0e-2
+00110000010 6.5e-2
+runproj limit: 8.0e-2
+01110001010 7.2e-2
+runproj limit: 8.0e-2
+00110000011 6.5e-2
+runproj limit: 8.0e-2
+01110100001 6.7e-2
+runproj limit: 8.0e-2
+11001110100 8.0e-2
+runproj limit: 8.0e-2
+11100100100 7.5e-2
+runproj limit: 8.0e-2
+00100010010 7.0e-2
+runproj limit: 8.0e-2
+01111001000 6.5e-2
+runproj limit: 8.0e-2
+10110000011 6.7e-2
+runproj limit: 8.0e-2
+11110000010 6.2e-2
+runproj limit: 8.0e-2
+00110000010 6.8e-2
+runproj limit: 8.0e-2
+10110000011 7.0e-2
+runproj limit: 8.0e-2
+01110100011 6.0e-2
+runproj limit: 8.0e-2
+01110100010 6.0e-2
+runproj limit: 8.0e-2
+01110000010 6.2e-2
+runproj limit: 8.0e-2
+11111011100 7.0e-2
+best: 0.75
+runproj limit: 8.0e-2
+01110100010 6.5e-2
+runproj limit: 8.0e-2
+00110000011 6.5e-2
+runproj limit: 8.0e-2
+01110100011 8.5e-2
+runproj limit: 8.0e-2
+01110000010 7.3e-2
+runproj limit: 8.0e-2
+01110000011 6.2e-2
+runproj limit: 8.0e-2
+11110000011 6.7e-2
+runproj limit: 8.0e-2
+00110001010 7.2e-2
+runproj limit: 8.0e-2
+01110000010 6.7e-2
+runproj limit: 8.0e-2
+00111101010 7.0e-2
+runproj limit: 8.0e-2
+01110001000 7.0e-2
+runproj limit: 8.0e-2
+01110100010 6.2e-2
+runproj limit: 8.0e-2
+11010001010 7.2e-2
+runproj limit: 8.0e-2
+11110000000 8.0e-2
+runproj limit: 8.0e-2
+01110100011 6.5e-2
+runproj limit: 8.0e-2
+01110100010 6.0e-2
+runproj limit: 8.0e-2
+00110000011 6.0e-2
+runproj limit: 8.0e-2
+11110000010 6.5e-2
+runproj limit: 8.0e-2
+01110000010 6.0e-2
+runproj limit: 8.0e-2
+00110000010 6.5e-2
+runproj limit: 8.0e-2
+01111001000 6.0e-2
+best: 0.75
+runproj limit: 8.0e-2
+00110001010 6.0e-2
+runproj limit: 8.0e-2
+11110100011 6.2e-2
+runproj limit: 8.0e-2
+00110000011 6.2e-2
+runproj limit: 8.0e-2
+11110000010 7.2e-2
+runproj limit: 8.0e-2
+01111000011 7.0e-2
+runproj limit: 8.0e-2
+01110100011 6.8e-2
+runproj limit: 8.0e-2
+01111000011 7.0e-2
+runproj limit: 8.0e-2
+00110000011 7.0e-2
+runproj limit: 8.0e-2
+01000100011 8.0e-2
+runproj limit: 8.0e-2
+01110010000 8.2e-2
+runproj limit: 8.0e-2
+01011000111 7.2e-2
+runproj limit: 8.0e-2
+11010100010 7.0e-2
+runproj limit: 8.0e-2
+11100010010 8.0e-2
+runproj limit: 8.0e-2
+01110100010 7.0e-2
+runproj limit: 8.0e-2
+00110000011 6.5e-2
+runproj limit: 8.0e-2
+01110000010 7.2e-2
+runproj limit: 8.0e-2
+01111001000 6.5e-2
+runproj limit: 8.0e-2
+01110000011 6.7e-2
+runproj limit: 8.0e-2
+01110100011 6.5e-2
+runproj limit: 8.0e-2
+11110000010 7.2e-2
+best: 0.75
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+491.74user 813.97system 43:08.84elapsed 50%CPU (0avgtext+0avgdata 130212maxresident)k
+1334656inputs+1474376outputs (1915major+70068119minor)pagefaults 0swaps
