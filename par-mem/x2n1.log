@@ -1,0 +1,605 @@
+Optimizing /h/ywang30/nofib/imaginary/x2n1
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+"All is well :D"
+Basetime is: 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+best: 1.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+best: 1.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+10010 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+01100 1503024.0
+best: 1.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+10010 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+best: 1.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+00101 1503024.0
+runproj limit: 0.0
+10000 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+best: 1.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+10000 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+10000 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+00101 1503024.0
+best: 1.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+11100 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+01110 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+10000 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+best: 1.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+10101 1503024.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+10111 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+10101 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+11110 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+10110 1503024.0
+runproj limit: 0.0
+11100 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+best: 1.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+01110 1503024.0
+runproj limit: 0.0
+00101 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+11101 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+10101 1503024.0
+runproj limit: 0.0
+00000 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+10101 1503024.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+10111 1503024.0
+runproj limit: 0.0
+00001 1503024.0
+best: 1.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+10111 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+11100 1503024.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+01110 1503024.0
+runproj limit: 0.0
+00101 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+11101 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+best: 1.0
+runproj limit: 0.0
+00101 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+11001 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+11011 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+01100 1503024.0
+runproj limit: 0.0
+00011 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+best: 1.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+11001 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+00101 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+11001 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+11011 1503024.0
+best: 1.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+11001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+10111 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+01001 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+00010 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+best: 1.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+10000 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+11111 1503024.0
+runproj limit: 0.0
+00100 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+11001 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+01111 1503024.0
+runproj limit: 0.0
+10001 1503024.0
+runproj limit: 0.0
+10111 1503024.0
+best: 1.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+00110 1503024.0
+runproj limit: 0.0
+10111 1503024.0
+runproj limit: 0.0
+11100 1503024.0
+runproj limit: 0.0
+11111 1503024.0
+runproj limit: 0.0
+01010 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+11101 1503024.0
+runproj limit: 0.0
+11100 1503024.0
+runproj limit: 0.0
+01110 1503024.0
+runproj limit: 0.0
+10100 1503024.0
+runproj limit: 0.0
+01011 1503024.0
+runproj limit: 0.0
+11000 1503024.0
+runproj limit: 0.0
+10000 1503024.0
+runproj limit: 0.0
+01101 1503024.0
+runproj limit: 0.0
+01000 1503024.0
+runproj limit: 0.0
+00111 1503024.0
+best: 1.0
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+471.25user 352.41system 15:39.69elapsed 87%CPU (0avgtext+0avgdata 135584maxresident)k
+1061528inputs+1403664outputs (580major+62294803minor)pagefaults 0swaps
