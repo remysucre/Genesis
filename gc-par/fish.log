@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/spectral/fish
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 1.0e-2
+runproj limit: 1.0e-2
+GenesisNF: Base time neglegible
+6.19user 5.58system 0:20.30elapsed 58%CPU (0avgtext+0avgdata 110824maxresident)k
+6976inputs+15640outputs (4major+726969minor)pagefaults 0swaps

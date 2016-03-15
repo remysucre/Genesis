@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/spectral/calendar
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+5.87user 4.43system 0:26.48elapsed 38%CPU (0avgtext+0avgdata 119276maxresident)k
+7328inputs+10360outputs (4major+740464minor)pagefaults 0swaps

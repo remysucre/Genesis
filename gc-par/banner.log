@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/spectral/banner
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+5.67user 5.54system 0:19.74elapsed 56%CPU (0avgtext+0avgdata 110292maxresident)k
+9664inputs+10280outputs (4major+719596minor)pagefaults 0swaps
