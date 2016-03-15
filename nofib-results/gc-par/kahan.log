@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/imaginary/kahan
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.545
+runproj limit: 0.545
+GenesisNF: Base time neglegible
+9.50user 6.35system 0:26.33elapsed 60%CPU (0avgtext+0avgdata 134540maxresident)k
+7496inputs+10192outputs (4major+736569minor)pagefaults 0swaps

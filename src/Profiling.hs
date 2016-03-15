@@ -41,5 +41,6 @@ benchmark projDir runs =  do
   system cleanProj
   let s = unlines . tail . lines $ t
       stats = read s :: [(String, String)]
-  let Just alloc = lookup "peak_megabytes_allocated" stats
-  return $ read alloc
+  let Just muts = lookup "mutator_cpu_seconds" stats
+      Just gcs = lookup "GC_cpu_seconds" stats
+  return $ read muts + read gcs

@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/real/prolog
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+9.19user 6.95system 0:19.27elapsed 83%CPU (0avgtext+0avgdata 109356maxresident)k
+7664inputs+12616outputs (4major+1033385minor)pagefaults 0swaps

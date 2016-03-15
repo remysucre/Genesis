@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/imaginary/rfib
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 2.0e-2
+runproj limit: 2.0e-2
+GenesisNF: Base time neglegible
+4.98user 6.56system 0:20.28elapsed 56%CPU (0avgtext+0avgdata 131424maxresident)k
+7504inputs+10344outputs (4major+729391minor)pagefaults 0swaps
