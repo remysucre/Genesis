@@ -307,7 +307,7 @@ main :: IO ()
 main
   = do let count = 700
            blkSize = 65536
-           ((!args)) = ["./json-data/jp100.json"]
+       args <- getArgs
        forM_ args $
          \ arg ->
            bracket (openFile arg ReadMode) hClose $
