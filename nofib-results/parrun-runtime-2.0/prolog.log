@@ -1,0 +1,10 @@
+Optimizing /data/dan/nofib/real/prolog
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+9.98user 7.39system 0:20.37elapsed 85%CPU (0avgtext+0avgdata 136636maxresident)k
+3704inputs+11880outputs (29major+1039021minor)pagefaults 0swaps

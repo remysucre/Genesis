@@ -1,0 +1,10 @@
+Optimizing /data/dan/nofib/spectral/eliza
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+6.06user 10.68system 0:17.41elapsed 96%CPU (0avgtext+0avgdata 135592maxresident)k
+64inputs+11240outputs (0major+728554minor)pagefaults 0swaps

@@ -1,0 +1,10 @@
+Optimizing /data/dan/nofib/spectral/scc
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+4.85user 5.39system 0:11.42elapsed 89%CPU (0avgtext+0avgdata 137584maxresident)k
+8inputs+8680outputs (0major+773525minor)pagefaults 0swaps
