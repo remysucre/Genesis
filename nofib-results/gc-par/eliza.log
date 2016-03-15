@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/spectral/eliza
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+6.28user 4.51system 0:25.72elapsed 41%CPU (0avgtext+0avgdata 107272maxresident)k
+7488inputs+11544outputs (4major+722463minor)pagefaults 0swaps

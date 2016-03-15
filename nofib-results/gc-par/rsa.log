@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/real/rsa
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 4.0e-2
+runproj limit: 4.0e-2
+GenesisNF: Base time neglegible
+5.33user 3.20system 0:11.22elapsed 76%CPU (0avgtext+0avgdata 111308maxresident)k
+7536inputs+10744outputs (4major+774984minor)pagefaults 0swaps
