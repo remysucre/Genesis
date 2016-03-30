@@ -1,6 +1,0 @@
-400,401c400,401
-<   [args] <- getArgs
-<   let count = 700
----
->   args <- getArgs
->   let count = 1

@@ -1,9 +1,0 @@
-*** /dev/null
---- /dev/null
-***************
-*** 400,401
--   [args] <- getArgs
--   let count = 700
---- 400,401 -----
-+   args <- getArgs
-+   let count = 1
