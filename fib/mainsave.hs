@@ -1,8 +1,7 @@
 {-# LANGUAGE BangPatterns #-}
-
--- Fibonnacci sequence with accum. param.
+module Main (main) where
+ 
 fib :: Int -> Integer -> Integer -> Integer
 fib 0 _ b = b
-fib n a !b = fib (n - 1) b (a + b)
-
+fib n d c = fib (n - 1) c (d + c)
 main = print $ fib 300000 0 1
