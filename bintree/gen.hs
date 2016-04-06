@@ -11,14 +11,15 @@ data Tree = Nil
 minN = 4
 io !s n !t = printf "%s of depth %d\t check: %d\n" s n t
 main
-  = do n <- getArgs >>= readIO . head
+  = do -- n <- getArgs >>= readIO . head
+       let n = 20
        let maxN = max (minN + 2) n
            !stretchN = maxN + 1
        let c = {-# SCC "stretch" #-} check (make 0 stretchN)
        io "stretch tree" stretchN c
        let !long = make 0 maxN
        let vs = depth minN maxN
-       mapM_ (\ (!m, !d, i)) -> io (show m ++ "\t trees") d i) vs
+       mapM_ (\ (!m, !d, i) -> io (show m ++ "\t trees") d i) vs
        io "long lived tree" maxN (check long)
  
 depth :: Int -> Int -> [(Int, Int, Int)]

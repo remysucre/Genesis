@@ -36,11 +36,14 @@ benchmark projDir runs =  do
                      ++ " -q +RTS -ttiming.temp --machine-readable"
                      ++ "> /dev/null"
       cleanProj = "rm timing.temp"
-  system runProj
-  !t <- readFile "timing.temp"
-  system cleanProj
-  let s = unlines . tail . lines $ t
-      stats = read s :: [(String, String)]
-  let Just muts = lookup "mutator_cpu_seconds" stats
-      Just gcs = lookup "GC_cpu_seconds" stats
-  return $ read muts + read gcs
+  exitc <- system runProj 
+  case exitc
+    of ExitSuccess -> do 
+                      !t <- readFile "timing.temp"
+                      system cleanProj
+                      let s = unlines . tail . lines $ t
+                          stats = read s :: [(String, String)]
+                      let Just muts = lookup "mutator_cpu_seconds" stats
+                          Just gcs = lookup "GC_cpu_seconds" stats
+                      return $ read muts + read gcs
+       _ -> return 100000
