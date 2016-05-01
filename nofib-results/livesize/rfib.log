@@ -1,0 +1,601 @@
+Optimizing /h/ywang30/nofib/imaginary/rfib
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 2.0e-2
+runproj limit: 2.0e-2
+"All is well :D"
+Basetime is: 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1111 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+1111 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+1001 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1111 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1111 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+1111 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1111 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+1101 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+1111 44312.0
+runproj limit: 2.0e-2
+0001 44312.0
+runproj limit: 2.0e-2
+0011 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1101 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+best: 1.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+1011 44312.0
+runproj limit: 2.0e-2
+0110 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1110 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0111 44312.0
+runproj limit: 2.0e-2
+0010 44312.0
+runproj limit: 2.0e-2
+0101 44312.0
+runproj limit: 2.0e-2
+1000 44312.0
+runproj limit: 2.0e-2
+0100 44312.0
+runproj limit: 2.0e-2
+1010 44312.0
+runproj limit: 2.0e-2
+0000 44312.0
+runproj limit: 2.0e-2
+1100 44312.0
+best: 1.0
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+427.66user 241.79system 32:40.46elapsed 34%CPU (0avgtext+0avgdata 137948maxresident)k
+1100264inputs+1446952outputs (576major+61722958minor)pagefaults 0swaps
