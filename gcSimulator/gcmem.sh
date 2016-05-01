@@ -1,16 +1,58 @@
-cp /data/remy/luindex.traceaa /data/remy/temp.trace &&
+cp /data/remy/luindex.traceac /data/remy/temp.trace &&
 cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
 cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
 cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
 # cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
-mkdir lua && mv *timing* lua &&
+mkdir luc && mv *timing* luc &&
 
-cp /data/remy/luindex.traceab /data/remy/temp.trace &&
+cp /data/remy/luindex.tracead /data/remy/temp.trace &&
 cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
 cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
 cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
 # cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
-mkdir lub && mv *timing* lub
+mkdir lud && mv *timing* lud &&
+
+cp /data/remy/luindex.traceae /data/remy/temp.trace &&
+cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
+cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
+cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
+# cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
+mkdir lue && mv *timing* lue &&
+
+cp /data/remy/luindex.traceaf /data/remy/temp.trace &&
+cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
+cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
+cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
+# cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
+mkdir luf && mv *timing* luf &&
+
+cp /data/remy/luindex.traceag /data/remy/temp.trace &&
+cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
+cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
+cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
+# cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
+mkdir lug && mv *timing* lug &&
+
+cp /data/remy/luindex.traceah /data/remy/temp.trace &&
+cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
+cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
+cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
+# cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
+mkdir luh && mv *timing* luh &&
+
+cp /data/remy/luindex.traceai /data/remy/temp.trace &&
+cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
+cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
+cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
+# cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
+mkdir lui && mv *timing* lui &&
+
+cp /data/remy/luindex.traceaj /data/remy/temp.trace &&
+cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
+cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
+cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
+# cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
+mkdir luj && mv *timing* luj 
 
 # cp /data/remy/tradebeans.trace /data/remy/temp.trace &&
 # cp nobangs.hs Main.hs && cabal run && mv timing.temp nobangstiming.log &&
