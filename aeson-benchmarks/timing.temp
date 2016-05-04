@@ -1,14 +1,14 @@
-/h/ywang30/Genesis/aeson-benchmarks/dist/build/aeson-benchmarks/aeson-benchmarks +RTS -ttiming.temp --machine-readable 
- [("bytes allocated", "44808")
+/h/ywang30/Genesis/aeson-benchmarks/dist/build/aeson-benchmarks/aeson-benchmarks /data/remy/aeson/jyba-n7fm.json +RTS -ttiming.temp --machine-readable 
+ [("bytes allocated", "75960")
  ,("num_GCs", "1")
- ,("average_bytes_used", "37656")
- ,("max_bytes_used", "37656")
+ ,("average_bytes_used", "38072")
+ ,("max_bytes_used", "38072")
  ,("num_byte_usage_samples", "1")
  ,("peak_megabytes_allocated", "1")
- ,("init_cpu_seconds", "0.001")
+ ,("init_cpu_seconds", "0.000")
  ,("init_wall_seconds", "0.003")
  ,("mutator_cpu_seconds", "0.000")
- ,("mutator_wall_seconds", "-0.000")
+ ,("mutator_wall_seconds", "0.000")
  ,("GC_cpu_seconds", "0.000")
  ,("GC_wall_seconds", "0.000")
  ]

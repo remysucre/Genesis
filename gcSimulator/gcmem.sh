@@ -1,9 +1,9 @@
 # cp /data/remy/luindex.traceac /data/remy/temp.trace &&
-# cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
-cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
+cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
+# cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
 cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
 # cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log 
-mkdir batright && mv *timing* batright 
+mkdir battry && mv *timing* battry
 
 # cp /data/remy/luindex.tracead /data/remy/temp.trace &&
 # cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.log &&
