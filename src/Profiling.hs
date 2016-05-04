@@ -31,7 +31,7 @@ instance NFData ExitCode
 
 benchmark :: FilePath -> Int64 -> IO Double
 benchmark projDir runs =  do
-  let runProj = "./" ++ projDir ++ "/dist/build/" 
+  let runProj = "timeout 2m ./" ++ projDir ++ "/dist/build/" 
                      ++ projDir ++ "/" ++ projDir 
                      ++ " -q +RTS -ttiming.temp --machine-readable"
                      ++ "> /dev/null"
