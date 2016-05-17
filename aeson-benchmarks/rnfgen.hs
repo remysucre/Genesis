@@ -302,8 +302,8 @@ main :: IO ()
 main
   = do let (!count) = 1
            blkSize = 65536
-           -- (!(!args)) = ["./json-data/objects.json"]
-       args <- getArgs
+           (!(!args)) = ["./json-data/objects.json"]
+       -- args <- getArgs
        forM_ args $
          \ (!(!arg)) ->
            bracket (openFile arg ReadMode) hClose $
