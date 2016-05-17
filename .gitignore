@@ -17,5 +17,8 @@ cabal.sandbox.config
 *.hp
 gennofib.log
 
+Main
 big files
 json-data/
+*dist*
+nofib-results/
