@@ -16,3 +16,6 @@ cabal.sandbox.config
 *.aux
 *.hp
 gennofib.log
+
+big files
+json-data
