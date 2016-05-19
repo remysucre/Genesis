@@ -7,8 +7,8 @@
  ,("peak_megabytes_allocated", "6")
  ,("init_cpu_seconds", "0.000")
  ,("init_wall_seconds", "0.001")
- ,("mutator_cpu_seconds", "4.969")
- ,("mutator_wall_seconds", "4.970")
- ,("GC_cpu_seconds", "0.338")
- ,("GC_wall_seconds", "0.337")
+ ,("mutator_cpu_seconds", "4.955")
+ ,("mutator_wall_seconds", "4.956")
+ ,("GC_cpu_seconds", "0.311")
+ ,("GC_wall_seconds", "0.310")
  ]
