@@ -1,0 +1,60 @@
+
+Main.hs:4:17:
+    Unexpected strictness annotation: !Int
+    In the type ‘!Int’
+    In the definition of data constructor ‘Lol’
+    In the data declaration for ‘Lol’
+
+Main.hs:4:17:
+    Unexpected strictness annotation: !Int
+    In the type ‘!Int’
+    In the definition of data constructor ‘Lol’
+    In the data declaration for ‘Lol’
+
+Main.hs:4:17:
+    Unexpected strictness annotation: !Int
+    In the type ‘!Int’
+    In the definition of data constructor ‘Lol’
+    In the data declaration for ‘Lol’
+
+Main.hs:4:17:
+    Unexpected strictness annotation: !Int
+    In the type ‘!Int’
+    In the definition of data constructor ‘Lol’
+    In the data declaration for ‘Lol’
+
+Main.hs:4:17:
+    Unexpected strictness annotation: !Int
+    In the type ‘!Int’
+    In the definition of data constructor ‘Lol’
+    In the data declaration for ‘Lol’
+Optimizing dummy
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 3
+gens: 3
+arch: 3
+Basetime is: 0.0
+bits: 01
+bits: 10
+bits: 10
+best: NaN
+bits: 10
+bits: 11
+bits: 00
+bits: 10
+bits: 01
+best: NaN
+bits: 11
+bits: 00
+bits: 10
+bits: 01
+bits: 10
+bits: 00
+best: NaN
+done evolving!
+best entity (GA): 00
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+24.96user 5.00system 0:30.32elapsed 98%CPU (0avgtext+0avgdata 126108maxresident)k
+0inputs+24912outputs (0major+1649400minor)pagefaults 0swaps
+Fri May 20 10:58:04 EDT 2016
+aa4e1a5
