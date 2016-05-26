@@ -3,7 +3,7 @@ for Trace in `ls /data/remy/*short`
     cp "$Trace" "/data/remy/temp.trace"
     for Hs in `ls *short.hs `
       do
-        cp "$Hs" Main.hs && cabal run > /dev/null && mv timing.temp "$Hs"."$Trace"timing.log 
+        cp "$Hs" Main.hs && cabal run > /dev/null && mv timing.temp "$Trace"."$Hs"timing.log 
 #        echo "$Trace"."$Hs"
       done
   done
