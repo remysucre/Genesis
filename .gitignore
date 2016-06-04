@@ -15,13 +15,8 @@ cabal.sandbox.config
 *.prof
 *.aux
 *.hp
-gennofib.log
 
 *.temp
 *.swp
 
-Main
-big files
-json-data/
 *dist*
-nofib-results/
