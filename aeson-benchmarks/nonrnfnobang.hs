@@ -93,7 +93,7 @@ objectValues str val = do
     k <- str <* skipSpace <* char ':'
     v <- val <* skipSpace
 
-    let !m = H.insert k v m0
+    let m = H.insert k v m0
 
 
 
@@ -108,7 +108,7 @@ array_ = {-# SCC "array_" #-} Array <$> arrayValues value
 array_' :: Parser Value
 array_' = {-# SCC "array_'" #-} do
 
-  !vals <- arrayValues value'
+  vals <- arrayValues value'
 
 
 
@@ -166,7 +166,7 @@ value' = do
   case w of
     34 -> do
 
-                     !s <- A.anyWord8 *> jstring_
+                     s <- A.anyWord8 *> jstring_
 
 
 
@@ -179,7 +179,7 @@ value' = do
     _ | w >= 48 && w <= 57 || w == 45
                   -> do
 
-                     !n <- scientific
+                     n <- scientific
 
 
 
