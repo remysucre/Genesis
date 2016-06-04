@@ -7,9 +7,9 @@
 #   done
 for Js in `ls aeson-benchmarks/json-data/chicago*.json`
   do
-    cp "$Js" aeson-benchmarks/json-data/objects.json
+    cp "$Js" json-data/objects.json
     # ./runGenesis.sh aeson-benchmark 13 15 7
-    ./runGenesis.sh aeson-benchmark 1 1 1
-    mv gcSimulatorSurvivor.hs "$Js".hs
-    mv gcSimulator.log "$Js".log
+    ./runGenesis.sh aeson-benchmarks 1 1 1
+    mv aeson-benchmarksSurvivor.hs "$Js".hs
+    mv aeson-benchmarks.log "$Js".log
   done
