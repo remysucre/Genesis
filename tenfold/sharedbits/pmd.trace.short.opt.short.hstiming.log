@@ -1,0 +1,14 @@
+/h/ywang30/Genesis/gcSimulator/dist/build/gcSimulator/gcSimulator +RTS -ttiming.temp --machine-readable 
+ [("bytes allocated", "148799401984")
+ ,("num_GCs", "285715")
+ ,("average_bytes_used", "5128873")
+ ,("max_bytes_used", "12152048")
+ ,("num_byte_usage_samples", "483")
+ ,("peak_megabytes_allocated", "36")
+ ,("init_cpu_seconds", "0.000")
+ ,("init_wall_seconds", "0.001")
+ ,("mutator_cpu_seconds", "78.869")
+ ,("mutator_wall_seconds", "79.796")
+ ,("GC_cpu_seconds", "13.777")
+ ,("GC_wall_seconds", "13.923")
+ ]
