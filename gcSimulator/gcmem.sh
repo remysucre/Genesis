@@ -5,6 +5,7 @@ cp nobangs.hs Main.hs && cabal run > /dev/null && mv timing.temp nobangstiming.l
 cp bangs.hs Main.hs && cabal run > /dev/null && mv timing.temp bangstiming.log &&
 cp gen.hs Main.hs && cabal run > /dev/null && mv timing.temp gentiming.log &&
 cp gen2.hs Main.hs && cabal run > /dev/null && mv timing.temp gen2timing.log &&
+cp Main.hs.opt Main.hs && cabal run > /dev/null && mv timing.temp opttiming.log &&
 mkdir battry && mv *timing* battry
 
 # cp /data/remy/luindex.tracead /data/remy/temp.trace &&
