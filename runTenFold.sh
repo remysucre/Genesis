@@ -8,8 +8,8 @@
 for Js in `ls aeson-benchmarks/json-data/chicago*.json`
   do
     cp "$Js" json-data/objects.json
-    # ./runGenesis.sh aeson-benchmark 13 15 7
-    ./runGenesis.sh aeson-benchmarks 1 1 1
+    ./runGenesis.sh aeson-benchmarks 13 15 7
+    # ./runGenesis.sh aeson-benchmarks 1 1 1
     mv aeson-benchmarksSurvivor.hs "$Js".hs
     mv aeson-benchmarks.log "$Js".log
   done
