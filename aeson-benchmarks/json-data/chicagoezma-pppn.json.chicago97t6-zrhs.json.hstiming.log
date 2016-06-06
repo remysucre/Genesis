@@ -1,0 +1,14 @@
+/h/ywang30/Genesis/aeson-benchmarks/dist/build/aeson-benchmarks/aeson-benchmarks +RTS -ttiming.temp --machine-readable 
+ [("bytes allocated", "17104740776")
+ ,("num_GCs", "32808")
+ ,("average_bytes_used", "96564971")
+ ,("max_bytes_used", "609010768")
+ ,("num_byte_usage_samples", "13")
+ ,("peak_megabytes_allocated", "1139")
+ ,("init_cpu_seconds", "0.000")
+ ,("init_wall_seconds", "0.001")
+ ,("mutator_cpu_seconds", "7.717")
+ ,("mutator_wall_seconds", "7.718")
+ ,("GC_cpu_seconds", "3.154")
+ ,("GC_wall_seconds", "3.153")
+ ]
