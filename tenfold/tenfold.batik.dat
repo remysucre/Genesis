@@ -1,0 +1,33 @@
+batik.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "51.735")
+("GC_wall_seconds", "3.459")
+fop.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "51.184")
+("GC_wall_seconds", "3.508")
+jython.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "50.583")
+("GC_wall_seconds", "3.085")
+luindex.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "51.144")
+("GC_wall_seconds", "4.995")
+lusearch.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "57.158")
+("GC_wall_seconds", "8.495")
+pmd.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "56.764")
+("GC_wall_seconds", "9.321")
+specjbb.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "51.811")
+("GC_wall_seconds", "2.920")
+temp.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "49.167")
+("GC_wall_seconds", "2.681")
+tomcat.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "50.531")
+("GC_wall_seconds", "3.083")
+tradebeans.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "49.554")
+("GC_wall_seconds", "2.718")
+tradesoap.trace.short.batik.trace.short.hstiming.log
+("mutator_wall_seconds", "49.061")
+("GC_wall_seconds", "2.682")
