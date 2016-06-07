@@ -1,0 +1,480 @@
+batik.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "8.107")
+("mutator_wall_seconds", "52.949")
+("max_bytes_used", "21897824")
+batik.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "3.459")
+("mutator_wall_seconds", "51.735")
+("max_bytes_used", "21451168")
+batik.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "4.147")
+("mutator_wall_seconds", "63.593")
+("max_bytes_used", "21661352")
+batik.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "3.313")
+("mutator_wall_seconds", "51.883")
+("max_bytes_used", "21555776")
+batik.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "3.463")
+("mutator_wall_seconds", "51.926")
+("max_bytes_used", "21708328")
+batik.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "3.502")
+("mutator_wall_seconds", "51.843")
+("max_bytes_used", "21595224")
+batik.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "40.751")
+("mutator_wall_seconds", "51.028")
+("max_bytes_used", "28793424")
+batik.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "3.451")
+("mutator_wall_seconds", "51.986")
+("max_bytes_used", "21459152")
+batik.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "5.049")
+("mutator_wall_seconds", "51.064")
+("max_bytes_used", "21625912")
+batik.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "3.331")
+("mutator_wall_seconds", "51.259")
+("max_bytes_used", "21421896")
+batik.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "5.199")
+("mutator_wall_seconds", "50.569")
+("max_bytes_used", "21440504")
+batik.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "3.519")
+("mutator_wall_seconds", "51.983")
+("max_bytes_used", "21449640")
+fop.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "8.180")
+("mutator_wall_seconds", "52.383")
+("max_bytes_used", "16126504")
+fop.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "3.508")
+("mutator_wall_seconds", "51.184")
+("max_bytes_used", "9096688")
+fop.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "3.651")
+("mutator_wall_seconds", "50.552")
+("max_bytes_used", "9100400")
+fop.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "3.611")
+("mutator_wall_seconds", "51.270")
+("max_bytes_used", "9070232")
+fop.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "3.856")
+("mutator_wall_seconds", "51.695")
+("max_bytes_used", "9060144")
+fop.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "3.782")
+("mutator_wall_seconds", "51.972")
+("max_bytes_used", "9105752")
+fop.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "44.159")
+("mutator_wall_seconds", "50.103")
+("max_bytes_used", "23670864")
+fop.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "3.723")
+("mutator_wall_seconds", "51.641")
+("max_bytes_used", "9112296")
+fop.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "4.439")
+("mutator_wall_seconds", "50.555")
+("max_bytes_used", "9111416")
+fop.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "3.719")
+("mutator_wall_seconds", "50.966")
+("max_bytes_used", "9069768")
+fop.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "4.378")
+("mutator_wall_seconds", "50.224")
+("max_bytes_used", "9106248")
+fop.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "3.685")
+("mutator_wall_seconds", "51.282")
+("max_bytes_used", "9068896")
+jython.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "6.296")
+("mutator_wall_seconds", "51.948")
+("max_bytes_used", "67700272")
+jython.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "3.085")
+("mutator_wall_seconds", "50.583")
+("max_bytes_used", "18245544")
+jython.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "3.085")
+("mutator_wall_seconds", "50.835")
+("max_bytes_used", "18245544")
+jython.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "2.958")
+("mutator_wall_seconds", "50.812")
+("max_bytes_used", "18245544")
+jython.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "3.079")
+("mutator_wall_seconds", "50.606")
+("max_bytes_used", "18245544")
+jython.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "3.096")
+("mutator_wall_seconds", "50.769")
+("max_bytes_used", "18245544")
+jython.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "44.636")
+("mutator_wall_seconds", "49.367")
+("max_bytes_used", "2060357824")
+jython.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "2.988")
+("mutator_wall_seconds", "50.763")
+("max_bytes_used", "16975784")
+jython.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "3.018")
+("mutator_wall_seconds", "49.694")
+("max_bytes_used", "18245544")
+jython.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "3.077")
+("mutator_wall_seconds", "50.188")
+("max_bytes_used", "16975784")
+jython.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "3.122")
+("mutator_wall_seconds", "49.866")
+("max_bytes_used", "18245544")
+jython.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "3.158")
+("mutator_wall_seconds", "59.713")
+("max_bytes_used", "16975784")
+luindex.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "9.256")
+("mutator_wall_seconds", "52.471")
+("max_bytes_used", "35976216")
+luindex.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "4.995")
+("mutator_wall_seconds", "51.144")
+("max_bytes_used", "9278200")
+luindex.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "5.038")
+("mutator_wall_seconds", "50.492")
+("max_bytes_used", "9158592")
+luindex.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "4.951")
+("mutator_wall_seconds", "51.101")
+("max_bytes_used", "9180888")
+luindex.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "5.044")
+("mutator_wall_seconds", "51.146")
+("max_bytes_used", "9266832")
+luindex.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "5.016")
+("mutator_wall_seconds", "51.086")
+("max_bytes_used", "9220600")
+luindex.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "47.990")
+("mutator_wall_seconds", "49.775")
+("max_bytes_used", "150522944")
+luindex.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "4.656")
+("mutator_wall_seconds", "50.839")
+("max_bytes_used", "9184256")
+luindex.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "5.915")
+("mutator_wall_seconds", "49.984")
+("max_bytes_used", "9184432")
+luindex.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "4.845")
+("mutator_wall_seconds", "50.869")
+("max_bytes_used", "9202992")
+luindex.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "6.690")
+("mutator_wall_seconds", "49.721")
+("max_bytes_used", "9234176")
+luindex.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "4.980")
+("mutator_wall_seconds", "50.840")
+("max_bytes_used", "9190816")
+lusearch.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "16.176")
+("mutator_wall_seconds", "58.586")
+("max_bytes_used", "12882160")
+lusearch.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "8.495")
+("mutator_wall_seconds", "57.158")
+("max_bytes_used", "6607232")
+lusearch.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "8.818")
+("mutator_wall_seconds", "56.496")
+("max_bytes_used", "6549632")
+lusearch.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "8.778")
+("mutator_wall_seconds", "57.168")
+("max_bytes_used", "6550744")
+lusearch.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "8.890")
+("mutator_wall_seconds", "56.964")
+("max_bytes_used", "6548312")
+lusearch.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "8.911")
+("mutator_wall_seconds", "57.511")
+("max_bytes_used", "6572144")
+lusearch.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "54.704")
+("mutator_wall_seconds", "56.656")
+("max_bytes_used", "55473024")
+lusearch.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "8.677")
+("mutator_wall_seconds", "57.452")
+("max_bytes_used", "6552360")
+lusearch.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "9.802")
+("mutator_wall_seconds", "56.335")
+("max_bytes_used", "6635392")
+lusearch.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "8.818")
+("mutator_wall_seconds", "56.580")
+("max_bytes_used", "6601320")
+lusearch.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "9.875")
+("mutator_wall_seconds", "55.919")
+("max_bytes_used", "6581152")
+lusearch.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "9.054")
+("mutator_wall_seconds", "58.058")
+("max_bytes_used", "6552632")
+pmd.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "20.334")
+("mutator_wall_seconds", "58.723")
+("max_bytes_used", "39526008")
+pmd.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "9.321")
+("mutator_wall_seconds", "56.764")
+("max_bytes_used", "12287936")
+pmd.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "9.889")
+("mutator_wall_seconds", "56.202")
+("max_bytes_used", "12212224")
+pmd.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "9.410")
+("mutator_wall_seconds", "56.464")
+("max_bytes_used", "12267488")
+pmd.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "9.496")
+("mutator_wall_seconds", "56.773")
+("max_bytes_used", "12030600")
+pmd.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "9.448")
+("mutator_wall_seconds", "56.844")
+("max_bytes_used", "12222864")
+pmd.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "51.611")
+("mutator_wall_seconds", "57.308")
+("max_bytes_used", "40184504")
+pmd.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "9.381")
+("mutator_wall_seconds", "56.878")
+("max_bytes_used", "12469360")
+pmd.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "10.381")
+("mutator_wall_seconds", "55.903")
+("max_bytes_used", "11995960")
+pmd.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "9.660")
+("mutator_wall_seconds", "56.280")
+("max_bytes_used", "12346400")
+pmd.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "9.966")
+("mutator_wall_seconds", "55.208")
+("max_bytes_used", "12086392")
+pmd.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "9.451")
+("mutator_wall_seconds", "56.740")
+("max_bytes_used", "12097920")
+specjbb.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "4.730")
+("mutator_wall_seconds", "53.547")
+("max_bytes_used", "33347816")
+specjbb.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "2.920")
+("mutator_wall_seconds", "51.811")
+("max_bytes_used", "19400384")
+specjbb.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "3.101")
+("mutator_wall_seconds", "51.701")
+("max_bytes_used", "19492000")
+specjbb.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "2.973")
+("mutator_wall_seconds", "52.455")
+("max_bytes_used", "19458504")
+specjbb.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "3.032")
+("mutator_wall_seconds", "52.236")
+("max_bytes_used", "19558824")
+specjbb.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "3.028")
+("mutator_wall_seconds", "52.114")
+("max_bytes_used", "19405416")
+specjbb.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "36.571")
+("mutator_wall_seconds", "50.712")
+("max_bytes_used", "34073736")
+specjbb.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "2.957")
+("mutator_wall_seconds", "52.198")
+("max_bytes_used", "19498000")
+specjbb.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "3.144")
+("mutator_wall_seconds", "51.503")
+("max_bytes_used", "19560472")
+specjbb.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "3.114")
+("mutator_wall_seconds", "51.739")
+("max_bytes_used", "19478416")
+specjbb.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "3.050")
+("mutator_wall_seconds", "51.124")
+("max_bytes_used", "19468912")
+specjbb.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "2.959")
+("mutator_wall_seconds", "51.951")
+("max_bytes_used", "19543680")
+tomcat.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "8.988")
+("mutator_wall_seconds", "52.047")
+("max_bytes_used", "121340512")
+tomcat.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "3.083")
+("mutator_wall_seconds", "50.531")
+("max_bytes_used", "19692760")
+tomcat.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "3.202")
+("mutator_wall_seconds", "49.711")
+("max_bytes_used", "20516104")
+tomcat.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "3.190")
+("mutator_wall_seconds", "50.529")
+("max_bytes_used", "19170432")
+tomcat.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "3.208")
+("mutator_wall_seconds", "51.449")
+("max_bytes_used", "20260912")
+tomcat.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "3.281")
+("mutator_wall_seconds", "50.631")
+("max_bytes_used", "20833856")
+tomcat.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "42.214")
+("mutator_wall_seconds", "52.300")
+("max_bytes_used", "130195952")
+tomcat.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "3.118")
+("mutator_wall_seconds", "50.436")
+("max_bytes_used", "20492040")
+tomcat.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "4.581")
+("mutator_wall_seconds", "49.585")
+("max_bytes_used", "20686008")
+tomcat.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "3.117")
+("mutator_wall_seconds", "49.990")
+("max_bytes_used", "20974112")
+tomcat.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "4.407")
+("mutator_wall_seconds", "50.025")
+("max_bytes_used", "20685040")
+tomcat.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "3.210")
+("mutator_wall_seconds", "55.882")
+("max_bytes_used", "20399384")
+tradebeans.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "5.528")
+("mutator_wall_seconds", "51.771")
+("max_bytes_used", "3270088")
+tradebeans.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "2.718")
+("mutator_wall_seconds", "49.554")
+("max_bytes_used", "1860848")
+tradebeans.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "2.794")
+("mutator_wall_seconds", "48.849")
+("max_bytes_used", "1864344")
+tradebeans.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "2.768")
+("mutator_wall_seconds", "49.772")
+("max_bytes_used", "1866680")
+tradebeans.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "2.830")
+("mutator_wall_seconds", "49.409")
+("max_bytes_used", "1862760")
+tradebeans.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "2.755")
+("mutator_wall_seconds", "49.470")
+("max_bytes_used", "1893048")
+tradebeans.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "45.582")
+("mutator_wall_seconds", "49.825")
+("max_bytes_used", "155596184")
+tradebeans.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "2.903")
+("mutator_wall_seconds", "49.783")
+("max_bytes_used", "1866296")
+tradebeans.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "2.899")
+("mutator_wall_seconds", "48.365")
+("max_bytes_used", "2022832")
+tradebeans.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "2.854")
+("mutator_wall_seconds", "49.180")
+("max_bytes_used", "1862240")
+tradebeans.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "2.929")
+("mutator_wall_seconds", "47.900")
+("max_bytes_used", "2045872")
+tradebeans.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "2.862")
+("mutator_wall_seconds", "49.194")
+("max_bytes_used", "1856528")
+tradesoap.trace.short.bangs.short.hstiming.log
+("GC_wall_seconds", "5.613")
+("mutator_wall_seconds", "50.101")
+("max_bytes_used", "3269216")
+tradesoap.trace.short.batik.trace.short.hstiming.log
+("GC_wall_seconds", "2.682")
+("mutator_wall_seconds", "49.061")
+("max_bytes_used", "1683984")
+tradesoap.trace.short.fop.trace.short.hstiming.log
+("GC_wall_seconds", "2.802")
+("mutator_wall_seconds", "48.402")
+("max_bytes_used", "1682248")
+tradesoap.trace.short.jython.trace.short.hstiming.log
+("GC_wall_seconds", "2.785")
+("mutator_wall_seconds", "49.433")
+("max_bytes_used", "1682424")
+tradesoap.trace.short.luindex.trace.short.hstiming.log
+("GC_wall_seconds", "2.806")
+("mutator_wall_seconds", "48.956")
+("max_bytes_used", "1683344")
+tradesoap.trace.short.lusearch.trace.short.hstiming.log
+("GC_wall_seconds", "2.713")
+("mutator_wall_seconds", "49.246")
+("max_bytes_used", "1683304")
+tradesoap.trace.short.nobangs.short.hstiming.log
+("GC_wall_seconds", "42.867")
+("mutator_wall_seconds", "47.587")
+("max_bytes_used", "155606960")
+tradesoap.trace.short.pmd.trace.short.hstiming.log
+("GC_wall_seconds", "2.703")
+("mutator_wall_seconds", "49.285")
+("max_bytes_used", "1682768")
+tradesoap.trace.short.specjbb.trace.short.hstiming.log
+("GC_wall_seconds", "3.042")
+("mutator_wall_seconds", "48.057")
+("max_bytes_used", "2045040")
+tradesoap.trace.short.tomcat.trace.short.hstiming.log
+("GC_wall_seconds", "2.694")
+("mutator_wall_seconds", "48.604")
+("max_bytes_used", "1683728")
+tradesoap.trace.short.tradebeans.trace.short.hstiming.log
+("GC_wall_seconds", "3.106")
+("mutator_wall_seconds", "48.046")
+("max_bytes_used", "2045040")
+tradesoap.trace.short.tradesoap.trace.short.hstiming.log
+("GC_wall_seconds", "2.726")
+("mutator_wall_seconds", "48.892")
+("max_bytes_used", "1683120")

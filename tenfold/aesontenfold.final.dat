@@ -1,0 +1,440 @@
+chicago7as2-ds3y.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "5.155")
+("GC_wall_seconds", "2.645")
+("max_bytes_used", "574901528")
+chicago7as2-ds3y.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "4.896")
+("GC_wall_seconds", "2.572")
+("max_bytes_used", "574874152")
+chicago7as2-ds3y.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "4.934")
+("GC_wall_seconds", "2.590")
+("max_bytes_used", "574906864")
+chicago7as2-ds3y.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "5.048")
+("GC_wall_seconds", "2.627")
+("max_bytes_used", "574907280")
+chicago7as2-ds3y.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "5.061")
+("GC_wall_seconds", "2.569")
+("max_bytes_used", "574908400")
+chicago7as2-ds3y.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "5.076")
+("GC_wall_seconds", "2.516")
+("max_bytes_used", "574907416")
+chicago7as2-ds3y.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "5.030")
+("GC_wall_seconds", "2.571")
+("max_bytes_used", "574906936")
+chicago7as2-ds3y.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "5.019")
+("GC_wall_seconds", "2.565")
+("max_bytes_used", "574907632")
+chicago7as2-ds3y.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "5.292")
+("GC_wall_seconds", "2.685")
+("max_bytes_used", "574908256")
+chicago7as2-ds3y.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "5.041")
+("GC_wall_seconds", "2.516")
+("max_bytes_used", "574906864")
+chicago7as2-ds3y.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "6.209")
+("GC_wall_seconds", "3.268")
+("max_bytes_used", "684929408")
+chicago97t6-zrhs.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "3.142")
+("GC_wall_seconds", "1.424")
+("max_bytes_used", "288061080")
+chicago97t6-zrhs.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "3.094")
+("GC_wall_seconds", "1.417")
+("max_bytes_used", "288033568")
+chicago97t6-zrhs.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "3.070")
+("GC_wall_seconds", "1.414")
+("max_bytes_used", "288065768")
+chicago97t6-zrhs.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "3.173")
+("GC_wall_seconds", "1.365")
+("max_bytes_used", "288066912")
+chicago97t6-zrhs.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "3.138")
+("GC_wall_seconds", "1.348")
+("max_bytes_used", "288066416")
+chicago97t6-zrhs.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "3.751")
+("GC_wall_seconds", "1.725")
+("max_bytes_used", "288067336")
+chicago97t6-zrhs.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "3.120")
+("GC_wall_seconds", "1.319")
+("max_bytes_used", "288067320")
+chicago97t6-zrhs.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "3.111")
+("GC_wall_seconds", "1.308")
+("max_bytes_used", "288066608")
+chicago97t6-zrhs.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "3.118")
+("GC_wall_seconds", "1.314")
+("max_bytes_used", "288066280")
+chicago97t6-zrhs.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "3.148")
+("GC_wall_seconds", "1.376")
+("max_bytes_used", "288066472")
+chicago97t6-zrhs.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "4.042")
+("GC_wall_seconds", "1.995")
+("max_bytes_used", "345446920")
+chicago9ksk-na4q.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "4.244")
+("GC_wall_seconds", "1.579")
+("max_bytes_used", "273001816")
+chicago9ksk-na4q.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "4.115")
+("GC_wall_seconds", "1.500")
+("max_bytes_used", "272974096")
+chicago9ksk-na4q.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "4.093")
+("GC_wall_seconds", "1.492")
+("max_bytes_used", "273006656")
+chicago9ksk-na4q.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "4.188")
+("GC_wall_seconds", "1.536")
+("max_bytes_used", "273007576")
+chicago9ksk-na4q.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "4.167")
+("GC_wall_seconds", "1.479")
+("max_bytes_used", "273007336")
+chicago9ksk-na4q.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "4.256")
+("GC_wall_seconds", "1.489")
+("max_bytes_used", "273008032")
+chicago9ksk-na4q.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "4.194")
+("GC_wall_seconds", "1.486")
+("max_bytes_used", "273007616")
+chicago9ksk-na4q.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "4.168")
+("GC_wall_seconds", "1.484")
+("max_bytes_used", "273007360")
+chicago9ksk-na4q.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "4.186")
+("GC_wall_seconds", "1.487")
+("max_bytes_used", "273007192")
+chicago9ksk-na4q.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "4.205")
+("GC_wall_seconds", "1.510")
+("max_bytes_used", "273006968")
+chicago9ksk-na4q.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "5.416")
+("GC_wall_seconds", "3.100")
+("max_bytes_used", "444605616")
+chicagoe4sp-itvq.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "4.906")
+("GC_wall_seconds", "2.705")
+("max_bytes_used", "598104544")
+chicagoe4sp-itvq.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "4.739")
+("GC_wall_seconds", "2.658")
+("max_bytes_used", "598078192")
+chicagoe4sp-itvq.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "4.778")
+("GC_wall_seconds", "2.679")
+("max_bytes_used", "598110880")
+chicagoe4sp-itvq.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "4.888")
+("GC_wall_seconds", "2.673")
+("max_bytes_used", "598111848")
+chicagoe4sp-itvq.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "4.924")
+("GC_wall_seconds", "2.595")
+("max_bytes_used", "598111624")
+chicagoe4sp-itvq.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "4.936")
+("GC_wall_seconds", "2.588")
+("max_bytes_used", "598112552")
+chicagoe4sp-itvq.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "4.867")
+("GC_wall_seconds", "2.669")
+("max_bytes_used", "598112072")
+chicagoe4sp-itvq.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "4.857")
+("GC_wall_seconds", "2.684")
+("max_bytes_used", "598111648")
+chicagoe4sp-itvq.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "4.861")
+("GC_wall_seconds", "2.669")
+("max_bytes_used", "598111480")
+chicagoe4sp-itvq.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "4.918")
+("GC_wall_seconds", "2.682")
+("max_bytes_used", "598111048")
+chicagoe4sp-itvq.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "6.381")
+("GC_wall_seconds", "3.588")
+("max_bytes_used", "699243736")
+chicagoezma-pppn.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "8.124")
+("GC_wall_seconds", "3.206")
+("max_bytes_used", "609038600")
+chicagoezma-pppn.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "7.718")
+("GC_wall_seconds", "3.153")
+("max_bytes_used", "609010768")
+chicagoezma-pppn.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "7.782")
+("GC_wall_seconds", "3.088")
+("max_bytes_used", "609043104")
+chicagoezma-pppn.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "7.996")
+("GC_wall_seconds", "3.141")
+("max_bytes_used", "609043520")
+chicagoezma-pppn.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "7.850")
+("GC_wall_seconds", "3.106")
+("max_bytes_used", "609043560")
+chicagoezma-pppn.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "7.958")
+("GC_wall_seconds", "3.083")
+("max_bytes_used", "609043920")
+chicagoezma-pppn.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "7.972")
+("GC_wall_seconds", "3.070")
+("max_bytes_used", "609043912")
+chicagoezma-pppn.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "7.925")
+("GC_wall_seconds", "3.125")
+("max_bytes_used", "609043768")
+chicagoezma-pppn.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "7.916")
+("GC_wall_seconds", "3.085")
+("max_bytes_used", "609043104")
+chicagoezma-pppn.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "8.011")
+("GC_wall_seconds", "3.145")
+("max_bytes_used", "609043104")
+chicagoezma-pppn.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "10.467")
+("GC_wall_seconds", "4.883")
+("max_bytes_used", "746058432")
+chicagohcqp-hyqa.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "2.978")
+("GC_wall_seconds", "0.613")
+("max_bytes_used", "159184688")
+chicagohcqp-hyqa.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "2.787")
+("GC_wall_seconds", "0.592")
+("max_bytes_used", "159157200")
+chicagohcqp-hyqa.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "2.147")
+("GC_wall_seconds", "0.694")
+("max_bytes_used", "159260336")
+chicagohcqp-hyqa.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "2.235")
+("GC_wall_seconds", "0.695")
+("max_bytes_used", "159268056")
+chicagohcqp-hyqa.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "2.167")
+("GC_wall_seconds", "0.693")
+("max_bytes_used", "159261016")
+chicagohcqp-hyqa.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "2.176")
+("GC_wall_seconds", "0.685")
+("max_bytes_used", "159274080")
+chicagohcqp-hyqa.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "2.195")
+("GC_wall_seconds", "0.696")
+("max_bytes_used", "159274816")
+chicagohcqp-hyqa.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "2.187")
+("GC_wall_seconds", "0.692")
+("max_bytes_used", "159258112")
+chicagohcqp-hyqa.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "2.196")
+("GC_wall_seconds", "0.696")
+("max_bytes_used", "159260872")
+chicagohcqp-hyqa.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "2.260")
+("GC_wall_seconds", "0.706")
+("max_bytes_used", "159264848")
+chicagohcqp-hyqa.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "3.272")
+("GC_wall_seconds", "1.120")
+("max_bytes_used", "175760304")
+chicagorsxa-ify5.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "3.380")
+("GC_wall_seconds", "1.346")
+("max_bytes_used", "275228768")
+chicagorsxa-ify5.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "3.224")
+("GC_wall_seconds", "1.319")
+("max_bytes_used", "275200816")
+chicagorsxa-ify5.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "3.239")
+("GC_wall_seconds", "1.323")
+("max_bytes_used", "275233096")
+chicagorsxa-ify5.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "3.322")
+("GC_wall_seconds", "1.322")
+("max_bytes_used", "275233584")
+chicagorsxa-ify5.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "3.316")
+("GC_wall_seconds", "1.309")
+("max_bytes_used", "275233776")
+chicagorsxa-ify5.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "3.358")
+("GC_wall_seconds", "1.320")
+("max_bytes_used", "275234040")
+chicagorsxa-ify5.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "3.266")
+("GC_wall_seconds", "1.289")
+("max_bytes_used", "275233624")
+chicagorsxa-ify5.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "3.309")
+("GC_wall_seconds", "1.310")
+("max_bytes_used", "275233560")
+chicagorsxa-ify5.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "3.317")
+("GC_wall_seconds", "1.317")
+("max_bytes_used", "275233568")
+chicagorsxa-ify5.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "3.350")
+("GC_wall_seconds", "1.337")
+("max_bytes_used", "275232952")
+chicagorsxa-ify5.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "4.480")
+("GC_wall_seconds", "2.096")
+("max_bytes_used", "330766176")
+chicagouupf-x98q.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "4.584")
+("GC_wall_seconds", "1.677")
+("max_bytes_used", "289984880")
+chicagouupf-x98q.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "4.445")
+("GC_wall_seconds", "1.636")
+("max_bytes_used", "289957864")
+chicagouupf-x98q.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "4.450")
+("GC_wall_seconds", "1.634")
+("max_bytes_used", "289990648")
+chicagouupf-x98q.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "4.557")
+("GC_wall_seconds", "1.638")
+("max_bytes_used", "289991432")
+chicagouupf-x98q.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "4.546")
+("GC_wall_seconds", "1.645")
+("max_bytes_used", "289991328")
+chicagouupf-x98q.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "4.634")
+("GC_wall_seconds", "1.636")
+("max_bytes_used", "289992024")
+chicagouupf-x98q.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "4.534")
+("GC_wall_seconds", "1.638")
+("max_bytes_used", "289991608")
+chicagouupf-x98q.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "4.523")
+("GC_wall_seconds", "1.627")
+("max_bytes_used", "289991352")
+chicagouupf-x98q.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "4.550")
+("GC_wall_seconds", "1.633")
+("max_bytes_used", "289991024")
+chicagouupf-x98q.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "4.547")
+("GC_wall_seconds", "1.662")
+("max_bytes_used", "289991528")
+chicagouupf-x98q.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "6.019")
+("GC_wall_seconds", "3.624")
+("max_bytes_used", "521714408")
+chicagouxic-zsuj.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "3.760")
+("GC_wall_seconds", "1.542")
+("max_bytes_used", "294519352")
+chicagouxic-zsuj.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "3.548")
+("GC_wall_seconds", "1.494")
+("max_bytes_used", "294491632")
+chicagouxic-zsuj.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "3.552")
+("GC_wall_seconds", "1.500")
+("max_bytes_used", "294524520")
+chicagouxic-zsuj.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "3.649")
+("GC_wall_seconds", "1.497")
+("max_bytes_used", "294525288")
+chicagouxic-zsuj.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "3.639")
+("GC_wall_seconds", "1.486")
+("max_bytes_used", "294525104")
+chicagouxic-zsuj.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "3.710")
+("GC_wall_seconds", "1.493")
+("max_bytes_used", "294525648")
+chicagouxic-zsuj.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "3.664")
+("GC_wall_seconds", "1.489")
+("max_bytes_used", "294525328")
+chicagouxic-zsuj.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "3.628")
+("GC_wall_seconds", "1.495")
+("max_bytes_used", "294525296")
+chicagouxic-zsuj.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "3.633")
+("GC_wall_seconds", "1.488")
+("max_bytes_used", "294524960")
+chicagouxic-zsuj.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "3.667")
+("GC_wall_seconds", "1.509")
+("max_bytes_used", "294524504")
+chicagouxic-zsuj.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "4.646")
+("GC_wall_seconds", "2.255")
+("max_bytes_used", "349944136")
+chicagozuxi-7xem.json.chicago7as2-ds3y.json.hstiming.log
+("mutator_wall_seconds", "5.424")
+("GC_wall_seconds", "2.647")
+("max_bytes_used", "570463656")
+chicagozuxi-7xem.json.chicago97t6-zrhs.json.hstiming.log
+("mutator_wall_seconds", "5.137")
+("GC_wall_seconds", "2.549")
+("max_bytes_used", "570436312")
+chicagozuxi-7xem.json.chicago9ksk-na4q.json.hstiming.log
+("mutator_wall_seconds", "5.106")
+("GC_wall_seconds", "2.548")
+("max_bytes_used", "570468600")
+chicagozuxi-7xem.json.chicagoe4sp-itvq.json.hstiming.log
+("mutator_wall_seconds", "5.276")
+("GC_wall_seconds", "2.560")
+("max_bytes_used", "570469432")
+chicagozuxi-7xem.json.chicagoezma-pppn.json.hstiming.log
+("mutator_wall_seconds", "5.222")
+("GC_wall_seconds", "2.525")
+("max_bytes_used", "570469152")
+chicagozuxi-7xem.json.chicagohcqp-hyqa.json.hstiming.log
+("mutator_wall_seconds", "5.304")
+("GC_wall_seconds", "2.537")
+("max_bytes_used", "570469960")
+chicagozuxi-7xem.json.chicagorsxa-ify5.json.hstiming.log
+("mutator_wall_seconds", "5.257")
+("GC_wall_seconds", "2.545")
+("max_bytes_used", "570469672")
+chicagozuxi-7xem.json.chicagouupf-x98q.json.hstiming.log
+("mutator_wall_seconds", "5.228")
+("GC_wall_seconds", "2.536")
+("max_bytes_used", "570469176")
+chicagozuxi-7xem.json.chicagouxic-zsuj.json.hstiming.log
+("mutator_wall_seconds", "5.241")
+("GC_wall_seconds", "2.540")
+("max_bytes_used", "570469008")
+chicagozuxi-7xem.json.chicagozuxi-7xem.json.hstiming.log
+("mutator_wall_seconds", "5.275")
+("GC_wall_seconds", "2.598")
+("max_bytes_used", "570468976")
+chicagozuxi-7xem.json.rnfnobangs.hstiming.log
+("mutator_wall_seconds", "6.490")
+("GC_wall_seconds", "3.240")
+("max_bytes_used", "671516008")
