@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/spectral/cse
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+5.99user 9.39system 0:16.56elapsed 92%CPU (0avgtext+0avgdata 135496maxresident)k
+6944inputs+10368outputs (4major+779126minor)pagefaults 0swaps

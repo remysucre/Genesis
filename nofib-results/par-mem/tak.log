@@ -1,0 +1,611 @@
+Optimizing /h/ywang30/nofib/imaginary/tak
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 2.0e-2
+runproj limit: 2.0e-2
+"All is well :D"
+Basetime is: 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000100 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000100 104416.0
+runproj limit: 2.0e-2
+00001100 104416.0
+runproj limit: 2.0e-2
+01100100 104416.0
+runproj limit: 2.0e-2
+01100101 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+00000100 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+00000100 104416.0
+runproj limit: 2.0e-2
+00100101 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+00010100 104416.0
+runproj limit: 2.0e-2
+00010000 104416.0
+runproj limit: 2.0e-2
+00110000 104416.0
+runproj limit: 2.0e-2
+10010100 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000100 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+00010000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+01100100 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+01001100 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000001 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000100 104416.0
+runproj limit: 2.0e-2
+00100101 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00010000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00110010 104416.0
+runproj limit: 2.0e-2
+11110000 104416.0
+runproj limit: 2.0e-2
+00101100 104416.0
+runproj limit: 2.0e-2
+11000001 104416.0
+runproj limit: 2.0e-2
+01010000 104416.0
+runproj limit: 2.0e-2
+00010000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+01100100 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+11110000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+01110000 104416.0
+runproj limit: 2.0e-2
+00100001 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+01110101 104416.0
+runproj limit: 2.0e-2
+11110110 104416.0
+runproj limit: 2.0e-2
+00010000 104416.0
+runproj limit: 2.0e-2
+01100100 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+00010000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+11100010 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+01110000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+00100001 104416.0
+runproj limit: 2.0e-2
+01010100 104416.0
+runproj limit: 2.0e-2
+01111111 104416.0
+runproj limit: 2.0e-2
+01011000 104416.0
+runproj limit: 2.0e-2
+10001000 104416.0
+runproj limit: 2.0e-2
+00100001 104416.0
+runproj limit: 2.0e-2
+11110000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+00000000 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+01110000 104416.0
+runproj limit: 2.0e-2
+00100001 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+10001001 104416.0
+runproj limit: 2.0e-2
+01010000 104416.0
+runproj limit: 2.0e-2
+01111010 104416.0
+runproj limit: 2.0e-2
+01010101 104416.0
+runproj limit: 2.0e-2
+00101001 104416.0
+runproj limit: 2.0e-2
+01001010 104416.0
+runproj limit: 2.0e-2
+01111000 104416.0
+runproj limit: 2.0e-2
+11101100 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+10100101 104416.0
+runproj limit: 2.0e-2
+01100011 104416.0
+runproj limit: 2.0e-2
+11011000 104416.0
+runproj limit: 2.0e-2
+11100010 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+01110000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+00100001 104416.0
+runproj limit: 2.0e-2
+01010100 104416.0
+runproj limit: 2.0e-2
+01111111 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+00010001 104416.0
+runproj limit: 2.0e-2
+01100111 104416.0
+runproj limit: 2.0e-2
+01011011 104416.0
+runproj limit: 2.0e-2
+11011011 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+10110100 104416.0
+runproj limit: 2.0e-2
+01101001 104416.0
+runproj limit: 2.0e-2
+10100010 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+11001010 104416.0
+runproj limit: 2.0e-2
+10001001 104416.0
+runproj limit: 2.0e-2
+00100000 104416.0
+runproj limit: 2.0e-2
+10001001 104416.0
+runproj limit: 2.0e-2
+01010000 104416.0
+runproj limit: 2.0e-2
+01111010 104416.0
+runproj limit: 2.0e-2
+01010101 104416.0
+runproj limit: 2.0e-2
+00101001 104416.0
+runproj limit: 2.0e-2
+01001010 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+01110110 104416.0
+runproj limit: 2.0e-2
+01001000 104416.0
+runproj limit: 2.0e-2
+10000001 104416.0
+runproj limit: 2.0e-2
+11000111 104416.0
+runproj limit: 2.0e-2
+10001001 104416.0
+runproj limit: 2.0e-2
+01010101 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+11101010 104416.0
+runproj limit: 2.0e-2
+11101001 104416.0
+runproj limit: 2.0e-2
+10000110 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+11111000 104416.0
+runproj limit: 2.0e-2
+11101000 104416.0
+runproj limit: 2.0e-2
+00010001 104416.0
+runproj limit: 2.0e-2
+01100111 104416.0
+runproj limit: 2.0e-2
+01011011 104416.0
+runproj limit: 2.0e-2
+11011011 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10110100 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+11011001 104416.0
+runproj limit: 2.0e-2
+00010101 104416.0
+runproj limit: 2.0e-2
+01100010 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10001000 104416.0
+runproj limit: 2.0e-2
+01001001 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+01100111 104416.0
+runproj limit: 2.0e-2
+01000111 104416.0
+runproj limit: 2.0e-2
+01000001 104416.0
+runproj limit: 2.0e-2
+01010010 104416.0
+runproj limit: 2.0e-2
+01111011 104416.0
+runproj limit: 2.0e-2
+01101010 104416.0
+runproj limit: 2.0e-2
+01110110 104416.0
+runproj limit: 2.0e-2
+01001000 104416.0
+runproj limit: 2.0e-2
+10000001 104416.0
+runproj limit: 2.0e-2
+11000111 104416.0
+runproj limit: 2.0e-2
+10001001 104416.0
+runproj limit: 2.0e-2
+01010101 104416.0
+runproj limit: 2.0e-2
+11100000 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+11101000 104416.0
+runproj limit: 2.0e-2
+11101010 104416.0
+runproj limit: 2.0e-2
+01000011 104416.0
+runproj limit: 2.0e-2
+01001011 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+01000010 104416.0
+runproj limit: 2.0e-2
+11010000 104416.0
+runproj limit: 2.0e-2
+00010101 104416.0
+runproj limit: 2.0e-2
+10000001 104416.0
+runproj limit: 2.0e-2
+01011010 104416.0
+runproj limit: 2.0e-2
+10100101 104416.0
+runproj limit: 2.0e-2
+11000011 104416.0
+runproj limit: 2.0e-2
+11100010 104416.0
+runproj limit: 2.0e-2
+11011001 104416.0
+runproj limit: 2.0e-2
+00010101 104416.0
+runproj limit: 2.0e-2
+01100010 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+10001000 104416.0
+runproj limit: 2.0e-2
+01001001 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+10100100 104416.0
+runproj limit: 2.0e-2
+11000011 104416.0
+runproj limit: 2.0e-2
+11000001 104416.0
+runproj limit: 2.0e-2
+01001011 104416.0
+runproj limit: 2.0e-2
+11101000 104416.0
+runproj limit: 2.0e-2
+11100100 104416.0
+runproj limit: 2.0e-2
+11000010 104416.0
+runproj limit: 2.0e-2
+01001001 104416.0
+runproj limit: 2.0e-2
+00110010 104416.0
+runproj limit: 2.0e-2
+01010011 104416.0
+runproj limit: 2.0e-2
+00000111 104416.0
+runproj limit: 2.0e-2
+01100000 104416.0
+runproj limit: 2.0e-2
+01001011 104416.0
+runproj limit: 2.0e-2
+11101000 104416.0
+runproj limit: 2.0e-2
+11101010 104416.0
+runproj limit: 2.0e-2
+01000011 104416.0
+runproj limit: 2.0e-2
+01001011 104416.0
+runproj limit: 2.0e-2
+10100000 104416.0
+runproj limit: 2.0e-2
+01000010 104416.0
+runproj limit: 2.0e-2
+11010000 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+01010010 104416.0
+runproj limit: 2.0e-2
+01010011 104416.0
+runproj limit: 2.0e-2
+11000010 104416.0
+runproj limit: 2.0e-2
+01001011 104416.0
+runproj limit: 2.0e-2
+01000011 104416.0
+runproj limit: 2.0e-2
+10100110 104416.0
+runproj limit: 2.0e-2
+11001010 104416.0
+runproj limit: 2.0e-2
+10101000 104416.0
+runproj limit: 2.0e-2
+00111010 104416.0
+runproj limit: 2.0e-2
+11000110 104416.0
+runproj limit: 2.0e-2
+11100011 104416.0
+runproj limit: 2.0e-2
+11001111 104416.0
+runproj limit: 2.0e-2
+10100100 104416.0
+runproj limit: 2.0e-2
+11000011 104416.0
+runproj limit: 2.0e-2
+11000001 104416.0
+runproj limit: 2.0e-2
+01001011 104416.0
+runproj limit: 2.0e-2
+11101000 104416.0
+runproj limit: 2.0e-2
+11100100 104416.0
+runproj limit: 2.0e-2
+11000010 104416.0
+best: 1.0
+runproj limit: 2.0e-2
+11000011 104416.0
+runproj limit: 2.0e-2
+01000011 104416.0
+runproj limit: 2.0e-2
+01010110 104416.0
+runproj limit: 2.0e-2
+00110110 104416.0
+runproj limit: 2.0e-2
+11000000 104416.0
+runproj limit: 2.0e-2
+10101100 104416.0
+runproj limit: 2.0e-2
+11100011 104416.0
+runproj limit: 2.0e-2
+11000001 104416.0
+runproj limit: 2.0e-2
+01110111 104416.0
+runproj limit: 2.0e-2
+11001001 104416.0
+runproj limit: 2.0e-2
+10000000 104416.0
+runproj limit: 2.0e-2
+01101111 104416.0
+runproj limit: 2.0e-2
+01110100 104416.0
+runproj limit: 2.0e-2
+01000000 104416.0
+runproj limit: 2.0e-2
+01010010 104416.0
+runproj limit: 2.0e-2
+01010011 104416.0
+runproj limit: 2.0e-2
+11000010 104416.0
+runproj limit: 2.0e-2
+01001011 104416.0
+runproj limit: 2.0e-2
+01000011 104416.0
+runproj limit: 2.0e-2
+10100110 104416.0
+best: 1.0
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+444.40user 367.65system 15:34.02elapsed 86%CPU (0avgtext+0avgdata 131320maxresident)k
+1048264inputs+1371304outputs (586major+62622453minor)pagefaults 0swaps

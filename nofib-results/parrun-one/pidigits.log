@@ -1,0 +1,779 @@
+warning: dubious run time results for pidigits: [2.55,2.52,4.1,3.92,3.13]
+warning: dubious mut time results for pidigits: [2.37,2.33,3.79,3.66,2.9]
+warning: dubious GC time results for pidigits: [0.18,0.19,0.31,0.26,0.23]
+warning: dubious run time results for pidigits: [2.55,2.52,4.1,3.92,3.13]
+warning: dubious mut time results for pidigits: [2.37,2.33,3.79,3.66,2.9]
+warning: dubious GC time results for pidigits: [0.18,0.19,0.31,0.26,0.23]
+warning: dubious GC time results for pidigits: [0.16,0.19,0.24,0.24,0.17]
+warning: dubious GC time results for pidigits: [0.16,0.19,0.24,0.24,0.17]
+warning: dubious run time results for pidigits: [2.44,2.5700002,2.5700002,2.74,4.76]
+warning: dubious mut time results for pidigits: [2.28,2.4,2.41,2.56,4.44]
+warning: dubious GC time results for pidigits: [0.16,0.17,0.16,0.18,0.32]
+warning: dubious run time results for pidigits: [2.44,2.5700002,2.5700002,2.74,4.76]
+warning: dubious mut time results for pidigits: [2.28,2.4,2.41,2.56,4.44]
+warning: dubious GC time results for pidigits: [0.16,0.17,0.16,0.18,0.32]
+warning: dubious run time results for pidigits: [4.65,4.9500003,2.8300002,3.93,4.09]
+warning: dubious mut time results for pidigits: [4.33,4.61,2.64,3.67,3.81]
+warning: dubious GC time results for pidigits: [0.32,0.34,0.19,0.26,0.28]
+warning: dubious run time results for pidigits: [4.65,4.9500003,2.8300002,3.93,4.09]
+warning: dubious mut time results for pidigits: [4.33,4.61,2.64,3.67,3.81]
+warning: dubious GC time results for pidigits: [0.32,0.34,0.19,0.26,0.28]
+warning: dubious run time results for pidigits: [2.64,3.62,2.49,3.3,2.4]
+warning: dubious mut time results for pidigits: [2.45,3.37,2.32,3.07,2.24]
+warning: dubious GC time results for pidigits: [0.19,0.25,0.17,0.23,0.16]
+warning: dubious run time results for pidigits: [2.64,3.62,2.49,3.3,2.4]
+warning: dubious mut time results for pidigits: [2.45,3.37,2.32,3.07,2.24]
+warning: dubious GC time results for pidigits: [0.19,0.25,0.17,0.23,0.16]
+warning: dubious run time results for pidigits: [3.1200001,3.09,2.55,3.84,4.06]
+warning: dubious mut time results for pidigits: [2.89,2.86,2.37,3.55,3.76]
+warning: dubious GC time results for pidigits: [0.23,0.23,0.18,0.29,0.3]
+warning: dubious run time results for pidigits: [3.1200001,3.09,2.55,3.84,4.06]
+warning: dubious mut time results for pidigits: [2.89,2.86,2.37,3.55,3.76]
+warning: dubious GC time results for pidigits: [0.23,0.23,0.18,0.29,0.3]
+warning: dubious GC time results for pidigits: [0.2,0.26,0.17,0.19,0.2]
+warning: dubious GC time results for pidigits: [0.2,0.26,0.17,0.19,0.2]
+warning: dubious run time results for pidigits: [4.73,2.92,2.64,2.45,3.19]
+warning: dubious mut time results for pidigits: [4.36,2.69,2.44,2.28,2.97]
+warning: dubious GC time results for pidigits: [0.37,0.23,0.2,0.17,0.22]
+warning: dubious run time results for pidigits: [4.73,2.92,2.64,2.45,3.19]
+warning: dubious mut time results for pidigits: [4.36,2.69,2.44,2.28,2.97]
+warning: dubious GC time results for pidigits: [0.37,0.23,0.2,0.17,0.22]
+warning: dubious GC time results for pidigits: [0.23,0.18,0.16,0.17,0.15]
+warning: dubious GC time results for pidigits: [0.23,0.18,0.16,0.17,0.15]
+warning: dubious mut time results for pidigits: [3.46,2.87,3.2,2.47,3.24]
+warning: dubious mut time results for pidigits: [3.46,2.87,3.2,2.47,3.24]
+warning: dubious run time results for pidigits: [3.25,3.79,2.66,2.79,2.73]
+warning: dubious mut time results for pidigits: [3.01,3.55,2.49,2.61,2.55]
+warning: dubious GC time results for pidigits: [0.24,0.24,0.17,0.18,0.18]
+warning: dubious run time results for pidigits: [3.25,3.79,2.66,2.79,2.73]
+warning: dubious mut time results for pidigits: [3.01,3.55,2.49,2.61,2.55]
+warning: dubious GC time results for pidigits: [0.24,0.24,0.17,0.18,0.18]
+warning: dubious run time results for pidigits: [2.51,2.46,2.69,3.77,2.39]
+warning: dubious mut time results for pidigits: [2.35,2.3,2.52,3.45,2.24]
+warning: dubious GC time results for pidigits: [0.16,0.16,0.17,0.32,0.15]
+warning: dubious run time results for pidigits: [2.51,2.46,2.69,3.77,2.39]
+warning: dubious mut time results for pidigits: [2.35,2.3,2.52,3.45,2.24]
+warning: dubious GC time results for pidigits: [0.16,0.16,0.17,0.32,0.15]
+warning: dubious GC time results for pidigits: [0.2,0.32,0.25,0.27,0.28]
+warning: dubious GC time results for pidigits: [0.2,0.32,0.25,0.27,0.28]
+warning: dubious run time results for pidigits: [2.46,2.93,4.4900002,3.96,2.95]
+warning: dubious mut time results for pidigits: [2.3,2.74,4.15,3.68,2.77]
+warning: dubious GC time results for pidigits: [0.16,0.19,0.34,0.28,0.18]
+warning: dubious run time results for pidigits: [2.46,2.93,4.4900002,3.96,2.95]
+warning: dubious mut time results for pidigits: [2.3,2.74,4.15,3.68,2.77]
+warning: dubious GC time results for pidigits: [0.16,0.19,0.34,0.28,0.18]
+warning: dubious run time results for pidigits: [3.56,2.6200001,3.26,6.39,4.54]
+warning: dubious mut time results for pidigits: [3.32,2.43,3.05,5.93,4.1]
+warning: dubious GC time results for pidigits: [0.24,0.19,0.21,0.46,0.44]
+warning: dubious run time results for pidigits: [3.56,2.6200001,3.26,6.39,4.54]
+warning: dubious mut time results for pidigits: [3.32,2.43,3.05,5.93,4.1]
+warning: dubious GC time results for pidigits: [0.24,0.19,0.21,0.46,0.44]
+warning: dubious run time results for pidigits: [3.6399999,2.42,2.63,3.13,2.48]
+warning: dubious mut time results for pidigits: [3.34,2.26,2.45,2.9,2.32]
+warning: dubious GC time results for pidigits: [0.3,0.16,0.18,0.23,0.16]
+warning: dubious run time results for pidigits: [3.6399999,2.42,2.63,3.13,2.48]
+warning: dubious mut time results for pidigits: [3.34,2.26,2.45,2.9,2.32]
+warning: dubious GC time results for pidigits: [0.3,0.16,0.18,0.23,0.16]
+warning: dubious GC time results for pidigits: [0.14,0.17,0.16,0.17,0.22]
+warning: dubious GC time results for pidigits: [0.14,0.17,0.16,0.17,0.22]
+warning: dubious GC time results for pidigits: [0.18,0.16,0.24,0.15,0.16]
+warning: dubious GC time results for pidigits: [0.18,0.16,0.24,0.15,0.16]
+warning: dubious GC time results for pidigits: [0.22,0.24,0.16,0.16,0.17]
+warning: dubious GC time results for pidigits: [0.22,0.24,0.16,0.16,0.17]
+warning: dubious GC time results for pidigits: [0.23,0.15,0.15,0.21,0.2]
+warning: dubious GC time results for pidigits: [0.23,0.15,0.15,0.21,0.2]
+warning: dubious GC time results for pidigits: [0.19,0.17,0.21,0.24,0.18]
+warning: dubious GC time results for pidigits: [0.19,0.17,0.21,0.24,0.18]
+warning: dubious run time results for pidigits: [2.5,2.3700001,3.36,2.44,4.96]
+warning: dubious mut time results for pidigits: [2.34,2.22,3.1,2.28,4.61]
+warning: dubious GC time results for pidigits: [0.16,0.15,0.26,0.16,0.35]
+warning: dubious run time results for pidigits: [2.5,2.3700001,3.36,2.44,4.96]
+warning: dubious mut time results for pidigits: [2.34,2.22,3.1,2.28,4.61]
+warning: dubious GC time results for pidigits: [0.16,0.15,0.26,0.16,0.35]
+warning: dubious run time results for pidigits: [4.14,4.23,2.54,4.38,2.43]
+warning: dubious mut time results for pidigits: [3.85,3.91,2.36,4.04,2.27]
+warning: dubious GC time results for pidigits: [0.29,0.32,0.18,0.34,0.16]
+warning: dubious run time results for pidigits: [4.14,4.23,2.54,4.38,2.43]
+warning: dubious mut time results for pidigits: [3.85,3.91,2.36,4.04,2.27]
+warning: dubious GC time results for pidigits: [0.29,0.32,0.18,0.34,0.16]
+warning: dubious run time results for pidigits: [3.26,3.87,2.51,2.9,2.48]
+warning: dubious mut time results for pidigits: [3.06,3.57,2.35,2.72,2.33]
+warning: dubious GC time results for pidigits: [0.2,0.3,0.16,0.18,0.15]
+warning: dubious run time results for pidigits: [3.26,3.87,2.51,2.9,2.48]
+warning: dubious mut time results for pidigits: [3.06,3.57,2.35,2.72,2.33]
+warning: dubious GC time results for pidigits: [0.2,0.3,0.16,0.18,0.15]
+warning: dubious run time results for pidigits: [2.8,2.46,2.3000002,3.42,2.93]
+warning: dubious mut time results for pidigits: [2.62,2.31,2.16,3.19,2.72]
+warning: dubious GC time results for pidigits: [0.18,0.15,0.14,0.23,0.21]
+warning: dubious run time results for pidigits: [2.8,2.46,2.3000002,3.42,2.93]
+warning: dubious mut time results for pidigits: [2.62,2.31,2.16,3.19,2.72]
+warning: dubious GC time results for pidigits: [0.18,0.15,0.14,0.23,0.21]
+warning: dubious run time results for pidigits: [2.6000001,4.98,3.01,3.01,2.8200002]
+warning: dubious mut time results for pidigits: [2.43,4.61,2.81,2.8,2.63]
+warning: dubious GC time results for pidigits: [0.17,0.37,0.2,0.21,0.19]
+warning: dubious run time results for pidigits: [2.6000001,4.98,3.01,3.01,2.8200002]
+warning: dubious mut time results for pidigits: [2.43,4.61,2.81,2.8,2.63]
+warning: dubious GC time results for pidigits: [0.17,0.37,0.2,0.21,0.19]
+warning: dubious run time results for pidigits: [4.02,3.73,2.63,3.22,2.97]
+warning: dubious mut time results for pidigits: [3.76,3.46,2.44,3.01,2.77]
+warning: dubious GC time results for pidigits: [0.26,0.27,0.19,0.21,0.2]
+warning: dubious run time results for pidigits: [4.02,3.73,2.63,3.22,2.97]
+warning: dubious mut time results for pidigits: [3.76,3.46,2.44,3.01,2.77]
+warning: dubious GC time results for pidigits: [0.26,0.27,0.19,0.21,0.2]
+warning: dubious run time results for pidigits: [3.8,4.5699997,2.51,2.65,2.42]
+warning: dubious mut time results for pidigits: [3.53,4.22,2.34,2.49,2.28]
+warning: dubious GC time results for pidigits: [0.27,0.35,0.17,0.16,0.14]
+warning: dubious run time results for pidigits: [3.8,4.5699997,2.51,2.65,2.42]
+warning: dubious mut time results for pidigits: [3.53,4.22,2.34,2.49,2.28]
+warning: dubious GC time results for pidigits: [0.27,0.35,0.17,0.16,0.14]
+warning: dubious run time results for pidigits: [4.35,2.3100002,2.95,2.3400002,2.7]
+warning: dubious mut time results for pidigits: [4.02,2.17,2.77,2.2,2.53]
+warning: dubious GC time results for pidigits: [0.33,0.14,0.18,0.14,0.17]
+warning: dubious run time results for pidigits: [4.35,2.3100002,2.95,2.3400002,2.7]
+warning: dubious mut time results for pidigits: [4.02,2.17,2.77,2.2,2.53]
+warning: dubious GC time results for pidigits: [0.33,0.14,0.18,0.14,0.17]
+warning: dubious run time results for pidigits: [2.52,2.5500002,2.78,3.79,3.26]
+warning: dubious mut time results for pidigits: [2.36,2.39,2.59,3.52,3.03]
+warning: dubious GC time results for pidigits: [0.16,0.16,0.19,0.27,0.23]
+warning: dubious run time results for pidigits: [2.52,2.5500002,2.78,3.79,3.26]
+warning: dubious mut time results for pidigits: [2.36,2.39,2.59,3.52,3.03]
+warning: dubious GC time results for pidigits: [0.16,0.16,0.19,0.27,0.23]
+warning: dubious run time results for pidigits: [3.32,4.4100003,3.41,3.0,3.31]
+warning: dubious mut time results for pidigits: [3.09,4.05,3.15,2.77,3.07]
+warning: dubious GC time results for pidigits: [0.23,0.35,0.26,0.23,0.24]
+warning: dubious run time results for pidigits: [3.32,4.4100003,3.41,3.0,3.31]
+warning: dubious mut time results for pidigits: [3.09,4.05,3.15,2.77,3.07]
+warning: dubious GC time results for pidigits: [0.23,0.35,0.26,0.23,0.24]
+warning: dubious run time results for pidigits: [3.76,3.36,5.83,3.54,2.88]
+warning: dubious mut time results for pidigits: [3.47,3.11,5.38,3.31,2.69]
+warning: dubious GC time results for pidigits: [0.29,0.25,0.45,0.23,0.19]
+warning: dubious run time results for pidigits: [3.76,3.36,5.83,3.54,2.88]
+warning: dubious mut time results for pidigits: [3.47,3.11,5.38,3.31,2.69]
+warning: dubious GC time results for pidigits: [0.29,0.25,0.45,0.23,0.19]
+warning: dubious run time results for pidigits: [3.94,2.72,3.18,4.69,5.2599998]
+warning: dubious mut time results for pidigits: [3.65,2.53,2.94,4.41,4.87]
+warning: dubious GC time results for pidigits: [0.29,0.19,0.24,0.28,0.39]
+warning: dubious run time results for pidigits: [3.94,2.72,3.18,4.69,5.2599998]
+warning: dubious mut time results for pidigits: [3.65,2.53,2.94,4.41,4.87]
+warning: dubious GC time results for pidigits: [0.29,0.19,0.24,0.28,0.39]
+warning: dubious run time results for pidigits: [2.3700001,2.39,3.42,3.07,2.73]
+warning: dubious mut time results for pidigits: [2.22,2.24,3.19,2.87,2.54]
+warning: dubious GC time results for pidigits: [0.15,0.15,0.23,0.2,0.19]
+warning: dubious run time results for pidigits: [2.3700001,2.39,3.42,3.07,2.73]
+warning: dubious mut time results for pidigits: [2.22,2.24,3.19,2.87,2.54]
+warning: dubious GC time results for pidigits: [0.15,0.15,0.23,0.2,0.19]
+warning: dubious run time results for pidigits: [2.79,2.38,3.82,2.7,2.5800002]
+warning: dubious mut time results for pidigits: [2.61,2.24,3.55,2.53,2.41]
+warning: dubious GC time results for pidigits: [0.18,0.14,0.27,0.17,0.17]
+warning: dubious run time results for pidigits: [2.79,2.38,3.82,2.7,2.5800002]
+warning: dubious mut time results for pidigits: [2.61,2.24,3.55,2.53,2.41]
+warning: dubious GC time results for pidigits: [0.18,0.14,0.27,0.17,0.17]
+warning: dubious run time results for pidigits: [3.24,3.27,3.81,2.5800002,2.8500001]
+warning: dubious mut time results for pidigits: [2.99,3.06,3.56,2.41,2.66]
+warning: dubious GC time results for pidigits: [0.25,0.21,0.25,0.17,0.19]
+warning: dubious run time results for pidigits: [3.24,3.27,3.81,2.5800002,2.8500001]
+warning: dubious mut time results for pidigits: [2.99,3.06,3.56,2.41,2.66]
+warning: dubious GC time results for pidigits: [0.25,0.21,0.25,0.17,0.19]
+warning: dubious run time results for pidigits: [2.89,4.2200003,2.3600001,4.23,2.5]
+warning: dubious mut time results for pidigits: [2.69,3.92,2.21,3.96,2.33]
+warning: dubious GC time results for pidigits: [0.2,0.3,0.15,0.27,0.17]
+warning: dubious run time results for pidigits: [2.89,4.2200003,2.3600001,4.23,2.5]
+warning: dubious mut time results for pidigits: [2.69,3.92,2.21,3.96,2.33]
+warning: dubious GC time results for pidigits: [0.2,0.3,0.15,0.27,0.17]
+warning: dubious run time results for pidigits: [3.16,2.69,2.96,5.2599998,4.32]
+warning: dubious mut time results for pidigits: [2.96,2.53,2.75,4.87,4.0]
+warning: dubious GC time results for pidigits: [0.2,0.16,0.21,0.39,0.32]
+warning: dubious run time results for pidigits: [3.16,2.69,2.96,5.2599998,4.32]
+warning: dubious mut time results for pidigits: [2.96,2.53,2.75,4.87,4.0]
+warning: dubious GC time results for pidigits: [0.2,0.16,0.21,0.39,0.32]
+warning: dubious GC time results for pidigits: [0.15,0.15,0.22,0.21,0.18]
+warning: dubious GC time results for pidigits: [0.15,0.15,0.22,0.21,0.18]
+warning: dubious run time results for pidigits: [2.42,4.54,4.09,3.7,2.39]
+warning: dubious mut time results for pidigits: [2.27,4.24,3.78,3.45,2.23]
+warning: dubious GC time results for pidigits: [0.15,0.3,0.31,0.25,0.16]
+warning: dubious run time results for pidigits: [2.42,4.54,4.09,3.7,2.39]
+warning: dubious mut time results for pidigits: [2.27,4.24,3.78,3.45,2.23]
+warning: dubious GC time results for pidigits: [0.15,0.3,0.31,0.25,0.16]
+warning: dubious run time results for pidigits: [2.8200002,4.17,3.56,2.45,2.53]
+warning: dubious mut time results for pidigits: [2.64,3.89,3.33,2.3,2.37]
+warning: dubious GC time results for pidigits: [0.18,0.28,0.23,0.15,0.16]
+warning: dubious run time results for pidigits: [2.8200002,4.17,3.56,2.45,2.53]
+warning: dubious mut time results for pidigits: [2.64,3.89,3.33,2.3,2.37]
+warning: dubious GC time results for pidigits: [0.18,0.28,0.23,0.15,0.16]
+warning: dubious run time results for pidigits: [2.4,3.42,2.99,3.3600001,3.87]
+warning: dubious mut time results for pidigits: [2.25,3.19,2.79,3.14,3.61]
+warning: dubious GC time results for pidigits: [0.15,0.23,0.2,0.22,0.26]
+warning: dubious run time results for pidigits: [2.4,3.42,2.99,3.3600001,3.87]
+warning: dubious mut time results for pidigits: [2.25,3.19,2.79,3.14,3.61]
+warning: dubious GC time results for pidigits: [0.15,0.23,0.2,0.22,0.26]
+warning: dubious run time results for pidigits: [2.31,3.23,2.5400002,3.75,3.56]
+warning: dubious mut time results for pidigits: [2.18,3.02,2.38,3.49,3.33]
+warning: dubious GC time results for pidigits: [0.13,0.21,0.16,0.26,0.23]
+warning: dubious run time results for pidigits: [2.31,3.23,2.5400002,3.75,3.56]
+warning: dubious mut time results for pidigits: [2.18,3.02,2.38,3.49,3.33]
+warning: dubious GC time results for pidigits: [0.13,0.21,0.16,0.26,0.23]
+warning: dubious run time results for pidigits: [5.07,4.23,3.85,2.67,2.7]
+warning: dubious mut time results for pidigits: [4.67,3.94,3.55,2.5,2.52]
+warning: dubious GC time results for pidigits: [0.4,0.29,0.3,0.17,0.18]
+warning: dubious run time results for pidigits: [5.07,4.23,3.85,2.67,2.7]
+warning: dubious mut time results for pidigits: [4.67,3.94,3.55,2.5,2.52]
+warning: dubious GC time results for pidigits: [0.4,0.29,0.3,0.17,0.18]
+warning: dubious GC time results for pidigits: [0.22,0.16,0.23,0.27,0.16]
+warning: dubious GC time results for pidigits: [0.22,0.16,0.23,0.27,0.16]
+warning: dubious run time results for pidigits: [4.3300004,3.47,3.32,5.1099997,3.21]
+warning: dubious mut time results for pidigits: [4.05,3.25,3.1,4.74,2.99]
+warning: dubious GC time results for pidigits: [0.28,0.22,0.22,0.37,0.22]
+warning: dubious run time results for pidigits: [4.3300004,3.47,3.32,5.1099997,3.21]
+warning: dubious mut time results for pidigits: [4.05,3.25,3.1,4.74,2.99]
+warning: dubious GC time results for pidigits: [0.28,0.22,0.22,0.37,0.22]
+warning: dubious run time results for pidigits: [3.61,3.84,3.54,2.43,3.72]
+warning: dubious mut time results for pidigits: [3.37,3.58,3.31,2.29,3.46]
+warning: dubious GC time results for pidigits: [0.24,0.26,0.23,0.14,0.26]
+warning: dubious run time results for pidigits: [3.61,3.84,3.54,2.43,3.72]
+warning: dubious mut time results for pidigits: [3.37,3.58,3.31,2.29,3.46]
+warning: dubious GC time results for pidigits: [0.24,0.26,0.23,0.14,0.26]
+warning: dubious run time results for pidigits: [3.96,3.39,2.8200002,2.48,2.8500001]
+warning: dubious mut time results for pidigits: [3.69,3.15,2.64,2.32,2.64]
+warning: dubious GC time results for pidigits: [0.27,0.24,0.18,0.16,0.21]
+warning: dubious run time results for pidigits: [3.96,3.39,2.8200002,2.48,2.8500001]
+warning: dubious mut time results for pidigits: [3.69,3.15,2.64,2.32,2.64]
+warning: dubious GC time results for pidigits: [0.27,0.24,0.18,0.16,0.21]
+warning: dubious run time results for pidigits: [2.5400002,3.84,2.74,2.79,2.5400002]
+warning: dubious mut time results for pidigits: [2.39,3.55,2.55,2.6,2.38]
+warning: dubious GC time results for pidigits: [0.15,0.29,0.19,0.19,0.16]
+warning: dubious run time results for pidigits: [2.5400002,3.84,2.74,2.79,2.5400002]
+warning: dubious mut time results for pidigits: [2.39,3.55,2.55,2.6,2.38]
+warning: dubious GC time results for pidigits: [0.15,0.29,0.19,0.19,0.16]
+warning: dubious run time results for pidigits: [5.16,3.04,3.26,3.54,2.74]
+warning: dubious mut time results for pidigits: [4.75,2.85,3.06,3.31,2.57]
+warning: dubious GC time results for pidigits: [0.41,0.19,0.2,0.23,0.17]
+warning: dubious run time results for pidigits: [5.16,3.04,3.26,3.54,2.74]
+warning: dubious mut time results for pidigits: [4.75,2.85,3.06,3.31,2.57]
+warning: dubious GC time results for pidigits: [0.41,0.19,0.2,0.23,0.17]
+warning: dubious run time results for pidigits: [2.39,3.16,2.3000002,2.39,3.75]
+warning: dubious mut time results for pidigits: [2.24,2.94,2.17,2.24,3.48]
+warning: dubious GC time results for pidigits: [0.15,0.22,0.13,0.15,0.27]
+warning: dubious run time results for pidigits: [2.39,3.16,2.3000002,2.39,3.75]
+warning: dubious mut time results for pidigits: [2.24,2.94,2.17,2.24,3.48]
+warning: dubious GC time results for pidigits: [0.15,0.22,0.13,0.15,0.27]
+warning: dubious GC time results for pidigits: [0.14,0.14,0.22,0.14,0.17]
+warning: dubious GC time results for pidigits: [0.14,0.14,0.22,0.14,0.17]
+warning: dubious GC time results for pidigits: [0.15,0.18,0.15,0.24,0.14]
+warning: dubious GC time results for pidigits: [0.15,0.18,0.15,0.24,0.14]
+warning: dubious run time results for pidigits: [3.65,4.28,3.86,3.25,2.67]
+warning: dubious mut time results for pidigits: [3.41,3.97,3.57,3.05,2.51]
+warning: dubious GC time results for pidigits: [0.24,0.31,0.29,0.2,0.16]
+warning: dubious run time results for pidigits: [3.65,4.28,3.86,3.25,2.67]
+warning: dubious mut time results for pidigits: [3.41,3.97,3.57,3.05,2.51]
+warning: dubious GC time results for pidigits: [0.24,0.31,0.29,0.2,0.16]
+warning: dubious GC time results for pidigits: [0.21,0.22,0.2,0.17,0.15]
+warning: dubious GC time results for pidigits: [0.21,0.22,0.2,0.17,0.15]
+warning: dubious run time results for pidigits: [3.31,3.69,2.8600001,2.88,2.49]
+warning: dubious mut time results for pidigits: [3.1,3.44,2.64,2.68,2.32]
+warning: dubious GC time results for pidigits: [0.21,0.25,0.22,0.2,0.17]
+warning: dubious run time results for pidigits: [3.31,3.69,2.8600001,2.88,2.49]
+warning: dubious mut time results for pidigits: [3.1,3.44,2.64,2.68,2.32]
+warning: dubious GC time results for pidigits: [0.21,0.25,0.22,0.2,0.17]
+warning: dubious run time results for pidigits: [3.63,2.5800002,2.49,2.38,2.2600002]
+warning: dubious mut time results for pidigits: [3.43,2.41,2.33,2.24,2.13]
+warning: dubious run time results for pidigits: [3.63,2.5800002,2.49,2.38,2.2600002]
+warning: dubious mut time results for pidigits: [3.43,2.41,2.33,2.24,2.13]
+warning: dubious run time results for pidigits: [3.43,3.6100001,2.39,2.5800002,3.87]
+warning: dubious mut time results for pidigits: [3.23,3.38,2.24,2.43,3.62]
+warning: dubious GC time results for pidigits: [0.2,0.23,0.15,0.15,0.25]
+warning: dubious run time results for pidigits: [3.43,3.6100001,2.39,2.5800002,3.87]
+warning: dubious mut time results for pidigits: [3.23,3.38,2.24,2.43,3.62]
+warning: dubious GC time results for pidigits: [0.2,0.23,0.15,0.15,0.25]
+warning: dubious run time results for pidigits: [2.7900002,4.98,2.41,2.74,2.9]
+warning: dubious mut time results for pidigits: [2.63,4.63,2.27,2.56,2.71]
+warning: dubious GC time results for pidigits: [0.16,0.35,0.14,0.18,0.19]
+warning: dubious run time results for pidigits: [2.7900002,4.98,2.41,2.74,2.9]
+warning: dubious mut time results for pidigits: [2.63,4.63,2.27,2.56,2.71]
+warning: dubious GC time results for pidigits: [0.16,0.35,0.14,0.18,0.19]
+warning: dubious run time results for pidigits: [2.3300002,2.38,2.65,3.28,2.41]
+warning: dubious GC time results for pidigits: [0.14,0.15,0.17,0.24,0.15]
+warning: dubious run time results for pidigits: [2.3300002,2.38,2.65,3.28,2.41]
+warning: dubious GC time results for pidigits: [0.14,0.15,0.17,0.24,0.15]
+warning: dubious run time results for pidigits: [2.5600002,2.44,2.67,3.47,3.6000001]
+warning: dubious mut time results for pidigits: [2.4,2.29,2.51,3.23,3.38]
+warning: dubious GC time results for pidigits: [0.16,0.15,0.16,0.24,0.22]
+warning: dubious run time results for pidigits: [2.5600002,2.44,2.67,3.47,3.6000001]
+warning: dubious mut time results for pidigits: [2.4,2.29,2.51,3.23,3.38]
+warning: dubious GC time results for pidigits: [0.16,0.15,0.16,0.24,0.22]
+warning: dubious run time results for pidigits: [2.52,5.2,2.39,2.3400002,2.52]
+warning: dubious mut time results for pidigits: [2.36,4.83,2.25,2.2,2.37]
+warning: dubious GC time results for pidigits: [0.16,0.37,0.14,0.14,0.15]
+warning: dubious run time results for pidigits: [2.52,5.2,2.39,2.3400002,2.52]
+warning: dubious mut time results for pidigits: [2.36,4.83,2.25,2.2,2.37]
+warning: dubious GC time results for pidigits: [0.16,0.37,0.14,0.14,0.15]
+warning: dubious run time results for pidigits: [2.41,2.95,2.3600001,2.74,3.57]
+warning: dubious mut time results for pidigits: [2.26,2.74,2.22,2.57,3.34]
+warning: dubious GC time results for pidigits: [0.15,0.21,0.14,0.17,0.23]
+warning: dubious run time results for pidigits: [2.41,2.95,2.3600001,2.74,3.57]
+warning: dubious mut time results for pidigits: [2.26,2.74,2.22,2.57,3.34]
+warning: dubious GC time results for pidigits: [0.15,0.21,0.14,0.17,0.23]
+warning: dubious GC time results for pidigits: [0.15,0.19,0.22,0.19,0.23]
+warning: dubious GC time results for pidigits: [0.15,0.19,0.22,0.19,0.23]
+warning: dubious GC time results for pidigits: [0.21,0.14,0.16,0.17,0.14]
+warning: dubious GC time results for pidigits: [0.21,0.14,0.16,0.17,0.14]
+warning: dubious run time results for pidigits: [2.43,4.4300003,2.69,2.6000001,2.43]
+warning: dubious mut time results for pidigits: [2.29,4.13,2.53,2.43,2.28]
+warning: dubious GC time results for pidigits: [0.14,0.3,0.16,0.17,0.15]
+warning: dubious run time results for pidigits: [2.43,4.4300003,2.69,2.6000001,2.43]
+warning: dubious mut time results for pidigits: [2.29,4.13,2.53,2.43,2.28]
+warning: dubious GC time results for pidigits: [0.14,0.3,0.16,0.17,0.15]
+warning: dubious run time results for pidigits: [3.13,3.3400002,3.28,2.42,2.38]
+warning: dubious GC time results for pidigits: [0.19,0.21,0.21,0.14,0.14]
+warning: dubious run time results for pidigits: [3.13,3.3400002,3.28,2.42,2.38]
+warning: dubious GC time results for pidigits: [0.19,0.21,0.21,0.14,0.14]
+warning: dubious run time results for pidigits: [3.29,3.28,2.45,2.91,3.69]
+warning: dubious mut time results for pidigits: [3.08,3.07,2.3,2.7,3.44]
+warning: dubious GC time results for pidigits: [0.21,0.21,0.15,0.21,0.25]
+warning: dubious run time results for pidigits: [3.29,3.28,2.45,2.91,3.69]
+warning: dubious mut time results for pidigits: [3.08,3.07,2.3,2.7,3.44]
+warning: dubious GC time results for pidigits: [0.21,0.21,0.15,0.21,0.25]
+warning: dubious run time results for pidigits: [3.6200001,2.6200001,3.54,2.5700002,2.72]
+warning: dubious mut time results for pidigits: [3.38,2.44,3.1,2.39,2.53]
+warning: dubious GC time results for pidigits: [0.24,0.18,0.44,0.18,0.19]
+warning: dubious run time results for pidigits: [3.6200001,2.6200001,3.54,2.5700002,2.72]
+warning: dubious mut time results for pidigits: [3.38,2.44,3.1,2.39,2.53]
+warning: dubious GC time results for pidigits: [0.24,0.18,0.44,0.18,0.19]
+warning: dubious GC time results for pidigits: [0.19,0.15,0.22,0.16,0.16]
+warning: dubious GC time results for pidigits: [0.19,0.15,0.22,0.16,0.16]
+warning: dubious run time results for pidigits: [3.55,2.45,2.3500001,2.3500001,2.8300002]
+warning: dubious mut time results for pidigits: [3.33,2.3,2.21,2.2,2.66]
+warning: dubious GC time results for pidigits: [0.22,0.15,0.14,0.15,0.17]
+warning: dubious run time results for pidigits: [3.55,2.45,2.3500001,2.3500001,2.8300002]
+warning: dubious mut time results for pidigits: [3.33,2.3,2.21,2.2,2.66]
+warning: dubious GC time results for pidigits: [0.22,0.15,0.14,0.15,0.17]
+warning: dubious run time results for pidigits: [3.28,2.5600002,3.84,2.8200002,2.76]
+warning: dubious mut time results for pidigits: [3.08,2.42,3.56,2.64,2.59]
+warning: dubious GC time results for pidigits: [0.2,0.14,0.28,0.18,0.17]
+warning: dubious run time results for pidigits: [3.28,2.5600002,3.84,2.8200002,2.76]
+warning: dubious mut time results for pidigits: [3.08,2.42,3.56,2.64,2.59]
+warning: dubious GC time results for pidigits: [0.2,0.14,0.28,0.18,0.17]
+warning: dubious run time results for pidigits: [3.34,2.71,2.3500001,2.3500001,2.46]
+warning: dubious mut time results for pidigits: [3.12,2.52,2.21,2.21,2.31]
+warning: dubious GC time results for pidigits: [0.22,0.19,0.14,0.14,0.15]
+warning: dubious run time results for pidigits: [3.34,2.71,2.3500001,2.3500001,2.46]
+warning: dubious mut time results for pidigits: [3.12,2.52,2.21,2.21,2.31]
+warning: dubious GC time results for pidigits: [0.22,0.19,0.14,0.14,0.15]
+warning: dubious GC time results for pidigits: [0.23,0.2,0.16,0.19,0.21]
+warning: dubious GC time results for pidigits: [0.23,0.2,0.16,0.19,0.21]
+warning: dubious run time results for pidigits: [3.59,2.71,2.3000002,2.3600001,2.5800002]
+warning: dubious mut time results for pidigits: [3.37,2.54,2.17,2.22,2.42]
+warning: dubious GC time results for pidigits: [0.22,0.17,0.13,0.14,0.16]
+warning: dubious run time results for pidigits: [3.59,2.71,2.3000002,2.3600001,2.5800002]
+warning: dubious mut time results for pidigits: [3.37,2.54,2.17,2.22,2.42]
+warning: dubious GC time results for pidigits: [0.22,0.17,0.13,0.14,0.16]
+warning: dubious run time results for pidigits: [4.32,3.93,3.89,2.64,2.5900002]
+warning: dubious mut time results for pidigits: [4.05,3.67,3.64,2.49,2.44]
+warning: dubious GC time results for pidigits: [0.27,0.26,0.25,0.15,0.15]
+warning: dubious run time results for pidigits: [4.32,3.93,3.89,2.64,2.5900002]
+warning: dubious mut time results for pidigits: [4.05,3.67,3.64,2.49,2.44]
+warning: dubious GC time results for pidigits: [0.27,0.26,0.25,0.15,0.15]
+warning: dubious run time results for pidigits: [3.62,2.73,2.5900002,2.8500001,2.51]
+warning: dubious mut time results for pidigits: [3.37,2.56,2.43,2.67,2.36]
+warning: dubious GC time results for pidigits: [0.25,0.17,0.16,0.18,0.15]
+warning: dubious run time results for pidigits: [3.62,2.73,2.5900002,2.8500001,2.51]
+warning: dubious mut time results for pidigits: [3.37,2.56,2.43,2.67,2.36]
+warning: dubious GC time results for pidigits: [0.25,0.17,0.16,0.18,0.15]
+warning: dubious GC time results for pidigits: [0.24,0.16,0.14,0.21,0.22]
+warning: dubious GC time results for pidigits: [0.24,0.16,0.14,0.21,0.22]
+warning: dubious run time results for pidigits: [2.5,3.52,2.48,2.3700001,2.66]
+warning: dubious mut time results for pidigits: [2.35,3.27,2.33,2.23,2.5]
+warning: dubious GC time results for pidigits: [0.15,0.25,0.15,0.14,0.16]
+warning: dubious run time results for pidigits: [2.5,3.52,2.48,2.3700001,2.66]
+warning: dubious mut time results for pidigits: [2.35,3.27,2.33,2.23,2.5]
+warning: dubious GC time results for pidigits: [0.15,0.25,0.15,0.14,0.16]
+warning: dubious run time results for pidigits: [3.0900002,2.47,2.46,2.2800002,3.48]
+warning: dubious mut time results for pidigits: [2.89,2.32,2.32,2.14,3.27]
+warning: dubious GC time results for pidigits: [0.2,0.15,0.14,0.14,0.21]
+warning: dubious run time results for pidigits: [3.0900002,2.47,2.46,2.2800002,3.48]
+warning: dubious mut time results for pidigits: [2.89,2.32,2.32,2.14,3.27]
+warning: dubious GC time results for pidigits: [0.2,0.15,0.14,0.14,0.21]
+warning: dubious run time results for pidigits: [3.24,2.49,4.61,3.23,3.82]
+warning: dubious mut time results for pidigits: [3.02,2.33,4.3,3.02,3.55]
+warning: dubious GC time results for pidigits: [0.22,0.16,0.31,0.21,0.27]
+warning: dubious run time results for pidigits: [3.24,2.49,4.61,3.23,3.82]
+warning: dubious mut time results for pidigits: [3.02,2.33,4.3,3.02,3.55]
+warning: dubious GC time results for pidigits: [0.22,0.16,0.31,0.21,0.27]
+warning: dubious run time results for pidigits: [3.3400002,2.63,2.43,2.77,2.2900002]
+warning: dubious mut time results for pidigits: [3.13,2.47,2.28,2.6,2.15]
+warning: dubious GC time results for pidigits: [0.21,0.16,0.15,0.17,0.14]
+warning: dubious run time results for pidigits: [3.3400002,2.63,2.43,2.77,2.2900002]
+warning: dubious mut time results for pidigits: [3.13,2.47,2.28,2.6,2.15]
+warning: dubious GC time results for pidigits: [0.21,0.16,0.15,0.17,0.14]
+warning: dubious run time results for pidigits: [2.3100002,2.75,3.57,2.48,2.3500001]
+warning: dubious mut time results for pidigits: [2.17,2.57,3.34,2.32,2.21]
+warning: dubious GC time results for pidigits: [0.14,0.18,0.23,0.16,0.14]
+warning: dubious run time results for pidigits: [2.3100002,2.75,3.57,2.48,2.3500001]
+warning: dubious mut time results for pidigits: [2.17,2.57,3.34,2.32,2.21]
+warning: dubious GC time results for pidigits: [0.14,0.18,0.23,0.16,0.14]
+Optimizing /h/ywang30/nofib/shootout/pidigits
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 15
+gens: 13
+arch: 7
+Basetime is: 8.450072008e9
+01000000010011000001100010 8.445446992e9
+10101001001101110101110100 8.446549032e9
+10100000100100101010011110 9.377787112e9
+00001001001100100111000110 9.37580844e9
+10000000000010000000010011 8.44650968e9
+10100001111100010101000101 8.446565032e9
+11100000100000000010100111 9.379249928e9
+11011001001011000000111101 8.44543104e9
+00001000011100101000111001 8.447556368e9
+01110101010001000001101011 8.449356416e9
+11101100100000001100111011 8.450003136e9
+10111110000010000000010110 8.448674616e9
+00001110000010000101000010 8.448674632e9
+11010010000010011000001000 8.446565e9
+00110000011001101101011110 8.44919632e9
+best: 0.9994507776980355
+00001000001110000101010010 8.445430992e9
+01001001010011000000101000 8.44543104e9
+10000000001110000000010001 8.445446992e9
+10101001001101110101110100 8.446549032e9
+11011100001000001000111011 8.44782204e9
+11110001011101010001110101 8.446565032e9
+10001001001110010101110000 8.444368352e9
+11111110000010001000011110 8.448674616e9
+01110010010011011001011100 8.446564984e9
+10011110110011111111001001 9.375379792e9
+00000100110001000100101010 8.447175312e9
+11000100110100010001000101 8.444384304e9
+00110110011001101111111010 9.377787112e9
+10010010001000000101010011 8.450259152e9
+00100000010000000000010010 8.450259136e9
+11011001001011000000111101 8.44543104e9
+01000000010011000001100010 8.445446992e9
+10000000000010000000010011 8.44650968e9
+10101001001101110101110100 8.446549032e9
+11010010000010011000001000 8.446565e9
+10100001111100010101000101 8.446565032e9
+00001000011100101000111001 8.447556368e9
+best: 0.9993250168762349
+00101001001110010101110010 8.446549032e9
+10001001001101010100010001 8.444368352e9
+10000000001111010101110000 8.444384304e9
+11111001001011010001110101 8.446549032e9
+11000100010000000000000111 8.448477976e9
+01000010010011011001000110 8.446565e9
+00001000001110000101010010 8.445430992e9
+10011000001010011100011000 8.444368304e9
+10101001001101110101110100 8.446549032e9
+10011000001011110101110010 8.444368304e9
+10110000010101011000110001 8.446564984e9
+10011101001111001101101001 8.4443684e9
+11110001001111110101010100 8.446565032e9
+10001000001111010101100001 8.444368304e9
+10111110101110000101110010 8.4476118e9
+10001001001110010101110000 8.444368352e9
+11000100110100010001000101 8.444384304e9
+00001000001110000101010010 8.445430992e9
+01001001010011000000101000 8.44543104e9
+11011001001011000000111101 8.44543104e9
+10000000001110000000010001 8.445446992e9
+01000000010011000001100010 8.445446992e9
+best: 0.99932501119581
+11011001001111000100111101 8.444368352e9
+10011000001010010101011010 8.444368304e9
+10101001001110010000010001 8.446549032e9
+10011001001111011101100001 8.444368352e9
+11011101010101000101101001 8.44609672e9
+10010000000010010101001000 8.444384304e9
+01011001011011110101110010 8.444368352e9
+11011000001111000000101001 8.444368304e9
+10010000001010000001010010 8.44650968e9
+11111000011011000000011000 8.4476118e9
+10011000001101000100001000 8.446096624e9
+11001001011010010100111000 8.444368352e9
+10001000011110001010011000 9.374080072e9
+00011001001010000111100011 9.375142808e9
+10001010011001011100011100 8.446549e9
+10011000001010011100011000 8.444368304e9
+10011000001011110101110010 8.444368304e9
+10001000001111010101100001 8.444368304e9
+10001001001101010100010001 8.444368352e9
+10001001001110010101110000 8.444368352e9
+10011101001111001101101001 8.4443684e9
+10000000001111010101110000 8.444384304e9
+best: 0.99932501119581
+10011001001101011101100001 8.444368352e9
+10011001001111000100111001 8.444368352e9
+10011000001010010100001000 8.444368304e9
+11011001001111000000111001 8.444368352e9
+10011000001010000101011010 8.44649368e9
+00011000001011110101110010 8.444368304e9
+11001000001101000000001001 8.446096624e9
+11011001001100010101001001 8.444368352e9
+10011001001111011101100001 8.444368352e9
+11010000001111000100010000 8.444384304e9
+11011000010111111101010000 8.444368304e9
+11011000001101000000110000 8.445696664e9
+00001101000110010100111101 8.4443684e9
+10001001011100010110110010 9.373017432e9
+00001011100101000100000111 8.448277568e9
+10011000001010010101011010 8.444368304e9
+11011000001111000000101001 8.444368304e9
+10011000001010011100011000 8.444368304e9
+10011000001011110101110010 8.444368304e9
+10001000001111010101100001 8.444368304e9
+11011001001111000100111101 8.444368352e9
+10011001001111011101100001 8.444368352e9
+best: 0.99932501119581
+11011000001111110000001001 8.444368304e9
+11011000010111011100011000 8.444368304e9
+10011000001010010101011010 8.444368304e9
+11011001001111000000111001 8.444368352e9
+00011000001011110101110010 8.444368304e9
+10011001001111010101101001 8.444368352e9
+10011001001111010100110001 8.444368352e9
+11011000001011011100011000 8.444368304e9
+00011000001011010100110000 8.444368304e9
+01011101101110010101100011 8.4443684e9
+10001000101000000101011010 8.448062016e9
+10011100001001000001100010 8.447159312e9
+11001010001111101110111001 9.375379792e9
+11010010101010000101001110 8.448690632e9
+10110000101011010101011111 8.446564984e9
+10011000001010010100001000 8.444368304e9
+00011000001011110101110010 8.444368304e9
+11011000010111111101010000 8.444368304e9
+10011000001010010101011010 8.444368304e9
+11011000001111000000101001 8.444368304e9
+10011000001010011100011000 8.444368304e9
+10011000001011110101110010 8.444368304e9
+best: 0.99932501119581
+00011000001011110101011010 8.444368304e9
+10011000001010010101011010 8.444368304e9
+11011000001111011100001000 8.444368304e9
+10011000001011100101111010 8.445430992e9
+11011000001111000000101001 8.444368304e9
+10011000001011110100111000 8.444368304e9
+00011000001011110101110010 8.444368304e9
+10011000001011010101010010 8.444368304e9
+10011000000011010100001000 8.444368304e9
+11000000001111000100101101 8.444384304e9
+00010000010010010101111001 8.444384304e9
+00011000000010110101100111 8.444368304e9
+11010000000010110010011000 9.373033384e9
+10010110101011011101101011 8.446565e9
+11101010010111001101011000 8.446548984e9
+11011000001111110000001001 8.444368304e9
+11011000010111011100011000 8.444368304e9
+10011000001010010101011010 8.444368304e9
+00011000001011110101110010 8.444368304e9
+11011000001011011100011000 8.444368304e9
+00011000001011010100110000 8.444368304e9
+10011000001010010100001000 8.444368304e9
+best: 0.99932501119581
+00011000001011110101110010 8.444368304e9
+10011000001011110101111010 8.444368304e9
+00011000001010110101100010 8.444368304e9
+11011000001011110001010001 8.444368304e9
+11011000001010110100011010 8.444368304e9
+11011000001111110000101001 8.444368304e9
+10011000010111110100011000 8.444368304e9
+01011000011011111100011000 8.444368304e9
+00011000001010110101110010 8.444368304e9
+00111101101011110100111000 8.44654908e9
+10111011001011010110000000 9.375379824e9
+10011000011011001100110000 8.445430992e9
+10011000000111101111111000 9.373017384e9
+10011000001010110100101000 8.444368304e9
+10011000010010001111111001 9.37514276e9
+00011000001011110101011010 8.444368304e9
+10011000001010010101011010 8.444368304e9
+11011000001111011100001000 8.444368304e9
+11011000001111000000101001 8.444368304e9
+10011000001011110100111000 8.444368304e9
+00011000001011110101110010 8.444368304e9
+10011000001011010101010010 8.444368304e9
+best: 0.99932501119581
+11011000001111110101011000 8.444368304e9
+00011000011011111100010010 8.444368304e9
+10011000001011110101111010 8.444368304e9
+00011000001011110101100010 8.444368304e9
+11011000001111010101000010 8.444368304e9
+11011000001010110100010010 8.444368304e9
+11011000001111110000100001 8.444368304e9
+01011000001010110100110010 8.444368304e9
+00011000001011110101110010 8.444368304e9
+00001000101110110101100010 8.444368304e9
+00011000000001010100010100 8.444368304e9
+10011000001001100010111001 9.375408432e9
+10001010011011100101110111 8.447611816e9
+11011010001111010001000100 8.446549e9
+11010010110010110100110001 8.446565e9
+00011000001011110101110010 8.444368304e9
+10011000001011110101111010 8.444368304e9
+00011000001010110101100010 8.444368304e9
+11011000001011110001010001 8.444368304e9
+11011000001010110100011010 8.444368304e9
+11011000001111110000101001 8.444368304e9
+1001100001011111010warning: dubious GC time results for pidigits: [0.17,0.21,0.19,0.15,0.14]
+warning: dubious GC time results for pidigits: [0.17,0.21,0.19,0.15,0.14]
+warning: dubious GC time results for pidigits: [0.21,0.28,0.17,0.14,0.15]
+warning: dubious GC time results for pidigits: [0.21,0.28,0.17,0.14,0.15]
+warning: dubious run time results for pidigits: [2.2199998,3.32,2.2600002,2.69,2.27]
+warning: dubious mut time results for pidigits: [2.09,3.1,2.13,2.52,2.14]
+warning: dubious GC time results for pidigits: [0.13,0.22,0.13,0.17,0.13]
+warning: dubious run time results for pidigits: [2.2199998,3.32,2.2600002,2.69,2.27]
+warning: dubious mut time results for pidigits: [2.09,3.1,2.13,2.52,2.14]
+warning: dubious GC time results for pidigits: [0.13,0.22,0.13,0.17,0.13]
+warning: dubious run time results for pidigits: [3.49,3.03,2.1799998,2.24,2.3500001]
+warning: dubious mut time results for pidigits: [3.27,2.79,2.05,2.09,2.2]
+warning: dubious GC time results for pidigits: [0.22,0.24,0.13,0.15,0.15]
+warning: dubious run time results for pidigits: [3.49,3.03,2.1799998,2.24,2.3500001]
+warning: dubious mut time results for pidigits: [3.27,2.79,2.05,2.09,2.2]
+warning: dubious GC time results for pidigits: [0.22,0.24,0.13,0.15,0.15]
+warning: dubious run time results for pidigits: [2.33,2.1899998,2.3400002,3.53,2.2099998]
+warning: dubious mut time results for pidigits: [2.2,2.07,2.2,3.28,2.09]
+warning: dubious GC time results for pidigits: [0.13,0.12,0.14,0.25,0.12]
+warning: dubious run time results for pidigits: [2.33,2.1899998,2.3400002,3.53,2.2099998]
+warning: dubious mut time results for pidigits: [2.2,2.07,2.2,3.28,2.09]
+warning: dubious GC time results for pidigits: [0.13,0.12,0.14,0.25,0.12]
+warning: dubious run time results for pidigits: [2.2800002,2.42,3.0,3.2,2.45]
+warning: dubious GC time results for pidigits: [0.13,0.16,0.19,0.21,0.15]
+warning: dubious run time results for pidigits: [2.2800002,2.42,3.0,3.2,2.45]
+warning: dubious GC time results for pidigits: [0.13,0.16,0.19,0.21,0.15]
+warning: dubious run time results for pidigits: [2.1799998,2.2199998,3.28,2.3200002,2.2800002]
+warning: dubious mut time results for pidigits: [2.06,2.09,3.07,2.19,2.14]
+warning: dubious GC time results for pidigits: [0.12,0.13,0.21,0.13,0.14]
+warning: dubious run time results for pidigits: [2.1799998,2.2199998,3.28,2.3200002,2.2800002]
+warning: dubious mut time results for pidigits: [2.06,2.09,3.07,2.19,2.14]
+warning: dubious GC time results for pidigits: [0.12,0.13,0.21,0.13,0.14]
+warning: dubious run time results for pidigits: [2.2199998,2.2800002,2.3200002,4.11,2.26]
+warning: dubious mut time results for pidigits: [2.09,2.14,2.18,3.83,2.12]
+warning: dubious GC time results for pidigits: [0.13,0.14,0.14,0.28,0.14]
+warning: dubious run time results for pidigits: [2.2199998,2.2800002,2.3200002,4.11,2.26]
+warning: dubious mut time results for pidigits: [2.09,2.14,2.18,3.83,2.12]
+warning: dubious GC time results for pidigits: [0.13,0.14,0.14,0.28,0.14]
+warning: dubious run time results for pidigits: [2.1899998,3.21,2.33,2.2700002,2.3000002]
+warning: dubious mut time results for pidigits: [2.07,3.0,2.2,2.13,2.17]
+warning: dubious GC time results for pidigits: [0.12,0.21,0.13,0.14,0.13]
+warning: dubious run time results for pidigits: [2.1899998,3.21,2.33,2.2700002,2.3000002]
+warning: dubious mut time results for pidigits: [2.07,3.0,2.2,2.13,2.17]
+warning: dubious GC time results for pidigits: [0.12,0.21,0.13,0.14,0.13]
+warning: dubious run time results for pidigits: [3.15,2.3400002,3.34,2.19,2.1699998]
+warning: dubious mut time results for pidigits: [2.92,2.19,3.1,2.06,2.05]
+warning: dubious GC time results for pidigits: [0.23,0.15,0.24,0.13,0.12]
+warning: dubious run time results for pidigits: [3.15,2.3400002,3.34,2.19,2.1699998]
+warning: dubious mut time results for pidigits: [2.92,2.19,3.1,2.06,2.05]
+warning: dubious GC time results for pidigits: [0.23,0.15,0.24,0.13,0.12]
+warning: dubious run time results for pidigits: [2.3000002,2.8700001,3.58,2.42,2.4]
+warning: dubious mut time results for pidigits: [2.16,2.67,3.27,2.26,2.25]
+warning: dubious GC time results for pidigits: [0.14,0.2,0.31,0.16,0.15]
+warning: dubious run time results for pidigits: [2.3000002,2.8700001,3.58,2.42,2.4]
+warning: dubious mut time results for pidigits: [2.16,2.67,3.27,2.26,2.25]
+warning: dubious GC time results for pidigits: [0.14,0.2,0.31,0.16,0.15]
+warning: dubious run time results for pidigits: [2.49,2.2399998,2.3000002,3.18,2.3400002]
+warning: dubious mut time results for pidigits: [2.34,2.11,2.16,2.98,2.2]
+warning: dubious run time results for pidigits: [2.49,2.2399998,2.3000002,3.18,2.3400002]
+warning: dubious mut time results for pidigits: [2.34,2.11,2.16,2.98,2.2]
+warning: dubious GC time results for pidigits: [0.17,0.15,0.22,0.14,0.17]
+warning: dubious GC time results for pidigits: [0.17,0.15,0.22,0.14,0.17]
+warning: dubious GC time results for pidigits: [0.14,0.13,0.15,0.17,0.21]
+warning: dubious GC time results for pidigits: [0.14,0.13,0.15,0.17,0.21]
+0011000 8.444368304e9
+best: 0.99932501119581
+01011000001010110100010010 8.444368304e9
+11011000010111110100001001 8.444368304e9
+11000010110110110101110011 8.446565e9
+00011000001010110101110010 8.444368304e9
+10011000001101110100000000 8.444368304e9
+00011000001111110101100010 8.444368304e9
+00011000000011010100010110 8.444368304e9
+11011000001010110100100000 8.444368304e9
+10011000001011110101011010 8.444368304e9
+00101000101010111100110011 8.446548984e9
+10000000101101111101011010 8.444384304e9
+10010010011111000001000011 8.446565e9
+01110000111011110101100011 8.446564984e9
+01010000011010100100000010 8.44650968e9
+10001010111110101100001110 8.447611816e9
+11011000001111110101011000 8.444368304e9
+00011000011011111100010010 8.444368304e9
+10011000001011110101111010 8.444368304e9
+00011000001011110101100010 8.444368304e9
+11011000001111010101000010 8.444368304e9
+11011000001010110100010010 8.444368304e9
+11011000001111110000100001 8.444368304e9
+best: 0.99932501119581
+10011000011111000101000010 8.444368304e9
+11011000001111110101010010 8.444368304e9
+00011000001011110100000010 8.444368304e9
+11011000001111110100010011 8.444368304e9
+00011000001010110101110010 8.444368304e9
+11011000001011110100110001 8.444368304e9
+10011000001011110101111010 8.444368304e9
+00011000001010110101110010 8.444368304e9
+00011000001111110101110010 8.444368304e9
+00111100000010000110010111 9.377505408e9
+10111000001101000001010010 8.447877504e9
+10011000000110001101010110 8.445430992e9
+11011000101011000001111010 8.445430992e9
+10011101000010110101110011 8.4443684e9
+10011001101001111101100011 8.444368352e9
+01011000001010110100010010 8.444368304e9
+11011000010111110100001001 8.444368304e9
+00011000001010110101110010 8.444368304e9
+10011000001101110100000000 8.444368304e9
+00011000001111110101100010 8.444368304e9
+00011000000011010100010110 8.444368304e9
+11011000001010110100100000 8.444368304e9
+best: 0.99932501119581
+00011000000011010101100110 8.444368304e9
+00011000001111110101010010 8.444368304e9
+10011000001011110100000010 8.444368304e9
+10011000001010110101110010 8.444368304e9
+00011000001010110101110010 8.444368304e9
+10011000001111010101000000 8.444368304e9
+10011000001010110101100000 8.444368304e9
+00011000001011110101010010 8.444368304e9
+01011000001010110101110010 8.444368304e9
+11011010111000110101111110 8.446549e9
+00011100100011110110001100 9.373017384e9
+11011010001101111001110011 8.446549e9
+10011010001001010001111011 8.446549e9
+00011000100111101101101100 8.444368304e9
+10111011110111110100000001 8.446549032e9
+10011000011111000101000010 8.444368304e9
+11011000001111110101010010 8.444368304e9
+00011000001011110100000010 8.444368304e9
+11011000001111110100010011 8.444368304e9
+00011000001010110101110010 8.444368304e9
+11011000001011110100110001 8.444368304e9
+10011000001011110101111010 8.444368304e9
+best: 0.99932501119581
+11011000001010110100100001 8.444368304e9
+10011000001111110101110010 8.444368304e9
+00011000011011100101000010 8.445430992e9
+01011000001010110100110000 8.444368304e9
+10011000001110110101010010 8.444368304e9
+00011000100110110101110110 8.444368304e9
+00011000001010110101100000 8.444368304e9
+00011000001010110101110010 8.444368304e9
+00011000000011110101100010 8.444368304e9
+10001010001001110001111010 8.446549e9
+11011010011101010100011000 8.446549e9
+01011000001111011111110001 9.373017384e9
+10101000001010110101111110 8.446548984e9
+10011000010011101010110101 9.374080072e9
+10101011010111001001100101 8.446549032e9
+00011000000011010101100110 8.444368304e9
+00011000001111110101010010 8.444368304e9
+10011000001011110100000010 8.444368304e9
+10011000001010110101110010 8.444368304e9
+00011000001010110101110010 8.444368304e9
+10011000001111010101000000 8.444368304e9
+10011000001010110101100000 8.444368304e9
+best: 0.99932501119581
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+4309.05user 1070.04system 1:49:04elapsed 82%CPU (0avgtext+0avgdata 129748maxresident)k
+1086568inputs+4083512outputs (846major+69116571minor)pagefaults 0swaps

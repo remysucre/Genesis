@@ -1,0 +1,909 @@
+Optimizing /data/dan/nofib/imaginary/exp3_8
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: -1.0
+runproj limit: -1.0
+"timed out"
+"All is well :D"
+Basetime is: -2.0
+runproj limit: -1.0
+"timed out"
+01000000000000000000100 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000100000010000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000100000010000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000011000000001 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000000001000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00000000000000000010000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000100000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000000001000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000111001000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000010010110011 -4.0
+runproj limit: -1.0
+"timed out"
+00001100110001100111100 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100010000101001 -4.0
+runproj limit: -1.0
+"timed out"
+01100101001100000110000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000000000000100 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000100000010000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000011000000001 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000000001000000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000100000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000100100000100111000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000000000000100 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000101000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000010000101001 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000000100001010 -4.0
+runproj limit: -1.0
+"timed out"
+01010000000100000100000 -4.0
+runproj limit: -1.0
+"timed out"
+11010100100111110101101 -4.0
+runproj limit: -1.0
+"timed out"
+01110100110101011101101 -4.0
+runproj limit: -1.0
+"timed out"
+00010100000110010000011 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000010000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000100000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000000001000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000111001000000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+01010000000100100101000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000110000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100100000000101000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000100011000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000101000100000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000101000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01100000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000101000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01001000000010000000010 -4.0
+runproj limit: -1.0
+"timed out"
+11100100110001111011000 -4.0
+runproj limit: -1.0
+"timed out"
+11000101100111100101110 -4.0
+runproj limit: -1.0
+"timed out"
+01100100100100001001101 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000100000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10000100100000100111000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000000000000000100 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000101000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000010000101001 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000000100001010 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00000100100100000101000 -4.0
+runproj limit: -1.0
+"timed out"
+01100000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+11000100000000000001000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000100000110 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000001000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100010000000000 -4.0
+runproj limit: -1.0
+"timed out"
+11010100100100100101010 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000110100011000 -4.0
+runproj limit: -1.0
+"timed out"
+01110010001101000110010 -4.0
+runproj limit: -1.0
+"timed out"
+00010000010000010000010 -4.0
+runproj limit: -1.0
+"timed out"
+01001001100000000000101 -4.0
+runproj limit: -1.0
+"timed out"
+10000101101100001101100 -4.0
+runproj limit: -1.0
+"timed out"
+00010000000100100001111 -4.0
+runproj limit: -1.0
+"timed out"
+01010000000100100101000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000110000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100100000000101000 -4.0
+runproj limit: -1.0
+"timed out"
+10000000000000100011000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000101000100000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000101000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01100000000000000000000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+10010000100100001100000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000100001000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000110000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100011000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100010000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000100010100011000 -4.0
+runproj limit: -1.0
+"timed out"
+10010100100100100101000 -4.0
+runproj limit: -1.0
+"timed out"
+01000101100010000001000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000111000001010 -4.0
+runproj limit: -1.0
+"timed out"
+00110001101100001101000 -4.0
+runproj limit: -1.0
+"timed out"
+10110110101110001110010 -4.0
+runproj limit: -1.0
+"timed out"
+00010000100100110011000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111110100010 -4.0
+runproj limit: -1.0
+"timed out"
+00000100100100000101000 -4.0
+runproj limit: -1.0
+"timed out"
+01100000000000000000000 -4.0
+runproj limit: -1.0
+"timed out"
+11000100000000000001000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000100000110 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000001000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100010000000000 -4.0
+runproj limit: -1.0
+"timed out"
+11010100100100100101010 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00000010100110101110010 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000111100100110 -4.0
+runproj limit: -1.0
+"timed out"
+10010100100101000100000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000100010110011010 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000000100001000 -4.0
+runproj limit: -1.0
+"timed out"
+01100000000000000001000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000000001100000 -4.0
+runproj limit: -1.0
+"timed out"
+01000101100010000001000 -4.0
+runproj limit: -1.0
+"timed out"
+00010000100000101000100 -4.0
+runproj limit: -1.0
+"timed out"
+01111111000011110101000 -4.0
+runproj limit: -1.0
+"timed out"
+00111000000111000101010 -4.0
+runproj limit: -1.0
+"timed out"
+11001100111011000000100 -4.0
+runproj limit: -1.0
+"timed out"
+01000101101011000001010 -4.0
+runproj limit: -1.0
+"timed out"
+10010000100100001100000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000000100001000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000110000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100011000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100010000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01000000100010100011000 -4.0
+runproj limit: -1.0
+"timed out"
+10010100100100100101000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+01000100100011000000000 -4.0
+runproj limit: -1.0
+"timed out"
+11001101101011000001010 -4.0
+runproj limit: -1.0
+"timed out"
+00010100000000100100000 -4.0
+runproj limit: -1.0
+"timed out"
+01101010000010110011000 -4.0
+runproj limit: -1.0
+"timed out"
+01010101100010110001010 -4.0
+runproj limit: -1.0
+"timed out"
+01001101100010000000100 -4.0
+runproj limit: -1.0
+"timed out"
+01001010000000110101000 -4.0
+runproj limit: -1.0
+"timed out"
+00011000100101000100000 -4.0
+runproj limit: -1.0
+"timed out"
+01101100000100000001010 -4.0
+runproj limit: -1.0
+"timed out"
+11100000100010110110110 -4.0
+runproj limit: -1.0
+"timed out"
+11100001000011000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00100011100011110001011 -4.0
+runproj limit: -1.0
+"timed out"
+10111000010111011101010 -4.0
+runproj limit: -1.0
+"timed out"
+00000010100110101110010 -4.0
+runproj limit: -1.0
+"timed out"
+00000000000111100100110 -4.0
+runproj limit: -1.0
+"timed out"
+10010100100101000100000 -4.0
+runproj limit: -1.0
+"timed out"
+00000000100010110011010 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000000100001000 -4.0
+runproj limit: -1.0
+"timed out"
+01100000000000000001000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000000001100000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00010100000000110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00100111100010110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00111011110111110001011 -4.0
+runproj limit: -1.0
+"timed out"
+11001011100011010011000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111100001000 -4.0
+runproj limit: -1.0
+"timed out"
+00100100000111010100000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000101100001110 -4.0
+runproj limit: -1.0
+"timed out"
+11100000000010000000000 -4.0
+runproj limit: -1.0
+"timed out"
+10001001000100110100100 -4.0
+runproj limit: -1.0
+"timed out"
+11100010100011010110110 -4.0
+runproj limit: -1.0
+"timed out"
+00000100100100100100000 -4.0
+runproj limit: -1.0
+"timed out"
+11001010001010110100000 -4.0
+runproj limit: -1.0
+"timed out"
+11001101101001010111010 -4.0
+runproj limit: -1.0
+"timed out"
+01000100100011000000000 -4.0
+runproj limit: -1.0
+"timed out"
+11001101101011000001010 -4.0
+runproj limit: -1.0
+"timed out"
+00010100000000100100000 -4.0
+runproj limit: -1.0
+"timed out"
+01101010000010110011000 -4.0
+runproj limit: -1.0
+"timed out"
+01010101100010110001010 -4.0
+runproj limit: -1.0
+"timed out"
+01001101100010000000100 -4.0
+runproj limit: -1.0
+"timed out"
+01001010000000110101000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00100010100110010000000 -4.0
+runproj limit: -1.0
+"timed out"
+01001100000000110101000 -4.0
+runproj limit: -1.0
+"timed out"
+11000100000000010011010 -4.0
+runproj limit: -1.0
+"timed out"
+11000111100010110100010 -4.0
+runproj limit: -1.0
+"timed out"
+11001001100001000001110 -4.0
+runproj limit: -1.0
+"timed out"
+00010101000000110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111100001000 -4.0
+runproj limit: -1.0
+"timed out"
+11001010001010000100000 -4.0
+runproj limit: -1.0
+"timed out"
+10001101100010100010111 -4.0
+runproj limit: -1.0
+"timed out"
+11000110100011111101111 -4.0
+runproj limit: -1.0
+"timed out"
+00100100100000101101010 -4.0
+runproj limit: -1.0
+"timed out"
+00011100111101101000000 -4.0
+runproj limit: -1.0
+"timed out"
+10101000110011000010110 -4.0
+runproj limit: -1.0
+"timed out"
+00010100000000110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00100111100010110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00111011110111110001011 -4.0
+runproj limit: -1.0
+"timed out"
+11001011100011010011000 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111100001000 -4.0
+runproj limit: -1.0
+"timed out"
+00100100000111010100000 -4.0
+runproj limit: -1.0
+"timed out"
+00100000000101100001110 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+11001101110111000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00010000000100110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00100110100000110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111110100000 -4.0
+runproj limit: -1.0
+"timed out"
+11001100100001111101001 -4.0
+runproj limit: -1.0
+"timed out"
+00001100100010100000011 -4.0
+runproj limit: -1.0
+"timed out"
+00000100110100101000010 -4.0
+runproj limit: -1.0
+"timed out"
+00100111000001110001110 -4.0
+runproj limit: -1.0
+"timed out"
+00000111110110110101100 -4.0
+runproj limit: -1.0
+"timed out"
+10100101101101010001010 -4.0
+runproj limit: -1.0
+"timed out"
+00000110100111000010000 -4.0
+runproj limit: -1.0
+"timed out"
+00011011110111000100001 -4.0
+runproj limit: -1.0
+"timed out"
+01001010001111011101000 -4.0
+runproj limit: -1.0
+"timed out"
+00100010100110010000000 -4.0
+runproj limit: -1.0
+"timed out"
+01001100000000110101000 -4.0
+runproj limit: -1.0
+"timed out"
+11000100000000010011010 -4.0
+runproj limit: -1.0
+"timed out"
+11000111100010110100010 -4.0
+runproj limit: -1.0
+"timed out"
+11001001100001000001110 -4.0
+runproj limit: -1.0
+"timed out"
+00010101000000110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111100001000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00001100000101100001000 -4.0
+runproj limit: -1.0
+"timed out"
+00001110000111110001000 -4.0
+runproj limit: -1.0
+"timed out"
+00000011100001110101110 -4.0
+runproj limit: -1.0
+"timed out"
+00001111000111010100000 -4.0
+runproj limit: -1.0
+"timed out"
+11100100100000111001000 -4.0
+runproj limit: -1.0
+"timed out"
+01000010000111010111000 -4.0
+runproj limit: -1.0
+"timed out"
+10000100100001000001000 -4.0
+runproj limit: -1.0
+"timed out"
+00010000000100110001010 -4.0
+runproj limit: -1.0
+"timed out"
+11000100010000101111010 -4.0
+runproj limit: -1.0
+"timed out"
+00011010000000110110010 -4.0
+runproj limit: -1.0
+"timed out"
+11100101110011110001111 -4.0
+runproj limit: -1.0
+"timed out"
+10000011011000110111101 -4.0
+runproj limit: -1.0
+"timed out"
+00000110000101101101100 -4.0
+runproj limit: -1.0
+"timed out"
+11001101110111000000000 -4.0
+runproj limit: -1.0
+"timed out"
+00010000000100110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00100110100000110001010 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111110100000 -4.0
+runproj limit: -1.0
+"timed out"
+11001100100001111101001 -4.0
+runproj limit: -1.0
+"timed out"
+00001100100010100000011 -4.0
+runproj limit: -1.0
+"timed out"
+00000100110100101000010 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+11100000000000110001000 -4.0
+runproj limit: -1.0
+"timed out"
+10000011011000110111101 -4.0
+runproj limit: -1.0
+"timed out"
+10000001110000010011100 -4.0
+runproj limit: -1.0
+"timed out"
+00001111000111110100000 -4.0
+runproj limit: -1.0
+"timed out"
+00001100000001111001001 -4.0
+runproj limit: -1.0
+"timed out"
+10100100100010110001110 -4.0
+runproj limit: -1.0
+"timed out"
+10000110101001100101000 -4.0
+runproj limit: -1.0
+"timed out"
+01001101110110000000000 -4.0
+runproj limit: -1.0
+"timed out"
+01110110010001111000001 -4.0
+runproj limit: -1.0
+"timed out"
+00010011001101110101110 -4.0
+runproj limit: -1.0
+"timed out"
+00000010000110110101010 -4.0
+runproj limit: -1.0
+"timed out"
+00100100110110010001111 -4.0
+runproj limit: -1.0
+"timed out"
+00001111000010111110000 -4.0
+runproj limit: -1.0
+"timed out"
+00001100000101100001000 -4.0
+runproj limit: -1.0
+"timed out"
+00001110000111110001000 -4.0
+runproj limit: -1.0
+"timed out"
+00000011100001110101110 -4.0
+runproj limit: -1.0
+"timed out"
+00001111000111010100000 -4.0
+runproj limit: -1.0
+"timed out"
+11100100100000111001000 -4.0
+runproj limit: -1.0
+"timed out"
+01000010000111010111000 -4.0
+runproj limit: -1.0
+"timed out"
+10000100100001000001000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+00000100000111010101011 -4.0
+runproj limit: -1.0
+"timed out"
+00010010101101100101000 -4.0
+runproj limit: -1.0
+"timed out"
+00010011011001110111110 -4.0
+runproj limit: -1.0
+"timed out"
+10000110100001100101010 -4.0
+runproj limit: -1.0
+"timed out"
+00001111000110111110000 -4.0
+runproj limit: -1.0
+"timed out"
+00000011011000110101111 -4.0
+runproj limit: -1.0
+"timed out"
+11100110010000110000111 -4.0
+runproj limit: -1.0
+"timed out"
+00001110000011111000001 -4.0
+runproj limit: -1.0
+"timed out"
+11101000100010011011101 -4.0
+runproj limit: -1.0
+"timed out"
+01111110010001110000101 -4.0
+runproj limit: -1.0
+"timed out"
+10000010101010000111001 -4.0
+runproj limit: -1.0
+"timed out"
+11100011000011110110000 -4.0
+runproj limit: -1.0
+"timed out"
+10001011011111110100011 -4.0
+runproj limit: -1.0
+"timed out"
+11100000000000110001000 -4.0
+runproj limit: -1.0
+"timed out"
+10000011011000110111101 -4.0
+runproj limit: -1.0
+"timed out"
+10000001110000010011100 -4.0
+runproj limit: -1.0
+"timed out"
+00001111000111110100000 -4.0
+runproj limit: -1.0
+"timed out"
+00001100000001111001001 -4.0
+runproj limit: -1.0
+"timed out"
+10100100100010110001110 -4.0
+runproj limit: -1.0
+"timed out"
+10000110101001100101000 -4.0
+best: 2.0
+runproj limit: -1.0
+"timed out"
+10000111000011100110000 -4.0
+runproj limit: -1.0
+"timed out"
+00000011011001110111111 -4.0
+runproj limit: -1.0
+"timed out"
+00010010000001110111010 -4.0
+runproj limit: -1.0
+"timed out"
+01110110010000110000111 -4.0
+runproj limit: -1.0
+"timed out"
+10000100000001100101011 -4.0
+runproj limit: -1.0
+"timed out"
+11101000000010111001100 -4.0
+runproj limit: -1.0
+"timed out"
+11100011000011110110000 -4.0
+runproj limit: -1.0
+"timed out"
+00000101100000110001101 -4.0
+runproj limit: -1.0
+"timed out"
+00110111011000110101101 -4.0
+runproj limit: -1.0
+"timed out"
+10001101010100110000000 -4.0
+runproj limit: -1.0
+"timed out"
+11000000000010011011001 -4.0
+runproj limit: -1.0
+"timed out"
+00101011000001110110100 -4.0
+runproj limit: -1.0
+"timed out"
+00110100011001001000011 -4.0
+runproj limit: -1.0
+"timed out"
+00000100000111010101011 -4.0
+runproj limit: -1.0
+"timed out"
+00010010101101100101000 -4.0
+runproj limit: -1.0
+"timed out"
+00010011011001110111110 -4.0
+runproj limit: -1.0
+"timed out"
+10000110100001100101010 -4.0
+runproj limit: -1.0
+"timed out"
+00001111000110111110000 -4.0
+runproj limit: -1.0
+"timed out"
+00000011011000110101111 -4.0
+runproj limit: -1.0
+"timed out"
+11100110010000110000111 -4.0
+best: 2.0
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+505.37user 352.03system 31:44.23elapsed 45%CPU (0avgtext+0avgdata 109520maxresident)k
+0inputs+1388336outputs (0major+62495029minor)pagefaults 0swaps

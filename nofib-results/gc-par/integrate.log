@@ -1,0 +1,755 @@
+warning: dubious run time results for integrate: [0.38,0.51,0.37,0.35]
+warning: dubious mut time results for integrate: [0.37,0.5,0.36,0.34]
+warning: dubious run time results for integrate: [0.38,0.51,0.37,0.35]
+warning: dubious mut time results for integrate: [0.37,0.5,0.36,0.34]
+warning: dubious run time results for integrate: [0.35,0.5,0.39,0.52]
+warning: dubious mut time results for integrate: [0.35,0.49,0.38,0.51]
+warning: dubious run time results for integrate: [0.35,0.5,0.39,0.52]
+warning: dubious mut time results for integrate: [0.35,0.49,0.38,0.51]
+warning: dubious run time results for integrate: [0.37,0.34,0.59999996,0.35]
+warning: dubious mut time results for integrate: [0.36,0.34,0.59,0.34]
+warning: dubious run time results for integrate: [0.37,0.34,0.59999996,0.35]
+warning: dubious mut time results for integrate: [0.36,0.34,0.59,0.34]
+warning: dubious run time results for integrate: [0.33,0.35,0.51,0.38]
+warning: dubious mut time results for integrate: [0.33,0.34,0.5,0.37]
+warning: dubious run time results for integrate: [0.33,0.35,0.51,0.38]
+warning: dubious mut time results for integrate: [0.33,0.34,0.5,0.37]
+warning: dubious run time results for integrate: [0.34,0.55,0.5,0.5]
+warning: dubious mut time results for integrate: [0.34,0.54,0.49,0.49]
+warning: dubious run time results for integrate: [0.34,0.55,0.5,0.5]
+warning: dubious mut time results for integrate: [0.34,0.54,0.49,0.49]
+warning: dubious run time results for integrate: [0.33,0.33,0.35999998,0.61]
+warning: dubious mut time results for integrate: [0.33,0.33,0.35,0.6]
+warning: dubious run time results for integrate: [0.33,0.33,0.35999998,0.61]
+warning: dubious mut time results for integrate: [0.33,0.33,0.35,0.6]
+warning: dubious run time results for integrate: [0.34,0.53,0.35999998,0.52]
+warning: dubious mut time results for integrate: [0.33,0.52,0.35,0.51]
+warning: dubious run time results for integrate: [0.34,0.53,0.35999998,0.52]
+warning: dubious mut time results for integrate: [0.33,0.52,0.35,0.51]
+warning: dubious run time results for integrate: [0.39,0.57,0.37,0.38]
+warning: dubious mut time results for integrate: [0.38,0.56,0.36,0.37]
+warning: dubious run time results for integrate: [0.39,0.57,0.37,0.38]
+warning: dubious mut time results for integrate: [0.38,0.56,0.36,0.37]
+warning: dubious run time results for integrate: [0.78,0.47,0.35999998,0.35999998]
+warning: dubious mut time results for integrate: [0.76,0.46,0.35,0.35]
+warning: dubious run time results for integrate: [0.78,0.47,0.35999998,0.35999998]
+warning: dubious mut time results for integrate: [0.76,0.46,0.35,0.35]
+warning: dubious run time results for integrate: [0.37,0.89,0.44,0.42]
+warning: dubious mut time results for integrate: [0.36,0.87,0.43,0.41]
+warning: dubious run time results for integrate: [0.37,0.89,0.44,0.42]
+warning: dubious mut time results for integrate: [0.36,0.87,0.43,0.41]
+warning: dubious run time results for integrate: [0.35,0.37,0.33,0.62]
+warning: dubious mut time results for integrate: [0.34,0.36,0.33,0.61]
+warning: dubious run time results for integrate: [0.35,0.37,0.33,0.62]
+warning: dubious mut time results for integrate: [0.34,0.36,0.33,0.61]
+warning: dubious run time results for integrate: [0.34,0.37,0.53,0.41]
+warning: dubious mut time results for integrate: [0.34,0.36,0.52,0.4]
+warning: dubious run time results for integrate: [0.34,0.37,0.53,0.41]
+warning: dubious mut time results for integrate: [0.34,0.36,0.52,0.4]
+warning: dubious run time results for integrate: [0.3,0.35,0.32,0.55]
+warning: dubious mut time results for integrate: [0.3,0.34,0.32,0.54]
+warning: dubious run time results for integrate: [0.3,0.35,0.32,0.55]
+warning: dubious mut time results for integrate: [0.3,0.34,0.32,0.54]
+warning: dubious run time results for integrate: [0.41,0.39,0.48,0.34]
+warning: dubious run time results for integrate: [0.41,0.39,0.48,0.34]
+warning: dubious run time results for integrate: [0.34,0.38,0.48,0.33]
+warning: dubious mut time results for integrate: [0.34,0.37,0.47,0.33]
+warning: dubious run time results for integrate: [0.34,0.38,0.48,0.33]
+warning: dubious mut time results for integrate: [0.34,0.37,0.47,0.33]
+warning: dubious run time results for integrate: [0.39999998,0.34,0.39999998,0.53999996]
+warning: dubious mut time results for integrate: [0.39,0.33,0.39,0.53]
+warning: dubious run time results for integrate: [0.39999998,0.34,0.39999998,0.53999996]
+warning: dubious mut time results for integrate: [0.39,0.33,0.39,0.53]
+warning: dubious mut time results for integrate: [0.34,0.37,0.36,0.48]
+warning: dubious mut time results for integrate: [0.34,0.37,0.36,0.48]
+warning: dubious run time results for integrate: [0.52,0.35,0.35999998,0.42]
+warning: dubious mut time results for integrate: [0.51,0.34,0.35,0.41]
+warning: dubious run time results for integrate: [0.52,0.35,0.35999998,0.42]
+warning: dubious mut time results for integrate: [0.51,0.34,0.35,0.41]
+warning: dubious run time results for integrate: [0.32,0.33,0.34,0.48]
+warning: dubious mut time results for integrate: [0.32,0.33,0.33,0.47]
+warning: dubious run time results for integrate: [0.32,0.33,0.34,0.48]
+warning: dubious mut time results for integrate: [0.32,0.33,0.33,0.47]
+warning: dubious run time results for integrate: [0.41,0.35,0.34,0.58]
+warning: dubious mut time results for integrate: [0.4,0.34,0.33,0.57]
+warning: dubious run time results for integrate: [0.41,0.35,0.34,0.58]
+warning: dubious mut time results for integrate: [0.4,0.34,0.33,0.57]
+warning: dubious run time results for integrate: [0.35,0.37,0.35999998,0.57]
+warning: dubious mut time results for integrate: [0.34,0.36,0.35,0.56]
+warning: dubious run time results for integrate: [0.35,0.37,0.35999998,0.57]
+warning: dubious mut time results for integrate: [0.34,0.36,0.35,0.56]
+warning: dubious run time results for integrate: [0.34,0.35999998,0.5,0.37]
+warning: dubious mut time results for integrate: [0.34,0.35,0.49,0.36]
+warning: dubious run time results for integrate: [0.34,0.35999998,0.5,0.37]
+warning: dubious mut time results for integrate: [0.34,0.35,0.49,0.36]
+warning: dubious run time results for integrate: [0.59999996,0.35999998,0.38,0.48999998]
+warning: dubious mut time results for integrate: [0.59,0.35,0.37,0.48]
+warning: dubious run time results for integrate: [0.59999996,0.35999998,0.38,0.48999998]
+warning: dubious mut time results for integrate: [0.59,0.35,0.37,0.48]
+Optimizing /h/ywang30/nofib/imaginary/integrate
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.368
+runproj limit: 0.368
+"All is well :D"
+Basetime is: 5.0e-3
+runproj limit: 0.368
+010000000000000000001000000 1.0e-2
+runproj limit: 0.368
+001000000010000000010000000 8.0e-3
+runproj limit: 0.368
+000000000001000000100000100 8.0e-3
+runproj limit: 0.368
+000000000000000000000000000 5.0e-3
+runproj limit: 0.368
+000000000000000000000000010 8.0e-3
+runproj limit: 0.368
+001000001001000000000001000 8.0e-3
+runproj limit: 0.368
+100000000000000000000000001 8.0e-3
+runproj limit: 0.368
+010000000000110000000010000 8.0e-3
+runproj limit: 0.368
+000010000000000000000010000 8.0e-3
+runproj limit: 0.368
+001000000000000000000000100 8.0e-3
+runproj limit: 0.368
+000001000000000010000000000 8.0e-3
+runproj limit: 0.368
+000010000000100000000001000 5.0e-3
+runproj limit: 0.368
+000000000000000000000000000 8.0e-3
+best: 1.0
+runproj limit: 0.368
+000000000000000000100000000 5.0e-3
+runproj limit: 0.368
+000010000001000000000000100 5.0e-3
+runproj limit: 0.368
+001000001001000000000001000 2.0e-3
+runproj limit: 0.368
+000000000000000000000000000 2.0e-3
+runproj limit: 0.368
+101000000000000000010000001 8.0e-3
+runproj limit: 0.368
+000010000000000000000010000 5.0e-3
+runproj limit: 0.368
+010000000000000010000000000 8.0e-3
+runproj limit: 0.368
+100000000000000000000000000 2.0e-3
+runproj limit: 0.368
+001000000011110010010001100 2.0e-3
+runproj limit: 0.368
+000011000000000101100111000 8.0e-3
+runproj limit: 0.368
+010011001100011001110000000 2.0e-3
+runproj limit: 0.368
+010001001000100001010010000 5.0e-3
+runproj limit: 0.368
+011001010011000001100000100 1.0e-2
+runproj limit: 0.368
+000000000000000000000000000 5.0e-3
+runproj limit: 0.368
+000010000000100000000001000 1.0e-2
+runproj limit: 0.368
+001000000010000000010000000 5.0e-3
+runproj limit: 0.368
+000000000001000000100000100 1.0e-2
+runproj limit: 0.368
+000000000000000000000000010 8.0e-3
+runproj limit: 0.368
+001000001001000000000001000 1.0e-2
+runproj limit: 0.368
+100000000000000000000000001 8.0e-3
+best: 0.4
+runproj limit: 0.368
+001000000001100000010001100 8.0e-3
+runproj limit: 0.368
+011000001000000000000001000 8.0e-3
+runproj limit: 0.368
+000001001001001001110000000 2.0e-3
+runproj limit: 0.368
+000010001100010001110000100 8.0e-3
+runproj limit: 0.368
+001000001001000000000001000 1.0e-2
+runproj limit: 0.368
+001000000000000000010000000 8.0e-3
+runproj limit: 0.368
+000000000011010000010000100 1.0e-2
+runproj limit: 0.368
+000001000000000001010010000 1.0e-2
+runproj limit: 0.368
+001000001001001000010101010 1.0e-2
+runproj limit: 0.368
+000100000001000001001000000 8.0e-3
+runproj limit: 0.368
+110101001001111101011010000 1.0e-2
+runproj limit: 0.368
+011101001101010111011010100 8.0e-3
+runproj limit: 0.368
+001101000011100100010111110 2.0e-3
+runproj limit: 0.368
+001000001001000000000001000 1.0e-2
+runproj limit: 0.368
+000000000000000000000000000 5.0e-3
+runproj limit: 0.368
+100000000000000000000000000 2.0e-3
+runproj limit: 0.368
+001000000011110010010001100 1.0e-2
+runproj limit: 0.368
+010011001100011001110000000 5.0e-3
+runproj limit: 0.368
+000000000000000000100000000 1.0e-2
+runproj limit: 0.368
+000010000001000000000000100 1.0e-2
+best: 0.4
+runproj limit: 0.368
+000000000000100000010000100 5.0e-3
+runproj limit: 0.368
+011010001101010101111000100 8.0e-3
+runproj limit: 0.368
+000001001001000001010000100 5.0e-3
+runproj limit: 0.368
+000000000011001010110001100 8.0e-3
+runproj limit: 0.368
+000000000001010001010000100 8.0e-3
+runproj limit: 0.368
+001000000000000000000000000 8.0e-3
+runproj limit: 0.368
+101000000000000000000000000 8.0e-3
+runproj limit: 0.368
+010010001100011001110000100 5.0e-3
+runproj limit: 0.368
+010011001100011001110000001 8.0e-3
+runproj limit: 0.368
+011010000001000000010101100 5.0e-3
+runproj limit: 0.368
+011001001101011110110000000 8.0e-3
+runproj limit: 0.368
+110001011001111001011100011 8.0e-3
+runproj limit: 0.368
+011001001001000010011011110 8.0e-3
+runproj limit: 0.368
+000001001001001001110000000 8.0e-3
+runproj limit: 0.368
+001101000011100100010111110 8.0e-3
+runproj limit: 0.368
+100000000000000000000000000 1.2e-2
+runproj limit: 0.368
+000000000000000000000000000 1.2e-2
+runproj limit: 0.368
+010011001100011001110000000 8.0e-3
+runproj limit: 0.368
+001000000001100000010001100 8.0e-3
+runproj limit: 0.368
+011000001000000000000001000 8.0e-3
+best: 1.0
+runproj limit: 0.368
+011010001101010001010100100 5.0e-3
+runproj limit: 0.368
+101000001000000000000000000 8.0e-3
+runproj limit: 0.368
+011001000001000000010001100 8.0e-3
+runproj limit: 0.368
+010000001010000000110001100 5.0e-3
+runproj limit: 0.368
+010010001100011001110000001 8.0e-3
+runproj limit: 0.368
+001000000001100100010011100 1.0e-2
+runproj limit: 0.368
+100001001000100000010100001 1.0e-2
+runproj limit: 0.368
+011010000011001000110001100 2.0e-3
+runproj limit: 0.368
+001000100010111000100100110 8.0e-3
+runproj limit: 0.368
+110100000100000100000100000 5.0e-3
+runproj limit: 0.368
+001111010011100100011100100 8.0e-3
+runproj limit: 0.368
+100001011010000011011000000 1.0e-2
+runproj limit: 0.368
+010000000000100001011110101 1.0e-2
+runproj limit: 0.368
+000000000000100000010000100 5.0e-3
+runproj limit: 0.368
+000001001001000001010000100 8.0e-3
+runproj limit: 0.368
+010010001100011001110000100 5.0e-3
+runproj limit: 0.368
+011010000001000000010101100 1.0e-2
+runproj limit: 0.368
+011010001101010101111000100 8.0e-3
+runproj limit: 0.368
+000000000011001010110001100 1.0e-2
+runproj limit: 0.368
+000000000001010001010000100 1.0e-2
+best: 0.4
+runproj limit: 0.368
+110100001000000011000000000 1.0e-2
+runproj limit: 0.368
+011010000010001001110001001 1.0e-2
+runproj limit: 0.368
+011110001100010101111100100 1.0e-2
+runproj limit: 0.368
+011010001101010101111000100 1.0e-2
+runproj limit: 0.368
+011010001101010101111000000 5.0e-3
+runproj limit: 0.368
+011010001010001000110001100 8.0e-3
+runproj limit: 0.368
+111011001101010001010100101 5.0e-3
+runproj limit: 0.368
+001000100001101000100111100 8.0e-3
+runproj limit: 0.368
+000111010011000100001000000 5.0e-3
+runproj limit: 0.368
+001100011010000011010000000 1.0e-2
+runproj limit: 0.368
+111001101010001010100100010 2.0e-3
+runproj limit: 0.368
+011110001011101100110001100 5.0e-3
+runproj limit: 0.368
+011011000011100101110101100 1.0e-2
+runproj limit: 0.368
+011010000011001000110001100 8.0e-3
+runproj limit: 0.368
+011010001101010001010100100 2.0e-3
+runproj limit: 0.368
+010000001010000000110001100 8.0e-3
+runproj limit: 0.368
+110100000100000100000100000 8.0e-3
+runproj limit: 0.368
+000000000000100000010000100 5.0e-3
+runproj limit: 0.368
+010010001100011001110000100 5.0e-3
+runproj limit: 0.368
+101000001000000000000000000 8.0e-3
+best: 0.4
+runproj limit: 0.368
+110100101100000110100100010 8.0e-3
+runproj limit: 0.368
+110010000001100101010100000 8.0e-3
+runproj limit: 0.368
+111011101110010110110000100 1.0e-2
+runproj limit: 0.368
+101000001010001000110001100 1.0e-2
+runproj limit: 0.368
+010000001010000000110001100 8.0e-3
+runproj limit: 0.368
+011000001100000000110101100 1.0e-2
+runproj limit: 0.368
+011010001101001000110100100 8.0e-3
+runproj limit: 0.368
+011010001101010101110100100 8.0e-3
+runproj limit: 0.368
+001111001101101111110000111 5.0e-3
+runproj limit: 0.368
+000101110010011101010001101 1.0e-2
+runproj limit: 0.368
+000001010011000101001001000 8.0e-3
+runproj limit: 0.368
+111000001011010101110000010 1.0e-2
+runproj limit: 0.368
+001000100011111000100010111 2.0e-3
+runproj limit: 0.368
+111001101010001010100100010 5.0e-3
+runproj limit: 0.368
+011010001101010001010100100 8.0e-3
+runproj limit: 0.368
+011010001101010101111000000 2.0e-3
+runproj limit: 0.368
+111011001101010001010100101 1.0e-2
+runproj limit: 0.368
+000111010011000100001000000 1.0e-2
+runproj limit: 0.368
+011110001011101100110001100 5.0e-3
+runproj limit: 0.368
+000000000000100000010000100 1.0e-2
+best: 0.4
+runproj limit: 0.368
+011111001101001110110100100 8.0e-3
+runproj limit: 0.368
+001010001011011100100010100 1.0e-2
+runproj limit: 0.368
+001010001011101100100011101 1.0e-2
+runproj limit: 0.368
+010100100011101100110001101 8.0e-3
+runproj limit: 0.368
+011010001101100000010000100 1.0e-2
+runproj limit: 0.368
+011010001101011001110100100 5.0e-3
+runproj limit: 0.368
+0010001000100111010101011warning: dubious run time results for integrate: [0.35,0.33,0.52,0.33]
+warning: dubious mut time results for integrate: [0.34,0.33,0.51,0.33]
+warning: dubious run time results for integrate: [0.35,0.33,0.52,0.33]
+warning: dubious mut time results for integrate: [0.34,0.33,0.51,0.33]
+warning: dubious run time results for integrate: [0.35,0.35,0.37,0.51]
+warning: dubious mut time results for integrate: [0.35,0.35,0.36,0.5]
+warning: dubious run time results for integrate: [0.35,0.35,0.37,0.51]
+warning: dubious mut time results for integrate: [0.35,0.35,0.36,0.5]
+warning: dubious run time results for integrate: [0.48999998,0.33,0.34,0.32]
+warning: dubious mut time results for integrate: [0.48,0.33,0.34,0.32]
+warning: dubious run time results for integrate: [0.48999998,0.33,0.34,0.32]
+warning: dubious mut time results for integrate: [0.48,0.33,0.34,0.32]
+warning: dubious run time results for integrate: [0.56,0.34,0.32,0.34]
+warning: dubious mut time results for integrate: [0.55,0.33,0.32,0.33]
+warning: dubious run time results for integrate: [0.56,0.34,0.32,0.34]
+warning: dubious mut time results for integrate: [0.55,0.33,0.32,0.33]
+warning: dubious run time results for integrate: [0.35999998,0.34,0.5,0.35]
+warning: dubious mut time results for integrate: [0.35,0.33,0.49,0.34]
+warning: dubious run time results for integrate: [0.35999998,0.34,0.5,0.35]
+warning: dubious mut time results for integrate: [0.35,0.33,0.49,0.34]
+warning: dubious run time results for integrate: [0.55,0.35999998,0.37,0.35999998]
+warning: dubious mut time results for integrate: [0.54,0.35,0.36,0.35]
+warning: dubious run time results for integrate: [0.55,0.35999998,0.37,0.35999998]
+warning: dubious mut time results for integrate: [0.54,0.35,0.36,0.35]
+warning: dubious run time results for integrate: [0.35,0.48,0.39999998,0.34]
+warning: dubious run time results for integrate: [0.35,0.48,0.39999998,0.34]
+warning: dubious run time results for integrate: [0.34,0.48999998,0.39999998,0.37]
+warning: dubious mut time results for integrate: [0.33,0.48,0.39,0.36]
+warning: dubious run time results for integrate: [0.34,0.48999998,0.39999998,0.37]
+warning: dubious mut time results for integrate: [0.33,0.48,0.39,0.36]
+warning: dubious run time results for integrate: [0.53999996,0.32999998,0.45999998,0.48999998]
+warning: dubious mut time results for integrate: [0.53,0.32,0.45,0.48]
+warning: dubious run time results for integrate: [0.53999996,0.32999998,0.45999998,0.48999998]
+warning: dubious mut time results for integrate: [0.53,0.32,0.45,0.48]
+warning: dubious run time results for integrate: [0.63,0.42999998,0.34,0.38]
+warning: dubious mut time results for integrate: [0.62,0.42,0.33,0.37]
+warning: dubious run time results for integrate: [0.63,0.42999998,0.34,0.38]
+warning: dubious mut time results for integrate: [0.62,0.42,0.33,0.37]
+warning: dubious run time results for integrate: [0.34,0.34,0.5,0.34]
+warning: dubious mut time results for integrate: [0.33,0.33,0.49,0.33]
+warning: dubious run time results for integrate: [0.34,0.34,0.5,0.34]
+warning: dubious mut time results for integrate: [0.33,0.33,0.49,0.33]
+warning: dubious run time results for integrate: [0.52,0.59,0.48,0.42]
+warning: dubious mut time results for integrate: [0.51,0.58,0.47,0.41]
+warning: dubious run time results for integrate: [0.52,0.59,0.48,0.42]
+warning: dubious mut time results for integrate: [0.51,0.58,0.47,0.41]
+warning: dubious run time results for integrate: [0.38,0.32,0.42,0.45]
+warning: dubious run time results for integrate: [0.38,0.32,0.42,0.45]
+warning: dubious mut time results for integrate: [0.41,0.34,0.48,0.37]
+warning: dubious mut time results for integrate: [0.41,0.34,0.48,0.37]
+warning: dubious run time results for integrate: [0.35999998,0.38,0.44,0.31]
+warning: dubious run time results for integrate: [0.35999998,0.38,0.44,0.31]
+00 5.0e-3
+runproj limit: 0.368
+001001001111010101111101000 8.0e-3
+runproj limit: 0.368
+000010010010000101001101011 8.0e-3
+runproj limit: 0.368
+010000001010001001101001001 8.0e-3
+runproj limit: 0.368
+110011010101010101110100101 5.0e-3
+runproj limit: 0.368
+100000111010011000010011101 5.0e-3
+runproj limit: 0.368
+101111001001101001110000110 5.0e-3
+runproj limit: 0.368
+001000100011111000100010111 1.0e-2
+runproj limit: 0.368
+011010001101010101111000000 8.0e-3
+runproj limit: 0.368
+001111001101101111110000111 5.0e-3
+runproj limit: 0.368
+111001101010001010100100010 5.0e-3
+runproj limit: 0.368
+011110001011101100110001100 1.0e-2
+runproj limit: 0.368
+110100101100000110100100010 8.0e-3
+runproj limit: 0.368
+110010000001100101010100000 1.0e-2
+best: 1.0
+runproj limit: 0.368
+111000101000001010100100010 8.0e-3
+runproj limit: 0.368
+000000111001101000010001100 5.0e-3
+runproj limit: 0.368
+101111111011101000010011110 8.0e-3
+runproj limit: 0.368
+011100101111001110110001100 5.0e-3
+runproj limit: 0.368
+101101111000011110010100101 8.0e-3
+runproj limit: 0.368
+001111001101101011110000111 8.0e-3
+runproj limit: 0.368
+111011011101110101110000101 2.0e-3
+runproj limit: 0.368
+110001010100010001110100101 5.0e-3
+runproj limit: 0.368
+111000011101101101110000000 1.0e-2
+runproj limit: 0.368
+110011110101001101110100100 5.0e-3
+runproj limit: 0.368
+001110000010101100100011101 8.0e-3
+runproj limit: 0.368
+101000100000111101000100000 8.0e-3
+runproj limit: 0.368
+001010001011111001000010111 5.0e-3
+runproj limit: 0.368
+011010001101011001110100100 8.0e-3
+runproj limit: 0.368
+001000100010011101010101100 1.0e-2
+runproj limit: 0.368
+110011010101010101110100101 8.0e-3
+runproj limit: 0.368
+100000111010011000010011101 2.0e-3
+runproj limit: 0.368
+101111001001101001110000110 8.0e-3
+runproj limit: 0.368
+001111001101101111110000111 5.0e-3
+runproj limit: 0.368
+111001101010001010100100010 5.0e-3
+best: 0.4
+runproj limit: 0.368
+100001111101110001010101100 2.0e-3
+runproj limit: 0.368
+111000001010001000100010111 5.0e-3
+runproj limit: 0.368
+001000001000001010000110111 1.0e-2
+runproj limit: 0.368
+101011101001101101000000010 1.0e-2
+runproj limit: 0.368
+001100000100101100100010001 5.0e-3
+runproj limit: 0.368
+111111001001101001110000101 8.0e-3
+runproj limit: 0.368
+111101011100010110110100101 5.0e-3
+runproj limit: 0.368
+101110100100101101100000000 1.0e-2
+runproj limit: 0.368
+111111001101100111010110111 1.0e-2
+runproj limit: 0.368
+111010110101000111000110100 8.0e-3
+runproj limit: 0.368
+111001010101010011100000110 8.0e-3
+runproj limit: 0.368
+000110110111001010000001001 8.0e-3
+runproj limit: 0.368
+100001010001001000110100110 1.0e-2
+runproj limit: 0.368
+111011011101110101110000101 1.0e-2
+runproj limit: 0.368
+100000111010011000010011101 1.0e-2
+runproj limit: 0.368
+000000111001101000010001100 8.0e-3
+runproj limit: 0.368
+011100101111001110110001100 8.0e-3
+runproj limit: 0.368
+110001010100010001110100101 5.0e-3
+runproj limit: 0.368
+110011110101001101110100100 8.0e-3
+runproj limit: 0.368
+001010001011111001000010111 8.0e-3
+best: 0.4
+runproj limit: 0.368
+011100100111001010000001000 5.0e-3
+runproj limit: 0.368
+001100001011101101010001110 8.0e-3
+runproj limit: 0.368
+001000100100100111100110001 8.0e-3
+runproj limit: 0.368
+110011111101000101110101100 8.0e-3
+runproj limit: 0.368
+111000000100000110000010111 5.0e-3
+runproj limit: 0.368
+111001000001001001110000101 5.0e-3
+runproj limit: 0.368
+110000010101011010100001001 8.0e-3
+runproj limit: 0.368
+101010111010111001010011101 8.0e-3
+runproj limit: 0.368
+110111001100101000111100101 5.0e-3
+runproj limit: 0.368
+010101000110111010110000101 1.0e-2
+runproj limit: 0.368
+101000111101100101110101110 5.0e-3
+runproj limit: 0.368
+001000111001100101000101000 1.0e-2
+runproj limit: 0.368
+001110100101111011110000000 5.0e-3
+runproj limit: 0.368
+100001111101110001010101100 5.0e-3
+runproj limit: 0.368
+111000001010001000100010111 8.0e-3
+runproj limit: 0.368
+001100000100101100100010001 5.0e-3
+runproj limit: 0.368
+111101011100010110110100101 1.0e-2
+runproj limit: 0.368
+110001010100010001110100101 8.0e-3
+runproj limit: 0.368
+111111001001101001110000101 1.0e-2
+runproj limit: 0.368
+111010110101000111000110100 8.0e-3
+best: 1.0
+runproj limit: 0.368
+011110100111101010100000000 1.0e-2
+runproj limit: 0.368
+101110101101110001110101110 1.0e-2
+runproj limit: 0.368
+111110000100101000100010001 1.0e-2
+runproj limit: 0.368
+100001111101000101110101100 1.0e-2
+runproj limit: 0.368
+111000000100000111000010111 2.0e-3
+runproj limit: 0.368
+001100110101111001110100100 1.0e-2
+runproj limit: 0.368
+001000110101101001110101110 8.0e-3
+runproj limit: 0.368
+001100001101111011110000100 8.0e-3
+runproj limit: 0.368
+001100000000100011100010001 1.0e-2
+runproj limit: 0.368
+111100111001101000000000001 1.0e-2
+runproj limit: 0.368
+011010010110011001010000101 0.0
+runproj limit: 0.368
+010110000111001000011111100 1.0e-2
+runproj limit: 0.368
+101000011101000110111101101 1.0e-2
+runproj limit: 0.368
+011100100111001010000001000 8.0e-3
+runproj limit: 0.368
+111000000100000110000010111 5.0e-3
+runproj limit: 0.368
+111001000001001001110000101 5.0e-3
+runproj limit: 0.368
+110111001100101000111100101 5.0e-3
+runproj limit: 0.368
+101000111101100101110101110 5.0e-3
+runproj limit: 0.368
+001110100101111011110000000 8.0e-3
+runproj limit: 0.368
+100001111101110001010101100 8.0e-3
+best: 0.0
+runproj limit: 0.368
+111000000100000110000010111 8.0e-3
+runproj limit: 0.368
+010110000111001000011111100 5.0e-3
+runproj limit: 0.368
+001100100101001001011101110 5.0e-3
+runproj limit: 0.368
+110101001100001110100110111 2.0e-3
+runproj limit: 0.368
+011110100101101100100101100 8.0e-3
+runproj limit: 0.368
+011010000001001001110000101 0.0
+runproj limit: 0.368
+101000010100000000110101110 8.0e-3
+runproj limit: 0.368
+111001100111011011000001000 8.0e-3
+runproj limit: 0.368
+000110010001100100100101110 2.0e-3
+runproj limit: 0.368
+111010001111101000100010001 5.0e-3
+runproj limit: 0.368
+111100100100100111000010111 8.0e-3
+runproj limit: 0.368
+111001100100100001111010111 5.0e-3
+runproj limit: 0.368
+100001111100011111010101010 5.0e-3
+runproj limit: 0.368
+011010010110011001010000101 2.0e-3
+runproj limit: 0.368
+111000000100000111000010111 1.0e-2
+runproj limit: 0.368
+111000000100000110000010111 5.0e-3
+runproj limit: 0.368
+111001000001001001110000101 5.0e-3
+runproj limit: 0.368
+110111001100101000111100101 5.0e-3
+runproj limit: 0.368
+101000111101100101110101110 8.0e-3
+runproj limit: 0.368
+001000110101101001110101110 5.0e-3
+best: 0.0
+runproj limit: 0.368
+111001100000001001110010111 2.0e-3
+runproj limit: 0.368
+111010001111101000100010001 5.0e-3
+runproj limit: 0.368
+110010001111101000010011100 0.0
+runproj limit: 0.368
+110001001100000110100010111 1.0e-2
+runproj limit: 0.368
+110001100101011011010000010 8.0e-3
+runproj limit: 0.368
+111010000011001000110000001 1.0e-2
+runproj limit: 0.368
+000010000001100101100001110 8.0e-3
+runproj limit: 0.368
+000001101101001100110101000 1.0e-2
+runproj limit: 0.368
+001001000001000011010110001 5.0e-3
+runproj limit: 0.368
+000100010001100110101101110 8.0e-3
+runproj limit: 0.368
+101001010100111000010110111 1.0e-2
+runproj limit: 0.368
+100000100100100001100100010 5.0e-3
+runproj limit: 0.368
+011000000111000001110110001 8.0e-3
+runproj limit: 0.368
+011010000001001001110000101 8.0e-3
+runproj limit: 0.368
+110101001100001110100110111 1.0e-2
+runproj limit: 0.368
+000110010001100100100101110 8.0e-3
+runproj limit: 0.368
+011010010110011001010000101 1.0e-2
+runproj limit: 0.368
+010110000111001000011111100 1.0e-2
+runproj limit: 0.368
+001100100101001001011101110 1.0e-2
+runproj limit: 0.368
+111010001111101000100010001 0.0
+best: 0.0
+runproj limit: 0.368
+110001100100100101100110111 5.0e-3
+runproj limit: 0.368
+110010001111101000010011100 5.0e-3
+runproj limit: 0.368
+110010000001101000010010101 8.0e-3
+runproj limit: 0.368
+000110010001100110100001110 8.0e-3
+runproj limit: 0.368
+111011100001101000100010111 2.0e-3
+runproj limit: 0.368
+001000000001001011110100001 2.0e-3
+runproj limit: 0.368
+100000100100100001100100010 2.0e-3
+runproj limit: 0.368
+100011010000101000110011111 5.0e-3
+runproj limit: 0.368
+111100100101011011010100111 1.0e-2
+runproj limit: 0.368
+010010101011011001010011111 0.0
+runproj limit: 0.368
+000011001001000011011110011 8.0e-3
+runproj limit: 0.368
+010011010111111001111000111 0.0
+runproj limit: 0.368
+001110101101110110101010011 2.0e-3
+runproj limit: 0.368
+110010001111101000010011100 1.0e-2
+runproj limit: 0.368
+111010001111101000100010001 2.0e-3
+runproj limit: 0.368
+111001100000001001110010111 2.0e-3
+runproj limit: 0.368
+001001000001000011010110001 1.0e-2
+runproj limit: 0.368
+100000100100100001100100010 5.0e-3
+runproj limit: 0.368
+110001100101011011010000010 8.0e-3
+runproj limit: 0.368
+000010000001100101100001110 5.0e-3
+best: 0.0
+done evolving!
+"all is well:)"
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+866.78user 453.63system 40:25.79elapsed 54%CPU (0avgtext+0avgdata 131636maxresident)k
+1167600inputs+1565776outputs (297major+100441466minor)pagefaults 0swaps

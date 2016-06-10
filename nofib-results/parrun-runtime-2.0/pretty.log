@@ -1,0 +1,10 @@
+Optimizing /data/dan/nofib/spectral/pretty
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+5.98user 5.92system 0:13.16elapsed 90%CPU (0avgtext+0avgdata 137588maxresident)k
+0inputs+10272outputs (0major+828342minor)pagefaults 0swaps

@@ -1,0 +1,10 @@
+Optimizing /h/ywang30/nofib/spectral/minimax
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 13
+gens: 15
+arch: 7
+limit is: 0.0
+runproj limit: 0.0
+GenesisNF: Base time neglegible
+7.91user 10.19system 0:19.78elapsed 91%CPU (0avgtext+0avgdata 109284maxresident)k
+7152inputs+11176outputs (4major+976086minor)pagefaults 0swaps
