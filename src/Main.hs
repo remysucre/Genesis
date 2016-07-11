@@ -12,6 +12,7 @@ import Data.Int
 import System.Environment
 import System.Process
 import Control.DeepSeq
+import HillClimbing 
 
 reps :: Int64
 reps = runs
@@ -40,10 +41,19 @@ fitness projDir bangVec = do
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed-}
 
+data Search = Genetic 
+            | HillClimbing
+
 main :: IO () 
 main = do 
   [projDir, pop, gen, arch] <- getArgs
-  gmain projDir (read pop, read gen, read arch)
+
+  let search = "Genetic"
+
+  if search == "Genetic" then
+    gmain projDir (read pop, read gen, read arch)
+  else 
+    hillClimbMain projDir
 
 emain :: IO ()
 emain = do
@@ -95,3 +105,16 @@ gmain projDir (pop, gens, arch) = do
     let survivorPath = projDir ++ "Survivor.hs"
     writeFile survivorPath prog'
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"
+
+
+hillClimbMain :: String -> IO ()
+hillClimbMain projDir = do
+    buildProj projDir
+    let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
+
+    prog <- readFile mainPath
+    bs <- readBangs mainPath
+    
+    hillClimb bs (\bits -> fitness projDir (B.fromBits bits))
+
+    return ()
