@@ -42,8 +42,21 @@ fitness projDir bangVec = do
 
 main :: IO () 
 main = do 
+  print "Configure optimization..."
+  print "No config.atb file found, please specify parameters as prompted"
+  print "<Enter> to use [defaults]"
+  print "Time alloted for Autobahn [3h]:" -- TODO add macros for defaults
+  print "Estimated bangs to change (add/remove) [3]:"
+  print "File(s) to add/remove bangs in [\"Main.hs\"]:"
+  print "Performance metric to optimize [\"runtime\"]:"
+  print "Representative input data & arguments [no input/arguments]:"
+  print "Times to run program for fitness measurement [1]:"
+  print "Setting up optimization process..." -- TODO run project to determine GA config
+  print "Starting optimization process..."
   [projDir, pop, gen, arch] <- getArgs
   gmain projDir (read pop, read gen, read arch)
+  print $ "Optimization finished, please inspect and select candidate changes "
+        ++ "(found in AutobahnResults under project root)"
 
 emain :: IO ()
 emain = do
