@@ -1,0 +1,15 @@
+Optimizing bintree
+>>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>
+pop: 1
+gens: 1
+arch: 1
+Basetime is: 89.373
+bits: 011000100100100000011000110100101001110000011101111010100100100110010110111101100011
+best: 1118.9061573405838
+done evolving!
+best entity (GA): 011000100100100000011000110100101001110000011101111010100100100110010110111101100011
+>>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>
+287.66user 40.29system 2:52.37elapsed 190%CPU (0avgtext+0avgdata 270208maxresident)k
+288inputs+3384outputs (1major+955497minor)pagefaults 0swaps
+Tue Aug 23 09:53:38 EDT 2016
+ea546fa

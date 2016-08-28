@@ -1,0 +1,6 @@
+/run/current-system/sw/bin/time: cannot run ./.stack-work/install/*/lts-2.22/7.8.4/bin/Genesis: No such file or directory
+Command exited with non-zero status 127
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 1116maxresident)k
+0inputs+0outputs (0major+29minor)pagefaults 0swaps
+Mon Aug 22 19:41:00 EDT 2016
+ea546fa

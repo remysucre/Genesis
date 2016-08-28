@@ -1,0 +1,7 @@
+----------- Autobahn configuration file ----------- 
+
+budgetTime = 5h -- time allocated for an Autobahn optimization
+confidence = 3 -- estimated # of annotation points to be altered (add or remove)
+coverage = "Main.hs" -- which parts of the project should Autobahn explore
+targetMetric = "peakAlloc" -- performance metric to optimize
+inputArg = "input.dat" -- representative input data/argument, if any; passed to `cabal run`
