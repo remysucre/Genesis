@@ -1,0 +1,15 @@
+"Configure optimization..."
+No config.atb file found, please specify parameters as prompted
+<Enter> to use [defaults]
+Time alloted for Autobahn [3h]:
+Estimated bangs to change (add/remove) [3]:
+File(s) to add/remove bangs in ["Main.hs"]:
+Performance metric to optimize ["runtime"]:
+Representative input data & arguments [no input/arguments]:
+Times to run program for fitness measurement [1]:
+Setting up optimization process...
+Starting optimization process...
+Genesis: user error (Pattern match failure in do expression at src/Main.hs:81:3-27)
+/usr/bin/time
+Thu Sep  1 16:59:38 EDT 2016
+8ee07d4
