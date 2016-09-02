@@ -1,0 +1,204 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{tikz}
+\usepackage{mathpartir}
+\usepackage{fancyvrb}
+\usetikzlibrary{shapes,arrows}
+
+\newcommand{\tname}{\textsc{Autobahn}}
+\newcommand{\dppsi}{\textsc{PSI}}
+\newcommand{\stepsto}[2]{\ensuremath{#1 \Downarrow #2}}
+\newcommand{\subst}[3]{\ensuremath{#1\{#3/#2\}}}
+\newcommand{\trans}[4]{\ensuremath{\mathit{transform}(#1 : #2) :  #3 ~\{~#4~\}}}
+\newcommand{\numinter}[2]{\ensuremath{N[#1,#2]}}
+\newcommand{\wf}{\mbox{ wf}}
+\newcommand{\br}[1]{\langle #1 \rangle}
+\def\Yields{\Downarrow}
+\newcommand{\tyex}{\sigma}
+\newcommand{\typesto}[4]{{#1} \vdash {#2} : {#3} \vartriangleright {#4}}
+\newcommand{\homepage}{\url{remysucre.github.io}}
+
+\title[Title]{\tname{} : Using Genetic Algorithms to Infer Strictness Annotations}
+\author{Yisu Remy Wang, Diogenes Nunez, Kathleen Fisher}
+\institute{Tufts University, Medford MA, USA}
+  
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Overview}
+
+\begin{frame}{Overview}
+
+\begin{itemize}
+  \item Intro. 
+  \item The Problem: Adding Strictness Annotations
+  \item Background: Strictness Annotations \& Genetic Algorithms
+  \item The Algorithm
+  \item Soundness
+  \item Evaluation \& Case Study
+  \item Related Work
+  
+\end{itemize}
+
+%\vskip 1cm
+%
+%\begin{block}{Examples}
+%Some examples of commonly used commands and features are included, to help you get started.
+%\end{block}
+
+\end{frame}
+
+%\section{Some \LaTeX{} Examples}
+%
+%\subsection{Tables and Figures}
+
+\section{Intro}
+\begin{frame}{Once Upon a Time, 2 Eager Programmers with a Lazy Program \dots}
+\begin{itemize}
+\item Example code \& explanation here
+\item Annotated code \& explanation, explain laziness / bangs informally in passing
+\item ?? What kind of example do we want?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Problem}
+\begin{itemize}
+\item Too much laziness \textbf{slows down} programs
+  \begin{itemize}
+    \item Runtime, allocation, GC work \dots
+  \end{itemize}
+\item \textbf{Difficult to add} strictness annotations
+  \begin{itemize}
+    \item Add \textbf{helpful} annotations, guarantee \textbf{soundness}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Background: Laziness \& Strictness Annotations}
+  \begin{itemize}
+    \item What's a thunk, what's WHNF
+    \item Different kinds of annotations and what do they do (mention StrictHaskell)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Background: Genetic Algorithms}
+  \begin{itemize}
+    \item Introduce GA
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Background: GA for Strictness Annotations}
+  \begin{itemize}
+    \item Why is it good?
+    \item Avoid local optima
+    \item Works like a desperate Haskeller trying all kinds of different bangs
+    \item Works great if bangs work with each other in a simple way (corpus analysis)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Algorithm: Representation}
+  \begin{itemize}
+  \item Genes \& chromosomes
+  \item Fitness Functions
+  \item Parameters
+  \item 1st Generation
+  \item New Generations
+  \item Determining a Winner
+  \item Pulling it All Together
+  \item Discussion
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Algorithm: Optimization}
+  \begin{itemize}
+  \item Parameters
+  \item 1st Generation
+  \item New Generations
+  \item Determining a Winner
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Algorithm: Pulling it All Together}
+\end{frame}
+
+\begin{frame}{The Algorithm: Discussion}
+\end{frame}
+
+\begin{frame}{Soundness}
+\end{frame}
+
+\begin{frame}{Evaluation}
+  \begin{itemize}
+  \item Introduce benchmarks / setup
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Evaluation: nofib benchmarks}
+\end{frame}
+
+\begin{frame}{Evaluation: strict Haskell}
+  \begin{itemize}
+  \item ?? Did we ever try StrictHaskell on aeson/gcSim?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Evaluation - Case Study: gcSimulator}
+\end{frame}
+
+\begin{frame}{Evaluation - Case Study: Aeson}
+\end{frame}
+
+\begin{frame}{Evaluation: 10-fold Cross-validation}
+\end{frame}
+
+\begin{frame}{Evaluation: Autobahn Performance}
+\end{frame}
+
+\begin{frame}{Related Work}
+  \begin{itemize}
+  \item static analysis
+  \item including dynamic information
+  \item other approaches
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Future Work}
+\end{frame}
+
+\begin{frame}{Conclusion}
+\end{frame}
+
+\begin{frame}{Acknowledgments}
+\end{frame}
+
+\end{document}

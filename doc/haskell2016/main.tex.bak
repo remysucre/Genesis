@@ -1,0 +1,438 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{tikz}
+\usepackage{mathpartir}
+\usepackage{fancyvrb}
+\usetikzlibrary{shapes,arrows}
+
+\newcommand{\tname}{\textsc{TransformeR}}
+\newcommand{\dppsi}{\textsc{PSI}}
+\newcommand{\stepsto}[2]{\ensuremath{#1 \Downarrow #2}}
+\newcommand{\subst}[3]{\ensuremath{#1\{#3/#2\}}}
+\newcommand{\trans}[4]{\ensuremath{\mathit{transform}(#1 : #2) :  #3 ~\{~#4~\}}}
+\newcommand{\numinter}[2]{\ensuremath{N[#1,#2]}}
+\newcommand{\wf}{\mbox{ wf}}
+\newcommand{\br}[1]{\langle #1 \rangle}
+\def\Yields{\Downarrow}
+\newcommand{\tyex}{\sigma}
+\newcommand{\typesto}[4]{{#1} \vdash {#2} : {#3} \vartriangleright {#4}}
+\newcommand{\homepage}{\url{remysucre.github.io}}
+
+\title[Title]{\tname{} : an eDSL in R \\ for Writing Safe Variable Transformations}
+\author{Yisu Remy Wang}
+\institute{
+  Privacy Tools for Sharing Research Data \\
+  \textbf{PI} : Salil Vadhan
+  \textbf{Mentors} : Stephen Chong, Marco Gaboardi, Victor Balcer}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Overview}
+
+\begin{frame}{Overview}
+
+\begin{itemize}
+  \item Introduction / background
+  \item Integration with \dppsi{}
+  \item Grammar \& type system
+  \item Statistical operations
+  \item Contributions
+  \item Future work
+\end{itemize}
+
+%\vskip 1cm
+%
+%\begin{block}{Examples}
+%Some examples of commonly used commands and features are included, to help you get started.
+%\end{block}
+
+\end{frame}
+
+%\section{Some \LaTeX{} Examples}
+%
+%\subsection{Tables and Figures}
+
+\section{Intro}
+\begin{frame}{Long Long ago, Far away \dots}
+\input{psi-old}
+\end{frame}
+
+\begin{frame}{The Problem}
+
+\begin{itemize}
+  \item Variable transformation / recode
+  \begin{itemize}
+    \item \textbf{Simple}: log, square, squareroot etc. 
+    \item \textbf{Advanced}: multivariate to univariate, remove outliers
+  \end{itemize}
+  \item Security \& privacy
+  \begin{itemize}
+    \item \textbf{Side-channel} attacks: timing, memory
+    \item \textbf{Compatibility} with DP-mechanisms
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Deep Beneath, Under the Sea \dots}
+
+\begin{columns}
+  \column {0.58\textwidth}
+    \begin{table}
+    %\centering
+    \begin{tabular}{l|r|r|r}
+     Whale       & length & weight \\
+     \hline
+     BigWill     & 42   & 75 \\
+     LilWill     & 15   & 23 \\
+     BigWhitney  & 40   & 63 \\
+     LilWhitney  &  2   & 7 \\
+    \end{tabular}
+    \caption{\label{tab:sea}Health record of a whale family}
+    \end{table}
+ \column{0.48\textwidth}
+  Calculate \textbf{average desity} from length and weight, assuming cubical whales. 
+    \begin{enumerate}
+      \item Add a new col. $l^3 / w$
+      \item Query the mean 
+    \end{enumerate}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{Arbitrary Program - Dangerous!}
+
+ \begin{columns}
+   \column{0.5\textwidth}
+    \begin{Verbatim}[commandchars=\\\{\}]
+ trans (whale) \{
+   \textcolor{red}{email("remy@:).com", whale)}
+   d <- whale.l ^ 3 / whale.w
+   return whale.d <- d\}
+ 
+ trans (whale) \{
+   d <- whale.l ^ 3 / whale.w
+   if whale.n == "LilWill"
+     && whale.l > 20
+   \textcolor{red}{then loop}
+   else return whale.d <- d\}
+    \end{Verbatim}
+   \column{0.5\textwidth}
+   \begin{itemize}
+   \item \dppsi{} adds noise from \textbf{range} of data, 
+   transformation changes range.
+   \item Need to know range of $l^3/w$ (density)!
+   \end{itemize}
+ \end{columns}
+
+\end{frame}
+
+\begin{frame}{\tname{} to the Rescue!}
+\begin{itemize}
+  \item Dangerous programs: \textbf{eliminate} unsafe features of R
+  \item Range information: track range with a \textbf{type system}
+  \item Differential privacy: ensure \textbf{per-row} transformation
+\end{itemize}
+\end{frame}
+
+\section{Integration in \dppsi{}}
+\begin{frame}{Integration in \dppsi{}}
+\input{psi-architecture}
+
+\end{frame}
+
+\section{Grammar \& type system}
+\begin{frame}[fragile]{Grammar \& type system}
+
+\begin{verbatim}
+transform (whale :
+         { ln : C["Will", "Whitney"]
+         , fn : C["Big", "Lil"]
+         , l  : N[1, 100] 
+         , w  : N[1, 50]})
+
+         { name    : C["BigWill", "BigWhitney", 
+                       "LilWill", "LilWhitney"]
+         , density : N[0.02, 20000] }
+
+   { n <- whale[[fn]] * whale[[ln]]
+   ; v <- cube(whale[[l]])
+   ; d = v / whale[[w]]
+   {name = n, density = d}}
+\end{verbatim}
+
+\end{frame}
+
+\subsection{Grammar}
+\begin{frame}[fragile]{Grammar}
+
+\begin{verbatim}
+transform (whale :
+         { ln : C["Will", "Whitney"]
+         , ... })
+
+         { ... 
+         , density : N[0.02, 20000] }
+
+   { n <- whale[[fn]] * whale[[ln]]
+   ; ... }
+\end{verbatim}
+\begin{lstlisting}[
+  mathescape,
+  columns=fullflexible,
+  basicstyle=\fontfamily{lmvtt}\selectfont,
+  keywordstyle=\bfseries\color{green},
+  commentstyle=\itshape\color{purple},
+  backgroundcolor=\color{yellow},
+  stringstyle=\color{orange}
+]
+      prog ::= transform(x : $\tau_1$) : $\tau_2$ { e }
+\end{lstlisting}
+\end{frame}
+
+\subsection{Grammar}
+\begin{frame}[fragile]{Grammar}
+
+\begin{verbatim}
+transform (whale :
+
+      ...
+
+   { n <- whale[[fn]] * whale[[ln]]
+   ; v <- cube(whale[[l]])
+   ; d <- v / whale[[w]]
+   ; {name = n, density = d}}
+\end{verbatim}
+
+\begin{lstlisting}[
+  mathescape,
+  columns=fullflexible,
+  basicstyle=\fontfamily{lmvtt}\selectfont,
+  backgroundcolor=\color{yellow},
+]
+    e ::= n | c | x | x[[l]] | opr ($e_1$, ... ) | {$l_1 = e_1$, ...}
+* $new!$ * | x <- e | x[[l]] <- e | $e_1$ ; $e_2$
+\end{lstlisting}
+
+\end{frame}
+
+\subsection{Statistical operations}
+\begin{frame}[fragile]{Statistical operations}
+
+\begin{itemize}
+\item \textbf{Unary operations}: \verb|log, sqr, sqrt, reciprocal| on numbers; \verb|not|
+on booleans (zero or non-zero numbers, more discussion in design doc).
+\item \textbf{Interactions}: \verb|+, -, *, /, ==| on a pair of numerical expressions; 
+\verb|and, or, if, xor| on a pair of booleans, and \verb|==, concat| on a pair 
+of categories.
+\item \textbf{Conditionals}: \verb|if| statements over booleans / (possibly zero) numbers
+\item \textbf{Others}(future work): library functions like \verb|melt| and friends from \verb|reshape2| etc. 
+\end{itemize}
+
+\end{frame}
+% 
+% \subsection{Statistical operations}
+% \begin{frame}[fragile]{Statistical operations}
+% 
+% \begin{table}
+% %\centering
+% \begin{tabular}{l|r|r|r}
+%  Whale       & 2013 & 2014 & 2015 \\
+%  \hline
+%  BigWill     & 42   & 45   & 44   \\
+%  LilWill     & 15   & 23   & 33   \\
+%  BigWhitney  & 40   & 43   & 42   \\
+%  LilWhitney  &  2   & 10   & 21   \\
+% \end{tabular}
+% \caption{\label{tab:whale}Length log for a whale family, long form}
+% \end{table}
+% \end{frame}
+% 
+% \subsection{Statistical operations}
+% \begin{frame}[fragile]{Statistical operations}
+% \begin{table}
+% %\centering
+% \begin{tabular}{l|r}
+%  Whale       & length \\
+%  \hline
+%  BigWill 13  & 42   \\
+%  BigWill 14  & 45   \\
+%  BigWill 15  & 44   \\
+%  LilWill 13  & 15   \\
+%  LilWill 14  & 23   \\
+%  LilWill 15  & 33   \\
+%  ...         & ...
+% \end{tabular}
+% \caption{\label{tab:whale}Length log for a whale family, short form}
+% \end{table}
+% \end{frame}
+% 
+% \subsection{Statistical operations}
+% \begin{frame}[fragile]{Nope}
+% \begin{itemize}
+% \item Hard to reason about privacy properties (is it per-row?)
+% \item Library functions written in R, not in \tname{}
+% \end{itemize}
+% \end{frame}
+
+\subsection{Type System}
+\begin{frame}[fragile]{Type System}
+
+\begin{verbatim}
+transform (whale :
+         { ln : C["Will", "Whitney"]
+         , fn : C["Big", "Lil"]
+         , l  : N[1, 100] 
+         , w  : N[1, 50]})
+
+         { name    : C["BigWill", "BigWhitney", 
+                       "LilWill", "LilWhitney"]
+         , density : N[0.02, 20000] }
+
+    ...
+\end{verbatim}
+
+\begin{lstlisting}[
+  mathescape,
+  columns=fullflexible,
+  basicstyle=\fontfamily{lmvtt}\selectfont,
+  keywordstyle=\bfseries\color{green},
+  commentstyle=\itshape\color{purple},
+  backgroundcolor=\color{yellow},
+  stringstyle=\color{orange}
+]
+      prog ::= transform(x : $\tau_1$) : $\tau_2$ { e }
+\end{lstlisting}
+\end{frame}
+
+\subsection{Type System}
+\begin{frame}[fragile]{Type System}
+\begin{itemize}
+\item Guarantee that every program that type-checks to a type that
+      is accepted by a differentially-private algorithm preserves
+      differential privacy
+\item \textbf{Formally} :
+  If $\, \vdash \trans{x}{\tau_1}{\tau_2}{e}$, 
+  then $\forall v.$  
+          if  $v : \tau$ and $\tau \leq \tau_1$ and $\stepsto{\br{e, [x \mapsto v]}}{\br{v', m}}$
+          then  $v' : \tau'$ and $\tau' \leq \tau_2$.
+         
+\item \textbf{Translation} : for every transformation that is valid, when it 
+        takes a value that matches the (declared) input type it should return a result
+        that matches the output type. 
+\end{itemize}
+
+
+\begin{mathpar}
+\inferrule%*[right=Transformation]
+  {
+   \vdash \tau_1 \wf \\ \vdash \tau_2 \wf \\
+   \typesto{x : \tau_1}{e}{\tau'}{\Gamma} \\ \tau' \leq \tau_2
+  }
+  {\vdash \trans{x}{\tau_1}{\tau_2}{e}}
+\end{mathpar}
+
+\end{frame}
+
+\subsection{Contribution}
+\begin{frame}{Contribution}
+\begin{itemize}
+  \item Variable transformation / recode
+  \begin{itemize}
+    \item \textbf{Simple}: log, square, squareroot etc. 
+    \item \textbf{Advanced}: multivariate to univariate, remove outliers
+  \end{itemize}
+  \item Security \& privacy
+  \begin{itemize}
+    \item \textbf{Side-channel} attacks: timing, memory
+    \item \textbf{Compatibility} with DP-mechanisms
+  \end{itemize}
+  \item Documentation for users \& \dppsi{} developers \footnote{Available
+    at \homepage{}}
+\end{itemize}
+\end{frame}
+
+\subsection{Future Work}
+\begin{frame}[fragile]{Future Work 
+  \footnote{See the project document \textit{A Roadmap to \tname{} for Contributors}}}
+\begin{itemize}
+\item Verify type system soundness \& completeness
+  \begin{itemize} 
+  \item Proof assistant (Coq)
+  \item Automated tests (QuickCheck)
+  \end{itemize}
+\item Timing attack
+  \begin{itemize}
+  \item Introduce positive noise
+  \item Spend $\epsilon$ on time \footnote{See \textit{Differential Privacy Under Fire}, 
+  Haeberlen et.al. }
+  \end{itemize}
+\item Language features
+  \begin{itemize} 
+  \item User-defined operations, long-wide form conversion
+  \item R library  functions
+  \item Interesting ranges (discontinuous, infinite \dots)
+  \end{itemize}
+\item Further integration with \dppsi{} (multivariate queries \dots)
+\item More general requirement of safe variable transformation (stability)
+\item Empirically evaluation (replication etc.)
+\end{itemize}
+\end{frame}
+
+\section{Acknowledgements}
+\begin{frame}{Acknowledgements}
+James Honaker, Dan Muise, Fanny Chow, Clara Wang, Jack Landry and 
+Grace Rehaut for their valuable input on useful R operations in social science
+projects. 
+
+Alex Ozdemir, Marcelo Novaes for their support \& inspiration. 
+\end{frame}
+
+\begin{frame}[plain,c]
+%\frametitle{A first slide}
+
+\begin{center}
+\Huge Thank you!
+\end{center}
+
+\end{frame}
+
+%\begin{frame}{Readable Mathematics}
+%
+%Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
+%$$S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
+%      = \frac{1}{n}\sum_{i}^{n} X_i$$
+%denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+%
+%\end{frame}
+
+\end{document}

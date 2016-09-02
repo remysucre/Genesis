@@ -1,0 +1,23 @@
+\frametitle{Future Work \footnote {See the project document \textit {A Roadmap to \tname {} for Contributors}}}
+\begin{itemize}
+\item Verify type system soundness \& completeness
+  \begin{itemize}
+  \item Proof assistant (Coq)
+  \item Automated tests (QuickCheck)
+  \end{itemize}
+\item Timing attack
+  \begin{itemize}
+  \item Introduce positive noise
+  \item Spend $\epsilon$ on time \footnote{See \textit{Differential Privacy Under Fire},
+  Haeberlen et.al. }
+  \end{itemize}
+\item Language features
+  \begin{itemize}
+  \item User-defined operations, long-wide form conversion
+  \item R library  functions
+  \item Interesting ranges (discontinuous, infinite \dots)
+  \end{itemize}
+\item Further integration with \dppsi{} (multivariate queries \dots)
+\item More general requirement of safe variable transformation (stability)
+\item Empirically evaluation (replication etc.)
+\end{itemize}
