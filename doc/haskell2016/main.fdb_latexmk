@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1472785981 "main.tex" "main.pdf" "main" 1472785981
+["pdflatex"] 1472821734 "main.tex" "main.pdf" "main" 1472821734
   "/nix/store/rf5f17p4y0mfj6wfjizj9zqwfk3prvil-TeXLive-linkdir/share/texmf-dist/web2c/texmf.cnf" 1 31722 4f52421e59a4b9e910cf18e64c1f2b4a ""
   "/nix/store/rf5f17p4y0mfj6wfjizj9zqwfk3prvil-TeXLive-linkdir/texmf-config/fonts/map/fontname/texfonts.map" 1 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/nix/store/rf5f17p4y0mfj6wfjizj9zqwfk3prvil-TeXLive-linkdir/texmf-config/fonts/map/pdftex/updmap/pdftex.map" 1 1561318 65362bcb480f022b5e6c1354c31fef1e ""
@@ -214,16 +214,16 @@
   "/nix/store/rf5f17p4y0mfj6wfjizj9zqwfk3prvil-TeXLive-linkdir/texmf-dist/tex/latex/url/url.sty" 1 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/nix/store/rf5f17p4y0mfj6wfjizj9zqwfk3prvil-TeXLive-linkdir/texmf-dist/tex/latex/xcolor/xcolor.sty" 1 55224 a43bab84e0ac5e6efcaf9a98bde73a94 ""
   "/nix/store/rf5f17p4y0mfj6wfjizj9zqwfk3prvil-TeXLive-linkdir/texmf-dist/web2c/texmf.cnf" 1 31722 4f52421e59a4b9e910cf18e64c1f2b4a ""
-  "main.aux" 1472785981 4690 1dedb22b45e92b2107d3a57fefd3ec8c ""
-  "main.nav" 1472785981 2647 2b25b7698d1ce7c0d2c2c74e9cbe33d8 ""
-  "main.out" 1472785981 83 d39d56b08ef310121909af29fff347b7 ""
-  "main.tex" 1472785976 5043 09ca0dd56947a15c96f85b6be8e70331 ""
+  "main.aux" 1472821734 4690 1dedb22b45e92b2107d3a57fefd3ec8c ""
+  "main.nav" 1472821734 2647 2b25b7698d1ce7c0d2c2c74e9cbe33d8 ""
+  "main.out" 1472821734 83 d39d56b08ef310121909af29fff347b7 ""
+  "main.tex" 1472821729 6143 9f84f1f8d054110c7caa3fd356d26c39 ""
   "mathpartir.sty" 1472781335 15719 cf0f0fefaed9812b7f06d60c005dfb48 ""
   (generated)
   "main.out"
-  "main.toc"
-  "main.aux"
-  "main.snm"
-  "main.nav"
-  "main.pdf"
   "main.log"
+  "main.toc"
+  "main.nav"
+  "main.snm"
+  "main.pdf"
+  "main.aux"

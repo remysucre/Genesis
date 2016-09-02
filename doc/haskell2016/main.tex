@@ -93,13 +93,16 @@
 
 \begin{frame}{The Problem}
 \begin{itemize}
-\item Too much laziness \textbf{slows down} programs
+\item \textbf{Need} to add strictness annotations
   \begin{itemize}
-    \item Runtime, allocation, GC work \dots
+    \item Too much laziness \textbf{slowdown} programs: runtime, allocation, GC work \dots
+    \item ghc must be \textbf{conservative}, does not add best annotations
+    \item \textbf{Library writers} cannot know how much laziness is good
   \end{itemize}
-\item \textbf{Difficult to add} strictness annotations
+\item \textbf{Difficult} to add strictness annotations
   \begin{itemize}
-    \item Add \textbf{helpful} annotations, guarantee \textbf{soundness}
+    \item Add \textbf{helpful} annotations
+    \item Guarantee \textbf{soundness}
   \end{itemize}
 \end{itemize}
 \end{frame}
@@ -119,23 +122,18 @@
 
 \begin{frame}{Background: GA for Strictness Annotations}
   \begin{itemize}
-    \item Why is it good?
-    \item Avoid local optima
+    \item Why is it good: avoid local optima
     \item Works like a desperate Haskeller trying all kinds of different bangs
-    \item Works great if bangs work with each other in a simple way (corpus analysis)
+    \item Works great if bangs work with each other in a simple way (corpus analysis will answer this)
+    \item !! bangs can only have complex relation when they share some scope, investigate this!
   \end{itemize}
 \end{frame}
 
-\begin{frame}{The Algorithm: Representation}
+\begin{frame}{Algorithm: Representation}
   \begin{itemize}
   \item Genes \& chromosomes
-  \item Fitness Functions
-  \item Parameters
-  \item 1st Generation
-  \item New Generations
-  \item Determining a Winner
-  \item Pulling it All Together
-  \item Discussion
+  \item Fitness Functions: the user has the opportunity to optimize over any 
+                            metric Haskell RTS reports
   \end{itemize}
 \end{frame}
 
@@ -149,12 +147,23 @@
 \end{frame}
 
 \begin{frame}{The Algorithm: Pulling it All Together}
+  \begin{itemize}
+  \item List of inputs
+  \item Start demo and leave running?
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{The Algorithm: Discussion}
+  \begin{itemize}
+  \item seq, strict app etc. 
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Soundness}
+  \begin{itemize}
+  \item use example for soundness problem
+  \item requiring representitive input is good enough
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Evaluation}
@@ -164,6 +173,10 @@
 \end{frame}
 
 \begin{frame}{Evaluation: nofib benchmarks}
+  \begin{itemize}
+  \item standard benchmark, make sure \tname{} works
+  \item however, not target use (programs that have unacceptable performance)
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Evaluation: strict Haskell}
@@ -176,12 +189,21 @@
 \end{frame}
 
 \begin{frame}{Evaluation - Case Study: Aeson}
+  \begin{itemize}
+  \item Specializing libraries
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Evaluation: 10-fold Cross-validation}
+  \begin{itemize}
+  \item Stability of optimization
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Evaluation: Autobahn Performance}
+  \begin{itemize}
+  \item room for improvement: parallelization, use GHC-API
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Related Work}
@@ -193,6 +215,13 @@
 \end{frame}
 
 \begin{frame}{Future Work}
+  \begin{itemize}
+  \item Soundness
+  \item Other algorithms
+  \item Improve the tool
+  \item Learnabile?
+  \item Learn to be annotation expert
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Conclusion}
