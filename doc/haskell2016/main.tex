@@ -27,6 +27,7 @@
 
 \newcommand{\tname}{\textsc{Autobahn}}
 \newcommand{\dppsi}{\textsc{PSI}}
+\newcommand{\cut}[1]{}
 \newcommand{\stepsto}[2]{\ensuremath{#1 \Downarrow #2}}
 \newcommand{\subst}[3]{\ensuremath{#1\{#3/#2\}}}
 \newcommand{\trans}[4]{\ensuremath{\mathit{transform}(#1 : #2) :  #3 ~\{~#4~\}}}
@@ -61,8 +62,8 @@
 
 \begin{itemize}
   \item Intro. 
-  \item The Problem: Adding Strictness Annotations
-  \item Background: Strictness Annotations \& Genetic Algorithms
+  \item The Problem
+  \item Background: (Strictness Annotations) \& Genetic Algorithms
   \item The Algorithm
   \item Soundness
   \item Evaluation \& Case Study
@@ -83,40 +84,38 @@
 %\subsection{Tables and Figures}
 
 \section{Intro}
-\begin{frame}{Once Upon a Time, 2 Eager Programmers with a Lazy Program \dots}
+\begin{frame}{Once Upon a Time, 2 Eager Programmers with a Lazy Program \dots\footnote{View animation in Acrobat Reader}}
 \begin{itemize}
-\item Example code \& explanation here
-\item Annotated code \& explanation, explain laziness / bangs informally in passing
-\item ?? What kind of example do we want?
+\item 1st slide: code on the left, pic / animation on the right showing thunk building up
+\item 2nd slide: annotated code, animation showing absence of thunk
 \end{itemize}
 \end{frame}
 
-\begin{frame}{The Problem}
+\begin{frame}{The Problem \& Solutions}
 \begin{itemize}
-\item \textbf{Need} to add strictness annotations
+\item \textbf{The problem}: how much laziness?
   \begin{itemize}
-    \item Too much laziness \textbf{slowdown} programs: runtime, allocation, GC work \dots
-    \item ghc must be \textbf{conservative}, does not add best annotations
+    \item Too much laziness \textbf{slowdown programs}: thunk leak, generating ``cheap'' thunks
+    \item Too little laziness \textbf{wastes computation}, contradicts the spirit of Haskell
     \item \textbf{Library writers} cannot know how much laziness is good
   \end{itemize}
-\item \textbf{Difficult} to add strictness annotations
+\item \textbf{Solutions}: 
   \begin{itemize}
-    \item Add \textbf{helpful} annotations
-    \item Guarantee \textbf{soundness}
+    \item ghc strictness analysis: must be \textbf{conservative} for soundness
+    \item manual annotations: difficult to know \textbf{effectiveness} and \textbf{soundness}
+  \end{itemize}
+\item \textbf{\tname{}}:
+  \begin{itemize}
+    \item more aggressive in exploring strictness optimizations
+    \item helps the programmer with in the task of annotating programs: find a 
+          effective one
   \end{itemize}
 \end{itemize}
-\end{frame}
-
-\begin{frame}{Background: Laziness \& Strictness Annotations}
-  \begin{itemize}
-    \item What's a thunk, what's WHNF
-    \item Different kinds of annotations and what do they do (mention StrictHaskell)
-  \end{itemize}
 \end{frame}
 
 \begin{frame}{Background: Genetic Algorithms}
   \begin{itemize}
-    \item Introduce GA
+    \item Have a picture for GA representation \& execution
   \end{itemize}
 \end{frame}
 
@@ -153,11 +152,13 @@
   \end{itemize}
 \end{frame}
 
+\cut{
 \begin{frame}{The Algorithm: Discussion}
   \begin{itemize}
   \item seq, strict app etc. 
   \end{itemize}
 \end{frame}
+}
 
 \begin{frame}{Soundness}
   \begin{itemize}
@@ -166,24 +167,13 @@
   \end{itemize}
 \end{frame}
 
+\cut{
 \begin{frame}{Evaluation}
   \begin{itemize}
   \item Introduce benchmarks / setup
   \end{itemize}
 \end{frame}
-
-\begin{frame}{Evaluation: nofib benchmarks}
-  \begin{itemize}
-  \item standard benchmark, make sure \tname{} works
-  \item however, not target use (programs that have unacceptable performance)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Evaluation: strict Haskell}
-  \begin{itemize}
-  \item ?? Did we ever try StrictHaskell on aeson/gcSim?
-  \end{itemize}
-\end{frame}
+}
 
 \begin{frame}{Evaluation - Case Study: gcSimulator}
 \end{frame}
@@ -191,6 +181,12 @@
 \begin{frame}{Evaluation - Case Study: Aeson}
   \begin{itemize}
   \item Specializing libraries
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Evaluation: strict Haskell}
+  \begin{itemize}
+  \item ?? Did we ever try StrictHaskell on aeson/gcSim?
   \end{itemize}
 \end{frame}
 
@@ -218,16 +214,15 @@
   \begin{itemize}
   \item Soundness
   \item Other algorithms
+  \item Other annotations
   \item Improve the tool
   \item Learnabile?
   \item Learn to be annotation expert
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Conclusion}
-\end{frame}
-
 \begin{frame}{Acknowledgments}
+We thank ourselves for our hardwork. 
 \end{frame}
 
 \end{document}
