@@ -1,9 +1,20 @@
 {-# LANGUAGE BangPatterns, OverloadedStrings, ExtendedDefaultRules #-}
 
+module Result
+where
+import Rewrite
+---
 import qualified Data.Text.Lazy as L
 import Text.Html
-import Data.BitVector (BV, bitVec)
+import Data.BitVector (BV, bitVec, toBits)
 import GA
+import System.Process
+import System.Exit
+import Data.List ((\\))
+import Control.DeepSeq
+
+resultDir :: String
+resultDir = "autobahn-results/"
 
 linkToCss :: String
 linkToCss = "http://www.eecs.tufts.edu/~dan/ids/style.css"
@@ -40,18 +51,18 @@ makeTable as = table . concatHtml $ map makeTableRow as
 tableHeader :: Html
 tableHeader = tr $ (th $ toHtml "Chromosome") +++ (th $ toHtml "Performance")
 
-genResultTableEntry :: (Int, Float) -> FilePath -> Html
-genResultTableEntry (bv, score) fp = makeTableRowLink (show bv, show score) fp
+genResultTableEntry :: (Floating a, Show a) => Int -> a -> FilePath -> Html
+genResultTableEntry bv score fp = makeTableRowLink (show bv, show score) fp
 
-genResultTable :: [(BV, Float)] -> FilePath -> Html
-genResultTable chroms fp = (p $ toHtml $ "Top " ++ n ++ " chromosomes: Higher is better") +++ resultTable
+genResultTable :: (Floating a, Show a) => [a] -> [FilePath] -> Html
+genResultTable chroms fps = (p $ toHtml $ "Top " ++ n ++ " chromosomes: Higher is better") +++ resultTable
                            where
                            n = show $ length chroms
                            resultTable = table $ tableEntries
                            tableEntries = tableHeader +++ tableData
                            tableData = concatHtml $ tableDataList
-                           tableDataList = map (uncurry genResultTableEntry) (zip chroms' $ repeat fp)
-                           chroms' = map (\(n, (bv, score)) -> (n, score)) $ zip [1..] chroms
+                           tableDataList = map (uncurry $ uncurry genResultTableEntry) chroms'
+                           chroms' = zip (zip [1..] chroms) fps
 
 genParamTable :: GAConfig -> Float -> Int -> String -> Html
 genParamTable cfg diversity fitnessRuns progName = (p $ toHtml $ "Autobahn run for " ++ progName ++ " with the following configuration") +++ paramTable
@@ -69,12 +80,30 @@ genParamTable cfg diversity fitnessRuns progName = (p $ toHtml $ "Autobahn run f
                                           crossoverRateEntry = makeTableRow ("crossRate", show $ getCrossoverRate cfg)
                                           fitnessEntry = makeTableRow ("numFitnessRuns", show fitnessRuns)
 
-genResultPage :: [(BV, Float)] -> FilePath -> Maybe String -> GAConfig -> Float -> Int -> String
-genResultPage chroms fp name cfg diversity fitnessRuns = renderHtml $ headHtml +++ bodyHtml
-                                                    where bodyHtml = body $ pageTitleHtml +++ (genParamTable cfg diversity fitnessRuns progName) +++ genResultTable chroms fp
+genResultPage :: (Floating a, Show a) => [a] -> [FilePath] -> FilePath -> Maybe String -> GAConfig -> Float -> Int -> String
+genResultPage chroms fps fp name cfg diversity fitnessRuns = renderHtml $ headHtml +++ bodyHtml
+                                                    where bodyHtml = body $ pageTitleHtml +++ (genParamTable cfg diversity fitnessRuns progName) +++ genResultTable chroms fps
                                                           pageTitleHtml = h1 $ toHtml $ pageTitle progName
                                                           headHtml = genResultPageHeader progName
                                                           progName = programName fp name
 
-main :: IO ()
-main = putStr $ genResultPage [(bitVec 4 3, 1.2)] "./Main.hs" (Just "tick") (GAConfig 1 1 1 1 1 1 1 False False) 0.2 1
+createResultDir ::FilePath -> [FilePath] -> Int -> [BV] -> IO FilePath
+createResultDir projDir srcs n bvs = do
+      newPath <- return $ resultDir ++ show n ++ "/"
+      code <- system $ "mkdir -p " ++ newPath
+      progs <- sequence $ map readFile srcs
+      progs' <- sequence $ zipWith editBangs srcs (map toBits bvs)
+      -- Recover the names of the source files
+      srcs' <- return $ map (\x -> newPath ++ x) $ map (\x -> x \\ projDir) srcs
+      -- Write these new files into the new project directory
+      rnf progs `seq` sequence $ zipWith writeFile srcs' progs'
+      return newPath
+
+createResultDirForAll :: FilePath -> [FilePath] -> [[BV]] -> IO [FilePath]
+createResultDirForAll projDir srcs chroms = sequence $ map (uncurry createDirForProj) $ zip [1..] chroms
+                                 where
+                                 createDirForProj = createResultDir projDir srcs
+
+
+-- main :: IO ()
+-- main = putStr $ genResultPage [1.2] "./Main.hs" (Just "tick") (GAConfig 1 1 1 1 1 1 1 False False) 0.2 1
