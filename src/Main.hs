@@ -70,7 +70,7 @@ cliCfg = do
 
 readCfg :: FilePath -> IO Cfg
 readCfg = undefined
-{-
+
 main :: IO () 
 main = do 
   hSetBuffering stdout LineBuffering
@@ -83,10 +83,6 @@ main = do
   gmain projDir (read pop, read gen, read arch)
   putStrLn $ "Optimization finished, please inspect and select candidate changes "
         ++ "(found in AutobahnResults under project root)"
--}
-
-main :: IO ()
-main = writeFile "test.html" $ genResultPage [1.5, 1.2] ["autobahn-results/1", "autobahn-results/2"] "./Main.hs" (Just "tick") (GAConfig 1 1 1 1 1 1 1 False False) 0.2 1
 
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
