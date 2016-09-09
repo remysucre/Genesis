@@ -12,6 +12,7 @@ import System.Process
 import System.Exit
 import Data.List ((\\))
 import Control.DeepSeq
+import Debug.Trace
 
 resultDir :: String
 resultDir = "autobahn-results/"
@@ -82,13 +83,15 @@ genParamTable cfg diversity fitnessRuns progName = (p $ toHtml $ "Autobahn run f
 
 genResultPage :: (Floating a, Show a) => [a] -> [FilePath] -> FilePath -> Maybe String -> GAConfig -> Float -> Int -> String
 genResultPage chroms fps fp name cfg diversity fitnessRuns = renderHtml $ headHtml +++ bodyHtml
-                                                    where bodyHtml = body $ pageTitleHtml +++ (genParamTable cfg diversity fitnessRuns progName) +++ genResultTable chroms fps
+                                                    where bodyHtml = body $ pageTitleHtml +++ (genParamTable cfg diversity fitnessRuns progName) +++ results
+                                                          results = genResultTable chroms fps
                                                           pageTitleHtml = h1 $ toHtml $ pageTitle progName
                                                           headHtml = genResultPageHeader progName
                                                           progName = programName fp name
 
-createResultDir ::FilePath -> [FilePath] -> Int -> [BV] -> IO FilePath
-createResultDir projDir srcs n bvs = do
+createResultDir ::FilePath -> [FilePath] -> Int -> BV -> IO FilePath
+createResultDir projDir srcs n bv = do
+      bvs <- return $ [bv]
       newPath <- return $ resultDir ++ show n ++ "/"
       code <- system $ "mkdir -p " ++ newPath
       progs <- sequence $ map readFile srcs
@@ -99,11 +102,8 @@ createResultDir projDir srcs n bvs = do
       rnf progs `seq` sequence $ zipWith writeFile srcs' progs'
       return newPath
 
-createResultDirForAll :: FilePath -> [FilePath] -> [[BV]] -> IO [FilePath]
-createResultDirForAll projDir srcs chroms = sequence $ map (uncurry createDirForProj) $ zip [1..] chroms
+createResultDirForAll :: FilePath -> [FilePath] -> [BV] -> IO [FilePath]
+createResultDirForAll projDir srcs chroms = sequence $ map (uncurry createDirForProj) $ inputs
                                  where
+                                 inputs = zip [1..] chroms
                                  createDirForProj = createResultDir projDir srcs
-
-
--- main :: IO ()
--- main = putStr $ genResultPage [1.2] "./Main.hs" (Just "tick") (GAConfig 1 1 1 1 1 1 1 False False) 0.2 1
