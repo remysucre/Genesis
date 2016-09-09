@@ -127,7 +127,7 @@ gmain projDir (pop, gens, arch) = do
   -- Write result page
     es' <- return $ filter (\x -> fst x /= Nothing) es
     bangs <- return $ (map snd es') :: IO [BangVec]
-    newFps <- createResultDirForAll projDir ["Main.hs"] [bangs]
+    newFps <- createResultDirForAll projDir [projDir ++ "/Main.hs"] bangs
     f <- return $ map fst es'
     scores <- return $ map getScore f
     writeFile (resultDir ++ "result.html") $ genResultPage scores newFps projDir Nothing cfg 0.0 1
@@ -136,6 +136,7 @@ gmain projDir (pop, gens, arch) = do
        getScore s = case s of
                         Nothing -> error "filter should have removed all Nothing"
                         Just n -> n
+
 -- Experiments to tune Genetic Algorithm parameters
 --
 emain :: IO ()
