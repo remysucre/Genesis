@@ -58,13 +58,18 @@ cliCfg :: IO Cfg
 cliCfg = do 
   putStrLn "No config.atb file found, please specify parameters as prompted"
   putStrLn "<Enter> to use [defaults]"
-  putStrLn "Time alloted for Autobahn [3h]:" -- TODO add macros for defaults
+  putStr "Time alloted for Autobahn [3h]:" -- TODO add macros for defaults
   timeLimit <- readLnWDefault "3h"
-  putStrLn "Estimated bangs to change (add/remove) [3]:"
-  putStrLn "File(s) to add/remove bangs in [\"Main.hs\"]:"
-  putStrLn "Performance metric to optimize [\"runtime\"]:"
-  putStrLn "Representative input data & arguments [no input/arguments]:"
-  putStrLn "Times to run program for fitness measurement [1]:"
+  putStr "Estimated bangs to change (add/remove) [3]:"
+  numBangs <- readLnWDefault 3
+  putStr "File(s) to add/remove bangs in [\"Main.hs\"]:"
+  srcs <- readLnWDefault ["Main.hs"]
+  putStr "Performance metric to optimize [\"runtime\"]:"
+  metric <- readLnWDefault "runtime"
+  putStr "Representative input data & arguments [no input/arguments]:"
+  args <- readLnWDefault ([] :: [String])
+  putStr "Times to run program for fitness measurement [1]:"
+  nRuns <- readLnWDefault 1
   return undefined
 
 readCfg :: FilePath -> IO Cfg
