@@ -54,6 +54,22 @@ fitness projDir bangVec = do
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed-}
 
+heuristic :: String -> Double -> Double -> Cfg
+heuristic projDir baseTime timeLimit = if n > 2 
+                                       then (projDir, n+1, n-1, n-2)
+                                       else (projDir, n, n, (n-1))
+                                       where
+                                       n = (round $ timeLimit /  2 * (2 * baseTime)) :: Int
+                                           
+fromTimeToCfg :: String -> Int -> IO Cfg
+fromTimeToCfg projDir timeLimit = do
+                          buildProj projDir
+                          baseTime <- benchmark projDir reps
+                          -- Coerce from Int to Double
+                          timeLimit' <- (return $ fromInteger $ toInteger timeLimit) :: IO Double
+                          -- Determine the configuration from the time limit and the base time
+                          return $ heuristic projDir baseTime timeLimit'
+
 cliCfg :: IO Cfg
 cliCfg = do 
   putStrLn "No config.atb file found, please specify parameters as prompted"
