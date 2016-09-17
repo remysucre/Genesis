@@ -16,13 +16,13 @@ import System.Directory
 import Text.Read
 import Control.DeepSeq
 
+import Debug.Trace
+
 reps :: Int64
 reps = runs
 
 cfgFile :: FilePath
 cfgFile = "config.atb"
-
-type Cfg = (FilePath, Int, Int, Int) -- projDir, pop, gen, arch
 
 readLnWDefault :: Read a => a -> IO a
 readLnWDefault def = do
@@ -54,22 +54,6 @@ fitness projDir bangVec = do
     let (useCliSeed, cliSeed) = (False, 0 :: Int)
         seed = if useCliSeed then cliSeed else randomSeed-}
 
-heuristic :: String -> Double -> Double -> Cfg
-heuristic projDir baseTime timeLimit = if n > 2 
-                                       then (projDir, n+1, n-1, n-2)
-                                       else (projDir, n, n, (n-1))
-                                       where
-                                       n = (round $ timeLimit /  2 * (2 * baseTime)) :: Int
-                                           
-fromTimeToCfg :: String -> Int -> IO Cfg
-fromTimeToCfg projDir timeLimit = do
-                          buildProj projDir
-                          baseTime <- benchmark projDir reps
-                          -- Coerce from Int to Double
-                          timeLimit' <- (return $ fromInteger $ toInteger timeLimit) :: IO Double
-                          -- Determine the configuration from the time limit and the base time
-                          return $ heuristic projDir baseTime timeLimit'
-
 cliCfg :: IO Cfg
 cliCfg = do 
   putStrLn "No config.atb file found, please specify parameters as prompted"
@@ -77,19 +61,25 @@ cliCfg = do
   putStr "Time alloted for Autobahn [3h]:" -- TODO add macros for defaults
   timeLimit <- readLnWDefault "3h"
   putStr "Estimated bangs to change (add/remove) [3]:"
-  numBangs <- readLnWDefault 3
+  numBangs <- readLnWDefault defaultCoverage
   putStr "File(s) to add/remove bangs in [\"Main.hs\"]:"
-  srcs <- readLnWDefault ["Main.hs"]
+  srcs <- readLnWDefault defaultCoverage
   putStr "Performance metric to optimize [\"runtime\"]:"
   metric <- readLnWDefault "runtime"
   putStr "Representative input data & arguments [no input/arguments]:"
   args <- readLnWDefault ([] :: [String])
   putStr "Times to run program for fitness measurement [1]:"
   nRuns <- readLnWDefault 1
-  return undefined
+  fromTimeToCfg defaultProjDir (fromInteger defaultTimeLimit)
 
 readCfg :: FilePath -> IO Cfg
-readCfg = undefined
+readCfg fp = do {
+          text <- readFile fp
+          ; x <- return $ parseCfgFile fp 1 1 text
+          ; case x of
+                Left err -> error $ show err
+                Right ast -> trace (show ast) $ foo ast
+          }
 
 main :: IO () 
 main = do 
