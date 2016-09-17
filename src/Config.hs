@@ -3,6 +3,7 @@ module Config where
 import GA
 import System.Random
 import Data.Int
+import Profiling
 
 import Text.ParserCombinators.Parsec
 import qualified Text.Parsec.String as PS
@@ -45,19 +46,85 @@ cfg = GAConfig
 
 g = mkStdGen 0 -- random generator
 
+type Cfg = (FilePath, Int, Int, Int) -- projDir, pop, gen, arch
+
+defaultProjDir :: FilePath
+defaultProjDir = "."
+
+defaultTimeLimit :: Integer
+defaultTimeLimit = toInteger $ 3 * 60 * 60
+
+defaultConfidence :: Integer
+defaultConfidence = toInteger 0
+
+defaultCoverage :: [String]
+defaultCoverage = ["Main.hs"]
+
+defaultMetric :: MetricType
+defaultMetric = RUNTIME
+
+defaultInput :: [String]
+defaultInput = []
+
+defaultFitRuns :: Integer
+defaultFitRuns = toInteger 1
+
+heuristic :: String -> Double -> Double -> Cfg
+heuristic projDir baseTime timeLimit = if n > 2 
+                                       then (projDir, n+1, n-1, n-2)
+                                       else (projDir, n, n, (n-1))
+                                       where
+                                       n = (round $ timeLimit /  2 * (2 * baseTime)) :: Int
+                                           
+fromTimeToCfg :: String -> Int -> IO Cfg
+fromTimeToCfg projDir timeLimit = do
+                          buildProj projDir
+                          baseTime <- benchmark projDir runs
+                          -- Coerce from Int to Double
+                          timeLimit' <- (return $ fromInteger $ toInteger timeLimit) :: IO Double
+                          -- Determine the configuration from the time limit and the base time
+                          return $ heuristic projDir baseTime timeLimit'
+
+
 -- Thanks to Matthew Ahrens for the Parsec boilerplate
 -- Thanks to Karl Cronburg for the help with Parsec rules
 
 data MetricType = ALLOC | GC | RUNTIME
 
+instance Show MetricType where
+    show ALLOC = "alloc"
+    show GC = "gc"
+    show RUNTIME = "runtime"
+
 data CfgAST = BUDGET Integer
             | CONFIDENCE Integer
+            | DIR String
             | SRCS [String]
             | METRIC MetricType
             | INPUTS [String]
-            | FITRUNS Int
-            | FILE [CfgAST]
-            
+            | FITRUNS Integer
+            | FILE [CfgAST] deriving Show
+
+foo :: [CfgAST] -> IO Cfg
+foo ast = fromTimeToCfg projDir timeLimit
+          where
+          timeLimit = (fromInteger $ getBudget ast) :: Int
+          projDir = getProjDir ast
+          
+getBudget :: [CfgAST] -> Integer
+getBudget ast = foldl f defaultTimeLimit ast
+                where
+                f base x = case x of
+                              BUDGET n -> n
+                              otherwise -> base
+
+getProjDir :: [CfgAST] -> String
+getProjDir ast = foldl f defaultProjDir ast
+                 where
+                 f dir x = case x of
+                              DIR fp -> fp
+                              otherwise -> dir
+
 parseCfgFile :: SourceName -> Line -> Column -> String -> Either ParseError [CfgAST]
 parseCfgFile fileName ln col text = 
   PP.parse cfgDefs fileName text
@@ -94,7 +161,7 @@ configOption = do {
 
 configTopLevel :: PS.Parser CfgAST
 configTopLevel = budgetRule <||> confidenceRule <||> coverageRule
-               <||> targetMetricRule
+               <||> targetMetricRule <||> inputArgRule <||> fitnessRunRule
 
 budgetRule :: PS.Parser CfgAST
 budgetRule = do {
@@ -121,6 +188,14 @@ coverageRule = do {
                ; return $ SRCS xs
                }
 
+projDirRule :: PS.Parser CfgAST
+projDirRule = do {
+               reserved "projectDirectory"
+               ; reservedOp "="
+               ; fp <- stringLiteral
+               ; return $ DIR fp
+               }
+
 targetMetricRule :: PS.Parser CfgAST
 targetMetricRule = do {
                    reserved "targetMetric"
@@ -137,7 +212,24 @@ parseMetric = do {
                   "runtime"   -> return $ RUNTIME
                   "gc"        -> return $ GC
               }
----- Lexer ----
+
+inputArgRule :: PS.Parser CfgAST
+inputArgRule = do {
+               reserved "inputArg"
+               ; reservedOp "="
+               ; xs <- many stringLiteral
+               ; return $ INPUTS xs
+               }
+
+fitnessRunRule :: PS.Parser CfgAST
+fitnessRunRule = do {
+                 reserved "fitnessRuns"
+                 ; reservedOp "="
+                 ; x <- natural
+                 ; return $ FITRUNS x
+                 }
+
+---- Lexer ----(
 
 lexer :: PT.TokenParser ()
 lexer = PT.makeTokenParser $ haskellStyle
