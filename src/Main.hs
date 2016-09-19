@@ -59,7 +59,7 @@ cliCfg = do
   putStrLn "No config.atb file found, please specify parameters as prompted"
   putStrLn "<Enter> to use [defaults]"
   putStr "Time alloted for Autobahn [3h]:" -- TODO add macros for defaults
-  timeLimit <- readLnWDefault "3h"
+  timeLimit <- readLnWDefault $ (show defaultTimeLimit) ++ "h"
   putStr "Estimated bangs to change (add/remove) [3]:"
   numBangs <- readLnWDefault defaultCoverage
   putStr "File(s) to add/remove bangs in [\"Main.hs\"]:"
@@ -86,11 +86,11 @@ main = do
   hSetBuffering stdout LineBuffering
   print "Configure optimization..."
   cfgExist <- doesFileExist cfgFile
-  cfg <- if cfgExist then readCfg cfgFile else cliCfg
+  (projDir, pop, gen, arch) <- if cfgExist then readCfg cfgFile else cliCfg
   putStrLn "Setting up optimization process..." -- TODO run project to determine GA config
   putStrLn "Starting optimization process..."
-  [projDir, pop, gen, arch] <- getArgs
-  gmain projDir (read pop, read gen, read arch)
+  --  [projDir, pop, gen, arch] <- getArgs
+  gmain projDir (pop, gen, arch) -- (read pop, read gen, read arch)
   putStrLn $ "Optimization finished, please inspect and select candidate changes "
         ++ "(found in AutobahnResults under project root)"
 
