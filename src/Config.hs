@@ -52,7 +52,10 @@ defaultProjDir :: FilePath
 defaultProjDir = "."
 
 defaultTimeLimit :: Integer
-defaultTimeLimit = toInteger $ 3 * 60 * 60
+defaultTimeLimit = toInteger $ 3
+
+defaultTimeLimitSec :: Integer
+defaultTimeLimitSec = defaultTimeLimit * 60 * 60
 
 defaultConfidence :: Integer
 defaultConfidence = toInteger 0
@@ -69,20 +72,28 @@ defaultInput = []
 defaultFitRuns :: Integer
 defaultFitRuns = toInteger 1
 
+{-
+ - Determine the configuration from the time limit and the base time
+ - Derived from 
+ -    (1) the ratio of generations : population is 4 : 3 and
+ -    (2) generations * population * (2 * baseTime) = timeLimit
+-}
 heuristic :: String -> Double -> Double -> Cfg
-heuristic projDir baseTime timeLimit = if n > 2 
-                                       then (projDir, n+1, n-1, n-2)
-                                       else (projDir, n, n, (n-1))
+heuristic projDir baseTime timeLimit = (projDir, round $ pop, round $ gen, round $ arch)
                                        where
-                                       n = (round $ timeLimit /  2 * (2 * baseTime)) :: Int
+                                       n = (timeLimit /  (2 * baseTime)) :: Double
+                                       pop = (sqrt $ (3 * n)/4) :: Double
+                                       gen = (4 * pop)/3 :: Double
+                                       arch = if pop/2 <= 0 then 1 else (pop/2)
                                            
-fromTimeToCfg :: String -> Int -> IO Cfg
+fromTimeToCfg :: String -> Double -> IO Cfg
 fromTimeToCfg projDir timeLimit = do
                           buildProj projDir
                           baseTime <- benchmark projDir runs
-                          -- Coerce from Int to Double
-                          timeLimit' <- (return $ fromInteger $ toInteger timeLimit) :: IO Double
-                          -- Determine the configuration from the time limit and the base time
+                          -- Remove the number of program runs per chromosome from time limit
+                          n <- return . fromInteger . toInteger $ runs :: IO Double
+                          timeLimit' <- (return $ timeLimit / n)
+
                           return $ heuristic projDir baseTime timeLimit'
 
 
@@ -108,14 +119,14 @@ data CfgAST = BUDGET Integer
 foo :: [CfgAST] -> IO Cfg
 foo ast = fromTimeToCfg projDir timeLimit
           where
-          timeLimit = (fromInteger $ getBudget ast) :: Int
+          timeLimit = (fromInteger $ getBudget ast) :: Double
           projDir = getProjDir ast
           
 getBudget :: [CfgAST] -> Integer
 getBudget ast = foldl f defaultTimeLimit ast
                 where
                 f base x = case x of
-                              BUDGET n -> n
+                              BUDGET n -> n * 60 * 60
                               otherwise -> base
 
 getProjDir :: [CfgAST] -> String
@@ -160,7 +171,7 @@ configOption = do {
                }
 
 configTopLevel :: PS.Parser CfgAST
-configTopLevel = budgetRule <||> confidenceRule <||> coverageRule
+configTopLevel = projDirRule <||> budgetRule <||> confidenceRule <||> coverageRule
                <||> targetMetricRule <||> inputArgRule <||> fitnessRunRule
 
 budgetRule :: PS.Parser CfgAST
@@ -229,13 +240,14 @@ fitnessRunRule = do {
                  ; return $ FITRUNS x
                  }
 
----- Lexer ----(
+---- Lexer ----
 
 lexer :: PT.TokenParser ()
 lexer = PT.makeTokenParser $ haskellStyle
   { reservedOpNames = ["="]
     , reservedNames = ["budgetTime", "confidence", "coverage",
-                       "targetMetric", "inputArg", "fitnessRuns"]
+                       "targetMetric", "inputArg", "fitnessRuns",
+                       "projectDirectory"]
   }
 
 whiteSpace = PT.whiteSpace  lexer
@@ -247,5 +259,5 @@ natural = PT.natural lexer
 reserved = PT.reserved lexer
 reservedOp = PT.reservedOp lexer
 symbol = PT.symbol lexer
--- Do the rest
+
 
