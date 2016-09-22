@@ -15,7 +15,7 @@ import Control.DeepSeq
 import Debug.Trace
 
 resultDir :: String
-resultDir = "autobahn-results/"
+resultDir = "autobahn-results"
 
 linkToCss :: String
 linkToCss = "http://www.eecs.tufts.edu/~dan/ids/style.css"
@@ -81,17 +81,19 @@ genParamTable cfg diversity fitnessRuns progName = (p $ toHtml $ "Autobahn run f
                                           crossoverRateEntry = makeTableRow ("crossRate", show $ getCrossoverRate cfg)
                                           fitnessEntry = makeTableRow ("numFitnessRuns", show fitnessRuns)
 
-genResultPage :: (Floating a, Show a) => [a] -> [FilePath] -> FilePath -> Maybe String -> GAConfig -> Float -> Int -> String
-genResultPage chroms fps fp name cfg diversity fitnessRuns = renderHtml $ headHtml +++ bodyHtml
-                                                    where bodyHtml = body $ pageTitleHtml +++ (genParamTable cfg diversity fitnessRuns progName) +++ results
-                                                          results = genResultTable chroms fps
-                                                          pageTitleHtml = h1 $ toHtml $ pageTitle progName
-                                                          headHtml = genResultPageHeader progName
-                                                          progName = programName fp name
+
+genResultPage :: (Floating a, Show a) => FilePath -> [a] -> [FilePath] -> FilePath -> Maybe String -> GAConfig -> Float -> Int -> IO ()
+genResultPage projDir chroms fps fp name cfg diversity fitnessRuns = writeFile (projDir ++ "/" ++ resultDir ++ "/" ++ "result.html") $ htmlPage
+                      where htmlPage = renderHtml $ headHtml +++ bodyHtml
+                            bodyHtml = body $ pageTitleHtml +++ (genParamTable cfg diversity fitnessRuns progName) +++ results
+                            results = genResultTable chroms fps
+                            pageTitleHtml = h1 $ toHtml $ pageTitle progName
+                            headHtml = genResultPageHeader progName
+                            progName = programName fp name
 
 createResultDir ::FilePath -> [FilePath] -> Int -> [BV] -> IO FilePath
 createResultDir projDir srcs n bvs = do
-      newPath <- return $ resultDir ++ show n ++ "/"
+      newPath <- return $ projDir ++ "/" ++ resultDir ++ "/" ++ show n ++ "/"
       code <- system $ "mkdir -p " ++ newPath
       progs <- sequence $ map readFile srcs
       progs' <- sequence $ zipWith editBangs srcs (map toBits bvs)

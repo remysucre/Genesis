@@ -34,8 +34,8 @@ checkBaseProgram baseTime baseMetric = if baseTime == -1
                                                  "Autobahn cannot optimize."
                                             else putStr $ "Base measurement is: " ++ (show baseTime)
 
-fitness :: FilePath -> Double -> MetricType -> [FilePath] -> [BangVec] -> IO Time
-fitness projDir timeLimit metric files bangVecs = do
+fitness :: FilePath -> String -> Double -> Int64 -> MetricType -> [FilePath] -> [BangVec] -> IO Time
+fitness projDir args timeLimit reps metric files bangVecs = do
   -- Read original
     let absPaths = map (\x -> projDir ++ "/" ++ x) files
     !progs  <- sequence $ map readFile absPaths
@@ -44,7 +44,7 @@ fitness projDir timeLimit metric files bangVecs = do
     rnf progs `seq` sequence $ map (uncurry writeFile) $ zip absPaths progs'
   -- Benchmark new
     buildProj projDir
-    !(_, newMetricStat) <- benchmark projDir timeLimit metric reps
+    !(_, newMetricStat) <- benchmark projDir args timeLimit metric reps
   -- Recover original
     !_ <- sequence $ map (uncurry writeFile) $ zip absPaths progs
     return newMetricStat
@@ -64,9 +64,13 @@ main = do
 gmain :: Cfg -> IO ()
 gmain autobahnCfg = do
     let projDir = projectDir autobahnCfg
-    let cfg = createGAConfig autobahnCfg
-    let metric = fitnessMetric autobahnCfg
-    let files = coverage autobahnCfg
+        cfg = createGAConfig autobahnCfg
+        metric = fitnessMetric autobahnCfg
+        files = coverage autobahnCfg
+        fitnessReps = fitnessRuns autobahnCfg
+        args = inputArgs autobahnCfg
+        baseTime  = getBaseTime autobahnCfg
+        baseMetric  = getBaseMetric autobahnCfg
     putStrLn $ "Optimizing " ++ projDir
     putStrLn $ ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
     putStrLn $ "pop: " ++ (show $ pop autobahnCfg)
@@ -84,11 +88,12 @@ gmain autobahnCfg = do
     
     defaultTimeout <- return $ timeLimit / (fromInteger . toInteger $ gen autobahnCfg) / (fromInteger . toInteger $ pop autobahnCfg) / (fromInteger defaultFitRuns)
     
-    (baseTime, baseMetric) <- benchmark projDir defaultTimeout metric reps
+    (baseTime, baseMetric) <- benchmark projDir args defaultTimeout metric reps
     
     checkBaseProgram baseTime baseMetric
     
     let absPaths = map (\x -> projDir ++ "/" ++ x) files
+        fitnessTimeLimit = deriveFitnessTimeLimit baseTime
     -- putStr "Basetime is: "; print baseTime
 
   -- Pool: bit vector representing original progam
@@ -100,7 +105,7 @@ gmain autobahnCfg = do
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
     es <- evolveVerbose g cfg vecPool (baseMetric,
-                                       fitness projDir (deriveFitnessTimeLimit baseTime) metric files)
+                                       fitness projDir args fitnessTimeLimit fitnessReps metric files)
     let e = snd $ head es :: [BangVec]
     progs' <- sequence $ map (uncurry editBangs) $ zip absPaths (map B.toBits e)
 
@@ -120,7 +125,7 @@ gmain autobahnCfg = do
     newFps <- createResultDirForAll projDir absPaths bangs
     f <- return $ map fst es'
     scores <- return $ map getScore f
-    writeFile (resultDir ++ "result.html") $ genResultPage scores newFps projDir Nothing cfg 0.0 1
+    genResultPage projDir scores newFps projDir Nothing cfg 0.0 1
 
     where
        getScore s = case s of

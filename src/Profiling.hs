@@ -46,11 +46,12 @@ statsFromMetric ALLOC   stats = let Just bytes = lookup "bytes allocated" stats
 statsFromMetric GC      stats = let Just gcs = lookup "GC_cpu_seconds" stats
                                 in read gcs
 
-benchmark :: FilePath -> Double -> MetricType -> Int64 -> IO (Double, Double)
-benchmark projDir timeLimit metric runs =  do
+benchmark :: FilePath -> String -> Double -> MetricType -> Int64 -> IO (Double, Double)
+benchmark projDir args timeLimit metric runs =  do
   let runProj = "timeout " ++ (show . round $ timeLimit) ++ "s ./" ++ projDir ++ "/dist/build/" 
                      ++ projDir ++ "/" ++ projDir 
                      ++ " -q +RTS -ttiming.temp --machine-readable"
+                     ++ args
                      ++ "> /dev/null"
       cleanProj = "rm timing.temp"
   exitc <- system runProj 

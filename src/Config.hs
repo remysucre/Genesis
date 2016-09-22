@@ -58,6 +58,8 @@ data Cfg = Cfg { projectDir :: String
                , pop :: Int
                , gen :: Int
                , arch :: Int
+               , fitnessRuns :: Int64
+               , inputArgs :: String
 {-             , diverRate :: Float
                , mutRate :: Float
                , xRate :: Float -}
@@ -85,7 +87,7 @@ defaultFitRuns :: Integer
 defaultFitRuns = toInteger 1
 
 emptyCfg :: Cfg
-emptyCfg = Cfg defaultProjDir defaultTimeLimitSec (0-1) (words defaultCoverage) defaultMetric (0-1) 1 1 1
+emptyCfg = Cfg defaultProjDir defaultTimeLimitSec (0-1) (words defaultCoverage) defaultMetric (0-1) 1 1 1 (fromInteger defaultFitRuns) defaultInput
 
 deriveFitnessTimeLimit :: Double -> Double
 deriveFitnessTimeLimit = (*) 2
@@ -166,29 +168,42 @@ readCfg fp = do {
  -    (1) the ratio of generations to population, 4 : 3, from the paper and
  -    (2) generations * population * (2 * baseTime) = timeLimit
  -}
-heuristic :: String -> Double -> Double -> (Int, Int, Int)
-heuristic projDir baseTime timeLimit = ((round pop), (round gen), (round arch))
+heuristic :: String -> Double -> Double -> Int64 -> (Int, Int, Int)
+heuristic projDir baseTime timeLimit nRuns = ((round pop), (round gen), (round arch))
                                        where
-                                       fitnessTimeLimit = deriveFitnessTimeLimit baseTime
+                                       fitnessTimeLimit = (fromInteger . toInteger $ nRuns) * deriveFitnessTimeLimit baseTime
                                        n = (timeLimit / fitnessTimeLimit) :: Double
                                        pop = (sqrt $ (3 * n)/4) :: Double
                                        gen = (4 * pop)/3 :: Double
                                        arch = if (round $ pop/2) <= 0 then 1 else pop/2
 
+calculateFitRuns :: String -> String -> Double -> MetricType -> (Double, Double) -> Int64 -> IO (Double, Double, Int64)
+calculateFitRuns projDir args timeLimit metric (accTime, accMetric) n = do
+                                            (baseTime, baseMetric) <- benchmark projDir args (timeLimit) metric (1 :: Int64)
+                                            let (accTime', accMetric') = (baseTime + accTime, baseMetric + accMetric)
+                                                (newTimeMean, newMetricMean)= (accTime' / (fromInteger . toInteger $ n+1), accMetric' / (fromInteger . toInteger $ n+1))
+                                                percChange = abs $ (currentTimeMean - newTimeMean)/currentTimeMean
+                                            if baseTime < 0 then error "Program did not run" else print newTimeMean
+                                            if percChange <= 0.05
+                                              then return $ (newTimeMean, newMetricMean, n)
+                                              else calculateFitRuns projDir args timeLimit metric (accTime', accMetric') (n + 1)
+                                            where
+                                               currentTimeMean = accTime / (fromInteger . toInteger $ n)
+
 {-
  - Convert the time budget to a number of generations,
  - population size, and archive/selection size.
  -}
-convertTimeToGens :: String -> Double -> MetricType -> IO (Int, Int, Int, Double, Double)
-convertTimeToGens projDir timeLimit metric = do
+convertTimeToGens :: String -> String -> Double -> MetricType -> IO (Int, Int, Int, Int64, Double, Double)
+convertTimeToGens projDir args timeLimit metric = do
                           buildProj projDir
-                          (baseTime, baseMetric) <- benchmark projDir (timeLimit) metric runs
+                          (baseTime, baseMetric) <- benchmark projDir args (timeLimit) metric 1
+                          (meanTime, meanMetric, nRuns) <- calculateFitRuns projDir args (timeLimit) metric (baseTime, baseMetric) 1
                           -- Remove the number of program runs per chromosome from time limit
                           n <- return . fromInteger . toInteger $ runs :: IO Double
                           timeLimit' <- (return $ timeLimit / n)
-                          (pop, gen, arch) <- return $ heuristic projDir baseTime timeLimit'
-                          return $ (pop, gen, arch, baseTime, baseMetric)
-
+                          (pop, gen, arch) <- return $ heuristic projDir meanTime timeLimit' nRuns
+                          return $ (pop, gen, arch, nRuns, meanTime, meanMetric)
 data CfgAST = BUDGET Double
             | DIR String
             | SRCS [String]
@@ -207,6 +222,7 @@ convertToCfg ((BUDGET n) : ast)   cfg = let timeInSeconds = hoursToSeconds $ n
                                         in convertToCfg ast $ cfg { timeBudget = timeInSeconds }
 convertToCfg ((SRCS srcs) : ast) cfg = convertToCfg ast $ cfg { coverage = srcs }
 convertToCfg ((FILE inner) : ast) cfg = convertToCfg ast $ convertToCfg inner cfg
+convertToCfg ((INPUTS args) : ast) cfg = convertToCfg ast $ cfg { inputArgs = concat args }
 -- Ignore the other AST Nodes
 convertToCfg ((_) : ast)          cfg = convertToCfg ast cfg
 
@@ -214,12 +230,15 @@ calculateInputs :: Cfg -> IO Cfg
 calculateInputs cfg = do
             metric <- return $ fitnessMetric cfg
             timeLimit <- return $ timeBudget cfg
-            (pop', gen', arch', baseTime, baseMetric) <- convertTimeToGens (projectDir cfg) timeLimit metric
+            let projDir = projectDir cfg
+                args = inputArgs cfg
+            (pop', gen', arch', nRuns, baseTime, baseMetric) <- convertTimeToGens projDir args timeLimit metric
             return $ cfg { getBaseTime = baseTime
                          , getBaseMetric = baseMetric
                          , pop = pop'
                          , gen = gen'
                          , arch = arch'
+                         , fitnessRuns = nRuns
                          }
 
 parseCfgFile :: SourceName -> Line -> Column -> String -> Either ParseError [CfgAST]
