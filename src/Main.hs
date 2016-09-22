@@ -17,117 +17,107 @@ import System.Directory
 import Text.Read
 import Control.DeepSeq
 
+import Debug.Trace
+
 reps :: Int64
 reps = runs
 
 cfgFile :: FilePath
 cfgFile = "config.atb"
 
-type Cfg = (FilePath, Int, Int, Int) -- projDir, pop, gen, arch
+checkBaseProgram :: Double -> Double -> IO ()
+checkBaseProgram baseTime baseMetric = if baseTime == -1
+                                       then error $ "Base program ran longer than expected. " ++
+                                                  "We suggest a larger time budget."
+                                       else if baseMetric <= 0
+                                            then error $ "Base measurement is negligible (0). " ++
+                                                 "Autobahn cannot optimize."
+                                            else putStr $ "Base measurement is: " ++ (show baseTime)
 
-readLnWDefault :: Read a => a -> IO a
-readLnWDefault def = do
-  cont <- getLine
-  case readMaybe cont 
-    of Nothing -> return def
-       Just res -> return res
-
-fitness :: FilePath -> BangVec -> IO Time
-fitness projDir bangVec = do
+fitness :: FilePath -> Double -> MetricType -> [FilePath] -> [BangVec] -> IO Time
+fitness projDir timeLimit metric files bangVecs = do
   -- Read original
-    let mainPath = projDir ++ "/Main.hs"
-    !prog  <- readFile mainPath
+    let absPaths = map (\x -> projDir ++ "/" ++ x) files
+    !progs  <- sequence $ map readFile absPaths
   -- Rewrite from gene
-    !prog' <- editBangs mainPath (B.toBits bangVec) 
-    rnf prog `seq` writeFile mainPath prog'
+    !progs' <- sequence $ map (uncurry editBangs) $ zip absPaths (map B.toBits bangVecs) 
+    rnf progs `seq` sequence $ map (uncurry writeFile) $ zip absPaths progs'
   -- Benchmark new
     buildProj projDir
-    !newTime <- benchmark projDir reps
+    !(_, newMetricStat) <- benchmark projDir timeLimit metric reps
   -- Recover original
-    !_ <- writeFile mainPath prog
-    return newTime
-
-    {-
-  -- Random seed; credit to Cyrus Cousins
-    randomSeed <- (getStdRandom random)
-  -- TODO parse CLI arguments here.  Need to determine runs and cliSeed.  
-  -- Also parse options for genetic algorithm?
-    let (useCliSeed, cliSeed) = (False, 0 :: Int)
-        seed = if useCliSeed then cliSeed else randomSeed-}
-
-cliCfg :: IO Cfg
-cliCfg = do 
-  putStrLn "No config.atb file found, please specify parameters as prompted"
-  putStrLn "<Enter> to use [defaults]"
-  putStrLn "Time alloted for Autobahn [3h]:" -- TODO add macros for defaults
-  timeLimit <- readLnWDefault "3h"
-  putStrLn "Estimated bangs to change (add/remove) [3]:"
-  putStrLn "File(s) to add/remove bangs in [\"Main.hs\"]:"
-  putStrLn "Performance metric to optimize [\"runtime\"]:"
-  putStrLn "Representative input data & arguments [no input/arguments]:"
-  putStrLn "Times to run program for fitness measurement [1]:"
-  return undefined
-
-readCfg :: FilePath -> IO Cfg
-readCfg = undefined
-
+    !_ <- sequence $ map (uncurry writeFile) $ zip absPaths progs
+    return newMetricStat
+    
 main :: IO () 
 main = do 
   hSetBuffering stdout LineBuffering
   print "Configure optimization..."
   cfgExist <- doesFileExist cfgFile
   cfg <- if cfgExist then readCfg cfgFile else cliCfg
-  putStrLn "Setting up optimization process..." -- TODO run project to determine GA config
+  putStrLn "Setting up optimization process..."
   putStrLn "Starting optimization process..."
-  [projDir, pop, gen, arch] <- getArgs
-  gmain projDir (read pop, read gen, read arch)
+  gmain cfg
   putStrLn $ "Optimization finished, please inspect and select candidate changes "
         ++ "(found in AutobahnResults under project root)"
 
-gmain :: String -> (Int, Int, Int) -> IO ()
-gmain projDir (pop, gens, arch) = do 
+gmain :: Cfg -> IO ()
+gmain autobahnCfg = do
+    let projDir = projectDir autobahnCfg
+    let cfg = createGAConfig autobahnCfg
+    let metric = fitnessMetric autobahnCfg
+    let files = coverage autobahnCfg
     putStrLn $ "Optimizing " ++ projDir
     putStrLn $ ">>>>>>>>>>>>>>>START OPTIMIZATION>>>>>>>>>>>>>>>"
-    putStrLn $ "pop: " ++ show pop 
-    putStrLn $ "gens: " ++ show gens
-    putStrLn $ "arch: " ++ show arch 
+    putStrLn $ "pop: " ++ (show $ pop autobahnCfg)
+    putStrLn $ "gens: " ++ (show $ gen autobahnCfg)
+    putStrLn $ "arch: " ++ (show $ arch autobahnCfg)
   -- Configurations
     -- [projDir, popS, gensS, archS] <- getArgs
     -- let [pop, gens, arch] = map read [popS, gensS, archS]
-    let  cfg = GAConfig pop arch gens crossRate muteRate crossParam muteParam checkpoint rescoreArc
-
+    
   -- TODO for the future, check out criterion `measure`
   -- Get base time and pool. 
   -- Obtain base time: compile & run
     buildProj projDir
-    baseTime <- benchmark projDir reps
-    let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
+    timeLimit <- return $ timeBudget autobahnCfg
+    
+    defaultTimeout <- return $ timeLimit / (fromInteger . toInteger $ gen autobahnCfg) / (fromInteger . toInteger $ pop autobahnCfg) / (fromInteger defaultFitRuns)
+    
+    (baseTime, baseMetric) <- benchmark projDir defaultTimeout metric reps
+    
+    checkBaseProgram baseTime baseMetric
+    
+    let absPaths = map (\x -> projDir ++ "/" ++ x) files
     -- putStr "Basetime is: "; print baseTime
-    putStr "Basetime is: "; print baseTime
 
   -- Pool: bit vector representing original progam
-    prog <- readFile mainPath
+    progs <- sequence $ map readFile absPaths
     -- vecSize <- rnf prog `seq` placesToStrict mainPath
-    bs <- readBangs mainPath
-    let !vecPool = rnf prog `seq` B.fromBits bs
+    bs <- sequence $ map readBangs absPaths
+    let !vecPool = rnf progs `seq` map B.fromBits bs
 
   -- Do the evolution!
   -- Note: if either of the last two arguments is unused, just use () as a value
-    es <- evolveVerbose g cfg vecPool (baseTime, fitness projDir)
-    let e = snd $ head es :: BangVec
-    prog' <- editBangs mainPath (B.toBits e)
+    es <- evolveVerbose g cfg vecPool (baseMetric,
+                                       fitness projDir (deriveFitnessTimeLimit baseTime) metric files)
+    let e = snd $ head es :: [BangVec]
+    progs' <- sequence $ map (uncurry editBangs) $ zip absPaths (map B.toBits e)
 
   -- Write result
-    putStrLn $ "best entity (GA): " ++ (printBits $ B.toBits e)
+    putStrLn $ "best entity (GA): " ++ (unlines $ (map (printBits . B.toBits) e))
     --putStrLn prog'
-    let survivorPath = projDir ++ "Survivor.hs"
-    writeFile survivorPath prog'
+    newPath <- return $ projDir ++ "/" ++ "autobahn-survivor"
+    code <- system $ "mkdir -p " ++ newPath
+    
+    let survivorPaths = map (\x -> projDir ++ "/" ++ "autobahn-survivor/" ++ x) files
+    sequence $ map (uncurry writeFile) $ zip survivorPaths progs'
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"
 
-  -- Write result page
+      -- Write result page
     es' <- return $ filter (\x -> fst x /= Nothing) es
-    bangs <- return $ (map snd es') :: IO [BangVec]
-    newFps <- createResultDirForAll projDir [projDir ++ "/Main.hs"] bangs
+    bangs <- return $ (map snd es') :: IO [[BangVec]]
+    newFps <- createResultDirForAll projDir absPaths bangs
     f <- return $ map fst es'
     scores <- return $ map getScore f
     writeFile (resultDir ++ "result.html") $ genResultPage scores newFps projDir Nothing cfg 0.0 1
@@ -136,7 +126,7 @@ gmain projDir (pop, gens, arch) = do
        getScore s = case s of
                         Nothing -> error "filter should have removed all Nothing"
                         Just n -> n
-
+{-
 -- Experiments to tune Genetic Algorithm parameters
 --
 emain :: IO ()
@@ -148,3 +138,4 @@ emain = do
   let cfgs :: [(Int, Int, Int)]
       cfgs = [(pop, gen, arch) | pop <- [1..maxPop], gen <- [1..maxGen], arch <- [maxArch]]
   sequence_ $ map (gmain projDir) cfgs
+-}

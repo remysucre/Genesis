@@ -8,6 +8,7 @@ import System.Process
 import System.Exit
 import System.Timeout
 import GHC.Stats
+
 -- import Criterion.Main
 -- import Criterion.Measurement
 -- import Criterion.Types (measTime, measAllocated, fromInt)
@@ -15,6 +16,13 @@ import GHC.Stats
 -- 
 -- PROFILING EXTERNAL PROJECT
 --
+
+data MetricType = ALLOC | GC | RUNTIME
+
+instance Show MetricType where
+    show ALLOC = "alloc"
+    show GC = "gc"
+    show RUNTIME = "runtime"
 
 -- TODO assuming only one file Main.hs; assuming proj doesn't take input. 
 -- Build a cabal project. Project must be configured with cabal. `projDir` is in the current dir
@@ -29,9 +37,18 @@ instance NFData ExitCode
     rnf ExitSuccess = ()
     rnf (ExitFailure _) = ()
 
-benchmark :: FilePath -> Int64 -> IO Double
-benchmark projDir runs =  do
-  let runProj = "timeout 2m ./" ++ projDir ++ "/dist/build/" 
+statsFromMetric :: MetricType -> [(String, String)] -> Double
+statsFromMetric RUNTIME stats = let Just muts = lookup "mutator_cpu_seconds" stats
+                                    Just gcs = lookup "GC_cpu_seconds" stats
+                                in read muts + read gcs
+statsFromMetric ALLOC   stats = let Just bytes = lookup "bytes allocated" stats
+                                in read bytes
+statsFromMetric GC      stats = let Just gcs = lookup "GC_cpu_seconds" stats
+                                in read gcs
+
+benchmark :: FilePath -> Double -> MetricType -> Int64 -> IO (Double, Double)
+benchmark projDir timeLimit metric runs =  do
+  let runProj = "timeout " ++ (show . round $ timeLimit) ++ "s ./" ++ projDir ++ "/dist/build/" 
                      ++ projDir ++ "/" ++ projDir 
                      ++ " -q +RTS -ttiming.temp --machine-readable"
                      ++ "> /dev/null"
@@ -43,7 +60,8 @@ benchmark projDir runs =  do
                       system cleanProj
                       let s = unlines . tail . lines $ t
                           stats = read s :: [(String, String)]
-                      let Just muts = lookup "mutator_cpu_seconds" stats
-                          Just gcs = lookup "GC_cpu_seconds" stats
-                      return $ read muts + read gcs
-       _ -> return 100000
+                      runtime <- return $ statsFromMetric RUNTIME stats
+                      case metric of
+                        RUNTIME   -> return (runtime, runtime)
+                        otherwise -> return (runtime, statsFromMetric metric stats)
+       _ -> return ((0 - 1), (0 - 1))

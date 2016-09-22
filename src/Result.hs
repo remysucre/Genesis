@@ -89,9 +89,8 @@ genResultPage chroms fps fp name cfg diversity fitnessRuns = renderHtml $ headHt
                                                           headHtml = genResultPageHeader progName
                                                           progName = programName fp name
 
-createResultDir ::FilePath -> [FilePath] -> Int -> BV -> IO FilePath
-createResultDir projDir srcs n bv = do
-      bvs <- return $ [bv]
+createResultDir ::FilePath -> [FilePath] -> Int -> [BV] -> IO FilePath
+createResultDir projDir srcs n bvs = do
       newPath <- return $ resultDir ++ show n ++ "/"
       code <- system $ "mkdir -p " ++ newPath
       progs <- sequence $ map readFile srcs
@@ -102,7 +101,7 @@ createResultDir projDir srcs n bv = do
       rnf progs `seq` sequence $ zipWith writeFile srcs' progs'
       return newPath
 
-createResultDirForAll :: FilePath -> [FilePath] -> [BV] -> IO [FilePath]
+createResultDirForAll :: FilePath -> [FilePath] -> [[BV]] -> IO [FilePath]
 createResultDirForAll projDir srcs chroms = sequence $ map (uncurry createDirForProj) $ inputs
                                  where
                                  inputs = zip [1..] chroms
