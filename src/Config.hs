@@ -13,6 +13,9 @@ import qualified Text.Parsec.Expr as PE
 import qualified Text.Parsec.Combinator as PC
 import Text.ParserCombinators.Parsec.Language (haskellStyle, reservedOpNames, reservedNames)
 import Text.ParserCombinators.Parsec.Pos (newPos)
+import Text.Read
+
+import Debug.Trace
 --
 -- CONFIG FOR FITNESS RUN
 --
@@ -46,69 +49,153 @@ cfg = GAConfig
 
 g = mkStdGen 0 -- random generator
 
-type Cfg = (FilePath, Int, Int, Int) -- projDir, pop, gen, arch
+data Cfg = Cfg { projectDir :: String
+               , timeBudget :: Double
+               , getBaseTime :: Double
+               , coverage :: [String]
+               , fitnessMetric :: MetricType
+               , getBaseMetric :: Double
+               , pop :: Int
+               , gen :: Int
+               , arch :: Int
+{-             , diverRate :: Float
+               , mutRate :: Float
+               , xRate :: Float -}
+               } deriving Show
 
 defaultProjDir :: FilePath
 defaultProjDir = "."
 
-defaultTimeLimit :: Integer
-defaultTimeLimit = toInteger $ 3
+defaultTimeLimit :: Double
+defaultTimeLimit = 3
 
-defaultTimeLimitSec :: Integer
+defaultTimeLimitSec :: Double
 defaultTimeLimitSec = defaultTimeLimit * 60 * 60
 
-defaultConfidence :: Integer
-defaultConfidence = toInteger 0
-
-defaultCoverage :: [String]
-defaultCoverage = ["Main.hs"]
+defaultCoverage :: String
+defaultCoverage = "Main.hs"
 
 defaultMetric :: MetricType
 defaultMetric = RUNTIME
 
-defaultInput :: [String]
-defaultInput = []
+defaultInput :: String
+defaultInput = ""
 
 defaultFitRuns :: Integer
 defaultFitRuns = toInteger 1
 
+emptyCfg :: Cfg
+emptyCfg = Cfg defaultProjDir defaultTimeLimitSec (0-1) (words defaultCoverage) defaultMetric (0-1) 1 1 1
+
+defaultNumGenerations :: Int
+defaultNumGenerations = 5
+
+defaultPopulationSize :: Int
+defaultPopulationSize = 8
+
+deriveFitnessTimeLimit :: Double -> Double
+deriveFitnessTimeLimit = (*) 2
+
+readLnWDefault :: Read a => a -> IO a
+readLnWDefault def = do
+  cont <- getLine
+  case readMaybe cont 
+    of Nothing -> return def
+       Just res -> return res
+
+{-
+ - Create the configuration specific to the GA library
+ -}
+createGAConfig :: Cfg -> GAConfig
+createGAConfig cfg = GAConfig pop' arch' gens' xRate mRate xParam mParam chkpt rescore
+                     where
+                       pop' = pop cfg
+                       gens' = gen cfg
+                       arch' = arch cfg
+                       xRate = crossRate
+                       mRate = muteRate
+                       xParam = crossParam
+                       mParam = muteParam
+                       chkpt = checkpoint
+                       rescore = rescoreArc
+{-
+ -  Read from the command line and produce an Autobahn Configuration
+ -}
+cliCfg :: IO Cfg
+cliCfg = do 
+  putStrLn "No config.atb file found, please specify parameters as prompted"
+  putStrLn "<Enter> to use [defaults]"
+
+  putStr "Path to project program sources [\".\"]:"
+  projDir <- readLnWDefault $ (show defaultProjDir)
+
+  putStr "Time alloted for Autobahn [3h]:"
+  timeLimit <- readLnWDefault $ (show defaultTimeLimit) ++ "h"
+
+  putStr "File(s) to add/remove bangs in [\"Main.hs\"]:"
+  srcs <- readLnWDefault defaultCoverage
+
+  putStr "Performance metric to optimize [\"runtime\"]:"
+  metric <- readLnWDefault "runtime"
+
+  putStr "Representative input data & arguments [no input/arguments]:"
+  args <- readLnWDefault ""
+
+  putStr "Times to run program for fitness measurement [1]:"
+  nRuns <- readLnWDefault "1"
+
+  -- Now we take their answers and produce a configuration file
+  cliCfgFile <- return $ unlines $ [ ("projectDirectory = " ++ projDir)
+                               , ("budgetTime = " ++ timeLimit)
+                               , ("coverage = " ++ srcs)
+                               , ("targetMetric = " ++ metric)
+                               , ("inputArg = " ++ args)
+                               , ("fitnessRuns = " ++ nRuns)]
+  -- That we now parse that file
+  result <- return $ parseCfgFile "cli" 1 1 cliCfgFile
+  case result of
+       Left err -> error $ show err
+       Right ast -> foo $ convertToCfg ast emptyCfg
+
+readCfg :: FilePath -> IO Cfg
+readCfg fp = do {
+          text <- readFile fp
+          ; x <- return $ parseCfgFile fp 1 1 text
+          ; case x of
+                Left err -> error $ show err
+                Right ast -> foo $ convertToCfg ast emptyCfg
+          }
+
 {-
  - Determine the configuration from the time limit and the base time
  - Derived from 
- -    (1) the ratio of generations : population is 4 : 3 and
+ -    (1) the ratio of generations : population is 4 : 3 from the paper and
  -    (2) generations * population * (2 * baseTime) = timeLimit
--}
-heuristic :: String -> Double -> Double -> Cfg
-heuristic projDir baseTime timeLimit = (projDir, round $ pop, round $ gen, round $ arch)
+ -}
+heuristic :: String -> Double -> Double -> (Int, Int, Int)
+heuristic projDir baseTime timeLimit = ((round pop), (round gen), (round arch))
                                        where
-                                       n = (timeLimit /  (2 * baseTime)) :: Double
+                                       fitnessTimeLimit = deriveFitnessTimeLimit baseTime
+                                       n = (timeLimit / fitnessTimeLimit) :: Double
                                        pop = (sqrt $ (3 * n)/4) :: Double
                                        gen = (4 * pop)/3 :: Double
-                                       arch = if pop/2 <= 0 then 1 else (pop/2)
-                                           
-fromTimeToCfg :: String -> Double -> IO Cfg
-fromTimeToCfg projDir timeLimit = do
+                                       arch = if (round $ pop/2) <= 0 then 1 else pop/2
+
+{-
+ - Convert the time budget to a number of generations,
+ - population size, and archive/selection size.
+ -}
+convertTimeToGens :: String -> Double -> MetricType -> IO (Int, Int, Int, Double, Double)
+convertTimeToGens projDir timeLimit metric = do
                           buildProj projDir
-                          baseTime <- benchmark projDir runs
+                          (baseTime, baseMetric) <- benchmark projDir (timeLimit) metric runs
                           -- Remove the number of program runs per chromosome from time limit
                           n <- return . fromInteger . toInteger $ runs :: IO Double
                           timeLimit' <- (return $ timeLimit / n)
+                          (pop, gen, arch) <- return $ heuristic projDir baseTime timeLimit'
+                          return $ (pop, gen, arch, baseTime, baseMetric)
 
-                          return $ heuristic projDir baseTime timeLimit'
-
-
--- Thanks to Matthew Ahrens for the Parsec boilerplate
--- Thanks to Karl Cronburg for the help with Parsec rules
-
-data MetricType = ALLOC | GC | RUNTIME
-
-instance Show MetricType where
-    show ALLOC = "alloc"
-    show GC = "gc"
-    show RUNTIME = "runtime"
-
-data CfgAST = BUDGET Integer
-            | CONFIDENCE Integer
+data CfgAST = BUDGET Double
             | DIR String
             | SRCS [String]
             | METRIC MetricType
@@ -116,25 +203,30 @@ data CfgAST = BUDGET Integer
             | FITRUNS Integer
             | FILE [CfgAST] deriving Show
 
-foo :: [CfgAST] -> IO Cfg
-foo ast = fromTimeToCfg projDir timeLimit
-          where
-          timeLimit = (fromInteger $ getBudget ast) :: Double
-          projDir = getProjDir ast
-          
-getBudget :: [CfgAST] -> Integer
-getBudget ast = foldl f defaultTimeLimit ast
-                where
-                f base x = case x of
-                              BUDGET n -> n * 60 * 60
-                              otherwise -> base
+hoursToSeconds :: Double -> Double
+hoursToSeconds = (*) $ 60 * 60
 
-getProjDir :: [CfgAST] -> String
-getProjDir ast = foldl f defaultProjDir ast
-                 where
-                 f dir x = case x of
-                              DIR fp -> fp
-                              otherwise -> dir
+convertToCfg :: [CfgAST] -> Cfg -> Cfg
+convertToCfg []                   cfg = cfg
+convertToCfg ((DIR path) : ast)   cfg = convertToCfg ast $ cfg { projectDir = path }
+convertToCfg ((BUDGET n) : ast)   cfg = let timeInSeconds = hoursToSeconds $ n
+                                        in convertToCfg ast $ cfg { timeBudget = timeInSeconds }
+convertToCfg ((SRCS srcs) : ast) cfg = convertToCfg ast $ cfg { coverage = srcs }
+convertToCfg ((FILE inner) : ast) cfg = convertToCfg ast $ convertToCfg inner cfg
+-- Ignore the other AST Nodes
+convertToCfg ((_) : ast)          cfg = convertToCfg ast cfg
+
+foo :: Cfg -> IO Cfg
+foo cfg = do
+            metric <- return $ fitnessMetric cfg
+            timeLimit <- return $ timeBudget cfg
+            (pop', gen', arch', baseTime, baseMetric) <- convertTimeToGens (projectDir cfg) timeLimit metric
+            return $ cfg { getBaseTime = baseTime
+                         , getBaseMetric = baseMetric
+                         , pop = pop'
+                         , gen = gen'
+                         , arch = arch'
+                         }
 
 parseCfgFile :: SourceName -> Line -> Column -> String -> Either ParseError [CfgAST]
 parseCfgFile fileName ln col text = 
@@ -155,8 +247,15 @@ parseCfgFile fileName ln col text =
     ; unexpected rest
     }
 
------------ Parser --------------
+-- Thanks to Matthew Ahrens for the Parsec boilerplate
+-- Thanks to Karl Cronburg for the help with Parsec rules
 
+----------- Parser for Config File  --------------
+
+{-
+ - Allows the <|> to backtrack if one case fails
+ - Not the most performant, but it works for our purposes.
+ -}
 (<||>) a b = try a <|> try b
 
 configAllOptions :: PS.Parser [CfgAST]
@@ -171,25 +270,19 @@ configOption = do {
                }
 
 configTopLevel :: PS.Parser CfgAST
-configTopLevel = projDirRule <||> budgetRule <||> confidenceRule <||> coverageRule
+configTopLevel = projDirRule <||> budgetRule <||> coverageRule
                <||> targetMetricRule <||> inputArgRule <||> fitnessRunRule
 
 budgetRule :: PS.Parser CfgAST
 budgetRule = do {
              reserved "budgetTime"
              ; reservedOp "="
-             ; x <- natural
+             ; x <- naturalOrFloat
              ; symbol "h"
-             ; return $ BUDGET x
+             ; return $ case x of
+                           Left n -> BUDGET $ fromInteger n
+                           Right n -> BUDGET n
              }
-
-confidenceRule :: PS.Parser CfgAST
-confidenceRule = do {
-                 reserved "confidence"
-                 ; reservedOp "="
-                 ; x <- natural
-                 ; return $ CONFIDENCE x
-                 }
 
 coverageRule :: PS.Parser CfgAST
 coverageRule = do {
