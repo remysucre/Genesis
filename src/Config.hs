@@ -87,12 +87,6 @@ defaultFitRuns = toInteger 1
 emptyCfg :: Cfg
 emptyCfg = Cfg defaultProjDir defaultTimeLimitSec (0-1) (words defaultCoverage) defaultMetric (0-1) 1 1 1
 
-defaultNumGenerations :: Int
-defaultNumGenerations = 5
-
-defaultPopulationSize :: Int
-defaultPopulationSize = 8
-
 deriveFitnessTimeLimit :: Double -> Double
 deriveFitnessTimeLimit = (*) 2
 
@@ -155,7 +149,7 @@ cliCfg = do
   result <- return $ parseCfgFile "cli" 1 1 cliCfgFile
   case result of
        Left err -> error $ show err
-       Right ast -> foo $ convertToCfg ast emptyCfg
+       Right ast -> calculateInputs $ convertToCfg ast emptyCfg
 
 readCfg :: FilePath -> IO Cfg
 readCfg fp = do {
@@ -163,13 +157,13 @@ readCfg fp = do {
           ; x <- return $ parseCfgFile fp 1 1 text
           ; case x of
                 Left err -> error $ show err
-                Right ast -> foo $ convertToCfg ast emptyCfg
+                Right ast -> calculateInputs $ convertToCfg ast emptyCfg
           }
 
 {-
  - Determine the configuration from the time limit and the base time
  - Derived from 
- -    (1) the ratio of generations : population is 4 : 3 from the paper and
+ -    (1) the ratio of generations to population, 4 : 3, from the paper and
  -    (2) generations * population * (2 * baseTime) = timeLimit
  -}
 heuristic :: String -> Double -> Double -> (Int, Int, Int)
@@ -216,8 +210,8 @@ convertToCfg ((FILE inner) : ast) cfg = convertToCfg ast $ convertToCfg inner cf
 -- Ignore the other AST Nodes
 convertToCfg ((_) : ast)          cfg = convertToCfg ast cfg
 
-foo :: Cfg -> IO Cfg
-foo cfg = do
+calculateInputs :: Cfg -> IO Cfg
+calculateInputs cfg = do
             metric <- return $ fitnessMetric cfg
             timeLimit <- return $ timeBudget cfg
             (pop', gen', arch', baseTime, baseMetric) <- convertTimeToGens (projectDir cfg) timeLimit metric
