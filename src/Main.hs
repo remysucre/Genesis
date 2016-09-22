@@ -82,14 +82,7 @@ gmain autobahnCfg = do
     
   -- TODO for the future, check out criterion `measure`
   -- Get base time and pool. 
-  -- Obtain base time: compile & run
-    buildProj projDir
-    timeLimit <- return $ timeBudget autobahnCfg
-    
-    defaultTimeout <- return $ timeLimit / (fromInteger . toInteger $ gen autobahnCfg) / (fromInteger . toInteger $ pop autobahnCfg) / (fromInteger defaultFitRuns)
-    
-    (baseTime, baseMetric) <- benchmark projDir args defaultTimeout metric reps
-    
+
     checkBaseProgram baseTime baseMetric
     
     let absPaths = map (\x -> projDir ++ "/" ++ x) files
