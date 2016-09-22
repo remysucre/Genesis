@@ -4,6 +4,7 @@ import Rewrite
 import Profiling
 import GeneAlg
 import Config
+import Result
 ------
 import GA
 import qualified Data.BitVector as B
@@ -83,7 +84,6 @@ main = do
   putStrLn $ "Optimization finished, please inspect and select candidate changes "
         ++ "(found in AutobahnResults under project root)"
 
-
 gmain :: String -> (Int, Int, Int) -> IO ()
 gmain projDir (pop, gens, arch) = do 
     putStrLn $ "Optimizing " ++ projDir
@@ -123,6 +123,19 @@ gmain projDir (pop, gens, arch) = do
     let survivorPath = projDir ++ "Survivor.hs"
     writeFile survivorPath prog'
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"
+
+  -- Write result page
+    es' <- return $ filter (\x -> fst x /= Nothing) es
+    bangs <- return $ (map snd es') :: IO [BangVec]
+    newFps <- createResultDirForAll projDir [projDir ++ "/Main.hs"] bangs
+    f <- return $ map fst es'
+    scores <- return $ map getScore f
+    writeFile (resultDir ++ "result.html") $ genResultPage scores newFps projDir Nothing cfg 0.0 1
+
+    where
+       getScore s = case s of
+                        Nothing -> error "filter should have removed all Nothing"
+                        Just n -> n
 
 -- Experiments to tune Genetic Algorithm parameters
 --
