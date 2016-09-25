@@ -9,6 +9,7 @@ import GA
 import qualified Data.BitVector as B
 import Data.Bits
 import Data.Int
+import Debug.Trace
 import System.Environment
 import System.Process
 import Control.DeepSeq
@@ -48,7 +49,7 @@ main :: IO ()
 main = do 
   [projDir, pop, gen, arch] <- getArgs
 
-  let search = "Genetic"
+  let search = "hillclimb"
 
   if search == "Genetic" then
     gmain projDir (read pop, read gen, read arch)
@@ -109,12 +110,18 @@ gmain projDir (pop, gens, arch) = do
 
 hillClimbMain :: String -> IO ()
 hillClimbMain projDir = do
-    buildProj projDir
+    trace ("Building project " ++ show projDir) $ buildProj projDir
     let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
 
     prog <- readFile mainPath
     bs <- readBangs mainPath
-    
-    hillClimb bs (\bits -> fitness projDir (B.fromBits bits))
+
+    bangVec  <- trace "Begining hill climbing" $ hillClimb bs (\bits -> fitness projDir (B.fromBits bits))
+
+
+    -- Note, we need to make a program' first
+    putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"
+    putStrLn $ "Resulting bang vector: " ++ show bangVec
+
 
     return ()
