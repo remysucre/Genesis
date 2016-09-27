@@ -123,5 +123,13 @@ hillClimbMain projDir = do
     putStrLn ">>>>>>>>>>>>>>FINISH OPTIMIZATION>>>>>>>>>>>>>>>"
     putStrLn $ "Resulting bang vector: " ++ show bangVec
 
+    prog' <- editBangs mainPath bangVec
+
+    -- Write result
+    putStrLn $ "best entity (GA): " ++ (printBits bangVec)
+    --putStrLn prog'
+    let survivorPath = projDir ++ "Survivor.hs"
+    writeFile survivorPath prog'
+   
 
     return ()
