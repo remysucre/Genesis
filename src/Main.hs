@@ -4,6 +4,7 @@ import Rewrite
 import Profiling
 import GeneAlg
 import Config
+import Result
 ------
 import GA
 import qualified Data.BitVector as B
@@ -12,41 +13,56 @@ import Data.Int
 import Debug.Trace
 import System.Environment
 import System.Process
+import System.IO
+import System.Directory
 import Control.DeepSeq
-
-import Debug.Trace
+import HillClimbing
 
 reps :: Int64
 reps = runs
 
-fitness :: FilePath -> BangVec -> IO Time
-fitness projDir bangVec = do
+cfgFile :: FilePath
+cfgFile = "config.atb"
+
+checkBaseProgram :: Double -> Double -> IO ()
+checkBaseProgram baseTime baseMetric = if baseTime == -1
+                                       then error $ "Base program ran longer than expected. " ++
+                                                  "We suggest a larger time budget."
+                                       else if baseMetric <= 0
+                                            then error $ "Base measurement is negligible (0). " ++
+                                                 "Autobahn cannot optimize."
+                                            else putStr $ "Base measurement is: " ++ (show baseTime)
+
+
+
+fitness :: FilePath -> String -> Double -> Int64 -> MetricType -> [FilePath] -> [BangVec] -> IO Time
+fitness projDir args timeLimit reps metric files bangVecs = do
   -- Read original
-    let mainPath = projDir ++ "/Main.hs"
-    !prog  <- readFile mainPath
-  -- Rewrite according to gene
-    !prog' <- editBangs mainPath (B.toBits bangVec) 
-    rnf prog `seq` writeFile mainPath prog'
-    -- print prog'
+    let absPaths = map (\x -> projDir ++ "/" ++ x) files
+    !progs  <- sequence $ map readFile absPaths
+  -- Rewrite from gene
+    !progs' <- sequence $ map (uncurry editBangs) $ zip absPaths (map B.toBits bangVecs) 
+    rnf progs `seq` sequence $ map (uncurry writeFile) $ zip absPaths progs'
   -- Benchmark new
     buildProj projDir
-    !newTime <- benchmark projDir reps
+    !(_, newMetricStat) <- benchmark projDir args timeLimit metric reps
   -- Recover original
-    !_ <- writeFile mainPath prog
-    return newTime
-
-    {-
-  -- Random seed; credit to Cyrus Cousins
-    randomSeed <- (getStdRandom random)
-  -- TODO parse CLI arguments here.  Need to determine runs and cliSeed.  
-  -- Also parse options for genetic algorithm?
-    let (useCliSeed, cliSeed) = (False, 0 :: Int)
-        seed = if useCliSeed then cliSeed else randomSeed-}
+    !_ <- sequence $ map (uncurry writeFile) $ zip absPaths progs
+    return newMetricStat
+ 
 
 main :: IO () 
 main = do 
-  [projDir, pop, gen, arch] <- getArgs
-  gmain projDir (read pop, read gen, read arch)
+  hSetBuffering stdout LineBuffering
+  print "Configure optimization..."
+  cfgExist <- doesFileExist cfgFile
+  cfg <- if cfgExist then readCfg cfgFile else cliCfg
+  putStrLn "Setting up optimization process..."
+  putStrLn "Starting optimization process..."
+  gmain cfg
+  putStrLn $ "Optimization finished, please inspect and select candidate changes "
+        ++ "(found in AutobahnResults under project root)"
+
 
 gmain :: Cfg -> IO ()
 gmain autobahnCfg = do
@@ -108,15 +124,20 @@ gmain autobahnCfg = do
     scores <- return $ map getScore f
     genResultPage projDir scores newFps projDir Nothing cfg 0.0 1
 
-hillClimbMain :: String -> IO ()
-hillClimbMain projDir = do
+    where
+       getScore s = case s of
+                        Nothing -> error "filter should have removed all Nothing"
+                        Just n -> n
+
+hillClimbMain :: String -> ([Bool]->IO Score)-> IO ()
+hillClimbMain projDir fitnessFunc = do
     trace ("Building project " ++ show projDir) $ buildProj projDir
     let mainPath = projDir ++ "/Main.hs" -- TODO assuming only one file per project
 
     prog <- readFile mainPath
     bs <- readBangs mainPath
 
-    bangVec  <- trace "Begining hill climbing" $ hillClimb bs (\bits -> fitness projDir (B.fromBits bits))
+    bangVec  <- trace "Begining hill climbing" $ hillClimb bs fitnessFunc
 
 
     -- Note, we need to make a program' first
